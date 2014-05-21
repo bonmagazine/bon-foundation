@@ -1,0 +1,61 @@
+// CAMPAIGN
+
+.campaign-promo-container {
+  display: none;
+
+  min-width: 1220px;
+  position: fixed;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 0;
+  z-index: 9999;
+
+  & > * {
+    -webkit-transform: translateZ(0px);
+  }
+
+  .campaign-promo-wrap {
+    position: static;
+    @include grid(15, 20);
+    height: 100%;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.85);
+    min-height: 100vh;
+    text-align: center;
+
+    div {
+      margin: 0 auto;
+    }
+  }
+
+  .btn-skip {
+    position: relative;
+    top: 0;
+    width: 100%;
+    background: black;
+    height: $baseline * 2;
+    text-align: center;
+    color: white;
+    border: none;
+    margin-bottom: 84px;
+    cursor: pointer;
+    text-transform: none;
+    font-size: 14px;
+    letter-spacing: .15em;
+    text-indent: 0;
+  }
+}
+
+.campaign-active { 
+  body {
+    overflow: hidden;
+  }
+
+  .campaign-promo-container {
+    display: block;
+  }
+}

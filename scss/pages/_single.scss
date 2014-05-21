@@ -1,0 +1,26 @@
+.single-main {
+  .post {
+    max-width: 42em;
+    margin: baseline(2) auto;
+  }
+
+  .author-and-date,
+  .section {
+    margin-left: $indent;
+  }
+  
+  .entry-title {
+    @extend %large-archive-h;
+  }
+
+  .entry-content {
+    margin-top: baseline();
+
+    p {
+      @extend %large-archive-p;
+    }
+    p + p {
+      text-indent: $indent;
+    }
+  }
+}

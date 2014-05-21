@@ -1,0 +1,125 @@
+// General Widget styles
+
+.widget {
+  @include grid-column(3);
+  float: left;
+  box-shadow: -1px 0 0 0 black;
+
+  &.widget_text {
+    @include grid-column(6);
+  }
+
+  .widgettitle {
+    @include sans-serif-heading;
+    margin-bottom: $baseline;
+  }
+
+  article {
+    margin-bottom: $baseline;
+
+    img {
+      float: left;
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
+
+    h3 {
+      margin-left: 68px;
+    }
+
+    p {
+      margin-left: 68px;
+    }
+  }
+
+  h3,
+  .post-title {
+    @include serif-heading-3;
+  }
+
+  .post-date,
+  .author {
+    @include sans-serif-small-text;
+  }
+
+  // specific styles
+}
+
+.widget.dividing-line {
+  width: 460px;
+  margin: 22px 10px;
+  border-top: 1px solid black;
+}
+
+.widget_bon_twitter {
+  @include grid-column(3);
+  float: left;
+  letter-spacing: 0px;
+
+  .widgettitle {
+    @include sans-serif-heading;
+  }
+
+  .twtr-widget {
+    .twtr-tweet-wrap {
+      padding: 0 0 $baseline;
+    }
+
+    .twtr-avatar {
+      margin-top: 6px;
+    }
+
+    .twtr-tweet-text {
+      margin-left: 0;
+
+      p {
+        @include sans-serif-small-text;
+        line-height: 22px !important;
+
+        a {
+          color: black !important;
+        }
+
+        em {
+          display:none;
+          font-size: 11px;
+        }
+
+        &:hover em {
+          display:block;
+        }
+      }
+    }
+  }
+  .twtr-timeline {
+    z-index: 0; }
+  .twtr-ft {
+    display: none; }
+  .twtr-hd {
+    padding: 0; } }
+
+.widget.bon-blogs-posts {
+  @include grid(6);
+  padding: 0;
+  box-shadow: none;
+  margin-bottom: $baseline;
+
+  .bon-blog-thumbnail {
+    height: 65px;
+    overflow: hidden;
+  }
+
+  .bon-blog-title {
+    @extend %small-archive-h;
+  }
+
+  .bon-blog-post-title {
+    @extend %medium-grotesque-p;
+    text-transform: none;
+  } 
+
+  .post-date {
+    @extend %medium-grotesque-p;
+    text-transform: none;
+  }
+}

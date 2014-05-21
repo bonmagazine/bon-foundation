@@ -1,0 +1,26 @@
+.blog-list {
+  .post {
+    margin-bottom: baseline();
+    
+    @media #{$s-up} {
+      @include grid-column(6);  
+    }
+    @media #{$m-up} {
+      @include grid-column(4);  
+    }
+  }
+  .section {
+    margin-left: $indent;
+  }
+  .title {
+    @extend %small-archive-h;
+  }
+  .author-and-date {
+    margin-left: $indent;
+
+    p {
+      margin: 0;
+    }
+  }
+
+}

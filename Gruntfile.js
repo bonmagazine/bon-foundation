@@ -19,9 +19,19 @@ module.exports = function(grunt) {
     watch: {
       grunt: { files: ['Gruntfile.js'] },
 
+      php: {
+        files: ['**/*.php'],
+        options: {
+          livereload: true
+        }
+      },
+
       sass: {
         files: 'scss/**/*.scss',
-        tasks: ['sass']
+        tasks: ['sass'],
+        options: {
+          livereload: true
+        }
       }
     }
   });

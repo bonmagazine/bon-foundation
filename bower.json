@@ -1,6 +1,7 @@
 {
-  "name": "foundation-libsass-template",
+  "name": "Bon Foundation",
   "dependencies": {
-    "foundation": "zurb/bower-foundation"
+    "foundation": "zurb/bower-foundation",
+    "masonry": "masonry"
   }
 }

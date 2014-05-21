@@ -1,0 +1,161 @@
+/* Styles for /blogs/[blogger-name] */
+
+.bon-blog {
+
+  #header {
+    padding-bottom: 0;
+    @include respond-to(to-l) {
+      background: white;
+      // position: absolute;
+    }
+
+    @include respond-to(l-up) {
+      nav {
+        @include grid(11);
+        margin: 0 auto;
+        min-height: 59px;
+        background: white;
+        padding-bottom: 6px;
+        border-right: 1px solid;
+        border-left: 1px solid;
+      }
+      .nav-with-dropdown {
+        // width: 574px;
+      }
+    }
+  }
+  #content-holder {
+    background: white;
+
+    @include respond-to(to-s) {
+      width: 100%;
+      margin: 0 -20px;
+    }
+    @include respond-to(s-up) {
+      margin: 0 -10px;
+    }
+    @include respond-to(l-up) {
+      background: rgba(255,255,255,0.7);
+
+      margin: 0 -10px;
+      padding: 0 10px;
+    }
+  }
+  .search-wrapper {
+    background: white;
+    @include respond-to(m-up) {
+      margin-top: -5px
+    }
+    @include respond-to(l-up) {
+      margin-top: -25px;
+    }
+  }
+}
+
+
+
+#bon-blog-holder {
+
+  padding-top: 48px;
+  @include respond-to(to-l) {
+    margin: 0;
+  }
+
+  @include respond-to(l-up) {
+    border: 1px solid;
+    border-top: none;
+    padding-top: 57px;
+  }
+
+}
+
+.bon-blogs .title-header {
+
+  &.fixed {
+    position: fixed;
+    width: 878px;
+    top: -115px;
+  }
+
+  @include respond-to(l-up) {
+    margin: 0 (-80px) $baseline*5;
+    z-index: 98;
+  }
+
+  h1 {
+    margin-top: -32px;
+    margin-left: 10px;
+
+    @include respond-to(l-up) {
+      margin-top: - ($baseline*5);
+      margin-left: 20px;
+    }
+
+    color: white;
+  }
+  p {
+    display: none;
+    margin-left: 10px;
+    margin-top:-5px;
+    @include respond-to(l-up) {margin-left: 20px;}
+    color: white;
+  }
+  img {
+    margin-top: 0;
+    max-width: 100%;
+    border-bottom: 10px solid white;
+  }
+}
+
+#bon-blog {
+  @include respond-to(to-l) {
+    padding: $baseline 10px;
+  }
+
+  .big-title {
+    padding: 0;
+    margin: 0;
+  }
+
+  .item {
+    &:after {
+      @include divider;
+    }
+    & + .item {
+      margin-top: $baseline*2;
+    }
+  }
+
+  .main-body {
+    a {
+      color: blue;
+    }
+  }
+
+  .social {
+    float: left;
+    width: 200px;
+    margin-top: $baseline;
+    margin-bottom: $baseline;
+
+    span {
+      margin: 0 20px 0 0;
+      padding: 0;
+    }
+  }
+
+  .tags {
+    float: left;
+    width: 300px;
+    margin-top: $baseline;
+    h1 {
+      float: left;
+    }
+  }
+
+  .load_more_posts {
+    clear: both;
+    display: block;
+  }
+
+}

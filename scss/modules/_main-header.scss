@@ -1,0 +1,194 @@
+/* HEADER */
+
+#header {
+  position: fixed;
+  z-index: 99;
+  min-height: 3 * $baseline;
+  margin-left: -10px; 
+
+  @include respond-to(to-m) { 
+    @include transition(height 0.2s linear);
+    background: rgb(152, 222, 255);
+  }
+
+  @include grid(3, 20);
+  width: 100%;
+  @include respond-to(xs) { margin-left: -20px;}
+  @include respond-to(s) { @include grid(6, 20); }
+  @include respond-to(m) { @include grid(9, 20); }
+  @include respond-to(l-up) { @include grid(12, 20); }
+
+  @include clearfix;
+
+  @include respond-to(m-up) { 
+    overflow: visible;
+    padding-bottom: 7px;
+    background: rgba(152, 222, 255, 0.85);
+  }
+
+  &.expanded-menu {
+    height: 100%;
+  }
+}
+
+.bon-logo {
+  background: url(images/bon_logo.png) no-repeat top left;
+  background-size: contain;
+  height: 34px;
+  width: 100px;
+  margin: 7px 0 0 10px;
+  @include respond-to(m-up) { 
+    width: 100px;
+    height: 35px;
+    margin-left: 15px;
+    margin-top: 5px;
+  }
+  @include respond-to(l-up) { 
+    width: 100px;
+    height: 35px;
+    margin: ($baseline - 4) 0 0 ($gutter-width - 5); 
+
+  }
+  float: left;
+}
+
+// NAV
+
+.about-nav {
+  @include respond-to(to-m) { 
+    .second-level-item-title {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.social-media img {
+  margin-left: .25em;
+  margin-bottom: -8px;
+} 
+
+
+
+// SEARCH
+.search-wrapper {
+  float: right;
+  padding: 0 !important;
+  @include respond-to(l-up) {
+    margin-top: -10px;
+    margin-right: 0;
+  }
+}
+
+input {
+  @include sans-serif-medium-text;
+}
+
+form[role=search] {
+  margin-left: 20px;
+
+  @include respond-to(l-up) { 
+    label {
+      display:none;
+    }
+  }
+
+  input[type=text] {
+    border: none;
+    border-bottom: 1px solid #000; 
+    background: transparent;
+    line-height: $baseline - 4px;
+    padding: 2px 0 1px;
+    width: 150px;
+    border-radius: 0;
+
+    @include respond-to(m) {
+      width: 300px;
+    }
+  } 
+  input[type=submit] {
+    border: none;
+    cursor: pointer;
+
+    width: 20px;
+    height: 20px;
+    text-indent: 20em;
+    margin-right: 10px;
+    overflow: hidden;
+    background: url('images/icons.png') top right no-repeat;
+  }    
+}
+
+// Mobile Search
+@include respond-to(to-l) { 
+  .search-wrapper {
+    display: block;
+    position: absolute;
+    text-align: right;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background: #98deff;
+  }
+
+  .search-dropdown {
+    display: none;
+    margin-left: -10px;
+    margin-top: 0;
+    float: left;
+    position: absolute;
+
+  }
+
+  .expanded-search {
+    padding-top: $baseline;
+    height: $baseline * 3;
+
+    @include respond-to(m) {
+      padding-top: $baseline * 3;
+      text-align: right;
+      height: $baseline * 5;
+    }
+  }
+
+  .expanded-search .search-dropdown {
+    display: block;
+
+    @include respond-to(m) {
+      width: 100%; 
+      padding-right: 20px;  
+    }
+  }
+
+  .search-nav-title {
+    position: absolute;
+    top: $baseline;
+    right: 50px;
+    @include respond-to(m) {
+      top: 50px;
+      right: 20px;
+    }
+
+    .expanded-search & {
+      right: 0;
+    }
+
+    .ir {
+      display: block;
+      float: right;
+      width: 20px;
+      height: 20px;
+      text-indent: 20em;
+      overflow: hidden;
+      background: url('images/icons.png') top right no-repeat;
+
+      .expanded-search & {
+        display: none;
+      }
+    }
+
+    .expanded-search & {
+      height: 100vh;
+      width: 100vw;
+    }
+  }
+}

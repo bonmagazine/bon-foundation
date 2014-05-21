@@ -1,0 +1,196 @@
+/* LANDING */
+.landing {
+  padding: baseline() 20px;
+
+  @media #{$s-up} { padding: baseline() 0; }
+}
+
+
+/* POSTER */
+
+#poster {
+  @include grid-row();
+  margin-bottom: baseline();
+
+  .poster-container {
+    @include grid-column(12);
+
+    > .poster-wrapper {
+      list-style: none;
+      margin: 0 0 baseline(2.60);
+      padding: 0;
+      li {
+        display: none;
+        &:first-child {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .orbit-bullets {
+    li {
+      border: 1px solid black;
+      margin: 0 10px;
+    }
+  }
+}
+
+#cover {
+  @include grid-row();
+
+  .post {
+    margin-bottom: baseline(4);
+    header {
+      @include grid-row();
+    }
+    .main {
+      @include grid-row();
+    }
+  }
+
+  .title {
+    @include serif-heading-2;
+  }
+
+  .entry-content p{
+    @extend %large-grotesque-p;
+  }
+
+  .entry-meta {
+    @media #{$s-up} { 
+      @include grid-column(2); 
+    }
+
+    div {
+      border-bottom: 1px solid;
+      padding: baseline(0.5) 0;
+    }
+
+    p {
+      margin: 0;
+      line-height: baseline();
+    }
+
+    .section {
+      padding-top: 0;
+    }
+  }
+
+  .thumbnail {
+    text-align: center;
+  }
+
+  .embed_iframe {
+    // @media #{$s-up} { height: 310px; }
+  }
+
+  //1 : Image left, text right.
+  .front-page-template-1 {
+    @include grid-column(12, $collapse: true);
+
+    @media #{$s-up} {
+      .title {
+        @include grid-column(10, $offset: 2);
+      }
+      .thumbnail {
+        @include grid-column(6);
+      }
+      .entry-content { 
+        @include grid-column(4);
+      }
+    }
+  }
+
+  // 2 : Text left, image right.
+  .front-page-template-2 {
+    @include grid-column(12, $collapse: true);
+    @media #{$s-up} {
+      .title {
+        @include grid-column(10, $offset: 2);
+      }
+      .thumbnail {
+        @include grid-column(6, $push: 4);
+      }
+      .entry-content { 
+        @include grid-column(4, $pull: 6);
+      }
+    }
+  }
+
+  // 3 : Small image, small text below (x2).  
+  .front-page-template-3 {
+    @media #{$s-up} {
+      @include grid-column(6, $collapse: true);
+      .title {
+        @include grid-column(12);
+      }
+      .thumbnail {
+        @include grid-column(8, $pull: 4);
+      }
+      .entry-meta {
+        @include grid-column(4, $push: 8); 
+      }
+      .entry-content { 
+        @include grid-column(8);
+      }
+
+    }
+
+    div.body {
+      @include sans-serif-small-text; 
+    }
+
+    & + .front-page-template-3 {
+      margin-right: 0;
+      padding-left: 0;
+
+      & + .item:before {
+        @include divider;
+        height: 0;
+        margin-bottom: baseline();      
+      }
+    }
+  }
+
+  // 4 : Big image, text below.
+  .front-page-template-4 {
+    @media #{$s-up} {
+      @include grid-column(12, $collapse: true);
+      .title {
+        @include grid-column(10, $offset: 2);
+      }
+      .thumbnail {
+        @include grid-column(10);
+      }
+      .entry-content { 
+        @include grid-column(10, $offset: 2);
+      }
+    }
+  }
+
+  // 5 : Video.  
+  .front-page-template-5.film {
+    @media #{$s-up} {
+      @include grid-column(12, $collapse: true);
+      .title {
+        @include grid-column(10, $offset: 2);
+      }
+      .thumbnail {
+        @include grid-column(10);
+      }
+      .entry-content { 
+        @include grid-column(10, $offset: 2);
+      }
+    }
+  }
+
+  // Divider after template 3
+  .front-page-template-3 + .front-page-template-3 + .item {
+    &:before {
+      @include divider;
+      height: 0;
+      margin-bottom: baseline();
+    }
+  }
+}

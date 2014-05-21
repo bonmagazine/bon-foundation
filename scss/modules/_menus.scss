@@ -1,0 +1,233 @@
+.main-nav {
+
+  @include respond-to(to-m) { 
+    width: 100%;
+    margin-left: -10px;
+    padding: 0 10px;
+    overflow: hidden;
+    .expanded-menu & { height: 100%; }
+  }
+
+  @include respond-to(m) {  
+    float: left;
+    height: $baseline * 2;
+  }
+  
+  @include respond-to(m-up) {
+    padding-top: 12px;
+  }
+
+  @include respond-to(l-up) {
+    padding-top: 34px;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.nav-toggle {
+  cursor: pointer;
+  text-indent: 20em;
+  overflow: hidden;
+  width: 20px;
+  height: $baseline;
+
+  position: absolute;
+  top: 0;
+  right: 20px;
+  padding-left: 16px;
+  margin: $baseline 0 $baseline 0;
+
+  background: url('images/icons.png') top left no-repeat;
+
+  @include respond-to(m-up) { display: none; }
+}
+
+.nav-back-btn {
+  @include sans-serif-small-heading;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+  visibility: hidden;
+  margin: ($baseline * 2) 0 0;
+  .expanded-menu & {
+    display: block;
+  }
+  .selected & {
+    visibility: visible;
+  }
+}
+
+%nav-with-dropdown {
+  @include grid-column(3);
+  width: 200%;
+
+  @include respond-to(to-m) { 
+    clear: both;
+    @include transition(margin 0.1s linear);
+    position: relative;
+    margin-top: -27px;
+    &.selected {
+      margin-left: -100%;
+    }
+  }
+
+  @include respond-to(m) {
+    @include grid-column(9, 10);
+    float: left;
+  }
+
+  @include respond-to(l-up) {
+    @include grid-column(10, 2);
+    float: left;
+    margin: -2px 0 1px;
+  }
+
+  @include respond-to(m-up) {
+    > li.has-sub-nav:hover,
+    > li.menu-item-has-children:hover {
+      background: white;
+
+      li {
+        display: block;
+      }
+
+      .dropdown,
+      .sub-menu {
+        display: block;
+      }
+    }
+  }
+}
+
+%top-level-item {
+  list-style: none;
+  margin: 0;
+
+  @media only screen and (max-width: 666) {
+    display: none;
+  }
+
+  @include respond-to(to-m) { 
+    display: none;
+
+    .expanded-menu & {
+     display: inherit;
+    }
+
+    & .second-level-item {
+     width: auto;
+     float: none;
+    }    
+  }
+
+  @include respond-to(m-up) {
+    padding: 8px 0 12px;
+    display: inline;
+    position: relative;
+  }
+}
+
+%top-level-item-title { 
+  @include sans-serif-small-heading;
+  letter-spacing: 0.2em;
+  line-height: $baseline;
+
+  cursor: pointer;
+  padding: $baseline/2 0;
+
+  @include respond-to(to-m) {
+    float: left;
+    width: 50%;
+    clear: left;
+  }
+
+  // SHAME HACK
+  @include respond-to(m-up) {
+    font-size: 15px;
+  }
+
+  @include respond-to(m-up) {
+    display: inline;
+    padding: 0 4px 6px;
+  }
+
+  @include respond-to(l-up) {
+    padding: 0 6px 6px 10px;
+  }
+}
+
+%dropdown {
+  @include grid-column(3);
+  @include respond-to(to-m) {
+    padding: 0 0 0 10px;
+    width: 50%;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: $baseline * 2;
+
+    .selected-li & {
+      display: block;
+    }
+  }
+  @include respond-to(m-up) {
+    position: absolute;
+    left: 0;
+    top: 38px;
+    
+    padding-top: 0;
+    padding-bottom: $baseline/2;
+    background: white;
+    z-index: 99;
+
+    display:none;
+  }
+}
+
+%second-level-item-title {
+  text-transform: none;
+  letter-spacing: 0;
+  text-indent: 0;
+  padding: $baseline/2 0;
+
+  display: block;
+  text-decoration: none;
+  color: #000;
+  letter-spacing: 2px;
+}
+
+.nav-with-dropdown,
+.menu {
+  @extend %nav-with-dropdown;
+}
+
+.top-level-item,
+.nav-with-dropdown > .menu-item {
+  @extend %top-level-item; 
+}
+
+.top-level-item-title,
+.menu-item > a {
+  @extend %top-level-item-title; 
+}
+
+.has-sub-nav .top-level-item-title:after,
+.menu-item-has-children > a:after { 
+  @include respond-to(to-m) { content: "\00bb"; }
+}
+
+.dropdown,
+.sub-menu {
+  @extend %dropdown; 
+}
+
+.second-level-item-title,
+.sub-menu .menu-item > a {
+  @extend %second-level-item-title;
+
+}
+
