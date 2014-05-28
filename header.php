@@ -27,7 +27,7 @@
            title="<?php bloginfo('name'); ?>">
 
             <div class="logo">
-              <?php include( 'images/logo.svg' ); ?>
+              <?php //include( 'images/logo.svg' ); ?>
             </div>
 
             <span class="logo-text"><?php bloginfo('name'); ?></span>
@@ -58,7 +58,7 @@
               <h1 class="site-name">
                 <a href="/" title="<?php bloginfo('name'); ?>">
                   <div class="logo">
-                    <?php include( 'images/logo.svg' ); ?>
+                    <?php //include( 'images/logo.svg' ); ?>
                   </div>
                   <span class="logo-text"><?php bloginfo('name'); ?></span>
                 </a>
