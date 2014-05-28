@@ -126,10 +126,10 @@
         @include grid-column(12);
       }
       .thumbnail {
-        @include grid-column(8, $pull: 4);
+        @include grid-column(8);
       }
       .entry-meta {
-        @include grid-column(4, $push: 8); 
+        @include grid-column(4); 
       }
       .entry-content { 
         @include grid-column(8);
@@ -144,6 +144,15 @@
     & + .front-page-template-3 {
       margin-right: 0;
       padding-left: 0;
+
+      @media #{$s-up} {
+        .thumbnail {
+          @include grid-column(8, $pull: 4);
+        }
+        .entry-meta {
+          @include grid-column(4, $push: 8); 
+        }
+      }
 
       & + .item:before {
         @include divider;

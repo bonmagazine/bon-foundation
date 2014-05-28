@@ -1,50 +1,40 @@
 <?php get_header(); ?>
 
   <div class="index-main main" role="main">
-  <?php if(is_home() && !get_query_var('paged')): ?>
-    <?php 
-      // Save the blog list for later
-      $blog_list_query = clone $wp_query; 
-    ?>
+  <?php if(is_home() && !get_query_var('paged')): // Only show Poster and Cover posts on home page, first page ?>
 
-    <?php if ( $top_banner ) : ?>
-    <div class="homepage-top-banner">
-      <?php echo $top_banner->post_content ?>
-    </div>
-    <?php endif; ?>
-
-    <?php bon_query_posters(); ?>
+    <?php $poster_posts = bon_get_poster_posts(); ?>
+    <?php if($poster_posts): ?>
     <section id="poster">
       <h1 class="hide">Poster</h1>
       <div class="poster-container">
         <ul class="poster-wrapper" data-orbit>
-          <?php if ( have_posts() ) : ?>
-            <?php while ( have_posts() ) : the_post(); ?>
-              <li><?php get_template_part( 'partials/content', 'poster' ); ?></li>
-            <?php endwhile; ?>
-          <?php endif;?>
+        <?php foreach ($poster_posts as $post): setup_postdata( $post ); ?>
+          <li><?php get_template_part( 'partials/content', 'poster' ); ?></li>
+        <?php endforeach; wp_reset_postdata(); ?>
         </ul>
       </div>
     </section>
+    <?php endif; ?>
 
-    <?php bon_query_cover(); ?>
+    <?php $cover_posts = bon_get_cover_posts(); ?>
+    <?php if($cover_posts): ?>
     <section id="cover">
-    <?php if ( have_posts() ) : ?>
-      <?php while ( have_posts() ) : the_post(); ?>
+      <?php foreach ($cover_posts as $post): setup_postdata( $post ); ?>
         <?php get_template_part( 'partials/excerpt', 'cover' ); ?>
-      <?php endwhile; ?>
-    <?php endif;?>
+      <?php endforeach; wp_reset_postdata(); ?>
     </section>
+    <?php endif;?>
 
-    <?php $wp_query = clone $blog_list_query; ?>
   <?php endif; // End homepage ?>
+
+  <?php if ( have_posts() ) : ?>
     <section id="blog-list" class="blog-list">
-    <?php if ( have_posts() ) : ?>
       <?php while ( have_posts() ) : the_post(); ?>
         <?php get_template_part( 'partials/excerpt' ); ?>
       <?php endwhile; ?>
-    <?php endif;?>
     </section>
+  <?php endif;?>
 
     <nav id="nav-below">
       <div class="nav-next alignleft">

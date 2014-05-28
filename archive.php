@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-  <div class="author-main main" role="main">
+  <div class="archive-main main" role="main">
 
   <?php if ( $top_banner ) : ?>
     <div class="homepage-top-banner">

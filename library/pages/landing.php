@@ -1,7 +1,7 @@
 <?php
 
 // Query Posters
-function bon_query_posters() {
+function bon_get_poster_posts() {
   $poster_args = array(
     'post_type' => 'bon_posters',
     'posts_per_page' => -1, 
@@ -12,13 +12,13 @@ function bon_query_posters() {
     'orderby' => 'date',
     'order' => 'DESC'
    );
-  query_posts($poster_args); 
+  return get_posts($poster_args); 
 }
 
-function bon_query_cover() {
+function bon_get_cover_posts() {
   $cover_args = array(
     'category_name' => 'cover',
     'posts_per_page' => 10
    );
-  query_posts($cover_args); 
+  return get_posts($cover_args); 
 }

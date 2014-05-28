@@ -1,3 +1,16 @@
+// Duplicate main nav for home page 
+$menuclone = $('.menu-main-menu-container').clone();
+
+$menuclone
+  .find('[id]')
+    .each(function() { 
+      $(this).attr('id', Foundation.utils.random_str(6) );
+    })
+    .end()
+  .addClass('home-menu')
+  .appendTo('.site-header');
+
+// Start Orbit and top bar
 $(document).foundation({
   orbit: {
       animation: 'slide', 
@@ -14,41 +27,39 @@ $(document).foundation({
 }).foundation({
   topbar: {
     sticky_class : 'sticky',
-    custom_back_text: true, // Set this to false and it will pull the top level link name as the back text
-    back_text: 'Back', // Define what you want your custom back text to be if custom_back_text: true
+    custom_back_text: true, 
+    back_text: 'Back', 
     is_hover: true,
-    mobile_show_parent_link: true, // will copy parent links into dropdowns for mobile navigation
-    scrolltop : false // jump to top when sticky nav menu toggle is clicked
+    mobile_show_parent_link: true, 
+    scrolltop : false 
   }
 });
 
-
-// Masonry
+// Masonry & Infinite Scroll
 var $blog = $('.blog-list');
 if($blog.length > 0) {
+
   var msnry = $blog.masonry({
-    itemSelector: '.post'
+    itemSelector: '.hentry'
   });
+
+  $blog.infinitescroll( {
+      behavior: "masonry",
+      contentSelector: "#blog-list",
+      debug: false,
+      bufferPx: 600,
+      itemSelector: ".hentry",
+      loading: {
+        finishedMsg: "<em>No additional posts.</em>",
+        img: "",
+        msgText: "<div class='loader'>Loading...</div>"
+      },
+      navSelector: "#nav-below",
+      nextSelector: ".nav-next a"
+    }, function(newElements) { 
+      var $elems = $(newElements);
+      $elems.imagesLoaded( function(){
+        msnry.masonry('appended',$elems);
+      })
+    });
 }
-
-
-//  Infinite Scroll
-$('.blog-list').infinitescroll( {
-    behavior: "masonry",
-    contentSelector: "#blog-list",
-    debug: false,
-    bufferPx: 600,
-    itemSelector: ".post",
-    loading: {
-      finishedMsg: "<em>No additional posts.</em>",
-      img: "",
-      msgText: "<div class='loader'>Loading...</div>"
-    },
-    navSelector: "#nav-below",
-    nextSelector: ".nav-next a"
-  }, function(newElements) { 
-    var $elems = $(newElements);
-    $elems.imagesLoaded( function(){
-      msnry.masonry('appended',$elems);
-    })
-  });

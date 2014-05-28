@@ -39,8 +39,10 @@ require_once('library/post-types.php');
  *
  */
 
-// Add Post Types
+// Page specifc functions
 require_once('library/pages/landing.php');
+require_once('library/pages/single.php');
+
 
 
 ?>

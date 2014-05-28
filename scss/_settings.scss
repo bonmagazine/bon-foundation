@@ -1231,8 +1231,8 @@ $topbar-link-font-size: rem-calc(16);
 $topbar-link-hover-lightness: 0; // Darken by 10%
 $topbar-link-bg: $topbar-bg;
 $topbar-link-bg-hover: #fff;
-$topbar-link-bg-active: $primary-color;
-$topbar-link-bg-active-hover: $primary-color;
+$topbar-link-bg-active: #fff;
+$topbar-link-bg-active-hover: #fff;
 $topbar-link-font-family: $body-font-family;
 $topbar-link-text-transform: none;
 $topbar-link-padding: $topbar-height / 3;
