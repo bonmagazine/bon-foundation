@@ -20,7 +20,7 @@
   <div class="inner-wrap">
 
     <header class="site-header" role="banner">
-
+      <?php if( is_home() ): ?>
       <h1 class="site-name">
         <a class="site-name-link" 
            href="<?php bloginfo('url'); ?>" 
@@ -68,10 +68,11 @@
             </div>
 
             <span class="logo-text"><?php bloginfo('name'); ?></span>
-          </a>
-        </h1>
+        </a>
+      </h1>
+      <?php endif; ?>
 
-      <div class="contain-to-grid nav-menu-wrapper sticky">
+      <div class="contain-to-grid <?php if( is_home() ): ?>sticky<?php else: ?>fixed<?php endif; ?> nav-menu-wrapper">
         <nav class="top-bar" data-topbar>
           <ul class="title-area">
             <li class="social">
