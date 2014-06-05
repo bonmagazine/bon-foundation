@@ -32,7 +32,7 @@ function start_cleanup() {
     // additional post related cleaning
     add_filter('get_image_tag_class', 'image_tag_class', 0, 4);
     add_filter('get_image_tag', 'image_editor', 0, 4);
-    add_filter( 'the_content', 'img_unautop', 30 );
+    // add_filter( 'the_content', 'img_unautop', 30 );
 
 } 
 

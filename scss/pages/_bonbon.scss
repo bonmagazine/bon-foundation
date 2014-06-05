@@ -1,0 +1,28 @@
+.single-bon_minimagazine {
+  .inner-wrap {
+    background: none;
+    max-width: 1226px;
+  }
+}
+
+article.bon_minimagazine {
+  .page {
+    height: auto;
+    min-height: 712px;
+    background: #fff;
+    margin-bottom: 64px;
+    position: relative; 
+  }
+
+  .container {
+    height: auto;
+    min-height: 712px;
+    width: 1225px;
+  }
+
+  .toplayer {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}

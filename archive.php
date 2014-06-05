@@ -16,6 +16,8 @@
       <?php while ( have_posts() ) : the_post(); ?>
         <?php if( is_post_type_archive('bon_se_film') ): ?>
           <?php get_template_part( 'partials/excerpt', 'film' ); ?>
+        <?php elseif( is_post_type_archive('bon_minimagazine') ): ?>
+          <?php get_template_part( 'partials/excerpt', 'bonbon' ); ?>
         <?php else: ?>
           <?php get_template_part( 'partials/excerpt' ); ?>
         <?php endif; ?>
