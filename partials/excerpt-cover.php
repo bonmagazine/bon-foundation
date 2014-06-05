@@ -17,7 +17,7 @@
         <p class="small-sys-title"><?php the_terms( $post->ID, 'section' ); ?></p>
       </div>
       <div class="author-and-date">
-        <?php bon_entry_meta(); ?>
+        <?php bon_the_entry_meta(); ?>
       </div>
       <?php get_template_part( 'partials/socialmedia' ); ?>
     </div>

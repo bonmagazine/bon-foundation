@@ -3,6 +3,9 @@
 // Various clean up functions
 require_once('library/cleanup.php'); 
 
+// Hooks that modify default behaviour
+require_once('library/hooks.php'); 
+
 // General funtions
 require_once('library/bon.php');
 
@@ -40,9 +43,9 @@ require_once('library/post-types.php');
  */
 
 // Page specifc functions
-require_once('library/pages/landing.php');
-require_once('library/pages/single.php');
-
+require_once('library/models/landing.php');
+require_once('library/models/single.php');
+require_once('library/models/bon_se_film.php');
 
 
 ?>

@@ -10,7 +10,7 @@
 //   "foundation/components/button-groups",
 //   "foundation/components/buttons",
   "foundation/components/clearing",
-//   "foundation/components/dropdown",
+  "foundation/components/dropdown",
 //   "foundation/components/dropdown-buttons",
   "foundation/components/flex-video",
 //   "foundation/components/forms",
@@ -45,6 +45,7 @@
 	"elements/typography",
   "modules/nav",
   "modules/blog-list",
+  "modules/videoplayer",
   "pages/single",
 	"pages/landing";
 
@@ -54,6 +55,12 @@ body {
 
 figure {
   margin: 0;
+}
+
+button {
+  &:focus {
+    outline: none;
+  }
 }
 
 .inner-wrap {

@@ -10,7 +10,7 @@
         </div>
         <h1 class="entry-title"><?php the_title(); ?></h1>
         <div class="author-and-date">
-          <?php bon_entry_meta(); ?>
+          <?php bon_the_entry_meta(); ?>
         </div>
       </header>
       <div class="entry-content">

@@ -4,17 +4,17 @@
  * A fallback when no navigation is selected by default.
  */
 function bon_menu_fallback() {
-	echo '<div class="alert-box secondary">';
-	// Translators 1: Link to Menus, 2: Link to Customize
-  	printf( __( 'Please assign a menu to the primary menu location under %1$s or %2$s the design.', 'bon' ),
-  		sprintf(  __( '<a href="%s">Menus</a>', 'bon' ),
-  			get_admin_url( get_current_blog_id(), 'nav-menus.php' )
-  		),
-  		sprintf(  __( '<a href="%s">Customize</a>', 'bon' ),
-  			get_admin_url( get_current_blog_id(), 'customize.php' )
-  		)
-  	);
-  	echo '</div>';
+    echo '<div class="alert-box secondary">';
+    // Translators 1: Link to Menus, 2: Link to Customize
+    printf( __( 'Please assign a menu to the primary menu location under %1$s or %2$s the design.', 'bon' ),
+        sprintf(  __( '<a href="%s">Menus</a>', 'bon' ),
+            get_admin_url( get_current_blog_id(), 'nav-menus.php' )
+        ),
+        sprintf(  __( '<a href="%s">Customize</a>', 'bon' ),
+            get_admin_url( get_current_blog_id(), 'customize.php' )
+        )
+    );
+    echo '</div>';
 }
 
 // Add Foundation 'active' class for the current menu item
@@ -32,7 +32,7 @@ add_filter( 'nav_menu_css_class', 'bon_active_nav_class', 10, 2 );
  */
 function bon_active_list_pages_class( $input ) {
 
-	$pattern = '/current_page_item/';
+    $pattern = '/current_page_item/';
     $replace = 'current_page_item active';
 
     $output = preg_replace( $pattern, $replace, $input );

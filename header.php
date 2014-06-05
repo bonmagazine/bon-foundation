@@ -73,7 +73,12 @@
       <?php endif; ?>
 
       <div class="contain-to-grid <?php if( is_home() ): ?>sticky<?php else: ?>fixed<?php endif; ?> nav-menu-wrapper">
-        <nav class="top-bar" data-topbar>
+        <nav  class="top-bar" 
+              data-topbar 
+              data-options="custom_back_text: true; 
+                            back_text: Tillbaka; 
+                            mobile_show_parent_link: true; 
+                            scrolltop: false">
           <ul class="title-area">
             <li class="social">
               <ul>

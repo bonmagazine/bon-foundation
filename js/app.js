@@ -11,29 +11,7 @@ $menuclone
   .appendTo('.site-header');
 
 // Start Orbit and top bar
-$(document).foundation({
-  orbit: {
-      animation: 'slide', 
-      timer_speed: 4000, 
-      next_on_click: false,
-      animation_speed: 500, 
-      stack_on_small: false,
-      navigation_arrows: true,
-      slide_number: false,
-      timer_show_progress_bar: false,
-      pause_on_hover: false,
-      timer: true
-  }
-}).foundation({
-  topbar: {
-    sticky_class : 'sticky',
-    custom_back_text: true, 
-    back_text: 'Back', 
-    is_hover: true,
-    mobile_show_parent_link: true, 
-    scrolltop : false 
-  }
-});
+$(document).foundation();
 
 // Masonry & Infinite Scroll
 var $blog = $('.blog-list');
@@ -63,3 +41,20 @@ if($blog.length > 0) {
       })
     });
 }
+
+Bon = function() {
+
+  this.init = function() {
+
+    // Initiate JW Player
+    var $videoPlayer = $('.jwplayer-video');
+    if($videoPlayer.length > 0) {
+      this.videoplayer = new VideoPlayer();
+    }
+
+  }
+
+  this.init();
+}
+
+var bon = new Bon();
