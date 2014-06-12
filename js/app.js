@@ -14,14 +14,15 @@ $menuclone
 $(document).foundation();
 
 // Masonry & Infinite Scroll
-var $blog = $('.blog-list');
-if($blog.length > 0) {
+var $masonry = $('.masonry'),
+    $infiniteScroll = $('.infinite-scroll');
+if($masonry.length > 0) {
 
-  var msnry = $blog.masonry({
+  var msnry = $masonry.masonry({
     itemSelector: '.hentry'
   });
 
-  $blog.infinitescroll( {
+  $masonry.infinitescroll( {
       behavior: "masonry",
       contentSelector: "#blog-list",
       debug: false,
@@ -40,6 +41,20 @@ if($blog.length > 0) {
         msnry.masonry('appended',$elems);
       })
     });
+} else if($infiniteScroll.length > 0) {
+  $infiniteScroll.infinitescroll( {
+      contentSelector: "#blog-list",
+      debug: false,
+      bufferPx: 600,
+      itemSelector: ".hentry",
+      loading: {
+        finishedMsg: "<em>No additional posts.</em>",
+        img: "",
+        msgText: "<div class='loader'>Loading...</div>"
+      },
+      navSelector: "#nav-below",
+      nextSelector: ".nav-next a"
+    });
 }
 
 Bon = function() {
@@ -50,6 +65,12 @@ Bon = function() {
     var $videoPlayer = $('.jwplayer-video');
     if($videoPlayer.length > 0) {
       this.videoplayer = new VideoPlayer();
+    }
+
+    // Sticky header for bon blogs
+    var $bonBlogs = $('body.post-type-archive-bon_blogs');
+    if($bonBlogs.length > 0) {
+      $(".sticky").sticky({topSpacing:-130});
     }
 
   }

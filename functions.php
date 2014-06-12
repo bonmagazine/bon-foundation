@@ -47,5 +47,6 @@ require_once('library/models/landing.php');
 require_once('library/models/single.php');
 require_once('library/models/bon_se_film.php');
 require_once('library/models/bonbon.php');
+require_once('library/models/bon_blogs.php');
 
 ?>

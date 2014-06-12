@@ -13,8 +13,10 @@
  }
 } 
 
-#logo {
+.logo .icon {
   stroke: #222;
+  width: 300px;
+  height: 100px;
   stroke-width: 3;
 
   @media #{$s-up} {

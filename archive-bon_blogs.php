@@ -1,9 +1,17 @@
 <?php get_header(); ?>
 
   <div class="archive-main main" role="main">
-    <h1 class="archive-title">
-      <?php wp_title(); ?>
-    </h1>
+    <header class="title-header sticky">
+      <a href="<?php bon_the_bon_blog_url(); ?>">
+        <?php bon_the_bon_blog_header_image() ?>
+        <h1 class="archive-title"><?php bon_the_bon_blog_title(); ?></h1>
+        <?php if( bon_the_bon_blog_subtitle() ):?>
+        <p class="intro-text">
+          <?php bon_the_bon_blog_subtitle(); ?>
+        </p>
+        <?php endif; ?>
+      </a>
+    </header>
 
   <?php if ( $top_banner ) : ?>
     <div class="homepage-top-banner">
@@ -12,15 +20,9 @@
   <?php endif; ?>
 
   <?php if ( have_posts() ) : ?>
-    <section id="blog-list" class="blog-list infinite-scroll masonry">
+    <section id="blog-list" class="bon-blog-list infinite-scroll">
       <?php while ( have_posts() ) : the_post(); ?>
-        <?php if( is_post_type_archive('bon_se_film') ): ?>
-          <?php get_template_part( 'partials/excerpt', 'film' ); ?>
-        <?php elseif( is_post_type_archive('bon_minimagazine') ): ?>
-          <?php get_template_part( 'partials/excerpt', 'bonbon' ); ?>
-        <?php else: ?>
-          <?php get_template_part( 'partials/excerpt' ); ?>
-        <?php endif; ?>
+        <?php get_template_part( 'partials/content' ); ?>
       <?php endwhile; ?>
     </section>
   <?php endif;?>

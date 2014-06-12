@@ -1,114 +1,46 @@
 /* Styles for /blogs/[blogger-name] */
 
-.bon-blog {
+body.post-type-archive-bon_blogs {
 
-  #header {
-    padding-bottom: 0;
-    @include respond-to(to-l) {
-      background: white;
-      // position: absolute;
+  .inner-wrap {
+    max-width: 55rem;
+    padding-top: 0;
+  }
+
+  .title-header {
+    margin-right: -1.25rem;
+    margin-left: -1.25rem;
+
+    &.fixed {
+      z-index: 98;
     }
 
-    @include respond-to(l-up) {
-      nav {
-        @include grid(11);
-        margin: 0 auto;
-        min-height: 59px;
-        background: white;
-        padding-bottom: 6px;
-        border-right: 1px solid;
-        border-left: 1px solid;
-      }
-      .nav-with-dropdown {
-        // width: 574px;
-      }
+    h1 {
+      @extend %large-archive-h;
+      margin-top: baseline(-3);
+      color: white;
+    }
+    p {
+      display: none;
+      margin-left: 10px;
+      margin-top:-5px;
+      @media #{$l-up} {margin-left: 20px;}
+      color: white;
+    }
+    img {
+      margin-top: 0;
+      max-width: 100%;
+      border-bottom: 10px solid white;
     }
   }
-  #content-holder {
-    background: white;
 
-    @include respond-to(to-s) {
-      width: 100%;
-      margin: 0 -20px;
-    }
-    @include respond-to(s-up) {
-      margin: 0 -10px;
-    }
-    @include respond-to(l-up) {
-      background: rgba(255,255,255,0.7);
-
-      margin: 0 -10px;
-      padding: 0 10px;
-    }
-  }
-  .search-wrapper {
-    background: white;
-    @include respond-to(m-up) {
-      margin-top: -5px
-    }
-    @include respond-to(l-up) {
-      margin-top: -25px;
-    }
-  }
 }
 
 
 
-#bon-blog-holder {
-
-  padding-top: 48px;
-  @include respond-to(to-l) {
-    margin: 0;
-  }
-
-  @include respond-to(l-up) {
-    border: 1px solid;
-    border-top: none;
-    padding-top: 57px;
-  }
-
-}
-
-.bon-blogs .title-header {
-
-  &.fixed {
-    position: fixed;
-    width: 878px;
-    top: -115px;
-  }
-
-  @include respond-to(l-up) {
-    margin: 0 (-80px) $baseline*5;
-    z-index: 98;
-  }
-
-  h1 {
-    margin-top: -32px;
-    margin-left: 10px;
-
-    @include respond-to(l-up) {
-      margin-top: - ($baseline*5);
-      margin-left: 20px;
-    }
-
-    color: white;
-  }
-  p {
-    display: none;
-    margin-left: 10px;
-    margin-top:-5px;
-    @include respond-to(l-up) {margin-left: 20px;}
-    color: white;
-  }
-  img {
-    margin-top: 0;
-    max-width: 100%;
-    border-bottom: 10px solid white;
-  }
-}
 
 #bon-blog {
-  @include respond-to(to-l) {
+  @media #{$l-up} {
     padding: $baseline 10px;
   }
 

@@ -19,6 +19,9 @@ if (!function_exists('bon_scripts')) :
     wp_enqueue_script( 'jwplayer', get_template_directory_uri().'/js/jwplayer/jwplayer.js', array('jquery'), '1.0.0', true );
 
     wp_enqueue_script( 'videoplayer', get_template_directory_uri() . '/js/videoplayer/videoplayer.js', array('jquery'), '1.0.0', true );
+
+    wp_enqueue_script( 'sticky', get_template_directory_uri() . '/js/sticky/jquery.sticky.js', array('jquery'), '1.0.0', true );
+
     wp_enqueue_script( 'app', get_template_directory_uri() . '/js/app.js', array('foundation'), '1.0.0', true );
 
   }
