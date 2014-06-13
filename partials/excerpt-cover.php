@@ -22,7 +22,9 @@
       <?php get_template_part( 'partials/socialmedia' ); ?>
     </div>
     <div class="thumbnail">
+      <a href="<?php the_permalink(); ?>">
       <?php the_cover_thumbail(); ?>
+      </a>
     </div>
     <div class="entry-content">
       <?php if( in_category( array('short-post', 'ad') ) ): ?>

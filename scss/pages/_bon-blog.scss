@@ -36,24 +36,27 @@ body.post-type-archive-bon_blogs {
 
 }
 
+.bon-blog-list {
+  @include grid-column(10, $offset: 1);
 
-
-
-#bon-blog {
-  @media #{$l-up} {
-    padding: $baseline 10px;
+  .entry-title {
+    @extend %large-archive-h;
   }
 
-  .big-title {
-    padding: 0;
-    margin: 0;
+  .author {
+    display: none;
   }
 
-  .item {
+  time {
+    text-indent: $indent;
+    display: block;
+  }
+
+  .hentry {
     &:after {
       @include divider;
     }
-    & + .item {
+    & + .hentry {
       margin-top: $baseline*2;
     }
   }

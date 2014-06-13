@@ -1259,7 +1259,7 @@ $topbar-menu-icon-color-toggled: #000;
 $topbar-transition-speed: 300ms;
 // Using rem-calc for the below breakpoint causes issues with top bar
 $topbar-breakpoint: 9999px; // Change to 9999px for always mobile layout
-$topbar-media-query: $xxlarge-up;
+$topbar-media-query: 9999px;
 
 // Divider Styles
 // $topbar-divider-border-bottom: solid 1px  scale-color($topbar-bg-color, $lightness: 13%);
