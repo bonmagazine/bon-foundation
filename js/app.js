@@ -61,6 +61,14 @@ Bon = function() {
 
   this.init = function() {
 
+    // Skip button for campaign
+    var $skipBtn = $('.campaign-promo-wrap .btn-skip');
+    if($skipBtn.length > 0) {
+      $skipBtn.click(function(e) {
+        $('body').removeClass('campaign-active');
+      });
+    }
+
     // Initiate JW Player
     var $videoPlayer = $('.jwplayer-video');
     if($videoPlayer.length > 0) {
@@ -72,6 +80,7 @@ Bon = function() {
     if($bonBlogs.length > 0) {
       $(".sticky").sticky({topSpacing:-130});
     }
+
 
   }
 

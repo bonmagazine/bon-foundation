@@ -108,32 +108,31 @@ add_filter('post_gallery', 'orbit_slider', 10, 2);
 
 
 /*
- * Front Page template
- *
+ * Campaigns
+ * $type can be: top-banner, article-top-banner, article-insert, overlay
  */
 
-// Returns the front page template class from the custom field
-function the_cover_template_class() {
-    return "front-page-template-".get_post_meta( get_the_ID(), 'front_page_template', true );
+function bon_get_campaign($type = 'overlay') {
+  $campaign_args = array(
+    'post_type' => 'bon_campaigns',
+    'posts_per_page' => '1',
+    'orderby' => 'meta_value',
+    'meta_key' => 'end_date',
+    'order' => 'ASC',
+    'meta_query' => array(
+        array(
+            'key' => 'Ad_placement',
+            'value' => $type
+            ),
+        array(
+            'key' => 'end_date',
+            'value' => date("Y-m-d"),
+            'compare' => '>=',
+            'type' => 'NUMERIC'
+            )
+        )
+    );
+  return get_posts($campaign_args);
 }
 
-// Returns the front page image size
-function the_cover_thumbail() {
-    $template = get_post_meta( get_the_ID(), 'front_page_template', true );
-    switch ($template) {
-        case 1:
-        case 2:
-            $image_size = 'cover-medium';
-            break;
-        case 4:
-        case 5:
-            $image_size = 'cover-big';
-            break;
-        case 3:
-        default:
-            $image_size = '';
-            break;
-    }
-    return the_post_thumbnail($image_size);
-}
 ?>

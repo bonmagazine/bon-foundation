@@ -20,7 +20,7 @@
 
   .campaign-promo-wrap {
     position: static;
-    @include grid(15, 20);
+    @include grid-column(12);
     height: 100%;
     margin: 0 auto;
     background: rgba(255,255,255,0.85);
@@ -50,10 +50,8 @@
   }
 }
 
-.campaign-active { 
-  body {
-    overflow: hidden;
-  }
+body.campaign-active { 
+  overflow: hidden;
 
   .campaign-promo-container {
     display: block;

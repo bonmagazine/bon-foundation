@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 
   <div class="main single-main" role="main">
+
+  <?php get_template_part( 'partials/campaigns/topbanner', 'single' ); ?>
   
   <?php while (have_posts()) : the_post(); ?>
     <article <?php post_class('videoplayer') ?> id="post-<?php the_ID(); ?>">

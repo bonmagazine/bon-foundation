@@ -12,4 +12,18 @@ function add_query_vars_filter( $vars ){
   return $vars;
 }
 add_filter( 'query_vars', 'add_query_vars_filter' );
+
+
+// Modify body class
+add_filter('body_class','bon_body_class');
+function bon_body_class($classes) {
+  // Check if there's an active overlay campaign, and if so activate it
+  $overlay = bon_get_campaign();
+  if($overlay) {
+    $classes[] = 'campaign-active';
+  }
+  return $classes;
+}
+
+
 ?>
