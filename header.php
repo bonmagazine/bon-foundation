@@ -46,16 +46,10 @@
             <li class="social">
               <ul>
                 <li class="social-item">
-                  <a href="https://www.facebook.com/bonmagazine" class=" fb main-nav-link" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/Facebook.png" width="24"></a>
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode( "http://".$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"] ); ?>" class="share-btn fb main-nav-link" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/Facebook.png" width="24"></a>
                 </li>
                 <li class="social-item">
-                  <a href="https://twitter.com/bonmagazine" class="twitter main-nav-link" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/Twitter.png" width="24"></a>
-                </li>
-                <li class="social-item">
-                  <a href="http://instagram.com/bonmagazine" class="instagram main-nav-link" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/Instagram.png" width="24"></a>
-                </li>
-                <li class="social-item">
-                  <a href="/feed/" class="rss main-nav-link no-ajax" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/RSS.png" width="24"></a>
+                  <a href="https://twitter.com/share?via=bonmagazine&amp;lang=en&amp;url=<?php echo urlencode( "http://".$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"] ); ?>" class="share-btn twitter main-nav-link" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/Twitter.png" width="24"></a>
                 </li>
               </ul>
             </li>
@@ -65,7 +59,6 @@
                 <a href="/" title="<?php bloginfo('name'); ?>">
                   <div class="logo">
                     <svg class="icon"><use xlink:href="#bon-logo" /></svg>
-
                   </div>
                   <span class="logo-text"><?php bloginfo('name'); ?></span>
                 </a>
