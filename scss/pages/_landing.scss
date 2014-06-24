@@ -5,7 +5,6 @@
   @media #{$s-up} { padding: baseline() 0; }
 }
 
-
 /* POSTER */
 
 #poster {
@@ -123,7 +122,7 @@
     @media #{$s-up} {
       @include grid-column(6, $collapse: true);
       .title {
-        @include grid-column(12);
+        @include grid-column(8, $offset: 4);
       }
       .thumbnail {
         @include grid-column(8);
@@ -146,6 +145,10 @@
       padding-left: 0;
 
       @media #{$s-up} {
+        .title {
+          @include grid-column(12, $offset: 0);
+        }
+
         .thumbnail {
           @include grid-column(8, $pull: 4);
         }

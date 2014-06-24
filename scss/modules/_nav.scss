@@ -50,7 +50,12 @@
 .top-bar {
   max-width: $row-width - 2.5rem;
   margin: 0 auto;
+  max-height: 3rem;
+  transition: all 300ms linear;
 
+  &.expanded {
+    max-height: 999px;
+  }
 
   .name h1 a {
     width: auto;
@@ -79,8 +84,10 @@
     right: 10px;
   }
   .social-item {
+    width: 40px;
+    height: 40px;
     float: right;
-    padding-top: 10px;
+    padding-top: 7px;
     padding-right: 10px;
   }
 }
@@ -119,7 +126,7 @@
    letter-spacing: 0.2em;
    line-height: $baseline;
    font-size: 15px;
-   padding: baseline(0.25) $indent/4;
+   padding: baseline(0.25) $indent/6;
 
    cursor: pointer;
    
@@ -162,6 +169,19 @@
 body.home {
   .menu-main-menu-container.home-menu {
     display: block;
+
+    form[role=search] {
+      width: 180px;
+      margin-top: -8px;
+
+      input[type=text] {
+        background: transparent;
+        max-width: 80px;
+      }
+      input[type=submit] {
+        background: transparent;
+      }
+    }
   }
   &:not(.f-topbar-fixed) {
     .nav-menu-wrapper {
@@ -200,3 +220,56 @@ body.home {
 }
 
 
+
+/*
+ *
+ * Search
+ * 
+ */
+
+form[role=search] {
+  float: right;
+  width: 250px;
+
+  label {
+    float: right;
+    width: 30px;
+    height: 30px;
+    margin-top: 2px;
+  }
+
+  .search-box {
+    float: right;
+  }
+
+  input[type=text] {
+    border: none;
+    line-height: baseline() ;
+    border-radius: 0;
+    padding: 2px 5px 1px;
+    margin-top: 4px;
+    width: 0px;
+    transition: width 200ms linear;
+    background: $bg-color;
+
+    &:focus {
+      width: 150px;
+      border-bottom: 1px solid #000; 
+
+      // background: white;
+      outline: none;
+
+      & + input[type=submit] {
+        display: inline;
+      }
+    }
+  } 
+  input[type=submit] {
+    display: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    overflow: hidden;
+    background: $bg-color;
+  }    
+}

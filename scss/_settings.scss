@@ -76,6 +76,7 @@ $success-color: #000;
 $warning-color: #000;
 $info-color: #000;
 $highlight-color: #00ADFF;
+$bg-color: #99DEFC;
 
 // We use these to make sure border radius matches unless we want it different.
 // $global-radius: 3px;
@@ -1201,7 +1202,7 @@ $include-html-tooltip-classes: $include-html-modules;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: #99DEFC;
+$topbar-bg-color: $bg-color;
 $topbar-bg: $topbar-bg-color;
 
 // Height and margin

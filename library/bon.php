@@ -135,4 +135,31 @@ function bon_get_campaign($type = 'overlay') {
   return get_posts($campaign_args);
 }
 
+
+/* 
+ * Skin
+ * Return the skin data: image url and background colour
+ */
+
+function bon_get_skin() {
+
+    $skin_args = 'post_type=bon_skin&posts_per_page=1';
+    $skin_post = get_posts($skin_args);
+    foreach ($skin_post as $post): setup_postdata( $post );
+        $image_id = get_post_meta( $post->ID, 'background', true );
+        $image_url = wp_get_attachment_url( $image_id );
+        $background_colour = get_post_meta( $post->ID, 'background_colour', true );
+    endforeach; wp_reset_postdata();
+
+    $skin = '<style>
+    body {
+      background-image: url('.$image_url.');
+      background-color: '.$background_colour.';
+    }
+    </style>';
+    echo $skin;
+}
+
+
+
 ?>

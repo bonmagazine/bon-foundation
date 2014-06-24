@@ -1,18 +1,3 @@
-// Duplicate main nav for home page 
-$menuclone = $('.menu-main-menu-container').clone();
-
-$menuclone
-  .find('[id]')
-    .each(function() { 
-      $(this).attr('id', Foundation.utils.random_str(6) );
-    })
-    .end()
-  .addClass('home-menu')
-  .appendTo('.site-header');
-
-// Start Orbit and top bar
-$(document).foundation();
-
 // Masonry & Infinite Scroll
 var $masonry = $('.masonry'),
     $infiniteScroll = $('.infinite-scroll');
@@ -81,6 +66,30 @@ Bon = function() {
       $(".sticky").sticky({topSpacing:-130});
     }
 
+    // Duplicate main nav for home page 
+    var $home = $('body.home');
+    if($home.length > 0) {
+      $menuclone = $('.menu-main-menu-container').clone();
+
+      $menuclone
+        .find('[id]')
+          .each(function() { 
+            $(this).attr('id', Foundation.utils.random_str(6) );
+          })
+          .end()
+        .append( $('.menu-searchform').clone() )
+        .find('#s')
+          .attr('id', 's-home')
+          .end()
+        .find('[for=s]')
+          .attr('for', 's-home')
+          .end()
+        .addClass('home-menu')
+        .appendTo('.site-header');
+    }
+
+    // Start Orbit and top bar
+    $(document).foundation();
 
   }
 
