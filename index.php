@@ -9,6 +9,7 @@
       <h1 class="hide">Poster</h1>
       <div class="poster-container">
         <ul class="poster-wrapper" 
+        <?php if(count($poster_posts) > 1): ?>
             data-orbit 
             data-options="timer_speed: 4000; 
                           next_on_click: false;
@@ -16,7 +17,9 @@
                           slide_number: false;
                           timer_show_progress_bar: false;
                           pause_on_hover: false;
-                          timer: true">
+                          timer: true"
+        <?php endif; ?>
+                          >
         <?php foreach ($poster_posts as $post): setup_postdata( $post ); ?>
           <li><?php get_template_part( 'partials/content', 'poster' ); ?></li>
         <?php endforeach; wp_reset_postdata(); ?>
