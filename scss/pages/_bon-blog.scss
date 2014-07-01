@@ -1,39 +1,40 @@
 /* Styles for /blogs/[blogger-name] */
 
-body.post-type-archive-bon_blogs {
+
+body.post-type-archive-bon_blogs,
+body.single-bon_blogs {
 
   .inner-wrap {
     max-width: 55rem;
     padding-top: 0;
   }
+}
 
-  .title-header {
-    margin-right: -1.25rem;
-    margin-left: -1.25rem;
+.title-header-bon_blogs {
+  margin-right: -1.25rem;
+  margin-left: -1.25rem;
 
-    &.fixed {
-      z-index: 98;
-    }
-
-    h1 {
-      @extend %large-archive-h;
-      margin-top: baseline(-3);
-      color: white;
-    }
-    p {
-      display: none;
-      margin-left: 10px;
-      margin-top:-5px;
-      @media #{$l-up} {margin-left: 20px;}
-      color: white;
-    }
-    img {
-      margin-top: 0;
-      max-width: 100%;
-      border-bottom: 10px solid white;
-    }
+  &.fixed {
+    z-index: 98;
   }
 
+  h1 {
+    @extend %large-archive-h;
+    margin-top: baseline(-3);
+    color: white;
+  }
+  p {
+    display: none;
+    margin-left: 10px;
+    margin-top:-5px;
+    @media #{$l-up} {margin-left: 20px;}
+    color: white;
+  }
+  img {
+    margin-top: 0;
+    max-width: 100%;
+    border-bottom: 10px solid white;
+  }
 }
 
 .bon-blog-list {

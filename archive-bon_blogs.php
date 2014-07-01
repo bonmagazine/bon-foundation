@@ -1,17 +1,8 @@
 <?php get_header(); ?>
 
   <div class="archive-main main" role="main">
-    <header class="title-header sticky">
-      <a href="<?php bon_the_bon_blog_url(); ?>">
-        <?php bon_the_bon_blog_header_image() ?>
-        <h1 class="archive-title"><?php bon_the_bon_blog_title(); ?></h1>
-        <?php if( bon_the_bon_blog_subtitle() ):?>
-        <p class="intro-text">
-          <?php bon_the_bon_blog_subtitle(); ?>
-        </p>
-        <?php endif; ?>
-      </a>
-    </header>
+
+    <?php get_template_part( 'partials/header', 'bon_blogs' ); ?>
 
   <?php if ( $top_banner ) : ?>
     <div class="homepage-top-banner">

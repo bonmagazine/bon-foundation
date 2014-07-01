@@ -2,6 +2,9 @@
 
   <div class="main single-main" role="main">
 
+    <?php get_template_part( 'partials/header', 'bon_blogs' ); ?>
+
+
   <?php get_template_part( 'partials/campaigns/topbanner', 'single' ); ?>
   
   <?php while (have_posts()) : the_post(); ?>

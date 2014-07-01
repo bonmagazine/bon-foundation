@@ -61,7 +61,7 @@ Bon = function() {
     }
 
     // Sticky header for bon blogs
-    var $bonBlogs = $('body.post-type-archive-bon_blogs');
+    var $bonBlogs = $('body.post-type-archive-bon_blogs,body.single-bon_blogs');
     if($bonBlogs.length > 0) {
       $(".sticky").sticky({topSpacing:-130});
     }
