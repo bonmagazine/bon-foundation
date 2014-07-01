@@ -48,7 +48,7 @@ function add_search_box_to_menu( $items, $args ) {
                     </label>
                     <div class="search-box">
                       <input type="text" value="" name="s" id="s-menu">
-                      <input type="submit" value="Sök">
+                      <button type="submit">Sök</button>
                     </div>
                   </form></li>';
 

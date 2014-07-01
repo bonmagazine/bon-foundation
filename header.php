@@ -63,7 +63,7 @@
       </h1>
       <?php endif; ?>
 
-      <div class="contain-to-grid <?php if( is_home() ): ?>sticky<?php else: ?>fixed<?php endif; ?> nav-menu-wrapper">
+      <div class="contain-to-grid fixed<?php /* if( is_home() ): ?>sticky<?php else: ?>fixed<?php endif; */ ?> nav-menu-wrapper">
         <nav  class="top-bar" 
               data-topbar 
               data-options="custom_back_text: true; 
