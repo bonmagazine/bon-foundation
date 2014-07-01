@@ -8,7 +8,7 @@ Author: Afonso Duarte (http://afn.so)
 <section class="related-posts">
   <h1 class="aside-title"> Relaterat </h1>
   <?php while (have_posts()) : the_post(); ?>
-    <?php get_template_part( 'partials/excerpt' ); ?>
+    <?php get_template_part( 'partials/excerpt', 'small' ); ?>
   <?php endwhile; ?>
 </section>
 <?php endif; ?>

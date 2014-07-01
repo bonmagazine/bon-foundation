@@ -56,6 +56,13 @@
     margin-bottom: baseline(4);
     header {
       @include grid-row();
+
+      .section {
+        display: block;
+        @media #{$s-up} { 
+          display: none;
+        }
+      }
     }
     .main {
       @include grid-row();
@@ -73,10 +80,13 @@
   .entry-meta {
     @media #{$s-up} { 
       @include grid-column(2); 
+
+      div {
+        border-bottom: 1px solid;
+      }
     }
 
     div {
-      border-bottom: 1px solid;
       padding: baseline(0.5) 0;
     }
 
@@ -87,6 +97,10 @@
 
     .section {
       padding-top: 0;
+      display: none;
+      @media #{$s-up} { 
+        display: block;
+      }
     }
   }
 

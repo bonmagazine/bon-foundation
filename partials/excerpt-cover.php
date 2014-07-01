@@ -9,6 +9,9 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( the_cover_template_class() ); ?>>
   <header>
+    <div class="section">
+      <p class="small-sys-title"><?php the_terms( $post->ID, 'section' ); ?></p>
+    </div>
     <h1 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
   </header>
   <div class="main">

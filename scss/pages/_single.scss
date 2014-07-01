@@ -1,27 +1,27 @@
 .single-main {
-  .post {
+  > .post {
     max-width: 42em;
     margin: 0 auto;
     padding-top: baseline(2);
-  }
 
-  .author-and-date,
-  .section {
-    margin-left: $indent;
-  }
-  
-  .entry-title {
-    @extend %large-archive-h;
-  }
-
-  .entry-content {
-    margin-top: baseline();
-
-    p {
-      @extend %large-archive-p;
+    .author-and-date,
+    .section {
+      margin-left: $indent;
     }
-    p + p {
-      text-indent: $indent;
+    
+    .entry-title {
+      @extend %large-archive-h;
+    }
+
+    .entry-content {
+      margin-top: baseline();
+
+      p {
+        @extend %large-archive-p;
+      }
+      p + p {
+        text-indent: $indent;
+      }
     }
   }
 }
