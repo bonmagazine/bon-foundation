@@ -28,7 +28,7 @@
       <?php if($author_posts): ?>
       <section class="same-author-posts">
         <h1 class="aside-title"><?= __('Other texts by', 'bon'); ?> <?php the_author_posts_link(); ?></h1>
-        <p class="aside-text"><?php the_author_meta('description'); ?></p>
+        <p class="aside-text bio"><?php the_author_meta('description'); ?></p>
         <?php foreach ($author_posts as $post): setup_postdata( $post ); ?>
           <?php get_template_part( 'partials/excerpt', 'small' ); ?>
         <?php endforeach; wp_reset_postdata(); ?>
