@@ -10,6 +10,11 @@
 #poster {
   @include grid-row();
   margin-bottom: baseline();
+  position: relative;
+  
+  img {
+    max-width: 100%;
+  }
 
   .poster-container {
     @include grid-column(12);

@@ -77,13 +77,13 @@ Bon = function() {
             $(this).attr('id', Foundation.utils.random_str(6) );
           })
           .end()
-        .append( $('.menu-searchform').clone() )
-        .find('#s')
-          .attr('id', 's-home')
-          .end()
-        .find('[for=s]')
-          .attr('for', 's-home')
-          .end()
+        // .append( $('.menu-searchform').clone() )
+        // .find('#s')
+        //   .attr('id', 's-home')
+        //   .end()
+        // .find('[for=s]')
+        //   .attr('for', 's-home')
+        //   .end()
         .addClass('home-menu')
         .appendTo('.site-header');
     }

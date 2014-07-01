@@ -51,7 +51,7 @@
   max-width: $row-width - 2.5rem;
   margin: 0 auto;
   max-height: 3rem;
-  transition: all 300ms linear;
+  transition: max-height 300ms linear;
 
   &.expanded {
     max-height: 999px;
@@ -79,17 +79,130 @@
     }
   }
 
-  .social {
-    position: absolute;
-    right: 10px;
-  }
+  // SOCIAL
   .social-item {
-    width: 40px;
-    height: 40px;
-    float: right;
+    float: left;
     padding-top: 7px;
     padding-right: 10px;
+
+    .icon {
+      width: 35px;
+      height: 35px;
+    }
+    
+    a {
+      float: left;
+      width: 35px;
+      height: 35px;
+    }
   }
+  // Social in menu (for mobile)
+  .top-bar-section{
+    .social {
+      clear: left;
+      @media #{$s-up} {
+        display: none; 
+      }
+
+      a {
+        background: transparent;
+      }
+    }
+  } 
+
+  // Social in top bar (for large screens)
+  .title-area {
+    .social {
+      position: absolute;
+      right: 10px;
+      display: none;
+      @media #{$s-up} {
+        display: block; 
+      }
+    }
+    .social-item {
+      float: right;
+    }
+  }
+}
+
+/*
+ *
+ * Search
+ * 
+ */
+
+form[role=search] {
+  input[type=text] {
+    border: none;
+    line-height: baseline() ;
+    border-radius: 0;
+    padding: 2px 5px 1px;
+    margin-top: 4px;
+    width: 250px;
+    background: $bg-color;
+    border-bottom: 1px solid #000; 
+    &:focus {
+      outline: none;
+    }
+  } 
+  input[type=submit] {
+    display: inline;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    overflow: hidden;
+    background: $bg-color;
+  } 
+}
+
+
+// Collapsible search for top bar
+
+.title-area {
+  form[role=search] {
+    float: right;
+    width: 250px;
+
+    label {
+      float: right;
+      margin-top: 2px;
+    }
+
+    .search-box {
+      float: right;
+    }
+
+    input[type=text] {
+      width: 0px;
+      transition: width 200ms linear;
+      border: none;
+
+      &:focus {
+        width: 150px;
+        border-bottom: 1px solid #000; 
+
+        & + input[type=submit] {
+          display: inline;
+        }
+      }
+    } 
+    input[type=submit] {
+
+    }    
+  }
+}
+
+// Top bar search in menu
+.nav-menu {
+  form[role=search]{
+    padding-left: 12px;
+    margin-bottom: baseline();
+    label {
+      display: none;
+    }
+  }
+
 }
 
 
@@ -171,16 +284,20 @@ body.home {
     display: block;
 
     form[role=search] {
+      display: inline;
       width: 180px;
       margin-top: -8px;
 
       input[type=text] {
         background: transparent;
-        max-width: 80px;
+        max-width: 120px;
       }
       input[type=submit] {
         background: transparent;
       }
+    }
+    .search-box {
+      display: inline;
     }
   }
   &:not(.f-topbar-fixed) {
@@ -221,55 +338,4 @@ body.home {
 
 
 
-/*
- *
- * Search
- * 
- */
 
-form[role=search] {
-  float: right;
-  width: 250px;
-
-  label {
-    float: right;
-    width: 30px;
-    height: 30px;
-    margin-top: 2px;
-  }
-
-  .search-box {
-    float: right;
-  }
-
-  input[type=text] {
-    border: none;
-    line-height: baseline() ;
-    border-radius: 0;
-    padding: 2px 5px 1px;
-    margin-top: 4px;
-    width: 0px;
-    transition: width 200ms linear;
-    background: $bg-color;
-
-    &:focus {
-      width: 150px;
-      border-bottom: 1px solid #000; 
-
-      // background: white;
-      outline: none;
-
-      & + input[type=submit] {
-        display: inline;
-      }
-    }
-  } 
-  input[type=submit] {
-    display: none;
-    border: none;
-    cursor: pointer;
-    margin-right: 10px;
-    overflow: hidden;
-    background: $bg-color;
-  }    
-}
