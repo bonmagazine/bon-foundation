@@ -3,8 +3,10 @@ var $masonry = $('.masonry'),
     $infiniteScroll = $('.infinite-scroll');
 if($masonry.length > 0) {
 
-  var msnry = $masonry.masonry({
-    itemSelector: '.hentry'
+  var msnry = $masonry.imagesLoaded( function(){
+    $masonry.masonry({
+      itemSelector: '.hentry'
+    });
   });
 
   $masonry.infinitescroll( {
