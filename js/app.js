@@ -3,63 +3,27 @@ var $masonry = $('.masonry'),
     $infiniteScroll = $('.infinite-scroll');
 if($masonry.length > 0) {
 
-  console.log('s');
-
   var msnry = $masonry.imagesLoaded( function(){
     $masonry.masonry({
       itemSelector: '.hentry'
     });
   });
 
-  // $masonry.infinitescroll( {
-  //     behavior: "masonry",
-  //     contentSelector: "#blog-list",
-  //     debug: false,
-  //     bufferPx: 600,
-  //     itemSelector: ".hentry",
-  //     loading: {
-  //       finishedMsg: "<em>No additional posts.</em>",
-  //       img: "",
-  //       msgText: "<div class='loader'>Loading...</div>"
-  //     },
-  //     navSelector: "#nav-below",
-  //     nextSelector: ".nav-next a"
-  //   }, function(newElements) {
-  //     var $elems = $(newElements);
-  //     $elems.imagesLoaded( function(){
-  //       msnry.masonry('appended',$elems);
-  //     })
-  //   });
   $masonry.waypoint('infinite', {
-    container: '#blog-list',
-    items: '.hentry',
-    more: '.nav-next a',
-    offset: 'bottom-in-view',
-    loadingClass: 'infinite-loading',
-    onBeforePageLoad: $.noop,
+    behavior: 'masonry',
     onAfterPageLoad: function(newElements) {
-      console.log(newElements);
       var $elems = $(newElements);
       $elems.imagesLoaded( function(){
-        msnry.masonry('appended',$elems);
+        $masonry.append($elems).masonry('appended', $elems);
       })
     }
   });
 
-} else if($infiniteScroll.length > 0) {
-  $infiniteScroll.infinitescroll( {
-      contentSelector: "#blog-list",
-      debug: false,
-      bufferPx: 600,
-      itemSelector: ".hentry",
-      loading: {
-        finishedMsg: "<em>No additional posts.</em>",
-        img: "",
-        msgText: "<div class='loader'>Loading...</div>"
-      },
-      navSelector: "#nav-below",
-      nextSelector: ".nav-next a"
-    });
+} 
+else if($infiniteScroll.length > 0) {
+
+  $infiniteScroll.waypoint('infinite');
+
 }
 
 Bon = function() {
@@ -83,23 +47,30 @@ Bon = function() {
     // Sticky header for bon blogs
     var $bonBlogs = $('body.post-type-archive-bon_blogs,body.single-bon_blogs');
     if($bonBlogs.length > 0) {
-      $(".sticky").sticky({topSpacing:-130});
+      $sticky = $('.sticky');
+      $sticky.waypoint('sticky', {offset: $sticky.css('top')});
     }
 
-    // Duplicate main nav for home page 
-    // var $home = $('body.home');
-    // if($home.length > 0) {
-    //   $menuclone = $('.menu-main-menu-container').clone();
+    // HOME PAGE 
+    var $home = $('body.home');
+    if($home.length > 0) {
 
-    //   $menuclone
-    //     .find('[id]')
-    //       .each(function() { 
-    //         $(this).attr('id', Foundation.utils.random_str(6) );
-    //       })
-    //       .end()
-    //     .addClass('home-menu')
-    //     .appendTo('.site-header');
-    // }
+      // Logo stuff
+      $('.site-header').waypoint(function(){
+        $('.nav-menu-wrapper').toggleClass('show-logo');
+      })
+
+      // Duplicate main nav for home page
+      // $menuclone = $('.menu-main-menu-container').clone();
+      // $menuclone
+      //   .find('[id]')
+      //     .each(function() { 
+      //       $(this).attr('id', Foundation.utils.random_str(6) );
+      //     })
+      //     .end()
+      //   .addClass('home-menu')
+      //   .appendTo('.site-header');
+    }
 
     // Start Orbit and top bar
     $(document).foundation();

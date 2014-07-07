@@ -23,7 +23,7 @@ if (!function_exists('bon_scripts')) :
 
     wp_enqueue_script( 'waypoints', get_template_directory_uri() . '/bower_components/jquery-waypoints/waypoints.min.js', array('jquery'), '1.0.0', true );
 
-    wp_enqueue_script( 'infinitescroll', get_template_directory_uri() . '/bower_components/jquery-waypoints/shortcuts/infinite-scroll/waypoints-infinite.min.js', array('waypoints'), '1.0.0', true );
+    wp_enqueue_script( 'infinitescroll', get_template_directory_uri() . '/js/infinitescroll/infinitescroll.js', array('waypoints'), '1.0.0', true );
 
     wp_enqueue_script( 'sticky', get_template_directory_uri() . '/bower_components/jquery-waypoints/shortcuts/sticky-elements/waypoints-sticky.min.js', array('waypoints'), '1.0.0', true );
 

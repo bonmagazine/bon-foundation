@@ -36,11 +36,22 @@
     padding-top: 10px;
   }
 
-  .logo svg {
-    width: 100px;
-    height: 40px;
-    margin-top: -5px;
-    stroke-width: 3;
+  .logo {
+    body.home & {
+      margin-top: -50px;
+      transition: margin 100ms linear;
+    }
+
+    body.home .show-logo & {
+      margin-top: 0;
+    }
+
+    svg {
+       width: 100px;
+       height: 40px;
+       margin-top: -5px;
+       stroke-width: 3;
+     }
   }
 }
 
@@ -69,9 +80,9 @@
       border-radius: 100px;
       width: 35px;
       height: 35px;
-      &:after {
+      text-indent: -999px;
+      span:after {
         right: 8px;
-        top: 0px;
       }
     }
   }
