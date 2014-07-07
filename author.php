@@ -9,7 +9,7 @@
   <?php endif; ?>
 
   <?php if ( have_posts() ) : ?>
-    <section id="blog-list" class="blog-list">
+    <section id="blog-list" class="blog-list infinite-scroll masonry">
       <?php while ( have_posts() ) : the_post(); ?>
         <?php get_template_part( 'partials/excerpt' ); ?>
       <?php endwhile; ?>
