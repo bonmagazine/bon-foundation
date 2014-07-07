@@ -30,11 +30,12 @@ function the_first_child_permalink() {
   echo $permalink;
 }
 
-function bon_get_sibling_posts() {
+function bon_get_sibling_posts($post_type, $post_parent, $post_ID) {
   $sibling_args = array(
-    'post_type'    => get_post_type(),
-    'child_of' => $post->post_parent,
-    'exclude' => $post->ID
+    'post_type'    => $post_type,
+    'post_parent' => $post_parent,
+    'exclude' => $post_ID,
+    'posts_per_page'=>-1
     );
   return get_posts( $sibling_args );
 }

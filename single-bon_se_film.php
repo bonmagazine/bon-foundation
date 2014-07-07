@@ -33,8 +33,7 @@
         </div>
       </footer>
     </article>
-
-    <?php $siblings = bon_get_sibling_posts(); ?>
+    <?php $siblings = bon_get_sibling_posts(get_post_type(), $post->post_parent, $post->ID); ?>
     <?php if($siblings): ?>
     <aside class="related-content blog-list">
       <?php foreach ($siblings as $post): setup_postdata( $post ); ?>
