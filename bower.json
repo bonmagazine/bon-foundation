@@ -1,7 +1,6 @@
 {
   "name": "Bon Foundation",
   "dependencies": {
-    "foundation": "zurb/bower-foundation",
-    "masonry": "masonry"
+    "foundation": "zurb/bower-foundation"
   }
 }

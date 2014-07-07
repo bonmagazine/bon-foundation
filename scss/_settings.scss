@@ -1214,9 +1214,9 @@ $topbar-height: baseline(2);
 $topbar-title-font-size: rem-calc(16);
 
 // Style the top bar dropdown elements
-$topbar-dropdown-bg: #99DEFC;
+$topbar-dropdown-bg: $bg-color;
 $topbar-dropdown-link-color: #000;
-$topbar-dropdown-link-bg: #99DEFC;
+$topbar-dropdown-link-bg: $bg-color;
 $topbar-dropdown-link-weight: normal;
 $topbar-dropdown-toggle-size: 5px;
 $topbar-dropdown-toggle-color: #000;
@@ -1231,12 +1231,12 @@ $topbar-link-weight: normal;
 $topbar-link-font-size: rem-calc(16);
 $topbar-link-hover-lightness: 0; // Darken by 10%
 $topbar-link-bg: $topbar-bg;
-$topbar-link-bg-hover: #fff;
-$topbar-link-bg-active: #fff;
-$topbar-link-bg-active-hover: #fff;
+$topbar-link-bg-hover: $bg-color;
+$topbar-link-bg-active: $bg-color;
+$topbar-link-bg-active-hover: $bg-color;
 $topbar-link-font-family: $body-font-family;
 $topbar-link-text-transform: none;
-$topbar-link-padding: $topbar-height / 3;
+$topbar-link-padding: 0;
 
 $topbar-button-font-size: 0.75rem;
 $topbar-button-top: 7px;
@@ -1245,7 +1245,7 @@ $topbar-dropdown-label-color: #000;
 $topbar-dropdown-label-text-transform: uppercase;
 $topbar-dropdown-label-font-weight: bold;
 $topbar-dropdown-label-font-size: rem-calc(16);
-$topbar-dropdown-label-bg: #99DEFC;
+$topbar-dropdown-label-bg: $bg-color;
 
 // Top menu icon styles
 $topbar-menu-link-transform: uppercase;
@@ -1268,7 +1268,7 @@ $topbar-media-query: 9999px;
 
 // Sticky Class
 $topbar-sticky-class: ".sticky";
-$topbar-arrows: true; //Set false to remove the triangle icon from the menu item
+$topbar-arrows: false; //Set false to remove the triangle icon from the menu item
 
 //
 // VISIBILITY CLASSES

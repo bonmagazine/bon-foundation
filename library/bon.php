@@ -155,6 +155,7 @@ function bon_get_skin() {
     body {
       background-image: url('.$image_url.');
       background-color: '.$background_colour.';
+      background-attachment:fixed;
     }
     </style>';
     echo $skin;
