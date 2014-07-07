@@ -3,31 +3,49 @@ var $masonry = $('.masonry'),
     $infiniteScroll = $('.infinite-scroll');
 if($masonry.length > 0) {
 
+  console.log('s');
+
   var msnry = $masonry.imagesLoaded( function(){
     $masonry.masonry({
       itemSelector: '.hentry'
     });
   });
 
-  $masonry.infinitescroll( {
-      behavior: "masonry",
-      contentSelector: "#blog-list",
-      debug: false,
-      bufferPx: 600,
-      itemSelector: ".hentry",
-      loading: {
-        finishedMsg: "<em>No additional posts.</em>",
-        img: "",
-        msgText: "<div class='loader'>Loading...</div>"
-      },
-      navSelector: "#nav-below",
-      nextSelector: ".nav-next a"
-    }, function(newElements) { 
+  // $masonry.infinitescroll( {
+  //     behavior: "masonry",
+  //     contentSelector: "#blog-list",
+  //     debug: false,
+  //     bufferPx: 600,
+  //     itemSelector: ".hentry",
+  //     loading: {
+  //       finishedMsg: "<em>No additional posts.</em>",
+  //       img: "",
+  //       msgText: "<div class='loader'>Loading...</div>"
+  //     },
+  //     navSelector: "#nav-below",
+  //     nextSelector: ".nav-next a"
+  //   }, function(newElements) {
+  //     var $elems = $(newElements);
+  //     $elems.imagesLoaded( function(){
+  //       msnry.masonry('appended',$elems);
+  //     })
+  //   });
+  $masonry.waypoint('infinite', {
+    container: '#blog-list',
+    items: '.hentry',
+    more: '.nav-next a',
+    offset: 'bottom-in-view',
+    loadingClass: 'infinite-loading',
+    onBeforePageLoad: $.noop,
+    onAfterPageLoad: function(newElements) {
+      console.log(newElements);
       var $elems = $(newElements);
       $elems.imagesLoaded( function(){
         msnry.masonry('appended',$elems);
       })
-    });
+    }
+  });
+
 } else if($infiniteScroll.length > 0) {
   $infiniteScroll.infinitescroll( {
       contentSelector: "#blog-list",
