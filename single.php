@@ -7,9 +7,9 @@
   <?php while (have_posts()) : the_post(); ?>
     <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
       <header class="entry-main">
-        <div class="section">
-          <p class="small-sys-title"><?php the_terms( $post->ID, 'section' ); ?></p>
-        </div>
+        <p class="section">
+          <?php the_terms( $post->ID, 'section' ); ?>
+        </p>
         <h1 class="entry-title"><?php the_title(); ?></h1>
         <div class="author-and-date">
           <?php bon_the_entry_meta(); ?>
@@ -18,8 +18,13 @@
       <div class="entry-content">
         <?php the_content(); ?>
       </div>
-      <footer>
-        <p><?php the_tags(); ?></p>
+      <footer class="entry-footer">
+        <div class="tags">
+          <h2 class="footer-title label"><?= __('Taggar', 'bon'); ?>:</h2>
+          <p>
+            <?php the_tags(''); ?>
+          </p>
+        </div>
       </footer>
     </article>
     <aside class="related-content">
@@ -27,10 +32,10 @@
       <?php $author_posts = bon_get_author_posts(); ?>
       <?php if($author_posts): ?>
       <section class="same-author-posts">
-        <h1 class="aside-title"><?= __('Other texts by', 'bon'); ?> <?php the_author_posts_link(); ?></h1>
+        <h1 class="aside-title"><span class="title-label"><?= __('Mer från', 'bon'); ?></span> <?php the_author_posts_link(); ?></h1>
         <p class="aside-text bio"><?php the_author_meta('description'); ?></p>
         <?php foreach ($author_posts as $post): setup_postdata( $post ); ?>
-          <?php get_template_part( 'partials/excerpt', 'small' ); ?>
+          <?php get_template_part( 'partials/excerpt' ); ?>
         <?php endforeach; wp_reset_postdata(); ?>
       </section>
       <?php endif;?>

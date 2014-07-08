@@ -1,0 +1,85 @@
+/* *************
+/* REDAKTION
+/* *************/
+
+div#about-left { 
+  @include grid-column(3);
+  width: 100%;
+  @include respond-to(l-up) { 
+    float: left;
+    @include grid-column(7); 
+  }
+} 
+
+div#about-right { 
+  @include grid-column(3);
+  width: 100%;
+  @include respond-to(l-up) { 
+    @include grid-column(7); 
+    border-left: 1px solid black; 
+    padding-top:50px; 
+    padding-bottom:50px; 
+    float: left;
+  }
+  padding-bottom:50px; 
+} 
+
+.aboutbon .medium-title { 
+  font-size: 36px; 
+  line-height: 36px;
+  margin-top:30px; 
+  margin-bottom: 30px; 
+} 
+
+div#about-right .medium-title { 
+  @include respond-to(l-up) { margin-left:160px; }
+} 
+
+.aboutbon { 
+  line-height: 30px; 
+} 
+
+.aboutbon p { 
+  font-family: 'Fortescue Regular'; 
+  font-size: 20px; 
+  text-indent:20px; 
+} 
+
+.aboutbon img { 
+  display: block; 
+  width:220px; 
+  height:300px; 
+  border:1px solid #ccc; 
+  @include respond-to(l-up) { float:left; }
+} 
+
+.aboutbon p.intro-text { 
+  font-family: 'Value Sans Regular'; 
+  text-indent: 0; 
+} 
+
+.margintop { 
+  margin-top: 30px; 
+} 
+
+.aboutbon hr { 
+  width:140px; 
+  height:5px; 
+  background-color: black; 
+  margin:28px 0 27px 0; 
+} 
+
+div#about-right hr { 
+  @include respond-to(l-up) { margin-left:160px; }
+} 
+
+.aboutbon .small-title { 
+  font-family: 'Value Sans Regular'; 
+  text-transform: uppercase; 
+  letter-spacing: .1em; 
+  font-size: 16px; 
+} 
+
+div.about-list { 
+  @include respond-to(l-up) { margin-left:240px; }
+}

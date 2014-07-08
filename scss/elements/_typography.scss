@@ -53,11 +53,15 @@ Paragraphs
   font-family:"Archive Pro Mono", serif; 
   word-spacing: -0.2em;
   text-rendering: optimizeLegibility;
-  text-transform: uppercase;
+  //text-transform: uppercase;
 }
 
 %archive-roman { // For paragraphs
   font-family:"Archive Pro Roman", serif; 
+}
+%archive-roman-italic { 
+  font-family:"Archive Pro Italic", serif; 
+  font-style: italic;
 }
 
 %serif {
@@ -76,13 +80,14 @@ Paragraphs
 
 // ## archive header: large-archive-header
 %large-archive-h {
-  @extend %archive-mono;
+  @extend %archive-roman;
 
   font-size: 54px; 
   font-weight: normal;
   line-height: baseline(2);
   letter-spacing: 0.02em;
-  word-spacing: -0.2em;
+  word-spacing: 0em;
+  text-align: center;
   @include respond-to(xs) {
     font-size: 28px; 
     line-height: baseline(2);  
@@ -97,11 +102,11 @@ Paragraphs
 // ## grotesque header: l-g-h
 %large-grotesque-h {
   @extend %grotesque;
-  font-size: 17px;
+  font-size: 20px;
   line-height: baseline(0.75);
   text-transform: uppercase;
   font-weight: normal;
-  letter-spacing: .2em;
+  letter-spacing: .1em;
 }
 
 // ## archive paragraph: l-a-p
@@ -138,11 +143,10 @@ Paragraphs
 
 // ## archive header: medium-archive-header
 %medium-archive-h {
-  @extend %archive-mono;
-  font-size: 30px; 
+  @extend %archive-roman;
+  font-size: 36px; 
   font-weight: normal;
-  line-height: baseline(2);
-  letter-spacing: 0.025em;
+  line-height: baseline(1.25);
 }
 
 // ## serif header: m-s-h
@@ -187,7 +191,7 @@ Paragraphs
 
 // ## archive header: small-archive-header
 %small-archive-h {
-  @extend %archive-mono;
+  @extend %archive-roman;
   font-size: 16px;
   font-weight: normal;
   line-height: baseline();
@@ -202,7 +206,7 @@ Paragraphs
 // ## grotesque header: s-g-h
 %small-grotesque-h {
   @extend %grotesque;
-  font-size: 16px;
+  font-size: 14px;
   line-height: baseline(0.75);
   text-transform: uppercase;
   font-weight: normal;

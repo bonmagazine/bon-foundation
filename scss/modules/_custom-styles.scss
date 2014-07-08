@@ -1,0 +1,687 @@
+/* CUSTOM STYLES */
+
+/* colors */
+
+.poster_container {
+  border: 1px solid black; }
+
+/* SPECIALFALL TILL POSTER */
+
+.column_box_left {
+  width: 320px;
+  padding: 5px;
+  float: left;
+  height: 480px; }
+
+.column_box_right {
+  width: 320px;
+  padding: 5px;
+  margin-left: 332px;
+  height: 480px; }
+
+/* MINIMAG-STYLES */
+
+#bonbon_container {
+  p {
+    @extend %medium-grotesque-p;
+    font-size: 14px;
+    line-height: 18px;
+    text-indent: $indent/2; 
+    &.humanist {
+      @extend %grotesque;
+      letter-spacing: 1.5px;
+      font-size: 16px; }
+    &.austinlight {
+      @extend %serif;
+    }
+  }
+  img.size-full {
+    display: block !important; }
+}
+
+.creditdiv p, p.ingress {
+  text-indent: 0 !important; }
+
+.center {
+  text-align: center; }
+
+#bonbon_container a:hover {
+  text-decoration: underline; }
+
+hr.ornament {
+  width: 45px;
+  height: 46px;
+  border: 0;
+  margin: 0px auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background: url(/live/wp-content/themes/bon/images/minimag-ornament.png); }
+
+.creditdiv {
+  width: 240px;
+  padding: 10px;
+  p {
+    @extend %grotesque;
+    line-height: 20px !important;
+    font-size: 13px !important; } }
+
+.italic {
+  font-style: italic; }
+
+.toplayer {
+  position: absolute;
+  left: 0;
+  top: 0; 
+}
+
+.toplayerright {
+  left: 954px;
+  top: 300px; }
+
+.toplayerleft {
+  left: 64px;
+  top: 300px; }
+
+.toplayerfarleft {
+  left: 36px; }
+
+.toplayerfarright {
+  left: 989px; }
+
+div.bonbon-fotocred {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+  z-index: 99; }
+
+.headerornament {
+  padding-bottom: 57px;
+  background: url(/live/wp-content/themes/bon/images/h1_leaf_47px.png) bottom center no-repeat; }
+
+.headerornamentwhite {
+  padding-bottom: 57px;
+  background: url(/live/wp-content/themes/bon/images/h1_leaf_47px-white.png) bottom center no-repeat; }
+
+#bonbon_container {
+  h1 {
+    text-rendering: optimizeLegibility;
+    @extend %serif;
+    font-size: 80px;
+    line-height: 80px;
+    margin: 0px auto;
+    padding-top: 100px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    font-weight: normal;
+
+    span {
+      font-weight: normal;
+      display: block;
+      @extend %grotesque;
+      font-size: 30px;
+      letter-spacing: 3px;
+      line-height: 30px;
+      &.headcenter {
+        @extend %serif;
+        font-size: 100px;
+        line-height: 75px;
+        letter-spacing: 0;
+        text-align: center; }
+      &.headright {
+        @extend %serif;
+        font-size: 100px;
+        line-height: 75px;
+        letter-spacing: 0;
+        text-align: right; }
+      &.headleft {
+        @extend %serif;
+        font-size: 100px;
+        line-height: 75px;
+        letter-spacing: 0;
+        text-align: left; } }
+    &.subrubaustin {
+      width: auto;
+      padding: 0;
+      background: none;
+      font-size: 70px;
+      line-height: 55px;
+      margin: 0px auto; } }
+  h2 {
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 1px;
+    &.topname {
+      font-size: 28px;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      text-rendering: optimizeLegibility;
+      text-align: center; } }
+  .container a {
+    color: #0C0; 
+  } 
+  p.noindentp {
+    text-indent: 0; 
+  }
+  p.fotocredit {
+    text-indent: 0;
+    font-size: 11px;
+  }
+}
+
+p.mejantitle {
+  font-size: 18px;
+  line-height: 22px;
+  margin-top: 515px;
+  text-indent: 0;
+  text-align: center; }
+
+h2 {
+  &.minimagsub {
+    font-size: 30px;
+    text-align: center;
+    font-weight: normal;
+    position: absolute;
+    top: 330px;
+    left: 115px;
+    width: 300px;
+    letter-spacing: 0;
+    line-height: 40px;
+    color: white;
+    @extend %serif;
+    text-transform: uppercase;
+    z-index: 4;
+    span {
+      font-size: 140px;
+      display: block;
+      @extend %serif;
+      margin-bottom: 40px; } }
+  &.minimagsubstat {
+    font-size: 30px;
+    text-align: center;
+    font-weight: normal;
+    width: 300px;
+    letter-spacing: 0;
+    line-height: 40px;
+    color: black;
+    margin: 0px auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    @extend %serif;
+    text-transform: uppercase;
+    z-index: 4;
+    span {
+      font-size: 140px;
+      display: block;
+      @extend %serif;
+      margin-bottom: 40px; } } }
+
+span.talkname {
+  @extend %grotesque;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-style: normal; }
+
+div {
+  &.minimagcolumn {
+    width: 1000px;
+    margin-left: 112px;
+    -moz-column-count: 3;
+    /* Firefox */
+    -webkit-column-count: 3;
+    /* Safari and Chrome */
+    column-count: 3;
+    -moz-column-gap: 20px;
+    /* Firefox */
+    -webkit-column-gap: 20px;
+    /* Safari and Chrome */
+    column-gap: 20px;
+    -moz-column-rule: 1px solid black;
+    /* Firefox */
+    -webkit-column-rule: 1px solid black;
+    /* Safari and Chrome */
+    column-rule: 1px solid black;
+    padding-bottom: 10px; }
+  &.minimag2column {
+    width: 602px;
+    height: 820px;
+    padding: 36px;
+    -moz-column-count: 2;
+    /* Firefox */
+    -webkit-column-count: 2;
+    /* Safari and Chrome */
+    column-count: 2;
+    -moz-column-gap: 20px;
+    /* Firefox */
+    -webkit-column-gap: 20px;
+    /* Safari and Chrome */
+    column-gap: 20px;
+    -moz-column-rule: 1px solid black;
+    /* Firefox */
+    -webkit-column-rule: 1px solid black;
+    /* Safari and Chrome */
+    column-rule: 1px solid black; } }
+
+
+
+div.minimagcolumnthin {
+  -webkit-column-width: 255px;
+  -moz-column-width: 255px;
+  column-width: 255px;
+  -moz-column-gap: 22px;
+  -webkit-column-gap: 22px;
+  column-gap: 22px; }
+
+.bonbon_page {
+  height: auto;
+  min-height: 712px; }
+
+
+/* EXTRA CSS STYLES HERE */
+
+.article-single .author, .author_container div.title {
+  @extend %medium-grotesque-p;
+}
+
+.article-single {
+  min-height: 1400px; }
+
+.leftfloat {
+  float: left; }
+
+.rightfloat {
+  float: right; }
+
+.block {
+  display: block; }
+
+.credits {
+  h3 {
+    margin-top: 18px;
+    margin-bottom: 0px; }
+  h5 {
+    margin-top: 10px;
+    font-size: 11px;
+    line-height: 18px;
+    @extend %serif; }
+  h4 {
+    @extend %grotesque;
+    font-weight: normal;
+    font-size: 13px;
+    margin-top: -20px; }
+  .leftfloat h4 {
+    margin-top: 0px; } }
+
+hr.separator {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border: none;
+  width: 25px;
+  height: 13px;
+  margin: 0px auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  clear: both;
+  background: url(/live/wp-content/uploads/2011/11/woodtype3.png); }
+
+.center {
+  margin: 0px auto;
+  width: 100%; }
+
+.clear {
+  clear: both; }
+
+.main_body p.delimiter,
+p.delimiter {
+  width:80px; 
+  text-indent:-9999px; 
+  height:6px; 
+  background:black; 
+  margin-top: ($baseline * 1.5) - 3px; 
+  margin-bottom: ($baseline * 1.5) - 3px; 
+  margin-left:$indent; 
+}
+
+.article-single p {
+  &.noindentp {
+    text-indent: 0; }
+  &.topmarginp {
+    margin-top: 18px;
+    text-indent: 0; } }
+
+.fashionname {
+  @extend %grotesque;
+  text-transform: uppercase;
+  padding-bottom: 3px;
+  border-bottom: 1px solid black; }
+
+.white .fashionname {
+  border-bottom: 1px solid white; }
+
+.ingress {
+  @extend %grotesque;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 1.2px; 
+  .bonbon_container & {
+    font-size: 24px;
+  }
+}
+
+.listsiffra {
+  text-align: center;
+  margin-top: -60px;
+  @extend %serif;
+  font-size: 124px;
+  text-indent: 0 !important;
+  margin-bottom: 33px; }
+
+span.dropcap {
+  float: left;
+  @extend %serif;
+  font-size: 145px;
+  margin-right: 5px;
+  padding-right: 8px; }
+
+.fotocredit {
+  @extend %grotesque;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.marialistarubrik {
+  text-transform: uppercase;
+  @extend %grotesque;
+  letter-spacing: 1px;
+  padding-right: 10px; }
+
+.fotocredit .austinmedium {
+  font-size: 16px; }
+
+.creditdiv .austinmedium {
+  font-size: 15px; }
+
+div {
+  &.custom {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: auto;
+    min-height: 0;
+    padding-bottom: 50px; }
+  &.fullwidth {
+    margin: 0;
+    padding: 0;
+    padding-top: 80px;
+    margin: 0px auto;
+    width: 940px; } }
+
+.inner_logo {
+  height: 65px;
+  width: 240px;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  margin-left: -119px;
+  text-indent: -9999px;
+  background: url(http://dev.bonmagazine.com/live/wp-content/themes/bon/images/bon_logo.png);
+  background-position: bottom center; }
+
+h3.inner_header {
+  @extend %grotesque;
+  letter-spacing: 1px;
+  font-weight: normal;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 56px;
+  background: url(/live/wp-content/themes/bon/images/bullet2.png);
+  background-position: bottom center;
+  background-repeat: no-repeat; }
+
+p.inner_message {
+  text-align: center;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 10px;
+  a {
+    text-decoration: none;
+    color: #000;
+    &:hover {
+      text-decoration: underline; } } }
+
+h3 {
+  &.qbricklink {
+    width: 59px;
+    height: 16px;
+    text-indent: -9999px;
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    a {
+      background: url(/live/wp-content/themes/bon/images/qbricklogo.png);
+      width: 59px;
+      height: 16px;
+      display: block; } }
+  &.qbrickmessage {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: 12px;
+    width: 881px;
+    margin-left: 59px;
+    text-align: right;
+    height: 16px;
+    letter-spacing: .5px;
+    a {
+      color: #000;
+      text-decoration: none;
+      &:hover {
+        color: #000;
+        text-decoration: underline; } } } }
+
+a.specialclose {
+  background: url(/live/wp-content/themes/bon/images/closebutton.png);
+  width: 88px;
+  height: 87px;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  margin-top: -23px;
+  margin-left: -65px;
+  text-indent: -9999px;
+  display: block;
+  cursor: hand; }
+
+/* rensa videospelaren nagot */
+
+div.video .strip {
+  border-top: none;
+  margin-top: -30px;
+  height: 190px; }
+
+.strip .strip_title {
+  margin-bottom: 5px; }
+
+.player_top_nav .file_title {
+  @extend %grotesque; }
+
+ul.gallery_nav li {
+  @extend %serif;
+  text-transform: none;
+  font-size: 16px; }
+
+div.panel_title {
+  font-size: 40px; }
+
+.bonbon_promo_container {
+  height: auto;
+  padding-bottom: 2px; }
+
+.black {
+  color: black !important; }
+
+.white {
+  color: white !important; }
+
+.austinlight {
+  @extend %serif; }
+
+.italic {
+  font-style: italic !important; }
+
+.austinmedium {
+  @extend %serif; }
+
+.pullquote {
+  @extend %serif;
+  font-size: 42px;
+  line-height: 32px;
+  width: 600px;
+  margin: 0px auto; }
+
+.smallquote {
+  @extend %serif;
+  font-size: 26px !important;
+  line-height: 32px !important; }
+
+.humanist {
+  @extend %grotesque; }
+
+.uppercase {
+  text-transform: uppercase !important; }
+
+.article-single .main_body p.questionp {
+  @extend %serif;
+  letter-spacing: 0.8px;
+  text-indent: 0;
+  margin-left: $indent; 
+}
+.bonbon_container img {
+  display: block !important;
+}
+
+div {
+  &.campaign_promo_container {
+    padding: 0;
+    background: none !important; }
+  &.campaign_promo_wrap {
+    background: none  !important;
+    text-align: left;
+    height: auto; } }
+
+.largeingress {
+  @extend %serif;
+  font-size: 30px !important;
+  line-height: 28px !important;
+  letter-spacing: 0; 
+}
+
+  /* SABRANIEL STYLES */
+.daniel {
+  text-indent: 0;
+  width:450px;
+  margin-left:256px;
+}
+.sabrina {
+  text-indent: 0;
+  width:450px;  
+}
+.sabranielhead {
+  text-indent: 0;
+  font-family: HumRoman;
+  font-size:12px;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  margin-top:14px;
+}
+
+/* *************
+/* REDAKTION
+/* *************/
+
+div#about-left { 
+  @include grid-column(3);
+  width: 100%;
+  @media #{$l-up} { 
+    float: left;
+    @include grid-column(7); 
+  }
+} 
+
+div#about-right { 
+  @include grid-column(3);
+  width: 100%;
+  @media #{$l-up} { 
+    @include grid-column(7); 
+    border-left: 1px solid black; 
+    padding-top:50px; 
+    padding-bottom:50px; 
+    float: left;
+  }
+  padding-bottom:50px; 
+} 
+
+.aboutbon .medium-title { 
+  font-size: 36px; 
+  line-height: 36px;
+  margin-top:30px; 
+  margin-bottom: 30px; 
+} 
+
+div#about-right .medium-title { 
+  @media #{$l-up} { margin-left:160px; }
+} 
+
+.aboutbon { 
+  line-height: 30px; 
+} 
+
+.aboutbon p { 
+  font-family: 'Fortescue Regular'; 
+  font-size: 20px; 
+  text-indent:20px; 
+} 
+
+.aboutbon img { 
+  display: block; 
+  width:220px; 
+  height:300px; 
+  border:1px solid #ccc; 
+  @media #{$l-up} { float:left; }
+} 
+
+.aboutbon p.intro-text { 
+  font-family: 'Value Sans Regular'; 
+  text-indent: 0; 
+} 
+
+.margintop { 
+  margin-top: 30px; 
+} 
+
+.aboutbon hr { 
+  width:140px; 
+  height:5px; 
+  background-color: black; 
+  margin:28px 0 27px 0; 
+} 
+
+div#about-right hr { 
+  @media #{$l-up} { margin-left:160px; }
+} 
+
+.aboutbon .small-title { 
+  font-family: 'Value Sans Regular'; 
+  text-transform: uppercase; 
+  letter-spacing: .1em; 
+  font-size: 16px; 
+} 
+
+div.about-list { 
+  @media #{$l-up} { margin-left:240px; }
+}

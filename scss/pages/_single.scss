@@ -1,20 +1,41 @@
 .single-main {
   > .post {
-    max-width: 42em;
     margin: 0 auto;
     padding-top: baseline(2);
-
-    .author-and-date,
+    @include grid-column(12, $collapse: true);
+    margin-bottom: baseline(2);
+    
+    header {
+      @include grid-row();
+      margin-bottom: baseline(2);
+    }
+    
     .section {
-      margin-left: $indent;
+      @include grid-column(2);
+      @extend %large-grotesque-h;
+      text-align: right;
+      &:after {
+        content: "/";
+        line-height: 4.5rem;
+      }
     }
     
     .entry-title {
+      @include grid-column(8);
       @extend %large-archive-h;
+    }
+    
+    .author-and-date {
+      @include grid-column(12);
+      text-align: center;
+      .author, 
+      .date {
+        @extend %small-archive-h;
+      }
     }
 
     .entry-content {
-      margin-top: baseline();
+      @include grid-column(8, $offset: 2);
 
       p {
         @extend %large-archive-p;
@@ -23,5 +44,15 @@
         text-indent: $indent;
       }
     }
+
+    .entry-footer {
+      @include grid-column(2);
+    }
   }
 }
+
+.label {
+  @extend %small-grotesque-h;
+  margin-right: 0.25em;
+}
+
