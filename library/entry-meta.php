@@ -6,7 +6,7 @@ if(!function_exists('bon_entry_meta')) :
   }
 
   function bon_the_entry_date() {
-    echo '<p><time class="date updated" datetime="'. get_the_time('c') .'" pubdate>'. get_the_date() .'</time></p>';
+    echo '<p class="date updated"><time datetime="'. get_the_time('c') .'" pubdate>'. get_the_date() .'</time></p>';
   }
 
   function bon_the_entry_author() {

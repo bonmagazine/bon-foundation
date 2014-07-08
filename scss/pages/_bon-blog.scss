@@ -5,15 +5,17 @@ body.post-type-archive-bon_blogs,
 body.single-bon_blogs {
 
   .inner-wrap {
-    max-width: 55rem;
     padding-top: 0;
   }
+}
+
+.sticky-wrapper {
+
 }
 
 .title-header-bon_blogs {
   z-index: 98;
   top: -120px;
-  
   margin-right: -1.25rem;
   margin-left: -1.25rem;
 
@@ -41,33 +43,42 @@ body.single-bon_blogs {
 }
 
 .bon-blog-list {
-  @include grid-column(10, $offset: 1);
 
   .entry-title {
+    margin-top: baseline();
     @extend %large-archive-h;
+  }
+
+  .date {
+    text-align: center;
+    margin-top: baseline();
   }
 
   .author {
     display: none;
   }
 
-  time {
-    text-indent: $indent;
-    display: block;
-  }
-
   .hentry {
-    &:after {
-      @include divider;
+    margin-top: baseline(4);
+    @media #{$s-up} {
+      @include grid-column(10, $offset: 1);
     }
-    & + .hentry {
-      margin-top: $baseline*2;
+    @media #{$m-up} {
+      @include grid-column(8, $offset: 2);
+    }
+
+    &:first-child {
+      margin-top: baseline();
     }
   }
 
-  .main-body {
-    a {
-      color: blue;
+  .entry-content {
+    margin-top: baseline();
+    p {
+      @extend %large-archive-p;
+    }
+    p + p {
+      text-indent: $indent;
     }
   }
 
