@@ -53,9 +53,10 @@
   @include grid-row();
 
   .post {
-    margin-bottom: baseline(4);
+    margin-bottom: baseline(1.5);
     header {
-      @include grid-row();
+      padding: 0 0.5em;
+      text-align: center;
 
       .section {
         display: block;
@@ -63,31 +64,57 @@
           display: none;
         }
       }
+
+      .author {
+        @media #{$s-up} { 
+          line-height: baseline(2);
+        }
+      }
     }
     .main {
       @include grid-row();
     }
+
+    & + .post {
+      padding-top: baseline(1.5);
+      border-top: 1px solid;
+    }
   }
 
   .title {
-    @include serif-heading-2;
+    @extend %medium-archive-h;
   }
 
   .entry-content p{
-    @extend %large-grotesque-p;
+    @extend %large-archive-p;
   }
 
   .entry-meta {
     @media #{$s-up} { 
       @include grid-column(2); 
+    }
 
-      div {
-        border-bottom: 1px solid;
+    .date {
+      text-align: center;
+      margin-bottom: baseline(0.5);
+      @media #{$s-up} { 
+        text-align: left;
+        margin-bottom: 0;
+      }
+    }
+
+    .social-media {
+      display: none;
+      @media #{$s-up} { 
+        display: block;
       }
     }
 
     div {
-      padding: baseline(0.5) 0;
+      @media #{$s-up} { 
+        border-bottom: 1px solid;
+        padding: baseline(0.5) 0;
+      }
     }
 
     p {
@@ -117,9 +144,6 @@
     @include grid-column(12, $collapse: true);
 
     @media #{$s-up} {
-      .title {
-        @include grid-column(10, $offset: 2);
-      }
       .thumbnail {
         @include grid-column(6);
       }
@@ -133,9 +157,7 @@
   .front-page-template-2 {
     @include grid-column(12, $collapse: true);
     @media #{$s-up} {
-      .title {
-        @include grid-column(10, $offset: 2);
-      }
+
       .thumbnail {
         @include grid-column(6, $push: 4);
       }
@@ -146,23 +168,30 @@
   }
 
   // 3 : Small image, small text below (x2).  
+  $box-shadow-gap: 17px;
   .front-page-template-3 {
+    @include grid-column(12, $collapse: true);
     @media #{$s-up} {
       @include grid-column(6, $collapse: true);
-      .title {
-        @include grid-column(8, $offset: 4);
-      }
+      box-shadow: ($box-shadow-gap + 1) $box-shadow-gap 0px (-$box-shadow-gap) black;
+
       .thumbnail {
         @include grid-column(8);
       }
       .entry-meta {
         @include grid-column(4); 
       }
-      .entry-content { 
+    }
+    
+    .entry-content { 
+      @media #{$s-up} {
+        @include grid-column(12);
+      }
+      @media #{$m-up} {
         @include grid-column(8, $offset: 4);
       }
-
     }
+
 
     div.body {
       @include sans-serif-small-text; 
@@ -173,9 +202,9 @@
       padding-left: 0;
 
       @media #{$s-up} {
-        .title {
-          @include grid-column(12, $offset: 0);
-        }
+        box-shadow: ($box-shadow-gap +1 * -1) $box-shadow-gap 0px (-$box-shadow-gap) black;
+        margin-left: 1px;
+        margin-right: -1px;
 
         .thumbnail {
           @include grid-column(8, $pull: 4);
@@ -183,7 +212,9 @@
         .entry-meta {
           @include grid-column(4, $push: 8); 
         }
-        .entry-content { 
+      }
+      .entry-content { 
+        @media #{$m-up} {
           @include grid-column(8, $offset: 0);
         }
       }
@@ -198,11 +229,8 @@
 
   // 4 : Big image, text below.
   .front-page-template-4 {
+    @include grid-column(12, $collapse: true);
     @media #{$s-up} {
-      @include grid-column(12, $collapse: true);
-      .title {
-        @include grid-column(10, $offset: 2);
-      }
       .thumbnail {
         @include grid-column(10);
       }
@@ -214,11 +242,8 @@
 
   // 5 : Video.  
   .front-page-template-5.film {
+    @include grid-column(12, $collapse: true);
     @media #{$s-up} {
-      @include grid-column(12, $collapse: true);
-      .title {
-        @include grid-column(10, $offset: 2);
-      }
       .thumbnail {
         @include grid-column(10);
       }
@@ -235,5 +260,12 @@
       height: 0;
       margin-bottom: baseline();
     }
+  }
+}
+
+.home {
+  .blog-list {
+    border-top: 1px solid;
+    padding-top: baseline();
   }
 }

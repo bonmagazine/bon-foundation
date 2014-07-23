@@ -1,6 +1,7 @@
 .aside-title {
   text-align: center;
   @extend %medium-archive-h;
+  margin-bottom: baseline();
   .title-label {
     @extend %archive-roman-italic;
     font-size: 0.6em;
@@ -15,7 +16,7 @@
   margin-bottom: baseline();
 
   .section {
-    margin-left: 0;
+    margin-left: 58px;
   }
 
   .title {
@@ -42,39 +43,24 @@
   border-top: 1px solid;
   padding-top: baseline();
 
-  section {
-    width: 100%;
-    margin: baseline() 0;
-
-    & > h1 {
-      margin-bottom: baseline();
-    }
-
-    .posts-list-container {
-      margin-left: -10px;
-      margin-right: 0;
-    }
-  }
 
   .same-author-posts {
-    width: 100%;
-    @media #{$s-up} {
-      @include grid-column(8);
-      float: left;
-      box-shadow: 1px 0 0 0 black;
-      padding: 0;
-      margin-bottom: baseline(2); 
-    }
-    padding: 0;
+    @include grid-column();
     margin-bottom: baseline(2); 
+
+    @media #{$s-up} {
+      @include grid-column(8, $collapse: true);
+      box-shadow: 1px 0 0 0 black;
+    }
 
     .bio {
       margin-bottom: baseline();
     }
 
     .post {
-      @include grid-column(6);
-      margin-bottom: baseline(2);
+      @media #{$m-up} {
+        @include grid-column(6);  
+      }
       &:nth-child(2n+1) {
         clear: left;
       }
@@ -87,15 +73,13 @@
 
   .yarpp-related {
     section {
-      width: 100%;
+      @include grid-column();
+      margin-bottom: baseline(2); 
+
       @media #{$s-up} {
         @include grid-column(4);
         border-left: 1px solid;
       }
-      margin-bottom: baseline(2); 
-    }
-    .post {
-      @include grid-column(12);
     }
   }
 

@@ -361,14 +361,18 @@ p.delimiter {
 .white .fashionname {
   border-bottom: 1px solid white; }
 
-.ingress {
-  @extend %grotesque;
-  font-size: 20px;
-  line-height: 30px;
-  letter-spacing: 1.2px; 
-  .bonbon_container & {
-    font-size: 24px;
+.post .entry-content {
+  .ingress {
+    @extend %grotesque;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 1.2px; 
+    margin-bottom: baseline();
   }
+}
+
+.bonbon_container .ingress {
+  font-size: 24px;
 }
 
 .listsiffra {

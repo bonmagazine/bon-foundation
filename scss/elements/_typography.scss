@@ -144,7 +144,7 @@ Paragraphs
 // ## archive header: medium-archive-header
 %medium-archive-h {
   @extend %archive-roman;
-  font-size: 36px; 
+  font-size: 28px; 
   font-weight: normal;
   line-height: baseline(1.25);
 }
@@ -192,7 +192,7 @@ Paragraphs
 // ## archive header: small-archive-header
 %small-archive-h {
   @extend %archive-roman;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: normal;
   line-height: baseline();
   word-spacing: -0.05em;

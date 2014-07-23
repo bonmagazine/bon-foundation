@@ -1,26 +1,48 @@
 .blog-list {
-  .hentry {
-    margin-bottom: baseline();
-    
+  .post {
+    @include grid-column();
+    margin-bottom: baseline(1.5);
+
     @media #{$s-up} {
       @include grid-column(6);  
     }
     @media #{$m-up} {
       @include grid-column(4);  
     }
-  }
-  .section {
-    margin-left: $indent;
-  }
-  .title {
-    @extend %small-archive-h;
-  }
-  .author-and-date {
-    margin-left: $indent;
 
-    p {
-      margin: 0;
+    & + .post {
+      padding-top: baseline(1.5);
+      border-top: 1px solid;
+      @media #{$s-up} { 
+        padding-top:0;
+        border-top: none;
+      }
     }
+
+    header {
+      padding: 0 0.5em;
+      text-align: center;
+
+      .author {
+        @media #{$s-up} { 
+          line-height: baseline(1.5);
+        }
+      }
+      .date {
+        margin-bottom: baseline(0.5);
+      }
+    }
+    .main {
+      @include grid-row();
+    }
+  }
+
+  .title {
+    @extend %medium-archive-h;
+  }
+
+  .entry-content p{
+    @extend %large-archive-p;
   }
 
 }

@@ -1,32 +1,45 @@
 .single-main {
   > .post {
     margin: 0 auto;
-    padding-top: baseline(2);
     @include grid-column(12, $collapse: true);
     margin-bottom: baseline(2);
+
+    @media #{$s-up} {
+      padding-top: baseline();
+    }
     
     header {
       @include grid-row();
-      margin-bottom: baseline(2);
+      margin-bottom: baseline();
+      padding-bottom: baseline();
+      border-bottom: 1px solid;
     }
     
     .section {
-      @include grid-column(2);
       @extend %large-grotesque-h;
-      text-align: right;
+
+      @media #{$s-up} {
+        text-align: right;
+
+        @include grid-column(2);
+      }
+
       &:after {
-        content: "/";
+        content: "";
         line-height: 4.5rem;
       }
     }
     
     .entry-title {
-      @include grid-column(8);
       @extend %large-archive-h;
+
+      @media #{$s-up} {
+        @include grid-column(8);
+      }
     }
     
     .author-and-date {
-      margin-top: baseline();
+      margin-top: baseline(0.5);
       @include grid-column(12);
       text-align: center;
       .author, 
@@ -35,20 +48,14 @@
       }
     }
 
-    .entry-content {
-      margin-top: baseline(4);
+    .entry-social {
+      display: none;
       @media #{$s-up} {
-        @include grid-column(10, $offset: 1);
+        display: block;
+        @include grid-column(1, $collapse: true);
       }
       @media #{$m-up} {
-        @include grid-column(8, $offset: 2);
-      }
-      
-      p {
-        @extend %large-archive-p;
-      }
-      p + p {
-        text-indent: $indent;
+        @include grid-column(2, $collapse: true);
       }
     }
 
@@ -56,10 +63,28 @@
       @include grid-column(2);
     }
   }
+
+  .entry-content {
+    @include grid-column();
+    @media #{$s-up} {
+      @include grid-column(10);
+    }
+    @media #{$m-up} {
+      @include grid-column(8);
+    }
+
+    p {
+      @extend %large-archive-p;
+    }
+    
+    p + p {
+      text-indent: $indent;
+    }
+  }
 }
 
 .label {
-  @extend %small-grotesque-h;
-  margin-right: 0.25em;
+  // @extend %small-grotesque-h;
+  // margin-right: 0.25em;
 }
 
