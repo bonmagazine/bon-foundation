@@ -85,7 +85,7 @@
     @extend %medium-archive-h;
   }
 
-  .entry-content p{
+  .entry-excerpt p{
     @extend %large-archive-p;
   }
 
@@ -147,7 +147,7 @@
       .thumbnail {
         @include grid-column(6);
       }
-      .entry-content { 
+      .entry-excerpt { 
         @include grid-column(4);
       }
     }
@@ -161,7 +161,7 @@
       .thumbnail {
         @include grid-column(6, $push: 4);
       }
-      .entry-content { 
+      .entry-excerpt { 
         @include grid-column(4, $pull: 6);
       }
     }
@@ -183,7 +183,7 @@
       }
     }
     
-    .entry-content { 
+    .entry-excerpt { 
       @media #{$s-up} {
         @include grid-column(12);
       }
@@ -213,7 +213,7 @@
           @include grid-column(4, $push: 8); 
         }
       }
-      .entry-content { 
+      .entry-excerpt { 
         @media #{$m-up} {
           @include grid-column(8, $offset: 0);
         }
@@ -234,7 +234,7 @@
       .thumbnail {
         @include grid-column(10);
       }
-      .entry-content { 
+      .entry-excerpt { 
         @include grid-column(10, $offset: 2);
       }
     }
@@ -247,7 +247,7 @@
       .thumbnail {
         @include grid-column(10);
       }
-      .entry-content { 
+      .entry-excerpt { 
         @include grid-column(10, $offset: 2);
       }
     }
