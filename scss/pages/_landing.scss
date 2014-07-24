@@ -67,7 +67,8 @@
 
       .author {
         @media #{$s-up} { 
-          line-height: baseline(2);
+          line-height: baseline(1.5);
+          margin-bottom: baseline(0.5);
         }
       }
     }
@@ -177,6 +178,7 @@
 
       .thumbnail {
         @include grid-column(8);
+        margin-bottom: baseline(0.5);
       }
       .entry-meta {
         @include grid-column(4); 
@@ -233,6 +235,8 @@
     @media #{$s-up} {
       .thumbnail {
         @include grid-column(10);
+        margin-bottom: baseline(0.5);
+
       }
       .entry-excerpt { 
         @include grid-column(10, $offset: 2);

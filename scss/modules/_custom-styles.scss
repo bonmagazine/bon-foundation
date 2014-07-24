@@ -334,23 +334,27 @@ hr.separator {
 .clear {
   clear: both; }
 
-.main_body p.delimiter,
-p.delimiter {
-  width:80px; 
-  text-indent:-9999px; 
-  height:6px; 
-  background:black; 
-  margin-top: ($baseline * 1.5) - 3px; 
-  margin-bottom: ($baseline * 1.5) - 3px; 
-  margin-left:$indent; 
-}
+.single-main > .post p {
 
-.article-single p {
   &.noindentp {
-    text-indent: 0; }
+    text-indent: 0; 
+  }
+
   &.topmarginp {
     margin-top: 18px;
-    text-indent: 0; } }
+    text-indent: 0; 
+  } 
+
+  &.delimiter {
+    width:80px; 
+    text-indent:-9999px; 
+    height:6px; 
+    background:black; 
+    margin-top: ($baseline * 1.5) - 3px; 
+    margin-bottom: ($baseline * 1.5) - 3px; 
+    margin-left:$indent; 
+  }
+}
 
 .fashionname {
   @extend %grotesque;
