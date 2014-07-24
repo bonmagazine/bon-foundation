@@ -9,10 +9,6 @@ body.single-bon_blogs {
   }
 }
 
-.sticky-wrapper {
-
-}
-
 .title-header-bon_blogs {
   z-index: 98;
   top: -120px;
@@ -42,7 +38,18 @@ body.single-bon_blogs {
   }
 }
 
-.bon-blog-list {
+.hentry.bon_blogs {
+  margin-top: baseline(4);
+  @media #{$s-up} {
+    @include grid-column(10, $offset: 1);
+  }
+  @media #{$m-up} {
+    @include grid-column(8, $offset: 2);
+  }
+
+  &:first-child {
+    margin-top: baseline();
+  }
 
   .entry-title {
     margin-top: baseline();
@@ -56,20 +63,6 @@ body.single-bon_blogs {
 
   .author {
     display: none;
-  }
-
-  .hentry {
-    margin-top: baseline(4);
-    @media #{$s-up} {
-      @include grid-column(10, $offset: 1);
-    }
-    @media #{$m-up} {
-      @include grid-column(8, $offset: 2);
-    }
-
-    &:first-child {
-      margin-top: baseline();
-    }
   }
 
   .entry-content {

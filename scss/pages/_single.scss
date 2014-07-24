@@ -62,16 +62,6 @@
     .entry-footer {
       @include grid-column(2);
     }
-  }
-
-  .entry-content {
-    @include grid-column();
-    @media #{$s-up} {
-      @include grid-column(10);
-    }
-    @media #{$m-up} {
-      @include grid-column(8);
-    }
 
     p {
       @extend %large-archive-p;
@@ -79,6 +69,16 @@
     
     p + p {
       text-indent: $indent;
+    }
+  }
+
+  .type-post .entry-content {
+    @include grid-column();
+    @media #{$s-up} {
+      @include grid-column(10);
+    }
+    @media #{$m-up} {
+      @include grid-column(8);
     }
   }
 }
