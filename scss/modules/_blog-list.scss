@@ -1,5 +1,5 @@
 .blog-list {
-  .post {
+  .hentry {
     @include grid-column();
     margin-bottom: baseline(1);
 
@@ -37,6 +37,7 @@
   .thumbnail {
     margin-top: baseline(0.5);
     margin-bottom: baseline(0.5);
+    text-align: center;
   }
 
   .title {

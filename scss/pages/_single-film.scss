@@ -1,0 +1,14 @@
+.single-main {
+  > .hentry.bon_se_film {
+    header {
+      text-align: center;
+    }
+    .entry-pre-title {
+      @extend %small-grotesque-h;
+    }
+    .entry-title {
+      @extend %medium-archive-h;
+      line-height: baseline(2);
+    }
+  }
+}

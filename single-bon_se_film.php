@@ -35,10 +35,13 @@
     </article>
     <?php $siblings = bon_get_sibling_posts(get_post_type(), $post->post_parent, $post->ID); ?>
     <?php if($siblings): ?>
-    <aside class="related-content blog-list">
+    <aside class="related-content">
+      <h1 class="aside-title">Mer från <?php echo get_the_title($post->post_parent); ?></h1>
+      <div class="masonry blog-list">
       <?php foreach ($siblings as $post): setup_postdata( $post ); ?>
         <?php get_template_part( 'partials/excerpt', 'film' ); ?>
       <?php endforeach; wp_reset_postdata(); ?>
+      </div>
     </aside><!-- .related-content -->
     <?php endif; ?>
 

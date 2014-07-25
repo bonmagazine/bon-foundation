@@ -48,7 +48,23 @@ function bon_get_poster_posts() {
 function bon_get_cover_posts() {
   $cover_args = array(
     'category_name' => 'cover',
-    'posts_per_page' => 10
+    'posts_per_page' => -1
    );
   return get_posts($cover_args); 
+}
+
+// Hook for main query
+function bon_landing_hook($query) {
+
+  // Prevent posts in cover from appearing in main loop
+  // !is_admin() prevents the backend query being modified
+  if ( is_home() 
+    && $query->is_main_query() 
+    && !is_admin() 
+    ) {
+      $cover_cat_ID = get_cat_ID( 'cover' );
+      $query->set( 'category__not_in', array($cover_cat_ID) );
+      return;
+  }
+
 }

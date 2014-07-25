@@ -97,6 +97,10 @@ body.single-bon_blogs {
   }
 }
 
+#disqus_thread {
+  @include grid-column(12);
+}
+
 #nav-below {
   clear: both;
   display: block;
