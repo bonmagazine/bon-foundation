@@ -1,14 +1,22 @@
-.single-main {
-  > .hentry.bon_se_film {
-    header {
-      text-align: center;
+.single-bon_se_film {
+  .single-main {
+    > .hentry.bon_se_film {
+      header {
+        text-align: center;
+      }
+      .entry-pre-title {
+        @extend %small-grotesque-h;
+      }
+      .entry-title {
+        @extend %medium-archive-h;
+        line-height: baseline(2);
+      }
     }
-    .entry-pre-title {
-      @extend %small-grotesque-h;
-    }
-    .entry-title {
-      @extend %medium-archive-h;
-      line-height: baseline(2);
+  }
+  .aside-title {
+    @extend %small-archive-h;
+    .title-label {
+      font-size: 0.8em;
     }
   }
 }

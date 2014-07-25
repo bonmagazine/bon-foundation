@@ -1,7 +1,7 @@
 .blog-list {
   .hentry {
     @include grid-column();
-    margin-bottom: baseline(1);
+    padding-bottom: baseline(1);
 
     @media #{$s-up} {
       @include grid-column(6);  

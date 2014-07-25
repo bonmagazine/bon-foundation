@@ -70,9 +70,6 @@ body.single-bon_blogs {
     p {
       @extend %large-archive-p;
     }
-    p + p {
-      text-indent: $indent;
-    }
   }
 
   .social {

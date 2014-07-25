@@ -2,7 +2,7 @@
 
   <div class="archive-main main" role="main">
     <h1 class="archive-title">
-      <?php wp_title(''); ?>
+      <?php single_cat_title(); ?>
     </h1>
 
   <?php if ( $top_banner ) : ?>
@@ -21,8 +21,6 @@
           <?php endif; ?>
         <?php elseif( is_post_type_archive('bon_minimagazine') ): ?>
           <?php get_template_part( 'partials/excerpt', 'bonbon' ); ?>
-        <?php elseif( is_post_type_archive('dagbok') ): ?>
-          <?php get_template_part( 'partials/excerpt', 'dagbok' ); ?>
         <?php else: ?>
           <?php get_template_part( 'partials/excerpt' ); ?>
         <?php endif; ?>

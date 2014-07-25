@@ -1,0 +1,10 @@
+.archive-title {
+	@extend %large-archive-h;
+	margin-bottom: baseline(2);
+}
+
+.tax-section {
+	.section {
+		display: none;
+	}
+}
