@@ -14,6 +14,7 @@
   <?php get_template_part( 'partials/svg' ); ?>
   <div class="off-canvas-wrap" data-offcanvas>
   <div class="inner-wrap">
+    <div class="inner-wrap-row">
 
     <?php get_template_part( 'partials/campaigns/overlay' ); ?>
 
@@ -36,7 +37,7 @@
       <?php endif; ?>
 
       <div class="fixed nav-menu-wrapper">
-        <nav  class="tab-bar">
+        <nav class="tab-bar">
           <ul class="title-area">
             <li class="left-small">
               <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
@@ -70,7 +71,7 @@
       </div>
 
       <section class="left-off-canvas-menu">
-        <h1>Bon.se</h1>
+        <h1 class="off-canvas-title"><a href="/">Bon.se</a></h1>
         <?php wp_nav_menu( 
                 array( 
                   'theme_location' => 'main-menu',  

@@ -50,7 +50,7 @@ button {
   }
 }
 
-.inner-wrap {
+.inner-wrap-row {
   @include grid-row();
   display: block;
   background: white;

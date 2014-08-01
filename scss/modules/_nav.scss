@@ -257,14 +257,21 @@ form[role=search] {
 }
 
 .left-off-canvas-menu {
+  .offcanvas-overlap & {
+    box-shadow: 5px 0px 5px 0px rgba(50, 50, 50, 0.4);
+  }
+
   h1 {
     @extend %medium-grotesque-h;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: $bg-color;
     border-bottom: 1px solid;
     padding: $off-canvas-link-padding;
     height: 3rem;
+
+    a {
+      color: $bg-color;
+    }
   }
 }
 
