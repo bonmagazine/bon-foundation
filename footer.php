@@ -4,5 +4,6 @@
 
 </div><!-- .inner-wrap -->
 <?php wp_footer(); ?>
+</div><!-- .off-canvas-wrap -->
 </body>
 </html>

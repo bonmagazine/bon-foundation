@@ -20,19 +20,42 @@
   stroke-width: 3;
 }
 
-
-
-
 /* 
  *
  * Sticky Nav
  *
  */
 
+.tab-bar {
+  li {
+    list-style: none;
+  }
+
+  // SOCIAL
+  .social {
+    left: auto;
+  }
+
+  .social-item {
+    float: left;
+    padding-top: 7px;
+    padding-left: 0.5em;
+
+    .icon {
+      width: 35px;
+      height: 35px;
+    }
+    
+    a {
+      float: left;
+      width: 35px;
+      height: 35px;
+    }
+  } 
+}
+
 .title-area {
-  max-width: $row-width - 2.5rem;
   .name {
-    text-align: center;
     padding-top: 10px;
   }
 
@@ -55,89 +78,8 @@
   }
 }
 
-.top-bar {
-  max-width: $row-width - 2.5rem;
-  margin: 0 auto;
-  max-height: 3rem;
-  transition: max-height 300ms linear;
-
-  &.expanded {
-    max-height: 999px;
-  }
-
-  .name h1 a {
-    width: auto;
-  }
-
-  // Menu toggle button
-  .toggle-topbar.menu-icon {
-    right: auto;
-    left: 0;
-    padding-left: $gutter-width;
-
-    a {
-      border: 1px solid;
-      border-radius: 100px;
-      width: 35px;
-      height: 35px;
-      text-indent: -999px;
-      span:after {
-        right: 8px;
-      }
-    }
-  }
-
-  // SOCIAL
-  .social-item {
-    float: left;
-    padding-top: 7px;
-    padding-left: 0.5em;
-
-    .icon {
-      width: 35px;
-      height: 35px;
-    }
-    
-    a {
-      float: left;
-      width: 35px;
-      height: 35px;
-    }
-  }
-
-  // Limit menu width
-  .top-bar-section{
-    li {
-      padding: baseline(0.5);
-      padding-left: 1.25em;
-
-      a {
-        display: inline;
-        padding: 0;
-      }
-    }
-    .has-dropdown {
-      > a {
-        &:after {
-          content: "»";
-          margin: 0;
-          position: static;
-          padding-left: 0.5em;
-        }
-      }
-    }
-  } 
-
-  // Social in top bar (for large screens)
-  .title-area {
-    .social {
-      position: absolute;
-      right: 10px;
-    }
-    .social-item {
-      float: right;
-    }
-  }
+.offcanvas-overlap .left-off-canvas-menu {
+  position: fixed;
 }
 
 /*
@@ -147,14 +89,15 @@
  */
 
 form[role=search] {
+  padding: $off-canvas-link-padding;
   input[type=text] {
     border: none;
-    line-height: baseline() ;
+    line-height: baseline();
     border-radius: 0;
     padding: 2px 5px 1px;
     margin-top: 4px;
-    width: 250px;
-    background: $bg-color;
+    width: calc(100% - 50px);
+    // background: $bg-color;
     border-bottom: 1px solid #000; 
     &:focus {
       outline: none;
@@ -164,9 +107,9 @@ form[role=search] {
     display: inline;
     border: none;
     cursor: pointer;
-    margin-right: 10px;
     overflow: hidden;
-    background: $bg-color;
+    width: 40px;
+    background: white;
   } 
 }
 
@@ -218,134 +161,122 @@ form[role=search] {
 /* 
  *
  * Static Nav (for home page)
+ * Vertical dropdown on hover
  *
  */
 
- %nav-with-dropdown {
-   > li.has-dropdown:hover {
-     background: white;
+%nav-with-dropdown {
+  > li.has-dropdown:hover {
+    background: white;
 
-     li {
-       display: block;
-     }
+    li {
+      display: block;
+    }
 
-     .dropdown {
-       display: block;
-     }
-   }
- }
+    .dropdown {
+      display: block;
+    }
+  }
+}
 
- %top-level-item {
-   list-style: none;
-   margin: 0;
-   display: inline;
-   position: relative;
-   padding: baseline(0.25) 0;
- }
+%top-level-item {
+  list-style: none;
+  margin: 0;
+  display: inline;
+  position: relative;
+  padding: baseline(0.25) 0;
+}
 
- %top-level-item-title { 
-   @extend %small-grotesque-h;
-   letter-spacing: 0.2em;
-   line-height: $baseline;
-   font-size: 15px;
-   padding: baseline(0.25) $indent/6;
+%top-level-item-title { 
+  @extend %small-grotesque-h;
+  letter-spacing: 0.2em;
+  line-height: $baseline;
+  font-size: 15px;
+  padding: baseline(0.25) $indent/6;
 
-   cursor: pointer;
-   
-   display: inline;
- }
+  cursor: pointer;
 
- %dropdown {
-   width: 250px;
+  display: inline;
+}
 
-   position: absolute;
-   left: 0;
-   top: baseline(1.10) ;
-   
-   margin: 0;
-   padding: baseline(0.25) $indent/4;
-   background: white;
-   z-index: 99;
+%dropdown {
+  width: 250px;
 
-   display:none;
- }
+  position: absolute;
+  left: 0;
+  top: baseline(1.10) ;
 
- %second-level-item-title {
-   text-transform: none;
-   letter-spacing: 0;
-   text-indent: 0;
-   padding: $baseline/2 0;
+  margin: 0;
+  padding: baseline(0.25) $indent/4;
+  background: white;
+  z-index: 99;
 
-   display: block;
-   text-decoration: none;
-   color: #000;
-   letter-spacing: 2px;
- }
+  display:none;
+}
 
+%second-level-item-title {
+  text-transform: none;
+  letter-spacing: 0;
+  text-indent: 0;
+  padding: $baseline/2 0;
 
-// .menu-main-menu-container.home-menu {
-//   display: none;
-// }
+  display: block;
+  text-decoration: none;
+  color: #000;
+  letter-spacing: 2px;
+}
 
-// Show static menu on homepage on big screen
-// @media #{$s-up} {
-//   body.home {
-//     .menu-main-menu-container.home-menu {
-//       display: block;
+/*
+ *
+ * Vertical menu expandable on click
+ *
+ */
 
-//       form[role=search] {
-//         display: inline;
-//         width: 180px;
-//         margin-top: -8px;
+%expandable-nav {
+  
+}
 
-//         input[type=text] {
-//           background: transparent;
-//           max-width: 120px;
-//         }
-//         button[type=submit] {
-//           background: transparent;
-//         }
-//       }
-//       .search-box {
-//         display: inline;
-//       }
-//     }
-//     &:not(.f-topbar-fixed) {
-//       .nav-menu-wrapper {
-//         top: - baseline(2);
-//         .top-bar {
-//           display: none;
-//         }
-//       }
-//     }
-//   }
+%expandable-nav-item {
+  > a:after {
+    content: "\25BA";
+    font-size: 0.7em;
+    float: right;
+  }
+  &.expanded > a:after {
+    content: "\25BC";
+  }
+}
 
-//   .nav-menu-wrapper {
-//     transition: top 150ms linear;
-//   }
+%expandable-nav-sub-menu {
+  display: none;
+  list-style: none;
+  margin: 0 0 0 rem-calc(10);
+  .expanded > & {
+    display: block;
+  }
+}
 
-//   .nav-menu {
-//     @extend %nav-with-dropdown;
-//     margin-left: 0;
-//     margin-bottom: baseline();
+.left-off-canvas-menu {
+  h1 {
+    @extend %medium-grotesque-h;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $bg-color;
+    border-bottom: 1px solid;
+    padding: $off-canvas-link-padding;
+    height: 3rem;
+  }
+}
 
-//     > .menu-item {
-//       @extend %top-level-item; 
-//     }
-//   }
+.nav-menu {
+  @extend %expandable-nav;
+}
 
-//   .menu-item > a {
-//     @extend %top-level-item-title; 
-//   }
+.has-dropdown {
+  @extend %expandable-nav-item;
+}
 
-//   .sub-menu {
-//     @extend %dropdown; 
-//   }
-
-//   .sub-menu .menu-item > a {
-//     @extend %second-level-item-title;
-//   }
-// }
-
-
+.sub-menu {
+  @extend %expandable-nav-sub-menu;
+}
 

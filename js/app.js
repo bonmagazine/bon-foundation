@@ -55,25 +55,27 @@ Bon = function() {
     var $home = $('body.home');
     if($home.length > 0) {
 
-      // Logo stuff
+      // Logo animation in nav menu
       $('.site-header').waypoint(function(){
         $('.nav-menu-wrapper').toggleClass('show-logo');
       })
-
-      // Duplicate main nav for home page
-      // $menuclone = $('.menu-main-menu-container').clone();
-      // $menuclone
-      //   .find('[id]')
-      //     .each(function() { 
-      //       $(this).attr('id', Foundation.utils.random_str(6) );
-      //     })
-      //     .end()
-      //   .addClass('home-menu')
-      //   .appendTo('.site-header');
     }
 
+    // Off canvas nav
+    $('.left-off-canvas-menu')
+      .find('.has-dropdown > a')
+      .click( function(e) {
+        e.preventDefault();
+        $(this).parent().toggleClass('expanded');
+      });
+
     // Start Orbit and top bar
-    $(document).foundation();
+    $(document).foundation({
+      offcanvas : {
+        open_method: 'overlap',
+        close_on_click: false
+      }
+    });
 
   }
 
