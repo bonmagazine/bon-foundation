@@ -55,13 +55,18 @@
             <li class="social right tab-bar-section">
               <ul>
                 <li class="social-item">
-                  <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode( "http://".$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"] ); ?>" class="share-btn fb main-nav-link" target="_blank">                    <svg class="icon"><use xlink:href="#facebook-logo" /></svg>
+                  <a href="https://www.facebook.com/bonmagazine" class="share-btn fb main-nav-link" target="_blank">                    <svg class="icon"><use xlink:href="#facebook-logo" /></svg>
 
                   </a>
                 </li>
                 <li class="social-item">
-                  <a href="https://twitter.com/share?via=bonmagazine&amp;lang=en&amp;url=<?php echo urlencode( "http://".$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"] ); ?>" class="share-btn twitter main-nav-link" target="_blank">
+                  <a href="https://twitter.com/bonmagazine" class="share-btn twitter main-nav-link" target="_blank">
                     <svg class="icon"><use xlink:href="#twitter-logo" /></svg>
+                    </a>
+                </li>
+                <li class="social-item">
+                  <a href="http://instagram.com/bonmagazine" class="share-btn instagram main-nav-link" target="_blank">
+                    <svg class="icon"><use xlink:href="#instagram-logo" /></svg>
                     </a>
                 </li>
               </ul>
