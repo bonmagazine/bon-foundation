@@ -54,6 +54,7 @@ button {
   @include grid-row();
   display: block;
   background: white;
+  margin-top: baseline(3);
   padding: $gutter-width;
 }
 
