@@ -31,6 +31,28 @@
     list-style: none;
   }
 
+  // Hamburger icon
+  .left-small {
+    border-right: none;
+  }
+  .menu-icon {
+    border: 1px solid black;
+    border-radius: 100%;
+    width: 2rem;
+    height: 2rem;
+    margin: .5rem 0 0 .5rem;
+    span {
+      &:after {
+        left: .5rem;
+        top: 53%;
+        width: .9rem;
+        box-shadow: 0 0px 0 1px #000,
+                    0 6px 0 1px #000,
+                    0 12px 0 1px #000;
+      }
+    }
+  }
+
   // SOCIAL
   .social {
     left: auto;
