@@ -105,6 +105,7 @@
     }
 
     .social-media {
+      border-bottom: none;
       display: none;
       @media #{$s-up} { 
         display: block;
