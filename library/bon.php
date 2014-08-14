@@ -118,7 +118,7 @@ function bon_get_campaign($type = 'overlay') {
     'posts_per_page' => '1',
     'orderby' => 'meta_value',
     'meta_key' => 'end_date',
-    'order' => 'ASC',
+    'order' => 'meta_value_num',
     'meta_query' => array(
         array(
             'key' => 'Ad_placement',
@@ -126,9 +126,9 @@ function bon_get_campaign($type = 'overlay') {
             ),
         array(
             'key' => 'end_date',
-            'value' => date("Y-m-d"),
+            'value' => current_time( 'mysql' ),
             'compare' => '>=',
-            'type' => 'NUMERIC'
+            'type' => 'date'
             )
         )
     );
