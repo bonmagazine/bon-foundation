@@ -69,6 +69,19 @@
                     <svg class="icon"><use xlink:href="#instagram-logo" /></svg>
                     </a>
                 </li>
+                <li class="social-item search-item">
+                  <form role="search" method="get" class="menu-searchform" action="/">
+                    <label class="screen-reader-text search-nav-title" for="s">
+                      <svg class="icon">
+                        <use xlink:href="#search-icon" />
+                      </svg>
+                    </label>
+                    <div class="search-box">
+                      <input type="text" value="" name="s" id="s">
+                      <button type="submit">Sök</button>
+                    </div>
+                  </form>
+                </li>
               </ul>
             </li>
           </ul>

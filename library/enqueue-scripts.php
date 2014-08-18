@@ -7,7 +7,7 @@ if (!function_exists('bon_scripts')) :
     wp_deregister_script( 'jquery' );
 
     // enqueue modernizr, jquery and foundation
-    wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr/modernizr.js', array(), '1.0.0', false );
+    // wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr/modernizr.js', array(), '1.0.0', false );
 
     wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery/jquery.min.js', array(), '1.0.0', false );
 

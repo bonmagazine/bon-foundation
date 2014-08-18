@@ -1,14 +1,13 @@
 // Masonry & Infinite Scroll
 var $masonry = $('.masonry'),
     $infiniteScroll = $('.infinite-scroll');
-if($masonry.length > 0) {
 
+if($masonry.length > 0) {
   var msnry = $masonry.imagesLoaded( function(){
     $masonry.masonry({
       itemSelector: '.hentry'
     });
   });
-
   $masonry.waypoint('infinite', {
     behavior: 'masonry',
     onAfterPageLoad: function(newElements) {
@@ -18,12 +17,9 @@ if($masonry.length > 0) {
       })
     }
   });
-
 } 
 else if($infiniteScroll.length > 0) {
-
   $infiniteScroll.waypoint('infinite');
-
 }
 
 Bon = function() {
@@ -74,6 +70,15 @@ Bon = function() {
           e.preventDefault();
           $('.off-canvas-wrap').removeClass('offcanvas-overlap');
         });  
+
+    // Submit search by clicking label
+    $('label.search-nav-title').click(function(e){
+      $s = $('#s');
+      if( $s.val() !== "" ) {
+        e.preventDefault();
+        $('form[role=search]').submit();
+      }
+    });
 
     // Start Orbit and top bar
     $(document).foundation({

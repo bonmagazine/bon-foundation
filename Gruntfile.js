@@ -2,6 +2,15 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    autoprefixer: {
+      sourcemap: {
+          options: {
+              map: true
+          },
+          src: 'css/app.css'
+      },
+    },
+
     sass: {
       options: {
         includePaths: ['bower_components/foundation/scss']
@@ -39,7 +48,8 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-autoprefixer');
 
-  grunt.registerTask('build', ['sass']);
+  grunt.registerTask('build', ['sass', 'autoprefixer']);
   grunt.registerTask('default', ['build','watch']);
 }

@@ -39,7 +39,7 @@ class top_bar_walker extends Walker_Nav_Menu {
 
 
 // Add search to menu
-add_filter('wp_nav_menu_items','add_search_box_to_menu', 10, 2);
+// add_filter('wp_nav_menu_items','add_search_box_to_menu', 10, 2);
 function add_search_box_to_menu( $items, $args ) {
     if( $args->theme_location == 'main-menu' )
         return $items.'<li class="menu-item"><form role="search" method="get" class="menu-searchform" action="/">

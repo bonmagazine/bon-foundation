@@ -27,6 +27,13 @@
  */
 
 .tab-bar {
+  
+  .title-area {
+    max-width: 980px;
+    margin: 0 auto;
+    position: relative;
+  }
+
   li {
     list-style: none;
   }
@@ -111,22 +118,22 @@
  */
 
 form[role=search] {
-  padding: $off-canvas-link-padding;
+  padding-left: $indent;
   input[type=text] {
     border: none;
     line-height: baseline();
     border-radius: 0;
-    padding: 2px 5px 1px;
+    padding: 0;
     margin-top: 4px;
-    width: calc(100% - 50px);
-    // background: $bg-color;
+    // width: calc(100% - 50px);
+
     border-bottom: 1px solid #000; 
     &:focus {
       outline: none;
     }
   } 
   button[type=submit] {
-    display: inline;
+    display: none;
     border: none;
     cursor: pointer;
     overflow: hidden;
@@ -141,7 +148,6 @@ form[role=search] {
 .title-area {
   form[role=search] {
     float: right;
-    width: 250px;
 
     label {
       float: right;
@@ -155,14 +161,16 @@ form[role=search] {
     input[type=text] {
       width: 0px;
       transition: width 200ms linear;
+      background: none;
       border: none;
 
       &:focus {
         width: 150px;
+        padding: 2px 5px 1px;
         border-bottom: 1px solid #000; 
 
         & + button[type=submit] {
-          display: inline;
+          // display: inline;
         }
       }
     }    
