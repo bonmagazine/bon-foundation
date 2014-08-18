@@ -69,6 +69,8 @@
     float: left;
     padding-top: 7px;
     padding-left: 0.5em;
+    display: none;
+    @media #{$l-up} { display: block; }
 
     .icon {
       width: 35px;
