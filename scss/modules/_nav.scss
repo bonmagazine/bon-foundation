@@ -119,6 +119,10 @@
  * 
  */
 
+.social-item.search-item {
+  display: block; 
+}
+
 form[role=search] {
   padding-left: $indent;
   input[type=text] {
