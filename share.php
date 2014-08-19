@@ -9,6 +9,16 @@
 <head>
   <meta charset="utf-8">
   <title><?php the_title(); ?> — <?php bloginfo(); ?></title>
+  <meta property="og:title" content="Add-Video-Title"/>
+  <meta property="og:description" content="Add-Video-Description"/>
+  <meta property="og:type" content="movie"/>
+  <meta property="og:video:height" content="270"/>
+  <meta property="og:video:width" content="480"/>
+  <meta property="og:url"  content="Add-URL-Of-Page-Hosting-Player"/>
+  <meta property="og:video" content="Add-Video-URL">
+  <meta property="og:video:secure_url" content="Add-Secure-Video-URL">
+  <meta property="og:image" content="Add-VideoStill-URL"/>
+  <meta property="og:video:type" content="application/x-shockwave-flash">
   <style>
   html {
     overflow: hidden;
