@@ -9,15 +9,18 @@
 <head>
   <meta charset="utf-8">
   <title><?php the_title(); ?> — <?php bloginfo(); ?></title>
-  <meta property="og:title" content="Add-Video-Title"/>
-  <meta property="og:description" content="Add-Video-Description"/>
+  <meta property="og:title" content="<?php the_title(); ?>"/>
+  <meta property="og:description" content="<?php the_title(); ?>"/>
   <meta property="og:type" content="movie"/>
   <meta property="og:video:height" content="270"/>
   <meta property="og:video:width" content="480"/>
-  <meta property="og:url"  content="Add-URL-Of-Page-Hosting-Player"/>
-  <meta property="og:video" content="Add-Video-URL">
-  <meta property="og:video:secure_url" content="Add-Secure-Video-URL">
-  <meta property="og:image" content="Add-VideoStill-URL"/>
+  <meta property="og:url"  content="<?php the_permalink(); ?>"/>
+  <?php $video_urls = bon_get_film_sources(); ?>
+  <?php foreach ($video_urls as $video_url): ?>
+  <meta property="og:video" content="<?php echo $video_url ?>">
+  <meta property="og:video:secure_url" content="<?php echo $video_url ?>">
+  <?php endforeach; ?>
+  <meta property="og:image" content="<?php echo bon_get_film_poster(); ?>"/>
   <meta property="og:video:type" content="application/x-shockwave-flash">
   <style>
   html {

@@ -55,7 +55,7 @@ function bon_the_film_base_src() {
 
 function bon_get_film_sources() {
   $sources = array();
-  if(bon_get_film_type() == 'strem'){
+  if(bon_get_film_type() == 'stream'){
     $sources = explode(", ", bon_get_film_src() );
   } else {
     $formats = array('.mp4','.webm');
