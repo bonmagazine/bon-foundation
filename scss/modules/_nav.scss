@@ -109,8 +109,9 @@
   }
 }
 
-.offcanvas-overlap .left-off-canvas-menu {
+.left-off-canvas-menu {
   position: fixed;
+  transition: all 500ms ease 0s;
 }
 
 /*

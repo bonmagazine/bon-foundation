@@ -53,7 +53,7 @@ button {
   @include grid-row();
   display: block;
   background: white;
-  margin-top: baseline(3);
+  margin-top: baseline(2);
   padding: $gutter-width;
 }
 
