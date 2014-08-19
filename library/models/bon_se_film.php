@@ -45,8 +45,15 @@ function bon_get_film_skin() {
   return $skin;
 }
 
+function bon_convert_to_protocol_relative($url) {
+  $protocol_relative_url = str_replace('http://','//',$url);
+  $protocol_relative_url = str_replace('https://','//',$protocol_relative_url);
+  return $protocol_relative_url;
+}
+
 function bon_get_film_src() {
-  return get_post_meta( get_the_ID(), 'src', true );
+  $src = get_post_meta( get_the_ID(), 'src', true );
+  return bon_convert_to_protocol_relative($src);
 }
 
 function bon_the_film_base_src() {
@@ -77,7 +84,7 @@ function bon_get_film_type() {
 
 function bon_get_film_poster() {
   $poster = wp_get_attachment_image_src( get_post_meta( get_the_ID(), 'poster', true ), 'tb' );
-  return $poster[0];
+  return bon_convert_to_protocol_relative($poster[0]);
 }
 
 
