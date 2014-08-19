@@ -44,7 +44,7 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/js/jwplayer/jwplayer.js"></script>
   <script>jwplayer.key="p8K1s8dYdTbGM5fWp6TooV9auuATbVSFI1imvajRHVs=";</script>
-  <script src="<?php echo get_template_directory_uri(); ?>/js/videoplayer/videoplayer.js"></script>
+  <script src="<?php echo bon_convert_to_protocol_relative(get_template_directory_uri() ); ?>/js/videoplayer/videoplayer.js"></script>
   <script type="text/javascript">
 
     // Once the video is ready
