@@ -39,6 +39,9 @@ require_once('library/rewrites.php');
 // Add Post Types
 require_once('library/post-types.php');
 
+// Add User Profile extra fields
+require_once('library/user-profile.php');
+
 /*
  *
  * MODELS
