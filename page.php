@@ -12,7 +12,7 @@
 				<?php wp_link_pages(array('before' => '<nav id="page-nav"><p>' . __('Pages:', 'FoundationPress'), 'after' => '</p></nav>' )); ?>
 				<p><?php the_tags(); ?></p>
 			</footer>
-			<?php comments_template(); ?>
+
 		</article>
 	<?php endwhile;?>
 		

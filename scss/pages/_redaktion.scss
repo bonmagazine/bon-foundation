@@ -3,25 +3,22 @@
 /* *************/
 
 div#about-left { 
-  @include grid-column(3);
-  width: 100%;
-  @include respond-to(l-up) { 
-    float: left;
-    @include grid-column(7); 
+  @include grid-column(12);
+  @media #{$m-up} { 
+    @include grid-column(6);
   }
 } 
 
 div#about-right { 
-  @include grid-column(3);
-  width: 100%;
-  @include respond-to(l-up) { 
-    @include grid-column(7); 
+  @include grid-column(12);
+  padding-bottom:50px; 
+  @media #{$m-up} { 
+    @include grid-column(6); 
     border-left: 1px solid black; 
     padding-top:50px; 
     padding-bottom:50px; 
     float: left;
   }
-  padding-bottom:50px; 
 } 
 
 .aboutbon .medium-title { 
@@ -32,7 +29,7 @@ div#about-right {
 } 
 
 div#about-right .medium-title { 
-  @include respond-to(l-up) { margin-left:160px; }
+  @media #{$m-up} { margin-left:160px; }
 } 
 
 .aboutbon { 
@@ -50,7 +47,7 @@ div#about-right .medium-title {
   width:220px; 
   height:300px; 
   border:1px solid #ccc; 
-  @include respond-to(l-up) { float:left; }
+  @media #{$m-up} { float:left; }
 } 
 
 .aboutbon p.intro-text { 
@@ -70,7 +67,7 @@ div#about-right .medium-title {
 } 
 
 div#about-right hr { 
-  @include respond-to(l-up) { margin-left:160px; }
+  @media #{$m-up} { margin-left:160px; }
 } 
 
 .aboutbon .small-title { 
@@ -81,5 +78,5 @@ div#about-right hr {
 } 
 
 div.about-list { 
-  @include respond-to(l-up) { margin-left:240px; }
+  @media #{$m-up} { margin-left:240px; }
 }
