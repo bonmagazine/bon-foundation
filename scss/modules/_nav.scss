@@ -160,14 +160,10 @@ form[role=search] {
       background: none;
       border: none;
 
-      &:focus {
+      &.focus {
         width: 150px;
-        padding: 2px 5px 1px;
+        padding: 2px 5px 0px;
         border-bottom: 1px solid #000; 
-
-        & + button[type=submit] {
-          // display: inline;
-        }
       }
     }    
   }

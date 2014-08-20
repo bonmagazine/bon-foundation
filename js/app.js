@@ -76,11 +76,9 @@ Bon = function() {
       $s = $('#s');
       // Submit search by clicking label
       if( $s.val() !== "" ) {
-        e.preventDefault();
         $('form[role=search]').submit();
-      } else if( $s.is(':focus') ) {
-        $s.blur();
-      }
+      } 
+      $s.toggleClass('focus');
     });
 
     // Start Orbit and top bar
