@@ -42,6 +42,19 @@
             <li class="left-small">
               <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
             </li>
+            <li class="icon-item search-item">
+              <form role="search" method="get" class="menu-searchform" action="/">
+                <label class="screen-reader-text search-nav-title" for="s">
+                  <svg class="icon">
+                    <use xlink:href="#search-icon" />
+                  </svg>
+                </label>
+                <div class="search-box">
+                  <input type="text" value="" name="s" id="s">
+                  <button type="submit">Sök</button>
+                </div>
+              </form>
+            </li>
             <li class="name middle tab-bar-section">
               <h1 class="site-name">
                 <a href="/" title="<?php bloginfo('name'); ?>">
@@ -54,33 +67,20 @@
             </li>
             <li class="social right tab-bar-section">
               <ul>
-                <li class="social-item">
+                <li class="social-item icon-item">
                   <a href="https://www.facebook.com/bonmagazine" class="share-btn fb main-nav-link" target="_blank">                    <svg class="icon"><use xlink:href="#facebook-logo" /></svg>
 
                   </a>
                 </li>
-                <li class="social-item">
+                <li class="social-item icon-item">
                   <a href="https://twitter.com/bonmagazine" class="share-btn twitter main-nav-link" target="_blank">
                     <svg class="icon"><use xlink:href="#twitter-logo" /></svg>
                     </a>
                 </li>
-                <li class="social-item">
+                <li class="social-item icon-item">
                   <a href="http://instagram.com/bonmagazine" class="share-btn instagram main-nav-link" target="_blank">
                     <svg class="icon"><use xlink:href="#instagram-logo" /></svg>
                     </a>
-                </li>
-                <li class="social-item search-item">
-                  <form role="search" method="get" class="menu-searchform" action="/">
-                    <label class="screen-reader-text search-nav-title" for="s">
-                      <svg class="icon">
-                        <use xlink:href="#search-icon" />
-                      </svg>
-                    </label>
-                    <div class="search-box">
-                      <input type="text" value="" name="s" id="s">
-                      <button type="submit">Sök</button>
-                    </div>
-                  </form>
                 </li>
               </ul>
             </li>

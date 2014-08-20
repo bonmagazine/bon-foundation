@@ -45,19 +45,7 @@
   .menu-icon {
     border: 1px solid black;
     border-radius: 100%;
-    width: 2rem;
-    height: 2rem;
     margin: .5rem 0 0 .5rem;
-    span {
-      &:after {
-        left: .5rem;
-        top: 53%;
-        width: .9rem;
-        box-shadow: 0 0px 0 1px #000,
-                    0 6px 0 1px #000,
-                    0 12px 0 1px #000;
-      }
-    }
   }
 
   // SOCIAL
@@ -65,12 +53,10 @@
     left: auto;
   }
 
-  .social-item {
+  .icon-item {
     float: left;
-    padding-top: 7px;
+    padding-top: 5px;
     padding-left: 0.5em;
-    display: none;
-    @media #{$s-up} { display: block; }
 
     .icon {
       width: 35px;
@@ -82,12 +68,19 @@
       width: 35px;
       height: 35px;
     }
+  }
+
+  .social-item {
+    display: none;
+    @media #{$s-up} { display: block; }
   } 
 }
 
 .title-area {
   .name {
     padding-top: 10px;
+    left: 6rem;
+    right: 9rem;
   }
 
   .logo {
@@ -120,10 +113,6 @@
  * 
  */
 
-.social-item.search-item {
-  display: block; 
-}
-
 form[role=search] {
   padding-left: $indent;
   input[type=text] {
@@ -154,15 +143,15 @@ form[role=search] {
 
 .title-area {
   form[role=search] {
-    float: right;
+    float: left;
 
     label {
-      float: right;
+      float: left;
       margin-top: 2px;
     }
 
     .search-box {
-      float: right;
+      float: left;
     }
 
     input[type=text] {

@@ -71,12 +71,15 @@ Bon = function() {
           $('.off-canvas-wrap').removeClass('offcanvas-overlap');
         });  
 
-    // Submit search by clicking label
+    // Search label
     $('label.search-nav-title').click(function(e){
       $s = $('#s');
+      // Submit search by clicking label
       if( $s.val() !== "" ) {
         e.preventDefault();
         $('form[role=search]').submit();
+      } else if( $s.is(':focus') ) {
+        $s.blur();
       }
     });
 

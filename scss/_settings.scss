@@ -729,19 +729,19 @@ $off-canvas-link-color: black;
 $off-canvas-link-border-bottom: 1px solid $bg-color;
 
 // Off Canvas Menu Icon Variables
-// $tabbar-menu-icon-color: #fff;
+$tabbar-menu-icon-color: #000;
 // $tabbar-menu-icon-hover: scale-color($tabbar-menu-icon-color, $lightness: -30%);
 
 // $tabbar-menu-icon-text-indent: rem-calc(35);
-// $tabbar-menu-icon-width: $tabbar-height;
-// $tabbar-menu-icon-height: $tabbar-height;
+$tabbar-menu-icon-width: 2rem; //$tabbar-height;
+$tabbar-menu-icon-height: 2rem; //$tabbar-height;
 // $tabbar-menu-icon-padding: 0;
 
 // $tabbar-hamburger-icon-width: rem-calc(16);
-// $tabbar-hamburger-icon-left: false;
-// $tabbar-hamburger-icon-top: false;
+$tabbar-hamburger-icon-left: false;
+$tabbar-hamburger-icon-top: 8px;
 // $tabbar-hamburger-icon-thickness: 1px;
-// $tabbar-hamburger-icon-gap: 6px;
+$tabbar-hamburger-icon-gap: 5px;
 
 // Off Canvas Back-Link Overlay
 // $off-canvas-overlay-transition: background 300ms ease;
