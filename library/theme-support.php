@@ -16,7 +16,7 @@ function bon_theme_support() {
     add_image_size('tb', 300, 9999); // Thumbnails
 
     // Image sizes 
-    add_image_size('blog-header', 880, 240, 1);
+    add_image_size('blog-header', 1000, 240, 1);
     add_image_size('square-thumbnail', 48, 48, 1);
 
     // Deprecated
