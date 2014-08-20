@@ -48,7 +48,10 @@ function bon_get_poster_posts() {
 function bon_get_cover_posts() {
   $cover_args = array(
     'category_name' => 'cover',
-    'posts_per_page' => -1
+    'posts_per_page' => -1,
+    'meta_key' => 'bon_cover_order',
+    'orderby' => 'meta_value_num',
+    'order' => 'ASC'
    );
   return get_posts($cover_args); 
 }
