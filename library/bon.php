@@ -1,17 +1,6 @@
 <?php
 
 /**
- * Tiny MCE custom fonts
- *
- */
-
-add_filter("mce_external_plugins", "bon_mce_external_plugins");
-function bon_mce_external_plugins($plugin_array){
-    $plugin_array['fontdeck']  =  get_template_directory_uri().'/js/fontdeck/fontdeck.tinymce.js';
-    return $plugin_array;
-}
-
-/**
  * A fallback when no navigation is selected by default.
  */
 function bon_menu_fallback() {
