@@ -8,9 +8,14 @@
 /* POSTER */
 
 #poster {
-  @include grid-row();
   margin-bottom: baseline();
   position: relative;
+
+  // Hide for mobile devices because they don't support video autoplay
+  display: none;
+  @media #{$s-up} { 
+    @include grid-row();
+  }
 
   img {
     max-width: 100%;
