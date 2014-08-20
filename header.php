@@ -65,24 +65,15 @@
                 </a>
               </h1>
             </li>
-            <li class="social right tab-bar-section">
-              <ul>
-                <li class="social-item icon-item">
-                  <a href="https://www.facebook.com/bonmagazine" class="share-btn fb main-nav-link" target="_blank">                    <svg class="icon"><use xlink:href="#facebook-logo" /></svg>
+            <li class="share icon-item right tab-bar-section">
+              <svg class="icon"><use xlink:href="#share-icon" /></svg>
+              <div class="share-btns">
+                <iframe src="//www.facebook.com/plugins/like.php?href=<?php echo urlencode(get_the_permalink()); ?>&amp;width=50&amp;layout=box_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=65&amp;appId=395965657184574" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:65px; margin-right: 10px" allowTransparency="true"></iframe>
 
-                  </a>
-                </li>
-                <li class="social-item icon-item">
-                  <a href="https://twitter.com/bonmagazine" class="share-btn twitter main-nav-link" target="_blank">
-                    <svg class="icon"><use xlink:href="#twitter-logo" /></svg>
-                    </a>
-                </li>
-                <li class="social-item icon-item">
-                  <a href="http://instagram.com/bonmagazine" class="share-btn instagram main-nav-link" target="_blank">
-                    <svg class="icon"><use xlink:href="#instagram-logo" /></svg>
-                    </a>
-                </li>
-              </ul>
+                <iframe allowtransparency="true" frameborder="0" scrolling="no"
+                        src="https://platform.twitter.com/widgets/tweet_button.html?count=vertical"
+                        style="width:60px; height:65px;"></iframe>
+              </div>
             </li>
           </ul>
         </nav>
@@ -98,6 +89,23 @@
                   'walker' => new top_bar_walker()
                 ) 
               ); ?>
+        <ul class="social">
+          <li class="social-item icon-item">
+            <a href="https://www.facebook.com/bonmagazine" class="share-btn fb main-nav-link" target="_blank">                    <svg class="icon"><use xlink:href="#facebook-logo" /></svg>
+
+            </a>
+          </li>
+          <li class="social-item icon-item">
+            <a href="https://twitter.com/bonmagazine" class="share-btn twitter main-nav-link" target="_blank">
+              <svg class="icon"><use xlink:href="#twitter-logo" /></svg>
+              </a>
+          </li>
+          <li class="social-item icon-item">
+            <a href="http://instagram.com/bonmagazine" class="share-btn instagram main-nav-link" target="_blank">
+              <svg class="icon"><use xlink:href="#instagram-logo" /></svg>
+              </a>
+          </li>
+        </ul>
       </section>
 
       <a class="exit-off-canvas exit-offcanvas-menu"></a>

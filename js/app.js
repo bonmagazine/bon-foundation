@@ -81,6 +81,11 @@ Bon = function() {
       $s.parent().toggleClass('focus');
     });
 
+    // Share Buttons
+    $('.share .icon').click(function(){
+      $(this).parent().toggleClass('open');
+    });
+
     // Start Orbit and top bar
     $(document).foundation({
       offcanvas : {
