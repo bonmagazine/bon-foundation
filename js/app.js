@@ -78,7 +78,7 @@ Bon = function() {
       if( $s.val() !== "" ) {
         $('form[role=search]').submit();
       } 
-      $s.toggleClass('focus');
+      $s.parent().toggleClass('focus');
     });
 
     // Start Orbit and top bar

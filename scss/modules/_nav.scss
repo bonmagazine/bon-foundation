@@ -151,20 +151,25 @@ form[role=search] {
     }
 
     .search-box {
-      float: left;
+      height: 2.5rem;
+      background: $bg-color;
+      z-index: 9999;
+      position: relative;
+      left: 0;
+      width: 0;
+      overflow: hidden;
+      transition: width 200ms linear;
+      
+      &.focus {
+        width: 150px;
+      }
     }
 
     input[type=text] {
-      width: 0px;
-      transition: width 200ms linear;
+      margin-top: 5px;
       background: none;
-      border: none;
-
-      &.focus {
-        width: 150px;
-        padding: 2px 5px 0px;
-        border-bottom: 1px solid #000; 
-      }
+      padding: 2px 5px 0px;
+      border-bottom: 1px solid #000; 
     }    
   }
 }
