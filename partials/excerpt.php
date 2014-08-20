@@ -22,7 +22,7 @@
     <?php if( in_category( array('short-post', 'ad') ) ): ?>
       <?php the_content(); ?>
     <?php else: ?>
-      <p><?php the_excerpt(); ?> <a class="read-more" href="<?php the_permalink(); ?>">»&nbsp;Läs mer</a></p>
+      <p><?php the_excerpt(); ?> <a class="read-more" href="<?php the_permalink(); ?>">»&nbsp;Läs&nbsp;mer</a></p>
     <?php endif; ?>
   </div>
 </article>

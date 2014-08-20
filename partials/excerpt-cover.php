@@ -38,7 +38,7 @@
       <?php else: ?>
         <p>
           <?php the_excerpt(); ?> 
-          <a class="read-more" href="<?php the_permalink(); ?>">»&nbsp;Läs mer</a>
+          <a class="read-more" href="<?php the_permalink(); ?>">»&nbsp;Läs&nbsp;mer</a>
         </p>
         
       <?php endif; ?>

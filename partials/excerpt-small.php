@@ -17,7 +17,7 @@
   <div class="content">
     <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
     <div class="author-and-date"><?php bon_the_entry_meta(); ?></div>
-    <p class="read-more"><a class="read-more" href="<?php the_permalink(); ?>">Läs mer</a></p>
+    <p class="read-more"><a class="read-more" href="<?php the_permalink(); ?>">Läs&nbsp;mer</a></p>
   </div>
 
 </article>
