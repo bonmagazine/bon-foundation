@@ -45,6 +45,7 @@
       .author, 
       .date {
         @extend %small-archive-h;
+        text-indent: 0;
       }
     }
 
