@@ -35,7 +35,6 @@ function bon_get_poster_posts() {
   $poster_args = array(
     'post_type' => 'bon_posters',
     'posts_per_page' => -1, 
-    'language' => 'SE',
     'meta_key' => 'end_date',
     'meta_value' => date("Y/m/d h:i A"),
     'meta_compare' => '>',
