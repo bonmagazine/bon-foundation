@@ -30,6 +30,7 @@ Bon = function() {
     var $skipBtn = $('.campaign-promo-wrap .btn-skip');
     if($skipBtn.length > 0) {
       $skipBtn.click(function(e) {
+        $('.campaign-promo-container').remove();
         $('body').removeClass('campaign-active');
       });
     }
