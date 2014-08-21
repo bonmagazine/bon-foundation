@@ -12,6 +12,9 @@ require_once('library/bon.php');
 // Add admin menu to manage cover order
 require_once('library/cover-order.php');
 
+// Add custom fields
+require_once('library/custom-fields.php');
+
 // Register all navigation menus
 require_once('library/navigation.php');
 
