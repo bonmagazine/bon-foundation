@@ -48,12 +48,12 @@ function bon_get_film_skin() {
 function bon_convert_to_protocol_relative($url) {
   $protocol_relative_url = str_replace('http://','//',$url);
   $protocol_relative_url = str_replace('https://','//',$protocol_relative_url);
-  return $url; //$protocol_relative_url;
+  return $protocol_relative_url;
 }
 
 function bon_get_film_src() {
   $src = get_post_meta( get_the_ID(), 'src', true );
-  return bon_convert_to_protocol_relative($src);
+  return $src; //bon_convert_to_protocol_relative($src);
 }
 
 function bon_the_film_base_src() {
