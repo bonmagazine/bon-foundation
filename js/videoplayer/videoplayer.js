@@ -16,7 +16,7 @@ VideoPlayer = function (opt) {
         parent = $videoPlayer.parent()[0].id,
         playlist = [{
           image: poster,
-          provider: "//mediapm.edgesuite.net/jw/support_player/v6/swf/AkamaiAdvancedJWStreamProvider.swf",
+          provider: "http://players.edgesuite.net/flash/plugins/jw/v3.4/AkamaiAdvancedJWStreamProvider.swf",
           type:'mp4'
           }],
         skins = {
