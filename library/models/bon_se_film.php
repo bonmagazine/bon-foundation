@@ -83,7 +83,7 @@ function bon_get_film_type() {
 }
 
 function bon_get_film_poster() {
-  $poster = wp_get_attachment_image_src( get_post_meta( get_the_ID(), 'poster', true ), 'tb' );
+  $poster = wp_get_attachment_image_src( get_post_meta( get_the_ID(), 'poster', true ), 'full' );
   return bon_convert_to_protocol_relative($poster[0]);
 }
 
