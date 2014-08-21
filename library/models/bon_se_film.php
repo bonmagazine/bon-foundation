@@ -87,11 +87,14 @@ function bon_get_film_poster() {
   return bon_convert_to_protocol_relative($poster[0]);
 }
 
-
-
 function bon_get_film_share_url() {
   $share_url = get_bloginfo('url').'/share?embed=video&vid='.get_the_ID();
   return $share_url;
+}
+
+function bon_get_film_field($field) {
+  $value = get_post_meta( get_the_ID(), $field, true );
+  return $value;
 }
 
 ?>

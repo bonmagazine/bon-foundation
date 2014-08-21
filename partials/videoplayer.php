@@ -8,7 +8,9 @@
 				 poster="<?php echo bon_get_film_poster(); ?>" 
 				 data-videotype="<?php echo bon_get_film_type() ?>" 
 				 data-skin="<?php echo bon_get_film_skin(); ?>" 
-				 data-permalink="<?php the_permalink(); ?>" > 
+				 data-permalink="<?php the_permalink(); ?>"
+				 data-share="<?php echo bon_get_film_field('share'); ?>"
+				 data-autostart="<?php echo bon_get_film_field('autostart'); ?>" > 
 		<?php $sources = bon_get_film_sources(); ?>
 		<?php foreach ($sources as $source): ?>
 		<source src="<?php echo $source ?>" />

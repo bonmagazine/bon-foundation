@@ -13,6 +13,7 @@ VideoPlayer = function (opt) {
         poster = $videoPlayer.attr('poster'),
         vpw = $videoPlayer.innerWidth(),
         vph = vpw * aspectRatio,
+        autostart = $videoPlayer.data().autostart,
         parent = $videoPlayer.parent()[0].id,
         playlist = [{
           image: poster,
@@ -59,6 +60,7 @@ VideoPlayer = function (opt) {
       skin: skinToUse,
       smoothing: true,
       primary: "flash",
+      autostart: autostart,
       //akamai support player configs.
       clipBegin : "",
       clipEnd : "",
