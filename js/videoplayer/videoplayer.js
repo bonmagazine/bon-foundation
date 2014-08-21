@@ -63,8 +63,6 @@ VideoPlayer = function (opt) {
       }
     }
 
-    console.log(playlist);
-
     // Initiate JW Player
     this.player = new jwplayer(parent).setup({
       playlist: playlist,
