@@ -21,8 +21,7 @@ VideoPlayer = function (opt) {
           }],
         skins = {
           bon: '/live/wp-content/themes/bon/libs/jwplayer/skins/bon/bon.xml',
-          plain: 'Five',
-          bekle: 'bekle'
+          plain: '/live/wp-content/themes/bon/libs/jwplayer/skins/bonplain/bonplain.xml'
         },
         skinToUse = ( skins[$videoPlayer.data().skin]? skins[$videoPlayer.data().skin] : skins.bon );
 
