@@ -1,3 +1,15 @@
+// General Utils
+Utils = {
+  searchArray: function(arr, obj) {
+    var res = false;
+    for(var i=0; i<arr.length; i++) {
+      var p = new RegExp(obj, "g");
+      if ( arr[i].src.match(p) ) res = i;
+    }
+    return res;
+  }
+}
+
 VideoPlayer = function (opt) {
  
   var that = this;
@@ -39,10 +51,10 @@ VideoPlayer = function (opt) {
     }
 
     if($videoPlayer.data().videotype === 'stream' ) { //Stream
-      // var hls = sources.eq( Utils.searchArray(sources, 'm3u8')).attr('src'),
-      //     hds = sources.eq( Utils.searchArray(sources, 'f4m')).attr('src');
-      var hls = sources.eq( $.inArray('m3u8', sources) ).attr('src'),
-          hds = sources.eq( $.inArray('f4m', sources) ).attr('src');
+      var hls = sources.eq( Utils.searchArray(sources, 'm3u8')).attr('src'),
+          hds = sources.eq( Utils.searchArray(sources, 'f4m')).attr('src');
+      // var hls = sources.eq( $.inArray('m3u8', sources) ).attr('src'),
+      //     hds = sources.eq( $.inArray('f4m', sources) ).attr('src');
       playlist[0].file = (iOS? hls : hds );
     } else { // VOD
       playlist[0].sources = [];
@@ -50,6 +62,8 @@ VideoPlayer = function (opt) {
         playlist[0].sources.push({file: sources.eq(i).attr('src')});
       }
     }
+
+    console.log(playlist);
 
     // Initiate JW Player
     this.player = new jwplayer(parent).setup({
