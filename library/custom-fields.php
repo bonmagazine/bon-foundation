@@ -3,7 +3,7 @@
 /*
  * Custom fields for bon_se_film
  *
- */
+ *
 
 if(function_exists("register_field_group"))
 {
@@ -114,3 +114,5 @@ if(function_exists("register_field_group"))
     'menu_order' => 2,
   ));
 }
+
+*/
