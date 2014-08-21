@@ -33,8 +33,8 @@ VideoPlayer = function (opt) {
           type:'mp4'
           }],
         skins = {
-          bon: '/live/wp-content/themes/bon/libs/jwplayer/skins/bon/bon.xml',
-          plain: '/live/wp-content/themes/bon/libs/jwplayer/skins/bonplain/bonplain.xml'
+          bon: '/live/wp-content/themes/bon-foundation/js/jwplayer/skins/bon/bon.xml',
+          plain: '/live/wp-content/themes/bon-foundation/js/jwplayer/skins/bonplain/bonplain.xml'
         },
         skinToUse = ( skins[$videoPlayer.data().skin]? skins[$videoPlayer.data().skin] : skins.bon );
 
