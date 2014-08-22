@@ -1,6 +1,8 @@
 @import "settings";
 
-// @import "foundation";
+// Vendor
+@import 
+    "vendor/slick";
 
 // Selectively include foundation components
 @import
@@ -8,7 +10,6 @@
   "foundation/components/dropdown",
   "foundation/components/flex-video",
   "foundation/components/grid",
-  "foundation/components/orbit",
   "foundation/components/top-bar",
   "foundation/components/offcanvas",
   "foundation/components/type",
