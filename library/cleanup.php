@@ -176,4 +176,31 @@ function line_output($atts) {
 }
 add_shortcode('line', 'line_output');
 
+
+// Prevent Tiny MCE stripping style tags
+
+function bon_tinymce_config( $options ) {
+    if ( ! isset( $options['extended_valid_elements'] ) ) {
+         $options['extended_valid_elements'] = 'style';
+     } else {
+         $options['extended_valid_elements'] .= ',style';
+     }
+
+     if ( ! isset( $options['valid_children'] ) ) {
+         $options['valid_children'] = '+body[style]';
+     } else {
+         $options['valid_children'] .= ',+body[style]';
+     }
+
+     if ( ! isset( $options['custom_elements'] ) ) {
+         $options['custom_elements'] = 'style';
+     } else {
+         $options['custom_elements'] .= ',style';
+     }
+
+     return $options;
+}
+add_filter('tiny_mce_before_init', 'bon_tinymce_config');
+
+
 ?>
