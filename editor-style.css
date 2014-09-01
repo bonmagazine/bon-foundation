@@ -62,6 +62,7 @@ p.fotocredit {
  font-size: 20px;
  line-height: 30px;
  letter-spacing: .7px;
+ text-indent: 0;
 }
 .ingress em {
 	font-family: "Value Sans Medium Italic", sans-serif;		
