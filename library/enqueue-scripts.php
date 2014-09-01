@@ -13,7 +13,7 @@ if (!function_exists('bon_scripts')) :
 
     wp_enqueue_script( 'foundation', get_template_directory_uri() . '/bower_components/foundation/js/foundation/foundation.js', array('jquery'), '1.0.0', true );
 
-    wp_enqueue_script( 'orbit', get_template_directory_uri() . '/bower_components/foundation/js/foundation/foundation.orbit.js', array('foundation'), '1.0.0', true );
+    wp_enqueue_script( 'slick', get_template_directory_uri() . '/bower_components/slick-carousel/slick/slick.js', array('jquery'), '1.0.0', true );
 
     wp_enqueue_script( 'dropdown', get_template_directory_uri() . '/bower_components/foundation/js/foundation/foundation.dropdown.js', array('foundation'), '1.0.0', true );
 
