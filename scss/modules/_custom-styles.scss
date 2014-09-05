@@ -704,7 +704,18 @@ div.about-list {
 
 		}
     }
-    
-
-  }
+  }    
 }  
+.bon_blogs {
+  > .entry-content {
+ 
+     img.fullwidth {
+        @media #{$m-up} {
+    	  width:($row-width - (2*$column-gutter));
+		  max-width: $row-width;
+		  margin-left: -($row-width/6);
+
+		}
+    }
+  }
+}

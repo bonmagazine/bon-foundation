@@ -1,4 +1,4 @@
-.blog-list {
+.bon-blog-list {
   .hentry {
     @include grid-column();
     padding-bottom: baseline(1);
@@ -46,6 +46,7 @@
 
   .entry-content p{
     @extend %large-archive-p;
+    margin-top: $baseline;
   }
 
 }
