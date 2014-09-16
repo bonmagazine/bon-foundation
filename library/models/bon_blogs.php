@@ -26,4 +26,35 @@ function bon_the_bon_blog_url() {
   echo "/blogs/". get_the_author_meta('user_nicename');
 }
 
+function bon_get_bon_blog_posts_by_date($author_ID) {
+
+  $bon_blog_posts_args = array(
+    'post_type' => 'bon_blogs',
+    'posts_per_page' => -1,
+    'orderby' => 'date',
+    'order' => 'DESC',
+    'author' => $author_ID
+   );
+  $collection = get_posts($bon_blog_posts_args);
+
+  $results = array();
+
+  // Loop through years, starting with present
+  for($year=date('Y'); $year>2012; $year--):
+    // Loop through months
+    for($month=12; $month>0; $month--):
+      // Loop through posts and compare to current year/month
+      foreach ( $collection as $post ):
+        // Continue unless months and years match
+        $post_year = date('Y', strtotime( $post->post_date ));
+        $post_month = date('n', strtotime( $post->post_date ));
+        if ( $post_year != $year || $post_month != $month ) continue;
+        $results[$year][$month][] = $post;
+      endforeach;
+    endfor;
+  endfor;
+
+  return $results;
+}
+
 ?>

@@ -33,6 +33,4 @@ function bon_add_bon_blogs_feed() {
 }
 add_action('wp_head', 'bon_add_bon_blogs_feed');
 
-
-
 ?>
