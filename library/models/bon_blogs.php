@@ -69,7 +69,6 @@ function bon_blogs_yearly_archive_hook($query) {
       $query->set( 'posts_per_page', -1 );
       return;
   }
-
 }
 
 ?>
