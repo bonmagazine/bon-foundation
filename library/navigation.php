@@ -10,7 +10,7 @@ function bon_register_menus() {
   $blogusers = get_users( 'role=bon_blogger' );
   // Array of WP_User objects.
   foreach ( $blogusers as $user ) {
-    $menus['bon-blog-menu-'.$user->display_name] = 'Bon blog Menu for '.$user->display_name;
+    $menus['bon-blog-menu-'.$user->user_nicename] = 'Bon blog Menu for '.$user->user_nicename;
   }
 
   register_nav_menus( $menus );
