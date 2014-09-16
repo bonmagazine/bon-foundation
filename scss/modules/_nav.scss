@@ -330,14 +330,14 @@ form[role=search] {
 }
 
 .nav-menu {
-  @extend %expandable-nav;
+  // @extend %expandable-nav;
 }
 
 .has-dropdown {
-  @extend %expandable-nav-item;
+  // @extend %expandable-nav-item;
 }
 
 .sub-menu {
-  @extend %expandable-nav-sub-menu;
+  // @extend %expandable-nav-sub-menu;
 }
 
