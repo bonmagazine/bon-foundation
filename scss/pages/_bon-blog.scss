@@ -143,3 +143,21 @@ body.single-bon_blogs {
   clear: both;
   display: block;
 }
+
+.archive-compact {
+  .hentry.bon_blogs {
+    margin-top: 0;
+
+    h2.entry-title  {
+      margin-top: 0;
+      @extend %small-archive-h;
+      text-align: left;
+    }
+    .entry-content {
+      display: none;
+    }
+    .date {
+      display: none;
+    }
+  }
+}

@@ -25,5 +25,4 @@ function bon_body_class($classes) {
   return $classes;
 }
 
-
 ?>
