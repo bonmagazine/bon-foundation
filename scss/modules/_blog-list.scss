@@ -49,3 +49,9 @@
   }
 
 }
+.bon-blog-list {
+  .entry-content p{
+    @extend %large-archive-p;
+    margin-top: $baseline;
+  }
+}

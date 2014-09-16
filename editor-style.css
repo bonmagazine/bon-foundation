@@ -1,9 +1,110 @@
 @import url("http://f.fontdeck.com/s/css/usizZWFdN2CyQNkbgHeoeWIoXHw/bon.se/30102.css");
-.topmarginp {margin-top: 18px; text-indent:0;}
-.noindentp {text-indent:0;}
+
+body, td, pre, p {color:#000; font-family:"Archive Pro Roman", serif; font-size:18px; margin:8px; line-height:1.25em;}
+body#tinymce {
+	width:720px;
+	margin:0px auto;
+}
+p {
+	margin:0;
+	text-indent: 48px;
+    font-family: "Archive Pro Roman", serif	
+}
+p em {
+	font-family: "Archive Pro Italic", serif	
+}
+p.noindentp {
+	text-indent:0;
+}
+p.topmarginp {
+	text-indent: 0;
+	margin-top: 16px;
+}
+p.questionp {
+  font-family: "Value Sans Medium", "Value", sans-serif;
+  letter-spacing: 0.8px;
+  text-indent: 0;
+  margin-left: 48px; 
+}
+p.questionp em {
+	font-family: "Value Sans Medium Italic", sans-serif;	
+}
+.austinlight {
+ font-family: "Value Sans Light", sans-serif;
+}
+.austinmedium {
+ font-family: "Value Serif", serif;
+}
+.marialistarubrik {
+	text-transform:uppercase;
+	font-family: "Value Sans Light", sans-serif;
+	letter-spacing: 1px;
+	padding-right: 10px;
+}
+
+.humanist {
+ font-family: "Value Sans Medium", sans-serif;
+}
+.humanist em {
+	font-family: "Value Sans Medium Italic", sans-serif;	
+}
+
+	
+p.fotocredit {
+ font-family: "Value Sans Medium", sans-serif;
+ font-size:14px;
+}
+.fotocredit .austinmedium {
+ font-size: 16px;
+}
 .ingress {
-font-size: 20px;
-line-height: 30px;
-letter-spacing: 1.2px;
-margin-bottom: 1.5rem;
+ font-family: "Value Sans Bold", sans-serif;
+ font-size: 20px;
+ line-height: 30px;
+ letter-spacing: .7px;
+ text-indent: 0;
+}
+.ingress em {
+	font-family: "Value Sans Medium Italic", sans-serif;		
+}
+
+.listsiffra {
+text-align: center;
+margin-top: -60px;
+ font-family: "Value Sans Bold", sans-serif;
+font-size:124px;
+text-indent: 0 !important;	
+}
+.largeingress {
+ font-family: "Value Sans Bold", sans-serif;
+ font-size: 30px !important;
+ line-height: 28px !important;
+ letter-spacing: 0;
+}
+
+span.dropcap {
+ float: left;
+ font-size: 145px;
+ margin-right: 5px;
+ padding-right: 8px;
+ 
+}
+
+.delimiter {
+	width:80px; 
+	text-indent:-9999px; 
+	height:6px; 
+	background:black; 
+	margin-top: 21px; 
+	margin-bottom: 21px; 
+	margin-left:48px; 
+}
+img.fullwidth {
+	margin-left:-170px;
+	width:960px !important;
+	height:auto !important;	
+}
+.post-type-bon_blogs p {
+text-indent:0;
+margin-top:30px;
 }

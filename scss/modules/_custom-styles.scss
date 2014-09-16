@@ -693,3 +693,29 @@ div#about-right hr {
 div.about-list { 
   @media #{$l-up} { margin-left:240px; }
 }
+.single-main {
+  > .post {
+ 
+     img.fullwidth {
+        @media #{$m-up} {
+    	  width:($row-width - (2*$column-gutter));
+		  max-width: $row-width;
+		  margin-left: -($row-width/6);
+
+		}
+    }
+  }    
+}  
+.bon_blogs {
+  > .entry-content {
+ 
+     img.fullwidth {
+        @media #{$m-up} {
+    	  width:($row-width - (2*$column-gutter));
+		  max-width: $row-width;
+		  margin-left: -($row-width/6);
+
+		}
+    }
+  }
+}
