@@ -87,12 +87,17 @@ Bon = function() {
       $(this).parent().toggleClass('open');
     });
 
-    // Start Orbit and top bar
+    // Start Orbit and top bar and dropdown
     $(document).foundation({
       offcanvas : {
         open_method: 'overlap',
         close_on_click: false
-      }
+      },
+      dropdown: {
+          // specify the class used for active dropdowns
+          is_hover: 'true',
+          align: 'right'
+        }
     });
 
     $('.poster-wrapper').slick({

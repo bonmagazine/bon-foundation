@@ -302,9 +302,23 @@ form[role=search] {
   }
 }
 
+:focus {
+  outline: none;
+}
+
 .left-off-canvas-menu {
-  .offcanvas-overlap & {
-    box-shadow: 5px 0px 5px 0px rgba(50, 50, 50, 0.4);
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,1) 0%,
+    rgba(255,255,255,1) 16.95rem,
+    rgba(80,80,80,0.3) 16.95rem,
+    rgba(80,80,80,0.3) 17.1rem,
+    transparent 17.1rem
+    );
+
+  .menu-main-menu-container {
+    max-width: 17rem;
   }
 
   h1 {

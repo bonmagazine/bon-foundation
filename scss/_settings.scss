@@ -436,7 +436,7 @@ $include-html-button-classes: $include-html-modules;
 $include-html-dropdown-classes: true;
 
 // We use these to controls height and width styles.
-$f-dropdown-max-width: 400px;
+$f-dropdown-max-width: 300px;
 // $f-dropdown-height: auto;
 // $f-dropdown-max-height: none;
 
@@ -444,7 +444,7 @@ $f-dropdown-max-width: 400px;
 // $f-dropdown-margin-top: 2px;
 
 // Used for right position
-// $f-dropdown-margin-left: $f-dropdown-margin-top;
+$f-dropdown-margin-left: 10px; //$f-dropdown-margin-top;
 
 // Used for left position
 // $f-dropdown-margin-right: $f-dropdown-margin-top;
@@ -456,9 +456,9 @@ $f-dropdown-max-width: 400px;
 // $f-dropdown-bg: #fff;
 
 // We use this to set the border styles for dropdowns.
-// $f-dropdown-border-style: solid;
-// $f-dropdown-border-width: 1px;
-// $f-dropdown-border-color: scale-color(#fff, $lightness: -20%);
+$f-dropdown-border-style: none; //solid;
+$f-dropdown-border-width: 0px;
+$f-dropdown-border-color: #000;
 
 // We use these to style the triangle pip.
 // $f-dropdown-triangle-size: 6px;

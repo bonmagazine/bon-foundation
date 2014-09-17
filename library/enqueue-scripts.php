@@ -21,6 +21,8 @@ if (!function_exists('bon_scripts')) :
 
     wp_enqueue_script( 'offcanvas', get_template_directory_uri() . '/bower_components/foundation/js/foundation/foundation.offcanvas.js', array('foundation'), '1.0.0', true );
 
+    wp_enqueue_script( 'dropdown', get_template_directory_uri() . '/bower_components/foundation/js/foundation/foundation.dropdown.js', array('foundation'), '1.0.0', true );
+
     wp_enqueue_script( 'masonry', get_template_directory_uri() . '/bower_components/masonry/dist/masonry.pkgd.min.js', '', '1.0.0', true );
 
     wp_enqueue_script( 'waypoints', get_template_directory_uri() . '/bower_components/jquery-waypoints/waypoints.min.js', array('jquery'), '1.0.0', true );
