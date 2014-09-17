@@ -245,6 +245,13 @@
       margin-bottom: baseline();
     }
   }
+
+  // Ads
+  .category-ad {
+    .entry-excerpt { 
+      @include grid-column(12);
+    }
+  }
 }
 
 .home {
