@@ -7,7 +7,9 @@
 </div>
 <?php endif; ?>
 <script>
-var $dest = document.querySelector(".entry-content p:nth-child(3)"),
-    $ad = document.querySelector(".article-insert");
-$dest.appendChild($ad);
+var p = document.querySelectorAll(".entry-content p"),
+    ad = document.querySelector(".article-insert"),
+    dest = (p.length > 5)? document.querySelector(".entry-content p:nth-child(4)") 
+                         : document.querySelector(".entry-content p:last-child()");
+dest.appendChild(ad);
 </script>
