@@ -334,10 +334,10 @@ form[role=search] {
 }
 
 .has-dropdown {
-  // @extend %expandable-nav-item;
+  @extend %expandable-nav-item;
 }
 
 .sub-menu {
-  // @extend %expandable-nav-sub-menu;
+  @extend %expandable-nav-sub-menu;
 }
 

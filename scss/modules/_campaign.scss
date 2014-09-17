@@ -61,3 +61,10 @@ body.campaign-active {
 .top-banner {
   margin: -1.25rem 0 1.25rem -1.25rem;
 }
+
+.article-insert {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  padding: baseline() 0;
+  margin: baseline() 0;
+}

@@ -19,6 +19,8 @@
       </header>
       <div class="entry-content">
         <?php the_content(); ?>
+
+        <?php get_template_part( 'partials/campaigns/articleinsert' ); ?>
       </div>
       <footer class="entry-tags">
         <?php echo get_the_term_list(get_the_ID(), 'bon_blogs_tag', '<p><span class="small-sys-title">Taggar – </span>', ', ', '</p>'); ?>
