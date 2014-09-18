@@ -101,10 +101,6 @@
   }
 }
 
-.left-off-canvas-menu {
-  position: fixed;
-  transition: all 500ms ease 0s;
-}
 
 /*
  *  Icons
@@ -205,77 +201,9 @@ form[role=search] {
 }
 
 
-/* 
- *
- * Static Nav (for home page)
- * Vertical dropdown on hover
- *
- */
-
-%nav-with-dropdown {
-  > li.has-dropdown:hover {
-    background: white;
-
-    li {
-      display: block;
-    }
-
-    .dropdown {
-      display: block;
-    }
-  }
-}
-
-%top-level-item {
-  list-style: none;
-  margin: 0;
-  display: inline;
-  position: relative;
-  padding: baseline(0.25) 0;
-}
-
-%top-level-item-title { 
-  @extend %small-grotesque-h;
-  letter-spacing: 0.2em;
-  line-height: $baseline;
-  font-size: 15px;
-  padding: baseline(0.25) $indent/6;
-
-  cursor: pointer;
-
-  display: inline;
-}
-
-%dropdown {
-  width: 250px;
-
-  position: absolute;
-  left: 0;
-  top: baseline(1.10) ;
-
-  margin: 0;
-  padding: baseline(0.25) $indent/4;
-  background: white;
-  z-index: 99;
-
-  display:none;
-}
-
-%second-level-item-title {
-  text-transform: none;
-  letter-spacing: 0;
-  text-indent: 0;
-  padding: $baseline/2 0;
-
-  display: block;
-  text-decoration: none;
-  color: #000;
-  letter-spacing: 2px;
-}
-
 /*
  *
- * Vertical menu expandable on click
+ * Off canvas menu
  *
  */
 
@@ -284,7 +212,10 @@ form[role=search] {
   outline: none;
 }
 
+
 .left-off-canvas-menu {
+  position: fixed;
+  transition: all 500ms ease 0s;
   box-shadow: 5px 5px 0 0 rgba(80,80,80,0.3);
 
   @media #{$m-up} {
@@ -327,20 +258,25 @@ form[role=search] {
     font-size: 1em;
     float: right;
   }
-  &.expanded > a:after {
-    content: " » =";
+  &.expanded-vertically > a:after {
+    content: " x";
   }
 }
 
+// Vertical Menu for Mobile
 @media #{$to-m} {
-  .open.dropdown {
-    position: static !important;
-    width: auto !important;
-    box-shadow: 0 0 0 0 !important;
-    border: none !important;
-    li a { 
-      padding-left: 2em;
+  ul.off-canvas-list {
+    .dropdown {
+      display: none;
+      margin: 0;
+      li a { 
+        padding-left: 2em;
+      }
+    }
+    .expanded-vertically .dropdown {
+      display: block;
     }
   }
 }
+
 

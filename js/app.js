@@ -58,20 +58,6 @@ Bon = function() {
       })
     }
 
-    // Off canvas nav
-    // $('.left-off-canvas-menu')
-    //   .find('.has-dropdown > a')
-    //     .click( function(e) {
-    //       e.preventDefault();
-    //       $(this).parent().toggleClass('expanded');
-    //     })
-    //     .end()
-    //   .find('.off-canvas-title a')
-    //     .click(function(e){
-    //       e.preventDefault();
-    //       $('.off-canvas-wrap').removeClass('offcanvas-overlap');
-    //     });  
-
     // Search label
     $('label.search-nav-title').click(function(e){
       $s = $('#s');
@@ -87,6 +73,29 @@ Bon = function() {
       $(this).parent().toggleClass('open');
     });
 
+    // Mobile specific 
+    if(!matchMedia(Foundation.media_queries['medium']).matches) {
+      // Disable dropdown nav
+      $(".left-off-canvas-menu")
+        .find('[data-dropdown]').removeAttr('data-dropdown').end()
+        .find('.f-dropdown').removeClass('f-dropdown');
+
+      // Vertically Expandable nav
+      $('.left-off-canvas-menu')
+        .find('.has-dropdown > a')
+          .click( function(e) {
+            e.preventDefault();
+            $(this).parent().toggleClass('expanded-vertically');
+          });
+    }
+
+    // Collapse nav when title is clicked
+    $('.off-canvas-title a')
+      .click(function(e){
+        e.preventDefault();
+        $('.off-canvas-wrap').removeClass('offcanvas-overlap');
+      });   
+
     // Start Orbit and top bar and dropdown
     $(document).foundation({
       offcanvas : {
@@ -94,7 +103,6 @@ Bon = function() {
         close_on_click: false
       },
       dropdown: {
-          // specify the class used for active dropdowns
           is_hover: 'true',
           align: 'right'
         }
