@@ -59,18 +59,18 @@ Bon = function() {
     }
 
     // Off canvas nav
-    $('.left-off-canvas-menu')
-      .find('.has-dropdown > a')
-        .click( function(e) {
-          e.preventDefault();
-          $(this).parent().toggleClass('expanded');
-        })
-        .end()
-      .find('.off-canvas-title a')
-        .click(function(e){
-          e.preventDefault();
-          $('.off-canvas-wrap').removeClass('offcanvas-overlap');
-        });  
+    // $('.left-off-canvas-menu')
+    //   .find('.has-dropdown > a')
+    //     .click( function(e) {
+    //       e.preventDefault();
+    //       $(this).parent().toggleClass('expanded');
+    //     })
+    //     .end()
+    //   .find('.off-canvas-title a')
+    //     .click(function(e){
+    //       e.preventDefault();
+    //       $('.off-canvas-wrap').removeClass('offcanvas-overlap');
+    //     });  
 
     // Search label
     $('label.search-nav-title').click(function(e){
