@@ -109,6 +109,18 @@
       max-width: 100%; //$row-width;
     }
   }
+
+  figcaption {
+    font-size: 16px;
+    line-height: 22px;
+    font-family: "Value Sans Medium", sans-serif;
+    font-weight: 500;
+
+    b {
+      font-family: "Value Serif Regular", serif;
+      font-weight: 600;
+    }
+  }
 }
 
 .single-main > .post,
