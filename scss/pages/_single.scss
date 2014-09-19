@@ -56,7 +56,7 @@
         @include grid-column(1, $collapse: true);
       }
       @media #{$m-up} {
-        @include grid-column(2, $collapse: true);
+        @include grid-column(1.5, $collapse: true);
       }
     }
 
@@ -87,7 +87,7 @@
       @include grid-column(10);
     }
     @media #{$m-up} {
-      @include grid-column(8);
+      @include grid-column(9);
     }
   }
 }
