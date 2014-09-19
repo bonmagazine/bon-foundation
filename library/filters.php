@@ -40,7 +40,6 @@ function bon_img_caption_shortcode_filter($dummy, $attr, $content) {
   return '<figure ' . $atts['id'] . ' class="' . esc_attr( $class ) . '">'
       . do_shortcode( $content ) . '<figcaption class="wp-caption-text">' . $atts['caption'] . '</figcaption></figure>';
 
-
   // Return nothing to allow for default behaviour!!!
   return '';
 }
