@@ -45,6 +45,9 @@ require_once('library/post-types.php');
 // Add User Profile extra fields
 require_once('library/user-profile.php');
 
+// Filters for content
+require_once('library/filters.php');
+
 /*
  *
  * MODELS

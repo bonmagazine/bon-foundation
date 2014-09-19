@@ -97,3 +97,23 @@
   // margin-right: 0.25em;
 }
 
+.figure-in-hentry {
+  text-align: center;
+  @media #{$m-up} {
+    width: ($row-width - (2*$column-gutter));
+    margin-left: -($row-width/6);
+    text-align: center;
+
+    img {
+      // width: 800px; //($row-width - (2*$column-gutter));
+      max-width: 100%; //$row-width;
+    }
+  }
+}
+
+.single-main > .post,
+.bon_blogs > .entry-content {
+  img.fullwidth {
+
+  }
+}
