@@ -16,6 +16,7 @@
 	<div class="entry-content">
 		<?php the_content(__('Continue reading...', 'bon')); ?>
 	</div>
-	<footer class="entry-footer">
+	<footer class="entry-tags">
+	  <?php echo get_the_term_list(get_the_ID(), 'bon_blogs_tag', '<p><span class="small-sys-title">Taggar – </span>', ', ', '</p>'); ?>
 	</footer>
 </article>
