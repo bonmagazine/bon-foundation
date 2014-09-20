@@ -572,7 +572,7 @@ div.panel_title {
   @extend %serif;
   letter-spacing: 0.8px;
   text-indent: 0;
-  margin-left: $indent; 
+  padding-left: $indent; 
 }
 .bonbon_container img {
   display: block !important;
