@@ -42,7 +42,7 @@ Bon = function() {
     }
 
     // Sticky header for bon blogs
-    var $bonBlogs = $('body.post-type-archive-bon_blogs,body.single-bon_blogs');
+    var $bonBlogs = $('body.post-type-archive-bon_blogs,body.single-bon_blogs,body.single-bon_blogs_pages');
     if($bonBlogs.length > 0) {
       $sticky = $('.sticky');
       $sticky.waypoint('sticky', {offset: $sticky.css('top')});
