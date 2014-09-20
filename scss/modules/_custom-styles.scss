@@ -346,13 +346,18 @@ hr.separator {
   } 
 
   &.delimiter {
-    width:80px; 
     text-indent:-9999px; 
-    height:6px; 
-    background:black; 
-    margin-top: ($baseline * 1.5) - 3px; 
+    margin-top: 6px; 
     margin-bottom: ($baseline * 1.5) - 3px; 
-    margin-left:$indent; 
+
+    &:after {
+      content: "";
+      display: block;
+      width:80px; 
+      background: black;
+      height: 6px;
+      margin-left: $indent;
+    }
   }
 }
 
