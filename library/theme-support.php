@@ -9,6 +9,10 @@ function bon_theme_support() {
     // Add post thumbnail support: http://codex.wordpress.org/Post_Thumbnails
     add_theme_support('post-thumbnails');
     set_post_thumbnail_size( 300 );
+    update_option('medium_size_w', 680);
+    update_option('medium_size_h', 1000);
+    update_option('large_size_w', 800);
+    update_option('large_size_h', 1200);
 
     // New image sizes
     add_image_size('cover-big', 780, 9999); // Front Cover Big image
