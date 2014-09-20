@@ -165,6 +165,10 @@
       }
     }
     
+    .title {
+      @extend %small-medium-archive-h;
+    }
+    
     .entry-excerpt { 
       @media #{$s-up} {
         @include grid-column(12);
