@@ -743,9 +743,9 @@ $tabbar-menu-icon-width: 2rem; //$tabbar-height;
 $tabbar-menu-icon-height: 2rem; //$tabbar-height;
 // $tabbar-menu-icon-padding: 0;
 
-// $tabbar-hamburger-icon-width: rem-calc(16);
-$tabbar-hamburger-icon-left: false;
-$tabbar-hamburger-icon-top: 8px;
+$tabbar-hamburger-icon-width: rem-calc(15);
+$tabbar-hamburger-icon-left: 8px;
+$tabbar-hamburger-icon-top: 9px;
 // $tabbar-hamburger-icon-thickness: 1px;
 $tabbar-hamburger-icon-gap: 5px;
 
