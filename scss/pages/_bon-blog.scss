@@ -32,13 +32,16 @@ body.single-bon_blogs {
   h1 {
     @extend %large-archive-h;
     margin-bottom: 0;
-    padding-top: baseline(7);
-
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 
-    a { color: white; }
+    a { 
+      color: white; 
+      padding-top: baseline(7);
+      display: block;
+    }
+
   }
   p {
     display: none;
