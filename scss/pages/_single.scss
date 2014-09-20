@@ -51,12 +51,11 @@
 
     .entry-social {
       display: none;
-      @media #{$s-up} {
+      position: absolute;
+
+      @media #{$m-up} {
         display: block;
         @include grid-column(1, $collapse: true);
-      }
-      @media #{$m-up} {
-        @include grid-column(1.5, $collapse: true);
       }
     }
 
@@ -64,9 +63,10 @@
       margin-top: baseline(2);
       @include grid-column(12);
 
-      @media #{$m-up} { 
-        @include grid-column(8, $offset: 2);
-      }
+      // @media #{$m-up} { 
+      //   @include grid-column(8, $offset: 2);
+      // }
+
       p {
         @extend %medium-archive-p;
       }
@@ -82,26 +82,33 @@
   }
 
   .type-post .entry-content {
-    @include grid-column();
-    @media #{$s-up} {
-      @include grid-column(10);
-    }
-    @media #{$m-up} {
-      @include grid-column(9);
-    }
+    @include grid-column(12);
+    // @media #{$s-up} {
+    //   @include grid-column(10);
+    // }
+    // @media #{$m-up} {
+    //   @include grid-column(9);
+    // }
   }
 }
 
-.label {
-  // @extend %small-grotesque-h;
-  // margin-right: 0.25em;
+.entry-content,
+.entry-footer {
+  // Limit text width to THE MEASURE
+  h1, h2, h3, p, ul, hr {
+    max-width: rem-calc(680);
+    margin: 0 auto;
+  }
 }
 
 .figure-in-hentry {
   text-align: center;
+  margin-top: baseline();
+  margin-bottom: baseline();
+  
   @media #{$m-up} {
-    width: ($row-width - (2*$column-gutter));
-    margin-left: -($row-width/6);
+    // width: ($row-width - (2*$column-gutter));
+    // margin-left: - 130px;
     text-align: center;
 
     img {
