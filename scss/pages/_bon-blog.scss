@@ -84,12 +84,13 @@ body.single-bon_blogs {
 
 .hentry.bon_blogs {
   margin-top: baseline(4);
-  @media #{$s-up} {
-    @include grid-column(10, $offset: 1);
-  }
-  @media #{$m-up} {
-    @include grid-column(8, $offset: 2);
-  }
+
+  // @media #{$s-up} {
+  //   @include grid-column(10, $offset: 1);
+  // }
+  // @media #{$m-up} {
+  //   @include grid-column(8, $offset: 2);
+  // }
 
   &:first-child {
     margin-top: baseline();
