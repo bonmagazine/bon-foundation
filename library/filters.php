@@ -7,10 +7,10 @@
  */
 
 // Clean up image tags and use figure el
-function bon_html5_insert_image($html, $id, $caption, $title, $align, $url) {
-    $url = wp_get_attachment_url($id);
-    $html5 = "<figure id='post-$id media-$id' class='figure-in-hentry align-$align'>";
-    $html5 .= "<img src='$url' alt='$title' />";
+function bon_html5_insert_image($html, $id, $caption, $title, $align, $url, $size, $alt) {
+    $image_src = wp_get_attachment_image_src($id, $size);
+    $html5 = "<figure id='post-$id media-$id' class='figure-in-hentry align-$align size-$size'>";
+    $html5 .= "<img src='$image_src[0]' alt='$title' class='size-$size' />";
     if($caption) $html5 .= "<figcaption>$caption</figcaption>";
     $html5 .= "</figure>";
     return $html5;
