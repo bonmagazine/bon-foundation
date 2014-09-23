@@ -56,6 +56,7 @@
       @media #{$m-up} {
         display: block;
         @include grid-column(1, $collapse: true);
+        padding-right: 2em;
       }
     }
 
