@@ -64,10 +64,6 @@
       margin-top: baseline(2);
       @include grid-column(12);
 
-      // @media #{$m-up} { 
-      //   @include grid-column(8, $offset: 2);
-      // }
-
       p {
         @extend %medium-archive-p;
       }
@@ -84,12 +80,6 @@
 
   .type-post .entry-content {
     @include grid-column(12);
-    // @media #{$s-up} {
-    //   @include grid-column(10);
-    // }
-    // @media #{$m-up} {
-    //   @include grid-column(9);
-    // }
   }
 }
 
@@ -108,12 +98,9 @@
   margin-bottom: baseline();
   
   @media #{$m-up} {
-    // width: ($row-width - (2*$column-gutter));
-    // margin-left: - 130px;
     text-align: center;
 
     img {
-      // width: 800px; //($row-width - (2*$column-gutter));
       max-width: 100%; //$row-width;
     }
   }
