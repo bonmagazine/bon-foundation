@@ -108,11 +108,24 @@ body.single-bon_blogs {
     }
   }
 
-  .social {
-    float: left;
-    width: 200px;
-    margin-top: $baseline;
-    margin-bottom: $baseline;
+  .entry-footer {
+    max-width: 42.5rem;
+    margin: baseline() auto;
+    
+    .entry-social {
+      @include grid-column(12);
+    }
+  }
+
+  .entry-social {
+    margin-top: baseline();
+    display: none;
+
+    @media #{$m-up} {
+      display: block;
+      @include grid-column(1, $collapse: true);
+      padding-right: 2em;
+    }
 
     span {
       margin: 0 20px 0 0;
@@ -120,14 +133,6 @@ body.single-bon_blogs {
     }
   }
 
-  .tags {
-    float: left;
-    width: 300px;
-    margin-top: $baseline;
-    h1 {
-      float: left;
-    }
-  }
 }
 
 #disqus_thread {
