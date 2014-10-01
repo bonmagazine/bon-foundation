@@ -4,12 +4,10 @@
 .bon-blog-list {
   @include grid-row();
   position: relative;
-
 }
 
 body.post-type-archive-bon_blogs,
 body.single-bon_blogs {
-
   .inner-wrap {
     padding-top: 0;
   }
