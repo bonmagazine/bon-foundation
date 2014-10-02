@@ -54,6 +54,14 @@
           margin-bottom: baseline(0.5);
         }
       }
+      .front-page-template-3 {
+	      .author {
+	        @media #{$s-up} { 
+	          line-height: baseline(1);
+	          margin-bottom: baseline(0.5);	      
+			}
+	      }
+      }
     }
     .main {
       @include grid-row();
@@ -186,7 +194,12 @@
     div.body {
       @include sans-serif-small-text; 
     }
-
+    .author {
+    @media #{$s-up} { 
+      line-height: baseline(1) !important;
+      margin-top: baseline(.25);
+     }
+    }
     & + .front-page-template-3 {
       margin-right: 0;
       padding-left: 0;
