@@ -4,11 +4,16 @@
 add_action('pre_get_posts','bon_se_film_hook');
 add_action('pre_get_posts','bonbon_hook');
 add_action('pre_get_posts','bon_landing_hook');
+add_action('pre_get_posts','bon_blogs_yearly_archive_hook');
 
-// Add query variable vid and embed to allowed list (for embed videos)
 function add_query_vars_filter( $vars ){
+  // Add query variable vid and embed to allowed list (for embed videos)
   $vars[] = "vid";
   $vars[] = "embed";
+
+  // Bon blog yearly archive
+  $vars[] = "yearly";
+
   return $vars;
 }
 add_filter( 'query_vars', 'add_query_vars_filter' );
