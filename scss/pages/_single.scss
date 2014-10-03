@@ -86,7 +86,7 @@
 .entry-content,
 .entry-footer {
   // Limit text width to THE MEASURE
-  h1, h2, h3, p, ul, hr {
+  h1, h2, h3, h4, h5, h6, p, ul, hr {
     max-width: rem-calc(680);
     margin: 0 auto;
   }

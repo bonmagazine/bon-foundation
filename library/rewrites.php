@@ -23,6 +23,11 @@ function bon_blogs_rewrite() {
                    'index.php?bon_blogs_tag=$matches[1]&post_type=bon_blogs&paged=$matches[2]',
                    'top');
 
+  // Bon Blog Yearly Archive
+  add_rewrite_rule('^blogs/([^/]*)/archive/?',
+                   'index.php?author_name=$matches[1]&post_type=bon_blogs&yearly=1',
+                   'top');
+
   // Bon Blog Tag front page
   add_rewrite_rule('^blogs/tag/([^/]*)/?',
                    'index.php?bon_blogs_tag=$matches[1]&post_type=bon_blogs',

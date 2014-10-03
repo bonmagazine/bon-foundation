@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-  <div class="archive-main main archive-compact" role="main">
+  <div class="archive-main main <?php if( get_query_var('yearly') ): ?>archive-compact<?php endif; ?>" role="main">
 
     <?php get_template_part( 'partials/header', 'bon_blogs' ); ?>
 
@@ -10,37 +10,33 @@
     </div>
   <?php endif; ?>
 
-  <?php /*
-  <?php $posts_by_date = bon_get_bon_blog_posts_by_date( get_the_author_meta( 'ID' ) ); ?>
-  <?php foreach ( $posts_by_date as $year_key => $y ): ?>
-    <h1><?php echo $year_key; ?></h1>
-    <?php foreach ( $y as $month_key => $m ): ?>
-      <h2><?php echo $month_key; ?></h2>
-      <?php foreach ( $m as $post ): ?>
-        <p><a href="<?php the_permalink(); ?>"><?php echo $post->post_title; ?></a></p>
-      <?php endforeach; ?>
-    <?php endforeach; ?>
-  <?php endforeach; ?>
-  */ ?>
-
   <?php if ( have_posts() ) : ?>
     <section id="blog-list" class="bon-blog-list infinite-scroll">
+
       <?php $index_date = new DateTime("+12 months"); ?>
+
       <?php while ( have_posts() ) : the_post(); ?>
-        <?php $post_date = new DateTime( $post->post_date ); ?>
-        <?php if ( $index_date->format('Y') !== $post_date->format('Y') ): $index_date = $post_date; ?>
-          <h1 class="hentry bon_blogs year date-separator">
-            <?php echo $post_date->format('Y'); ?>
-          </h1>
+
+        <?php if( get_query_var('yearly') == 1 ): // Dates for yearly archive ?>
+          <?php $post_date = new DateTime( $post->post_date ); ?>
+          <?php if ( $index_date->format('Y') != $post_date->format('Y') ): $index_date = $post_date; ?>
+            <h1 class="hentry year date-separator small-sys-title">
+              <?php echo $post_date->format('Y'); ?>
+            </h1>
+            <h2 class="hentry month date-separator small-sys-title">
+              <?php echo $post_date->format('F'); ?>
+            </h2>
+          <?php elseif (  $index_date->format('n') !== $post_date->format('n') ): $index_date = $post_date; ?>
+            <h2 class="hentry month date-separator small-sys-title">
+              <?php echo $post_date->format('F'); ?>
+            </h2>
+          <?php endif; ?>
         <?php endif; ?>
-        <?php if (  $index_date->format('n') !== $post_date->format('n') ): $index_date = $post_date; ?>
-          <h2 class="hentry bon_blogs month date-separator">
-            <?php echo $post_date->format('n'); ?>
-          </h2>
-        <?php endif; ?>
+
         <?php get_template_part( 'partials/content', 'bon_blogs' ); ?>
       <?php endwhile; ?>
     </section>
+    <?php if( get_query_var('yearly') !== 1 ): // hide disqus from yearly archive?>
     <script type="text/javascript">
     var disqus_shortname = 'bonmagazine';
     (function () {
@@ -50,6 +46,7 @@
     (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
     </script>
+    <?php endif;?>
   <?php endif;?>
 
     <nav id="nav-below">
@@ -61,6 +58,6 @@
       </div>
     </nav>
 
-  </div>
+  </div><!-- .main -->
     
 <?php get_footer(); ?>

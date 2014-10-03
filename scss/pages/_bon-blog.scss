@@ -145,13 +145,31 @@ body.single-bon_blogs {
 }
 
 .archive-compact {
+
+  .date-separator {
+    text-align: center;
+    margin-top: baseline(2);
+
+    & + .date-separator {
+      margin-top: 0;
+    }
+  }
+
+  .date-separator + .hentry.bon_blogs {
+    margin-top: baseline();
+  }
+
   .hentry.bon_blogs {
     margin-top: 0;
 
     h2.entry-title  {
-      margin-top: 0;
       @extend %small-archive-h;
       text-align: left;
+      max-width: rem-calc(680);
+      margin: 0 auto;
+    }
+    .entry-footer {
+      display: none;
     }
     .entry-content {
       display: none;

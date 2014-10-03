@@ -57,4 +57,19 @@ function bon_get_bon_blog_posts_by_date($author_ID) {
   return $results;
 }
 
+// Hook for yearly archive query
+function bon_blogs_yearly_archive_hook($query) {
+
+  // Retrieve all posts organised by year and month
+  // !is_admin() prevents the backend query being modified
+  if ( $query->is_main_query()
+    && get_query_var('yearly') == 1
+    && !is_admin()
+    ) {
+      $query->set( 'posts_per_page', -1 );
+      return;
+  }
+
+}
+
 ?>
