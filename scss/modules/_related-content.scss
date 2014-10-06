@@ -55,6 +55,8 @@
 
     .bio {
       margin-bottom: baseline();
+      margin-top: -(baseline());
+      @extend %small-grotesque-h;      
     }
 
     .post {

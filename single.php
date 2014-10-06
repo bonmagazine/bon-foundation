@@ -41,7 +41,7 @@
       <?php if($author_posts): ?>
       <section class="same-author-posts">
         <h1 class="aside-title"><span class="title-label"><?= __('Mer från', 'bon'); ?></span>&thinsp;<?php the_author_posts_link(); ?></h1>
-        <?php if(the_author_meta('description')): ?>
+        <?php if(get_the_author_meta('description')): ?>
         <p class="aside-text bio"><?php the_author_meta('description'); ?></p>
         <?php endif; ?>
         <div class="blog-list">
