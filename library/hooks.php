@@ -25,5 +25,14 @@ function bon_body_class($classes) {
   return $classes;
 }
 
+// Add Feed link to Bon blogs
+function bon_add_bon_blogs_feed() {
+  if('bon_blogs' == get_post_type()) {
+    echo '<link rel="alternate" type="application/rss+xml" title="RSS 2.0 Feed" href="'.get_bloginfo('rss2_url').'?author_name='.get_the_author_meta( 'user_nicename', $post->post_author ).'&post_type='.get_post_type().'" />'; 
+  }
+}
+add_action('wp_head', 'bon_add_bon_blogs_feed');
+
+
 
 ?>
