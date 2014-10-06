@@ -20,7 +20,7 @@
 	  <?php echo get_the_term_list(get_the_ID(), 'bon_blogs_tag', '', ', '); ?>
 	  </p>
 	  <?php if( comments_open() ): ?>
-	  <span class="comment-count small-sys-title"><a href="<?php the_permalink(); ?>#disqus_thread"></a></span>
+	  <span class="comment-count small-sys-title"><a href="<?php the_permalink(); ?>#disqus_thread">KOMMENTAR</a></span>
 		<?php endif; ?>
 
 	  <div class="entry-social">
