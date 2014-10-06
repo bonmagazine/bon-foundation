@@ -2,15 +2,6 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    // autoprefixer: {
-    //   sourcemap: {
-    //       options: {
-    //           map: true
-    //       },
-    //       src: 'css/app.css'
-    //   },
-    // },
-
     // // grunt-sass options
     // sass: {
     //   options: {
@@ -29,10 +20,20 @@ module.exports = function(grunt) {
 
     // grunt-contrib-sass options
     sass: {
-      dist: {
+      dev: {
+        options: {
+          style: 'expanded',
+          sourcemap: 'auto',
+          loadPath: ['bower_components/foundation/scss']
+        },
+        files: {
+          'css/app.css': 'scss/app.scss'
+        }        
+      },
+      prod: {
         options: {
           style: 'compressed',
-          sourcemap: 'auto',
+          sourcemap: 'none',
           loadPath: ['bower_components/foundation/scss']
         },
         files: {
@@ -64,8 +65,7 @@ module.exports = function(grunt) {
   // grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  // grunt.loadNpmTasks('grunt-autoprefixer');
 
-  grunt.registerTask('build', ['sass']);
-  grunt.registerTask('default', ['build','watch']);
+  grunt.registerTask('build', ['sass:prod']);
+  grunt.registerTask('default', ['sass:dev','watch']);
 }
