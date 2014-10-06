@@ -19,7 +19,16 @@ if($masonry.length > 0) {
   });
 } 
 else if($infiniteScroll.length > 0) {
-  $infiniteScroll.waypoint('infinite');
+  $infiniteScroll.waypoint('infinite', {
+    onAfterPageLoad: function() {
+      // Disqus comment counts for bon blog posts loaded via ajax
+      // TODO: fetch this only for new elements via Disqus API
+      if($infiniteScroll.hasClass('bon-blog-list')) {
+        window.DISQUSWIDGETS = undefined;
+        $.getScript("http://bonmagazine.disqus.com/count.js");
+      }
+    }
+  });
 }
 
 Bon = function() {
@@ -108,6 +117,7 @@ Bon = function() {
         }
     });
 
+    // Slick Carousel for landing page Poster
     $('.poster-wrapper').slick({
       autoplay: true,
       dots: true,

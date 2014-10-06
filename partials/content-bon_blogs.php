@@ -19,7 +19,9 @@
 	  <p class="entry-tags"><span class="small-sys-title">Taggar – </span>
 	  <?php echo get_the_term_list(get_the_ID(), 'bon_blogs_tag', '', ', '); ?>
 	  </p>
-	  <span class="comment-count small-sys-title"><a href="<?php the_permalink();  ?>#disqus_thread"></a></span>
+	  <?php if( comments_open() ): ?>
+	  <span class="comment-count small-sys-title"><a href="<?php the_permalink(); ?>#disqus_thread"></a></span>
+		<?php endif; ?>
 
 	  <div class="entry-social">
 	    <iframe src="//www.facebook.com/plugins/like.php?href=<?php echo urlencode(get_the_permalink()); ?>&amp;width=50&amp;layout=box_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=65&amp;appId=395965657184574" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:65px; margin-right: 30px" allowTransparency="true"></iframe>
