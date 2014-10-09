@@ -40,15 +40,23 @@ function bon_blogs_rewrite() {
 }
 add_action('init', 'bon_blogs_rewrite');
 
+function bon_custom_post_permalink( $url, $post = null, $leavename = false ) {
 
-function bon_blogs_add_author( $url, $post = null, $leavename = false ) {
+  // BON BLOGS
   if ( preg_match("/bon_blogs/i", get_post_type( $post ) ) ) {
-
     $tag = '%author%';
     $author = get_the_author_meta( 'user_nicename', $post->post_author );
 
-    return str_replace($tag, $author, $url);
+    $url = str_replace($tag, $author, $url);
   }
+
+  // BON ISSUES
+  elseif ( $post->post_type == 'bon_issues_posts' ) {
+    $tag = '%bon_issues%';
+    $issue = get_terms('bon_issues')[0]->slug;
+    if($issue) $url = str_replace($tag, $issue, $url);
+  }
+
   return $url;
 }
-add_filter( 'post_type_link', 'bon_blogs_add_author', 1, 3 );
+add_filter( 'post_type_link', 'bon_custom_post_permalink', 1, 3 );

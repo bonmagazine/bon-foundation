@@ -213,7 +213,80 @@ function create_post_type() {
     )
   );
 
+
   /*
+   * BON ISSUES
+   *
+   */
+
+  register_post_type( 'bon_issues_posts',
+    array(
+      'labels' => array(
+        'name' => __( 'Issue Articles' ),
+        'singular_name' => __( 'Issue Article' )
+      ),
+    'menu_position' => 11,
+    'hierarchical' => false,
+    'public' => true,
+    'has_archive' => true,
+    'show_ui' => true,
+    'exclude_from_search'=>false,
+    'supports'=>array('title', 'editor', 'custom-fields', 'post-formats', 'thumbnail'),
+    'taxonomies'=>array('bon_issues'),
+    'rewrite' => array('slug' => 'issue/%bon_issues%', 'with_front' => false)
+    )
+  );
+
+  add_theme_support( 'post-formats', array( 'gallery' ) );
+  add_post_type_support( 'bon_issues_posts', 'post-formats' );
+
+
+  register_taxonomy('bon_issues', 'bon_issues_posts',
+    array(
+      'hierarchical' => true,
+      'label' => 'Issues',
+      'query_var' => true,
+      'rewrite' => array('slug' => 'issue', 'with_front' => false),
+      'public'=>true,
+      'show_ui'=>true,
+      'show_in_nav_menus'=>true
+    )
+  );
+
+  // Bon Issues Image field (uses Tax-meta-class)
+  if (is_admin()){
+    /*
+     * prefix of meta keys, optional
+     */
+    $prefix = 'bon_';
+    /*
+     * configure your meta box
+     */
+    $config = array(
+      'id' => 'bon_issue_images',          // meta box id, unique per meta box
+      'title' => 'Bon Issue Covers',          // meta box title
+      'pages' => array('bon_issues'),        // taxonomy name, accept categories, post_tag and custom taxonomies
+      'context' => 'normal',            // where the meta box appear: normal (default), advanced, side; optional
+      'fields' => array(),            // list of meta fields (can be added by field arrays)
+      'local_images' => false,          // Use local or hosted images (meta box images for add/remove)
+      'use_with_theme' => get_template_directory_uri().'/library/vendor/Tax-meta-class'          //change path if used with theme set to true, false for a plugin or anything else for a custom path(default false).
+    );
+
+    $my_meta =  new Tax_Meta_Class($config);
+
+    $my_meta->addImage($prefix.'image_field_id',array('name'=> __('Issue Cover','tax-meta')));
+
+    $repeater_fields[] = $my_meta->addImage($prefix.'image_field_id',array('name'=> __('Issue Cover','tax-meta')),true);
+
+    $my_meta->addRepeaterBlock($prefix.'re_',array('inline' => true, 'name' => __('Add more covers','tax-meta'),'fields' => $repeater_fields));
+
+    $my_meta->Finish();
+  }
+
+
+
+  /*
+   *
    * Bon taxonomy - SECTIONS
    *
    */

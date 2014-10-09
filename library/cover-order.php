@@ -14,7 +14,8 @@ add_filter('content_save_pre', 'bon_cover_order_default_value');
 function bon_cover_order_default_value($post_content) {
   global $post;
   $post_id = $post->ID;
-  if( !get_post_meta( $post_id, 'bon_cover_order', 'true' ) ){
+  if( !get_post_meta( $post_id, 'bon_cover_order', 'true' )
+   && $post->post_type == 'post'){
     bon_cover_order($post_id, 'update', 1000);
   }
 

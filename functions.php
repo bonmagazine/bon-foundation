@@ -1,5 +1,8 @@
 <?php
 
+// External Libraries
+require_once('library/vendor/Tax-meta-class/Tax-meta-class.php');
+
 // Various clean up functions
 require_once('library/cleanup.php'); 
 
