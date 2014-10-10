@@ -267,17 +267,16 @@ function create_post_type() {
       'use_with_theme' => get_template_directory_uri().'/library/vendor/Tax-meta-class'          //change path if used with theme set to true, false for a plugin or anything else for a custom path(default false).
     );
 
-    // $my_meta = new Tax_Meta_Class($config);
+    $my_meta = new Tax_Meta_Class($config);
 
-    // $my_meta->addImage($prefix.'image_field_id',array('name'=> __('Issue Cover','tax-meta')));
+    $my_meta->addImage($prefix.'image_field_id',array('name'=> __('Issue Cover','tax-meta')));
 
-    // $repeater_fields[] = $my_meta->addImage($prefix.'image_field_id',array('name'=> __('Issue Cover','tax-meta')),true);
+    $repeater_fields[] = $my_meta->addImage($prefix.'image_field_id',array('name'=> __('Issue Cover','tax-meta')),true);
 
-    // $my_meta->addRepeaterBlock($prefix.'re_',array('inline' => true, 'name' => __('Add more covers','tax-meta'),'fields' => $repeater_fields));
+    $my_meta->addRepeaterBlock($prefix.'re_',array('inline' => true, 'name' => __('Add more covers','tax-meta'),'fields' => $repeater_fields));
 
-    // $my_meta->Finish();
+    $my_meta->Finish();
   }
-
 
 
   /*
