@@ -231,7 +231,7 @@ function create_post_type() {
     'has_archive' => true,
     'show_ui' => true,
     'exclude_from_search'=>false,
-    'supports'=>array('title', 'editor', 'author', 'custom-fields', 'post-formats', 'thumbnail'),
+    'supports'=>array('title', 'editor', 'author', 'post-formats', 'thumbnail'),
     'taxonomies'=>array('bon_issues', 'post_tag'),
     'rewrite' => array('slug' => 'issue/%bon_issues%', 'with_front' => false)
     )
@@ -240,16 +240,15 @@ function create_post_type() {
   add_theme_support( 'post-formats', array( 'gallery' ) );
   add_post_type_support( 'bon_issues_posts', 'post-formats' );
 
-
   register_taxonomy('bon_issues', 'bon_issues_posts',
     array(
       'hierarchical' => true,
       'label' => 'Issues',
       'query_var' => true,
       'rewrite' => array('slug' => 'issue', 'with_front' => false),
-      'public'=>true,
-      'show_ui'=>true,
-      'show_in_nav_menus'=>true
+      'public' => true,
+      'show_ui' => true,
+      'show_in_nav_menus' => true
     )
   );
 
@@ -263,7 +262,7 @@ function create_post_type() {
       'pages' => array('bon_issues'),        // taxonomy name, accept categories, post_tag and custom taxonomies
       'context' => 'normal',            // where the meta box appear: normal (default), advanced, side; optional
       'fields' => array(),            // list of meta fields (can be added by field arrays)
-      'local_images' => false,          // Use local or hosted images (meta box images for add/remove)
+      'local_images' => true,          // Use local or hosted images (meta box images for add/remove)
       'use_with_theme' => get_template_directory_uri().'/library/vendor/Tax-meta-class'          //change path if used with theme set to true, false for a plugin or anything else for a custom path(default false).
     );
 

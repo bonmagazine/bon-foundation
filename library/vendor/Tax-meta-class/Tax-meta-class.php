@@ -535,7 +535,7 @@ class Tax_Meta_Class {
          foreach ($meta as $me){
            //for labling toggles
            $mmm =  ($me[$field])? $me[$field['fields'][0]['id']]: "";
-           echo '<div class="at-repater-block">'.$mmm.'<br/><table class="repeater-table" style="display: none;">';
+           echo '<div class="at-repater-block">'.$mmm.'<br/><table class="repeater-table">';
            if ($field['inline']){
              echo '<tr class="at-inline" VALIGN="top">';
            }
@@ -565,34 +565,14 @@ class Tax_Meta_Class {
         if ($field['inline']){
           echo '</tr>';
         }
-        echo '</table>
-        <span class="at-re-toggle"><img src="';
-           if ($this->_Local_images){
-             echo $plugin_path.'/images/edit.png';
-           }else{
-             echo 'http://i.imgur.com/ka0E2.png';
-           }
-           echo '" alt="Edit" title="Edit"/></span>
-        <img src="';
-        if ($this->_Local_images){
-          echo $plugin_path.'/images/remove.png';
-        }else{
-          echo 'http://i.imgur.com/g8Duj.png';
-        }
-        echo '" alt="'.__('Remove','tax-meta').'" title="'.__('Remove','tax-meta').'" id="remove-'.$field['id'].'"></div>';
+        echo '</table>';
         $c = $c + 1;
 
         }
         $this->show_field_end( $field, $meta );
       }
 
-    echo '<img src="';
-    if ($this->_Local_images){
-      echo $plugin_path.'/images/add.png';
-    }else{
-      echo 'http://i.imgur.com/w5Tuc.png';
-    }
-    echo '" alt="'.__('Add','tax-meta').'" title="'.__('Add','tax-meta').'" id="add-'.$field['id'].'"><br/></div>';
+    echo '<div class="dashicons dashicons-plus plus" id="add-'.$field['id'].'"></div></div>';
 
     //create all fields once more for js function and catch with object buffer
     ob_start();
@@ -620,13 +600,7 @@ class Tax_Meta_Class {
     if ($field['inline']){
       echo '</tr>';
     }
-    echo '</table><img src="';
-    if ($this->_Local_images){
-      echo $plugin_path.'/images/remove.png';
-    }else{
-      echo 'http://i.imgur.com/g8Duj.png';
-    }
-    echo '" alt="'.__('Remove','tax-meta').'" title="'.__('Remove','tax-meta').'" id="remove-'.$field['id'].'"></div>';
+    echo '</table><div class="dashicons dashicons-no no" id="remove-'.$field['id'].'"></div></div>';
     $counter = 'countadd_'.$field['id'];
     $js_code = ob_get_clean ();
     $js_code = str_replace("\n","",$js_code);
@@ -922,6 +896,7 @@ class Tax_Meta_Class {
       $html .= "<input type='hidden' name='".$field['id']."[id]' id='".$field['id']."[id]' value='' />";
       $html .= "<input type='hidden' name='".$field['id']."[src]' id='".$field['id']."[src]' value='' />";
       $html .= "<input class='at-upload_image_button' type='button' rel='".$field['id']."' value='Upload Image' />";
+      $html .= "";
     }
     echo $html;
     $this->show_field_end( $field, $meta );
