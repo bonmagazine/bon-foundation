@@ -9,7 +9,7 @@
       <header class="entry-main">
         <p class="section">
           <?php $issue = get_terms( 'bon_issues' ); ?>
-	  <?php $issue? $issue[0]->slug : ''; ?>
+          <?php $issue? echo $issue[0]->slug : ''; ?>
         </p>
         <h1 class="entry-title"><?php the_title(); ?></h1>
         <div class="author-and-date">

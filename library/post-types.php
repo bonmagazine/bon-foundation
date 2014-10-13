@@ -232,7 +232,7 @@ function create_post_type() {
     'show_ui' => true,
     'exclude_from_search'=>false,
     'supports'=>array('title', 'editor', 'author', 'post-formats', 'thumbnail'),
-    'taxonomies'=>array('bon_issues', 'post_tag'),
+    'taxonomies'=>array('bon_issues', 'post_tag', 'bon_photographers', 'bon_stylists'),
     'rewrite' => array('slug' => 'issue/%bon_issues%', 'with_front' => false)
     )
   );
@@ -251,6 +251,36 @@ function create_post_type() {
       'show_in_nav_menus' => true
     )
   );
+  register_taxonomy_for_object_type( 'bon_issues', 'bon_issues_posts' );
+
+  register_taxonomy('bon_photographers', array('bon_issues_posts', 'posts', 'bon_minimagazine'),
+    array(
+      'hierarchical' => false,
+      'label' => 'Fotograf',
+      'query_var' => true,
+      'rewrite' => array('slug' => 'fotograf', 'with_front' => false),
+      'public' => true,
+      'show_ui' => true
+    )
+  );
+  register_taxonomy_for_object_type( 'bon_photographers', 'bon_issues_posts' );
+  register_taxonomy_for_object_type( 'bon_photographers', 'posts' );
+  register_taxonomy_for_object_type( 'bon_photographers', 'bon_minimagazine' );
+
+
+  register_taxonomy('bon_stylists', array('bon_issues_posts', 'posts', 'bon_minimagazine'),
+    array(
+      'hierarchical' => false,
+      'label' => 'Stylist',
+      'query_var' => true,
+      'rewrite' => array('slug' => 'stylist', 'with_front' => false),
+      'public' => true,
+      'show_ui' => true
+    )
+  );
+  register_taxonomy_for_object_type( 'bon_stylists', 'bon_issues_posts' );
+  register_taxonomy_for_object_type( 'bon_stylists', 'posts' );
+  register_taxonomy_for_object_type( 'bon_stylists', 'bon_minimagazine' );
 
   // Bon Issues Image field (uses Tax-meta-class)
   if (is_admin()){
