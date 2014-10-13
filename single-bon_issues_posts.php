@@ -2,14 +2,14 @@
 
   <div class="main single-main" role="main">
 
-  <?php get_template_part( 'partials/campaigns/topbanner', 'single' ); ?>
+  <?php get_template_part( 'partials/campaigns/topbanner', 'single' );?>
 
   <?php while (have_posts()) : the_post(); ?>
     <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
       <header class="entry-main">
         <p class="section">
-          <?php the_terms( $post->ID, 'section' ); ?>
-          <?php print_r( get_terms( 'bon_issues' )[0]->slug ); ?>
+          <?php $issue = get_terms( 'bon_issues' ); ?>
+	  <?php $issue? $issue[0]->slug : ''; ?>
         </p>
         <h1 class="entry-title"><?php the_title(); ?></h1>
         <div class="author-and-date">
