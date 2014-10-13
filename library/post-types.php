@@ -231,8 +231,8 @@ function create_post_type() {
     'has_archive' => true,
     'show_ui' => true,
     'exclude_from_search'=>false,
-    'supports'=>array('title', 'editor', 'custom-fields', 'post-formats', 'thumbnail'),
-    'taxonomies'=>array('bon_issues'),
+    'supports'=>array('title', 'editor', 'author', 'custom-fields', 'post-formats', 'thumbnail'),
+    'taxonomies'=>array('bon_issues', 'post_tag'),
     'rewrite' => array('slug' => 'issue/%bon_issues%', 'with_front' => false)
     )
   );
