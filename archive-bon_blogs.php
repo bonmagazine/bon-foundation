@@ -19,17 +19,12 @@
 
         <?php if( get_query_var('yearly') == 1 ): // Dates for yearly archive ?>
           <?php $post_date = new DateTime( $post->post_date ); ?>
-          <?php if ( $index_date->format('Y') != $post_date->format('Y') ): $index_date = $post_date; ?>
+          <?php if ($index_date->format('Y') != $post_date->format('Y')
+                ||  $index_date->format('n') !== $post_date->format('n')): 
+                $index_date = $post_date; ?>
             <h1 class="hentry year date-separator small-sys-title">
-              <?php echo $post_date->format('Y'); ?>
+              <?php echo $post_date->format('F'); ?> <?php echo $post_date->format('Y'); ?> 
             </h1>
-            <h2 class="hentry month date-separator small-sys-title">
-              <?php echo $post_date->format('F'); ?>
-            </h2>
-          <?php elseif (  $index_date->format('n') !== $post_date->format('n') ): $index_date = $post_date; ?>
-            <h2 class="hentry month date-separator small-sys-title">
-              <?php echo $post_date->format('F'); ?>
-            </h2>
           <?php endif; ?>
         <?php endif; ?>
 

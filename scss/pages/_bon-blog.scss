@@ -11,6 +11,12 @@ body.single-bon_blogs {
   .inner-wrap {
     padding-top: 0;
   }
+
+  .hentry{
+    a {
+      border-bottom: 1px solid $highlight-color;
+    }
+  }
 }
 
 .title-header-bon_blogs {
@@ -144,19 +150,15 @@ body.single-bon_blogs {
   display: block;
 }
 
+
+// YEALRY ARCHIVE
 .archive-compact {
 
   .date-separator {
-    text-align: center;
-    margin-top: baseline(2);
-
-    & + .date-separator {
-      margin-top: 0;
-    }
-  }
-
-  .date-separator + .hentry.bon_blogs {
     margin-top: baseline();
+    max-width: 42.5rem;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .hentry.bon_blogs {

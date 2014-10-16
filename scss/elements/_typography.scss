@@ -201,7 +201,7 @@ Paragraphs
   @extend %archive-roman;
   font-size: 20px;
   font-weight: normal;
-  line-height: baseline();
+  line-height: baseline(1.25);
   word-spacing: -0.05em;
 }
 
