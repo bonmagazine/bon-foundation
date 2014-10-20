@@ -12,9 +12,9 @@ body.single-bon_blogs {
     padding-top: 0;
   }
 
-  .hentry{
+  .entry-content{
     a {
-      border-bottom: 1px solid $highlight-color;
+      color: $highlight-color;
     }
   }
 }
