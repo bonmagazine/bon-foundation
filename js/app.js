@@ -60,6 +60,12 @@ Bon = function() {
       })
     }
 
+    // Bon bon autoplay
+    // TODO: only play on load
+    $('.minimagazine_video_autoplay').each(function() {
+      $(this)[0].play();
+    });
+
     // Search label
     $('label.search-nav-title').click(function(e){
       $s = $('#s');
