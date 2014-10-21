@@ -87,7 +87,7 @@ body.single-bon_blogs {
 }
 
 .hentry.bon_blogs {
-  margin-top: baseline(4);
+  margin-top: baseline(3);
 
   &:first-child {
     margin-top: baseline();
@@ -151,6 +151,7 @@ body.single-bon_blogs {
 }
 
 
+
 // YEALRY ARCHIVE
 .archive-compact {
 
@@ -159,6 +160,7 @@ body.single-bon_blogs {
     max-width: 42.5rem;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom:4px;
   }
 
   .hentry.bon_blogs {
@@ -170,14 +172,29 @@ body.single-bon_blogs {
       max-width: rem-calc(680);
       margin: 0 auto;
     }
-    .entry-footer {
-      display: none;
-    }
-    .entry-content {
-      display: none;
-    }
-    .date {
-      display: none;
-    }
   }
+    header.blog-archive-header {
+    max-width: 42.5rem;
+    margin-right: auto;
+    margin-left: auto;	  
+	.the-day {
+		float:left;
+		margin-left:-43px;
+		width:43px;
+		padding-right:8px;
+		text-align:right;
+		line-height: 1.875rem;
+	}
+	.the-day::after { 
+	    content: ":";
+	}
+	.entry-title {
+		@extend %small-archive-h;
+	    a { 
+		  color: #00ADFF;
+	    }
+	}
+	
+  }
+
 }

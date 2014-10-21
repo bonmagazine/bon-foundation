@@ -12,7 +12,7 @@
 
   <?php if ( have_posts() ) : ?>
     <section id="blog-list" class="bon-blog-list infinite-scroll">
-
+	  <?php if( get_query_var('yearly') ): ?><h1 class="archive-title">Arkiv</h2><?php endif; ?>
       <?php $index_date = new DateTime("+12 months"); ?>
 
       <?php while ( have_posts() ) : the_post(); ?>
@@ -22,13 +22,21 @@
           <?php if ($index_date->format('Y') != $post_date->format('Y')
                 ||  $index_date->format('n') !== $post_date->format('n')): 
                 $index_date = $post_date; ?>
-            <h1 class="hentry year date-separator small-sys-title">
+            <h1 class="hentry year date-separator medium-title">
               <?php echo $post_date->format('F'); ?> <?php echo $post_date->format('Y'); ?> 
             </h1>
           <?php endif; ?>
         <?php endif; ?>
+        <?php if( get_query_var('yearly') == 1 ): // Dates for yearly archive ?>
+			<header class="blog-archive-header">
+			    <time class="the-day" datetime="<?php echo get_the_time('c') ?>" pubdate><?php echo get_the_date('j') ?></time>
+				<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+			</header>
+        <?php 
+	        else: get_template_part( 'partials/content', 'bon_blogs' );                
+            endif; 
+        ?>
 
-        <?php get_template_part( 'partials/content', 'bon_blogs' ); ?>
       <?php endwhile; ?>
     </section>
     <?php if( get_query_var('yearly') !== 1 ): // hide disqus from yearly archive?>

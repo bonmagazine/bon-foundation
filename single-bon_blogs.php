@@ -9,9 +9,6 @@
   <?php while (have_posts()) : the_post(); ?>
     <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
       <header class="entry-main">
-        <div class="section">
-          <p class="small-sys-title"><?php the_terms( $post->ID, 'section' ); ?></p>
-        </div>
         <h1 class="entry-title"><?php the_title(); ?></h1>
         <div class="author-and-date">
           <?php bon_the_entry_date(); ?>
