@@ -344,7 +344,9 @@ Paragraphs
     margin-left: $gutter-width/2;
   }
 }
-
+.small-medium-title {
+  @extend %small-medium-archive-h;
+}
 .medium-title {
   @extend %small-archive-h;
   font-size: 22px;

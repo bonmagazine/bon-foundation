@@ -153,12 +153,13 @@ body.single-bon_blogs {
 
 // YEALRY ARCHIVE
 .archive-compact {
-
+  h1.archive-title { margin-top: 3rem; }
   .date-separator {
     margin-top: baseline();
     max-width: 42.5rem;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom:4px;
   }
 
   .hentry.bon_blogs {
@@ -170,14 +171,29 @@ body.single-bon_blogs {
       max-width: rem-calc(680);
       margin: 0 auto;
     }
-    .entry-footer {
-      display: none;
-    }
-    .entry-content {
-      display: none;
-    }
-    .date {
-      display: none;
-    }
   }
+    header {
+    max-width: 42.5rem;
+    margin-right: auto;
+    margin-left: auto;	  
+	.the-day {
+		float:left;
+		margin-left:-43px;
+		width:43px;
+		padding-right:8px;
+		text-align:right;
+		line-height: 1.875rem;
+	}
+	.the-day::after { 
+	    content: ":";
+	}
+	.entry-title {
+		@extend %small-archive-h;
+	    a { 
+		  color: #00ADFF;
+	    }
+	}
+	
+  }
+
 }
