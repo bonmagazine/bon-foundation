@@ -60,11 +60,33 @@ Bon = function() {
       })
     }
 
-    // Bon bon autoplay
-    // TODO: only play on load
-    $('.minimagazine_video_autoplay').each(function() {
-      $(this)[0].play();
-    });
+    // BONBON lazyload
+    $bonbon = $('.hentry.type-bon_minimagazine');
+    if($bonbon.length > 0) {
+
+      // Bon bon autoplay
+      $('.minimagazine_video_autoplay').attr({
+        loop: "",
+        autoplay: "autoplay"
+      });
+
+      $('.page')
+        .waypoint(function() {
+          $(this)
+            .find('.minimagazine_video_autoplay')
+            .attr({
+              loop: "",
+              autoplay: "autoplay"
+            })
+            .end()
+            .addClass('show');
+
+        }, {
+          offset: '80%',
+          triggerOnce: true
+        });
+    }
+
 
     // Search label
     $('label.search-nav-title').click(function(e){

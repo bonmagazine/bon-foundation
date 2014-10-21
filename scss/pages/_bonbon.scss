@@ -8,13 +8,21 @@
 
 article.bon_minimagazine {
   .page {
+    min-height: 600px;
     height: auto;
-    background: #fff;
     margin-bottom: 64px;
     position: relative; 
+    background: #fff;
+    opacity: 0;
+    transition:opacity 400ms;
+  }
+
+  .page.show {
+    opacity: 1;
   }
 
   .container {
+    position:relative;
     height: auto;
     width: 1225px;
   }
