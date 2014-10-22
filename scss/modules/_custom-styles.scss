@@ -23,16 +23,16 @@
 
 #bonbon_container {
   p {
-    @extend %medium-grotesque-p;
+    @include medium-grotesque-p;
     font-size: 14px;
     line-height: 18px;
     text-indent: $indent/2; 
     &.humanist {
-      @extend %grotesque;
+      @include grotesque;
       letter-spacing: 1.5px;
       font-size: 16px; }
     &.austinlight {
-      @extend %serif;
+      @include serif;
     }
   }
   img.size-full {
@@ -61,7 +61,7 @@ hr.ornament {
   width: 240px;
   padding: 10px;
   p {
-    @extend %grotesque;
+    @include grotesque;
     line-height: 20px !important;
     font-size: 13px !important; } }
 
@@ -106,7 +106,7 @@ div.bonbon-fotocred {
 #bonbon_container {
   h1 {
     text-rendering: optimizeLegibility;
-    @extend %serif;
+    @include serif;
     font-size: 80px;
     line-height: 80px;
     margin: 0px auto;
@@ -118,24 +118,24 @@ div.bonbon-fotocred {
     span {
       font-weight: normal;
       display: block;
-      @extend %grotesque;
+      @include grotesque;
       font-size: 30px;
       letter-spacing: 3px;
       line-height: 30px;
       &.headcenter {
-        @extend %serif;
+        @include serif;
         font-size: 100px;
         line-height: 75px;
         letter-spacing: 0;
         text-align: center; }
       &.headright {
-        @extend %serif;
+        @include serif;
         font-size: 100px;
         line-height: 75px;
         letter-spacing: 0;
         text-align: right; }
       &.headleft {
-        @extend %serif;
+        @include serif;
         font-size: 100px;
         line-height: 75px;
         letter-spacing: 0;
@@ -189,13 +189,13 @@ h2 {
     letter-spacing: 0;
     line-height: 40px;
     color: white;
-    @extend %serif;
+    @include serif;
     text-transform: uppercase;
     z-index: 4;
     span {
       font-size: 140px;
       display: block;
-      @extend %serif;
+      @include serif;
       margin-bottom: 40px; } }
   &.minimagsubstat {
     font-size: 30px;
@@ -208,17 +208,17 @@ h2 {
     margin: 0px auto;
     margin-top: 40px;
     margin-bottom: 20px;
-    @extend %serif;
+    @include serif;
     text-transform: uppercase;
     z-index: 4;
     span {
       font-size: 140px;
       display: block;
-      @extend %serif;
+      @include serif;
       margin-bottom: 40px; } } }
 
 span.talkname {
-  @extend %grotesque;
+  @include grotesque;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -282,7 +282,7 @@ div.minimagcolumnthin {
 /* EXTRA CSS STYLES HERE */
 
 .article-single .author, .author_container div.title {
-  @extend %medium-grotesque-p;
+  @include medium-grotesque-p;
 }
 
 .article-single {
@@ -305,9 +305,9 @@ div.minimagcolumnthin {
     margin-top: 10px;
     font-size: 11px;
     line-height: 18px;
-    @extend %serif; }
+    @include serif; }
   h4 {
-    @extend %grotesque;
+    @include grotesque;
     font-weight: normal;
     font-size: 13px;
     margin-top: -20px; }
@@ -362,7 +362,7 @@ hr.separator {
 }
 
 .fashionname {
-  @extend %grotesque;
+  @include grotesque;
   text-transform: uppercase;
   padding-bottom: 3px;
   border-bottom: 1px solid black; }
@@ -372,7 +372,7 @@ hr.separator {
 
 .post .entry-content {
   .ingress {
-    @extend %grotesque;
+    @include grotesque;
     font-size: 20px;
     line-height: 30px;
     letter-spacing: 1.2px; 
@@ -387,27 +387,27 @@ hr.separator {
 .listsiffra {
   text-align: center;
   margin-top: -60px;
-  @extend %serif;
+  @include serif;
   font-size: 124px;
   text-indent: 0 !important;
   margin-bottom: 33px; }
 
 span.dropcap {
   float: left;
-  @extend %serif;
+  @include serif;
   font-size: 145px;
   margin-right: 5px;
   padding-right: 8px; }
 
 .single-main .post p.fotocredit {
-  @extend %grotesque;
+  @include grotesque;
   font-size: 16px;
   line-height: 22px;
 }
 
 .marialistarubrik {
   text-transform: uppercase;
-  @extend %grotesque;
+  @include grotesque;
   letter-spacing: 1px;
   padding-right: 10px; }
 
@@ -444,7 +444,7 @@ div {
   background-position: bottom center; }
 
 h3.inner_header {
-  @extend %grotesque;
+  @include grotesque;
   letter-spacing: 1px;
   font-weight: normal;
   font-size: 20px;
@@ -521,10 +521,10 @@ div.video .strip {
   margin-bottom: 5px; }
 
 .player_top_nav .file_title {
-  @extend %grotesque; }
+  @include grotesque; }
 
 ul.gallery_nav li {
-  @extend %serif;
+  @include serif;
   text-transform: none;
   font-size: 16px; }
 
@@ -542,34 +542,34 @@ div.panel_title {
   color: white !important; }
 
 .austinlight {
-  @extend %serif; }
+  @include serif; }
 
 .italic {
   font-style: italic !important; }
 
 .austinmedium {
-  @extend %serif; }
+  @include serif; }
 
 .pullquote {
-  @extend %serif;
+  @include serif;
   font-size: 42px;
   line-height: 32px;
   width: 600px;
   margin: 0px auto; }
 
 .smallquote {
-  @extend %serif;
+  @include serif;
   font-size: 26px !important;
   line-height: 32px !important; }
 
 .humanist {
-  @extend %grotesque; }
+  @include grotesque; }
 
 .uppercase {
   text-transform: uppercase !important; }
 
 .single-post .entry-content p.questionp {
-  @extend %serif;
+  @include serif;
   letter-spacing: 0.8px;
   text-indent: 0;
   padding-left: $indent; 
@@ -588,7 +588,7 @@ div {
     height: auto; } }
 
 .largeingress {
-  @extend %serif;
+  @include serif;
   font-size: 30px !important;
   line-height: 28px !important;
   letter-spacing: 0; 

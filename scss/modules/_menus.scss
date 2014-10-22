@@ -202,17 +202,17 @@
 
 .nav-with-dropdown,
 .menu {
-  @extend %nav-with-dropdown;
+  @include nav-with-dropdown;
 }
 
 .top-level-item,
 .nav-with-dropdown > .menu-item {
-  @extend %top-level-item; 
+  @include top-level-item; 
 }
 
 .top-level-item-title,
 .menu-item > a {
-  @extend %top-level-item-title; 
+  @include top-level-item-title; 
 }
 
 .has-sub-nav .top-level-item-title:after,
@@ -222,12 +222,12 @@
 
 .dropdown,
 .sub-menu {
-  @extend %dropdown; 
+  @include dropdown; 
 }
 
 .second-level-item-title,
 .sub-menu .menu-item > a {
-  @extend %second-level-item-title;
+  @include second-level-item-title;
 
 }
 

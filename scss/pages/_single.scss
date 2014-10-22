@@ -16,7 +16,7 @@
     }
     
     .section {
-      @extend %large-grotesque-h;
+      @include large-grotesque-h;
 
       @media #{$s-up} {
         text-align: right;
@@ -31,7 +31,7 @@
     }
     
     .entry-title {
-      @extend %large-archive-h;
+      @include large-archive-h;
 
       @media #{$s-up} {
         @include grid-column(8);
@@ -44,7 +44,7 @@
       text-align: center;
       .author, 
       .date {
-        @extend %small-archive-h;
+        @include small-archive-h;
         text-indent: 0;
       }
     }
@@ -65,12 +65,12 @@
       @include grid-column(12);
 
       p {
-        @extend %medium-archive-p;
+        @include medium-archive-p;
       }
     }
 
     p {
-      @extend %large-archive-p;
+      @include large-archive-p;
     }
     
     p + p {

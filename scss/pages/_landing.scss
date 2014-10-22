@@ -74,11 +74,11 @@
   }
 
   .title {
-    @extend %medium-archive-h;
+    @include medium-archive-h;
   }
 
   .entry-excerpt p{
-    @extend %large-archive-p;
+    @include large-archive-p;
   }
 
   .entry-meta {
@@ -178,7 +178,7 @@
     }
     
     .title {
-      @extend %small-medium-archive-h;
+      @include small-medium-archive-h;
     }
     
     .entry-excerpt { 

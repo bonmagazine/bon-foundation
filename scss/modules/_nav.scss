@@ -223,7 +223,7 @@ form[role=search] {
   }
 
   h1 {
-    @extend %medium-grotesque-h;
+    @include medium-grotesque-h;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     border-bottom: 1px solid;

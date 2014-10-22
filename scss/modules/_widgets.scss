@@ -110,16 +110,16 @@
   }
 
   .bon-blog-title {
-    @extend %small-archive-h;
+    @include small-archive-h;
   }
 
   .bon-blog-post-title {
-    @extend %medium-grotesque-p;
+    @include medium-grotesque-p;
     text-transform: none;
   } 
 
   .post-date {
-    @extend %medium-grotesque-p;
+    @include medium-grotesque-p;
     text-transform: none;
   }
 }
