@@ -87,10 +87,10 @@ body.single-bon_blogs {
 }
 
 .hentry.bon_blogs {
-  margin-top: baseline(3);
+  margin-top: baseline();
 
-  &:first-child {
-    margin-top: baseline();
+  & + .hentry.bon_blogs {
+    margin-top: baseline(3);
   }
 
   .entry-title {
@@ -117,20 +117,14 @@ body.single-bon_blogs {
   .entry-footer {
     max-width: 42.5rem;
     margin: baseline() auto;
-    
-    .entry-social {
-      @include grid-column(12);
-    }
   }
 
   .entry-social {
-    margin-top: baseline();
     display: none;
 
     @media #{$m-up} {
       display: block;
-      @include grid-column(1, $collapse: true);
-      padding-right: 2em;
+      margin-top: baseline();
     }
 
     span {
@@ -173,28 +167,26 @@ body.single-bon_blogs {
       margin: 0 auto;
     }
   }
-    header.blog-archive-header {
+  .blog-archive-header {
     max-width: 42.5rem;
     margin-right: auto;
-    margin-left: auto;	  
-	.the-day {
-		float:left;
-		margin-left:-43px;
-		width:43px;
-		padding-right:8px;
-		text-align:right;
-		line-height: 1.875rem;
-	}
-	.the-day::after { 
-	    content: ":";
-	}
-	.entry-title {
-		@extend %small-archive-h;
-	    a { 
-		  color: #00ADFF;
-	    }
-	}
-	
+    margin-left: auto;    
+    .the-day {
+      float:left;
+      margin-left:-43px;
+      width:43px;
+      padding-right:8px;
+      text-align:right;
+      line-height: 1.875rem;
+    }
+    .the-day::after { 
+      content: ":";
+    }
+    .entry-title {
+      @extend %small-archive-h;
+      a { 
+        color: #00ADFF;
+      }
+    }
   }
-
 }
