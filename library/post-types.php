@@ -230,7 +230,7 @@ function create_post_type() {
     'public' => true,
     'has_archive' => true,
     'show_ui' => true,
-    'exclude_from_search'=>false,
+    'exclude_from_search'=>true,
     'supports'=>array('title', 'editor', 'author', 'post-formats', 'thumbnail'),
     'taxonomies'=>array('bon_issues', 'post_tag', 'bon_photographers', 'bon_stylists'),
     'rewrite' => array('slug' => 'issue/%bon_issues%', 'with_front' => false)
