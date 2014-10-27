@@ -48,7 +48,6 @@ p.questionp em {
 .humanist em {
 	font-family: "Value Sans Medium Italic", sans-serif;	
 }
-
 	
 p.fotocredit {
  font-family: "Value Sans Medium", sans-serif;
@@ -107,4 +106,23 @@ img.fullwidth {
 .post-type-bon_blogs p {
 text-indent:0;
 margin-top:30px;
+}
+figure {
+	max-width:100%;
+}
+figure img {
+	max-width:100%
+}
+figure.size-full {
+	max-width:980px;
+	margin-left:-120px;
+}
+figure.size-full img {
+	max-width:960px;
+}
+span.interviewname {
+	font-family: "Value Sans Medium Italic", sans-serif;	
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing:.5px;
 }
