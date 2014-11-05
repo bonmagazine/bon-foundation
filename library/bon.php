@@ -84,7 +84,8 @@ function orbit_slider($output, $attr) {
 
     // Here's your actual output, you may customize it to your need
 
-    $output = "<ul data-orbit data-options='timer_speed:0;timer:false;'>\n";
+// old output    $output = "<ul data-orbit class='slick-orbit' data-options='timer_speed:0;timer:false;'>\n";
+    $output = "<div class='slick-orbit'>\n";
 
     // Now you loop through each attachment
     foreach ($attachments as $id => $attachment) {
@@ -92,13 +93,17 @@ function orbit_slider($output, $attr) {
 //      $img = wp_get_attachment_image_src($id, 'medium');
 //      $img = wp_get_attachment_image_src($id, 'my-custom-image-size');
         $img = wp_get_attachment_image_src($id, 'full');
+        $alt = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true);
+		$caption = $attachment->post_excerpt;
 
-        $output .= "<li>\n";
-        $output .= "<img src=\"{$img[0]}\" width=\"{$img[1]}\" height=\"{$img[2]}\" alt=\"\" />\n";
-        $output .= "</li>\n";
+
+        $output .= "<div>\n";
+		$output .= "<figure class='figure-in-hentry align-none'>";
+        $output .= "<img src=\"{$img[0]}\" />\n<figcaption>".$caption."</figcaption>";
+        $output .= "</figure></div>\n";
     }
 
-    $output .= "</ul>\n";
+    $output .= "</div>\n";
 
     return $output;
 }

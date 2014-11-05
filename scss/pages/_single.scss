@@ -132,3 +132,19 @@
     }
   }
 }
+.single-main div.slick-orbit {
+	
+	margin-top:50px;
+	margin-bottom: 50px;
+	border-top:1px solid black;
+	border-bottom:1px solid black;
+	
+}
+.slick-orbit img {
+	max-width: $row-width;
+	max-height:600px; 
+	margin:0px auto;	
+}
+.entry-content ul.slick-dots {
+	max-width:100%;
+}

@@ -148,6 +148,11 @@ Bon = function() {
         });
       }
     });
+    $('.slick-orbit').slick({
+      autoplay: true,
+      dots: true,
+      variableWidth: false
+    });
 
   }
 
