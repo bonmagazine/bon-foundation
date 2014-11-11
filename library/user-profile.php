@@ -128,8 +128,8 @@ if(function_exists("register_field_group"))
     'fields' => array (
       array (
         'key' => 'field_545caaf7ff703',
-        'label' => 'Bon Blog Header',
-        'name' => 'bon_blog_header',
+        'label' => 'Blog Header',
+        'name' => 'bon_blog_header_image_id',
         'type' => 'image',
         'instructions' => 'upload header for blog',
         'save_format' => 'object',

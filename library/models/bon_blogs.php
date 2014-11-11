@@ -1,7 +1,7 @@
 <?php 
 
 function bon_the_bon_blog_header_image() {
-  $image = get_the_author_meta( 'bon_blog_header' );
+  $image = get_the_author_meta( 'bon_blog_header_image_id' );
   $headerImage = wp_get_attachment_image_src( $image, 'blog-header' );
   echo $headerImage[0];
 }
