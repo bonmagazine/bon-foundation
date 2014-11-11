@@ -34,7 +34,7 @@ body.single-bon_blogs {
   }
 
   h1 {
-    @extend %large-archive-h;
+    @include large-archive-h;
     margin-bottom: 0;
     background-size: cover;
     background-repeat: no-repeat;
@@ -80,7 +80,7 @@ body.single-bon_blogs {
   }
 
   a {
-    @extend %medium-grotesque-h;
+    @include medium-grotesque-h;
     text-transform: uppercase;
     letter-spacing: 0.06em;
   }
@@ -95,7 +95,7 @@ body.single-bon_blogs {
 
   .entry-title {
     margin-top: baseline();
-    @extend %large-archive-h;
+    @include large-archive-h;
   }
 
   .date {
@@ -110,7 +110,7 @@ body.single-bon_blogs {
   .entry-content {
     margin-top: baseline();
     p {
-      @extend %large-archive-p;
+      @include large-archive-p;
     }
   }
 
@@ -161,7 +161,7 @@ body.single-bon_blogs {
     margin-top: 0;
 
     h2.entry-title  {
-      @extend %small-archive-h;
+      @include small-archive-h;
       text-align: left;
       max-width: rem-calc(680);
       margin: 0 auto;

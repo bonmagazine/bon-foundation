@@ -41,17 +41,17 @@
   }
 
   .title {
-    @extend %small-medium-archive-h;
+    @include small-medium-archive-h;
   }
 
   .entry-content p{
-    @extend %large-archive-p;
+    @include large-archive-p;
   }
 
 }
 .bon-blog-list {
   .entry-content p{
-    @extend %large-archive-p;
+    @include large-archive-p;
     margin-top: $baseline;
   }
 }

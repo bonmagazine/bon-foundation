@@ -49,27 +49,26 @@ Paragraphs
 // #  
 // #
 
-%archive-mono { // For headings
+@mixin archive-mono { // For headings
   font-family:"Archive Pro Mono", serif; 
   word-spacing: -0.2em;
   text-rendering: optimizeLegibility;
-  //text-transform: uppercase;
 }
 
-%archive-roman { // For paragraphs
+@mixin archive-roman { // For paragraphs
   font-family:"Archive Pro Roman", serif; 
 }
-%archive-roman-italic { 
+@mixin archive-roman-italic { 
   font-family:"Archive Pro Italic", serif; 
   font-style: italic;
 }
 
-%serif {
+@mixin serif {
   font-family:"Value Serif Regular", serif; 
   font-weight:600; 
 }
 
-%grotesque {
+@mixin grotesque {
   font-family:"Value Sans Medium", sans-serif; 
   font-weight:500;  
 }
@@ -79,8 +78,8 @@ Paragraphs
 // #
 
 // ## archive header: large-archive-header
-%large-archive-h {
-  @extend %archive-roman;
+@mixin large-archive-h {
+  @include archive-roman;
 
   font-size: 54px; 
   font-weight: normal;
@@ -95,13 +94,13 @@ Paragraphs
 }
 
 // ## serif header: l-s-h
-%large-serif-h {
-  @extend %serif;
+@mixin large-serif-h {
+  @include serif;
 }
 
 // ## grotesque header: l-g-h
-%large-grotesque-h {
-  @extend %grotesque;
+@mixin large-grotesque-h {
+  @include grotesque;
   font-size: 20px;
   line-height: baseline(0.75);
   text-transform: uppercase;
@@ -110,8 +109,8 @@ Paragraphs
 }
 
 // ## archive paragraph: l-a-p
-%large-archive-p {
-  @extend %archive-roman;
+@mixin large-archive-p {
+  @include archive-roman;
   font-size: 20px; 
   line-height: 30px;
   @include respond-to(xs) {
@@ -121,13 +120,13 @@ Paragraphs
 }
 
 // ## serif paragraph: l-s-p
-%large-serif-p {
-  @extend %serif;
+@mixin large-serif-p {
+  @include serif;
 }
 
 // ## grotesque paragraph: l-g-p
-%large-grotesque-p {
-  @extend %grotesque;
+@mixin large-grotesque-p {
+  @include grotesque;
   font-size: 20px;
   line-height: baseline(1.25);
   @include respond-to(xs) {
@@ -142,51 +141,51 @@ Paragraphs
 // #
 
 // ## archive header: medium-archive-header
-%medium-archive-h {
-  @extend %archive-roman;
+@mixin medium-archive-h {
+  @include archive-roman;
   font-size: 36px; 
   font-weight: normal;
   line-height: baseline(1.75);
 }
 
-%small-medium-archive-h {
-  @extend %archive-roman;
+@mixin small-medium-archive-h {
+  @include archive-roman;
   font-size: 26px; 
   font-weight: normal;
   line-height: baseline(1.25);
 }
 
 // ## serif header: m-s-h
-%medium-serif-h {
-  @extend %serif;
+@mixin medium-serif-h {
+  @include serif;
   font-size: 16px;
   line-height: baseline();
 }
 
 // ## grotesque header: m-g-h
-%medium-grotesque-h {
-  @extend %grotesque;
+@mixin medium-grotesque-h {
+  @include grotesque;
   font-size: 16px;
   line-height: baseline();
 }
 
 // ## archive paragraph: m-a-p
-%medium-archive-p {
-  @extend %archive-roman;
+@mixin medium-archive-p {
+  @include archive-roman;
   font-size: 16px;
   line-height: baseline();
 }
 
 // ## serif paragraph: m-s-p
-%medium-serif-p {
-  @extend %serif;
+@mixin medium-serif-p {
+  @include serif;
   font-size: 16px;
   line-height: baseline();
 }
 
 // ## grotesque paragraph: m-g-p
-%medium-grotesque-p {
-  @extend %grotesque;
+@mixin medium-grotesque-p {
+  @include grotesque;
   font-size: 16px;
   line-height: baseline();
   word-spacing: -0.1em;
@@ -197,8 +196,8 @@ Paragraphs
 // #
 
 // ## archive header: small-archive-header
-%small-archive-h {
-  @extend %archive-roman;
+@mixin small-archive-h {
+  @include archive-roman;
   font-size: 20px;
   font-weight: normal;
   line-height: baseline(1.25);
@@ -206,13 +205,13 @@ Paragraphs
 }
 
 // ## serif header: s-s-h
-%small-serif-h {
-  @extend %serif;
+@mixin small-serif-h {
+  @include serif;
 }
 
 // ## grotesque header: s-g-h
-%small-grotesque-h {
-  @extend %grotesque;
+@mixin small-grotesque-h {
+  @include grotesque;
   font-size: 14px;
   line-height: baseline(0.75);
   text-transform: uppercase;
@@ -220,18 +219,18 @@ Paragraphs
 }
 
 // ## archive paragraph: s-a-p
-%small-archive-p {
-  @extend %archive-roman;
+@mixin small-archive-p {
+  @include archive-roman;
 }
 
 // ## serif paragraph: s-s-p
-%small-serif-p {
-  @extend %serif;
+@mixin small-serif-p {
+  @include serif;
 }
 
 // ## grotesque paragraph: s-g-p
-%small-grotesque-p {
-  @extend %grotesque;
+@mixin small-grotesque-p {
+  @include grotesque;
   font-size: 12px;
   line-height: baseline(0.75);
   word-spacing: -0.1em;
@@ -244,85 +243,85 @@ Paragraphs
 
 
 
-%text { 
-  @extend %grotesque;
+@mixin text { 
+  @include grotesque;
 }
 
-%small-title { 
-  @extend %serif;
+@mixin small-title { 
+  @include serif;
 }
 
-%title { 
-  @extend %archive-roman;
+@mixin title { 
+  @include archive-roman;
 }
 
-%title-i { 
+@mixin title-i { 
   font-family:"Archive Pro Italic", serif; 
   font-style:italic; 
 }
 
-%big-title { 
-  @extend %large-archive-h;
+@mixin big-title { 
+  @include large-archive-h;
 }
 
 @mixin sans-serif {
-  @extend %grotesque;
+  @include grotesque;
 }
 
 @mixin serif {
-  @extend %serif;
+  @include serif;
 }
 
 @mixin reading-type {
-  @extend %archive-roman;
+  @include archive-roman;
 }
 
 @mixin sans-serif-heading { 
-  @extend %large-grotesque-h;
+  @include large-grotesque-h;
 }
 
 @mixin sans-serif-small-heading { 
-  @extend %small-grotesque-h;
+  @include small-grotesque-h;
 }
 
 
 @mixin sans-serif-big-text { 
-  @extend %large-grotesque-p;
+  @include large-grotesque-p;
 }
 
 
 @mixin sans-serif-medium-text { 
-  @extend %medium-grotesque-p;
+  @include medium-grotesque-p;
 }
 
 @mixin sans-serif-small-text { 
 
-  @extend %small-grotesque-p;
+  @include small-grotesque-p;
 }
 
 @mixin serif-heading-1 { 
-  @extend %large-archive-h;
+  @include large-archive-h;
 } 
 
 @mixin serif-heading-2 { 
-  @extend %medium-archive-h;
+  @include medium-archive-h;
 } 
 
 @mixin serif-heading-3 { 
-  @extend %small-archive-h;
+  @include small-archive-h;
 } 
 
 @mixin serif-heading-4 { 
-  @extend %small-archive-h;
+  @include small-archive-h;
 } 
 
 @mixin reading-text {
-  @extend %large-archive-p;
+  @include large-archive-p;
 
 }
 
 @mixin intro-text {
-  @extend %large-grotesque-p;
+  @include large-grotesque-p;
 }
 
 @mixin title {
@@ -334,11 +333,11 @@ Paragraphs
 }
 
 .article-title {
-  @extend %large-archive-h;
+  @include large-archive-h;
 }
 
 .big-title {
-  @extend %medium-archive-h;
+  @include medium-archive-h;
 
   .content & {
     margin-left: $gutter-width/2;
@@ -346,43 +345,43 @@ Paragraphs
 }
 
 .medium-title {
-  @extend %small-archive-h;
+  @include small-archive-h;
   font-size: 22px;
 }
 
 .small-title {
-  @extend %small-archive-h;
+  @include small-archive-h;
 }
 
 .sys-title {
-  @extend %small-grotesque-h;
+  @include small-grotesque-h;
 }
 
 .small-sys-title {
-  @extend %small-grotesque-h;
+  @include small-grotesque-h;
   font-size: 12px;
 }
 
 .reading-text {
-  @extend %large-archive-p;
+  @include large-archive-p;
 }
 
 .intro-text {
-  @extend %large-grotesque-p;
+  @include large-grotesque-p;
 }
 
 .colophon {
-  @extend %small-grotesque-p;
+  @include small-grotesque-p;
 }
 
 .text {
-  @extend %medium-grotesque-p;
+  @include medium-grotesque-p;
 }
 
 .teaser-text {
-  @extend %medium-grotesque-p;
+  @include medium-grotesque-p;
 }
 
 .small-text {
-  @extend %small-grotesque-p;
+  @include small-grotesque-p;
 }

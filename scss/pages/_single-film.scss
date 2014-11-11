@@ -5,16 +5,16 @@
         text-align: center;
       }
       .entry-pre-title {
-        @extend %small-grotesque-h;
+        @include small-grotesque-h;
       }
       .entry-title {
-        @extend %medium-archive-h;
+        @include medium-archive-h;
         line-height: baseline(2);
       }
     }
   }
   .aside-title {
-    @extend %small-archive-h;
+    @include small-archive-h;
     .title-label {
       font-size: 0.8em;
     }
