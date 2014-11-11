@@ -56,17 +56,6 @@ function bon_display_extra_profile_fields( $user ) { ?>
       </td>
     </tr>
     <tr>
-      <th><label for="bon_blog_header_image">Blog Header Image</label></th>
-       
-      <td>
-        <img id="upload_header_preview" src="<?php echo esc_attr( get_the_author_meta( 'bon_blog_header_image', $user->ID ) ); ?>"><br>
-        <input type="hidden" name="bon_blog_header_image" id="bon_blog_header_image" value="<?php echo esc_attr( get_the_author_meta( 'bon_blog_header_image', $user->ID ) ); ?>" class="regular-text" />
-        <input type="hidden" name="bon_blog_header_image_id" id="bon_blog_header_image_id" value="<?php echo esc_attr( get_the_author_meta( 'bon_blog_header_image_id', $user->ID ) ); ?>" class="regular-text" />
-        <input type='button' class="button-primary" value="Upload Image" id="uploadimage"/><br />
-        <span class="description">Please upload the image for your blog header.</span>
-      </td>
-    </tr>
-    <tr>
       <th><label for="bon_blog_style_box">Custom style box</label></th>
       <td>
         <?php 
@@ -120,44 +109,53 @@ function bon_save_extra_profile_fields( $user_id ) {
   update_usermeta( $user_id, 'bon_blog_title', $_POST['bon_blog_title'] );
   update_usermeta( $user_id, 'bon_blog_subtitle', $_POST['bon_blog_subtitle'] );
   update_usermeta( $user_id, 'bon_blog_style_box', $_POST['bon_blog_style_box'] );
-  update_usermeta( $user_id, 'bon_blog_header_image', $_POST['bon_blog_header_image'] );
-  update_usermeta( $user_id, 'bon_blog_header_image_id', $_POST['bon_blog_header_image_id'] );
   update_usermeta( $user_id, 'about_page_id', $_POST['page_id'] );
 
 }
 
-function bon_profile_upload_js() {
-?>
-  <script type="text/javascript">
-  jQuery(document).ready(function() {
-    jQuery(document).find("input[id^='uploadimage']").live('click', function(){
-      formfield = jQuery('#bon_blog_header_image').attr('name');
-      tb_show('Upload a blog header image', 'media-upload.php?type=image&amp;TB_iframe=true', false);
-       
-      window.send_to_editor = function(html) {
-        var imgurl = jQuery('img',html).attr('src'),
-            aEl = jQuery(html).attr('rel'), //will be something like <a href="..." rel="attachment wp-att-29761">...</a>
-            imgId = aEl.match(/wp\-att\-(\d*)/i)[1];
-        jQuery('#bon_blog_header_image').val(imgurl);
-        jQuery('#bon_blog_header_image_id').val(imgId);
-        tb_remove();
+/*
+ *
+ * Advanced Custom field for Blog header
+ * Requires: Advanced Custom Fields plugin
+ *
+ */
 
-        jQuery('#upload_header_preview').attr('src',imgurl);  
-        jQuery('#submit').trigger('click');
-      }
-       
-      return false;
-    });
-  });
-  </script>
-<?php
+if(function_exists("register_field_group"))
+{
+  register_field_group(array (
+    'id' => 'acf_user',
+    'title' => 'user',
+    'fields' => array (
+      array (
+        'key' => 'field_545caaf7ff703',
+        'label' => 'Bon Blog Header',
+        'name' => 'bon_blog_header',
+        'type' => 'image',
+        'instructions' => 'upload header for blog',
+        'save_format' => 'object',
+        'preview_size' => 'thumbnail',
+        'library' => 'all',
+      ),
+    ),
+    'location' => array (
+      array (
+        array (
+          'param' => 'ef_user',
+          'operator' => '==',
+          'value' => 'bon_blogger',
+          'order_no' => 0,
+          'group_no' => 0,
+        ),
+      ),
+    ),
+    'options' => array (
+      'position' => 'normal',
+      'layout' => 'no_box',
+      'hide_on_screen' => array (
+      ),
+    ),
+    'menu_order' => 0,
+  ));
 }
-add_action('admin_head','bon_profile_upload_js');
- 
-// the following is the js and css for the upload functionality
-function bon_enqueu_scripts_init(){
-  wp_enqueue_script('media-upload');
-  wp_enqueue_script('thickbox');
-  wp_enqueue_style('thickbox');
-}
-add_action('admin_enqueue_scripts', 'bon_enqueu_scripts_init');
+
+
