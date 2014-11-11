@@ -268,10 +268,6 @@ Paragraphs
   @include grotesque;
 }
 
-@mixin serif {
-  @include serif;
-}
-
 @mixin reading-type {
   @include archive-roman;
 }

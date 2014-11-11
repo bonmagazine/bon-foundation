@@ -183,7 +183,7 @@ body.single-bon_blogs {
       content: ":";
     }
     .entry-title {
-      @extend %small-archive-h;
+      @include small-archive-h;
       a { 
         color: #00ADFF;
       }
