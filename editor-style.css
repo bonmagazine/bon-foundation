@@ -126,3 +126,31 @@ span.interviewname {
 	text-transform: uppercase;
 	letter-spacing:.5px;
 }
+.pullquote::before { 
+    content: "***";
+	width:80px; 
+	text-indent:-9999px; 
+	height:6px; 
+	background:black; 
+	margin-top: 21px; 
+	margin-bottom: 21px; 
+	margin-left:48px;    
+	display:block;
+}
+.pullquote::after { 
+    content: "***";
+	width:80px; 
+	text-indent:-9999px; 
+	height:6px; 
+	background:black; 
+	margin-top: 21px; 
+	margin-bottom: 21px; 
+	margin-left:48px;  
+	display:block;
+}
+.pullquote {
+ font-family: "Archive Pro Roman", serif;
+ font-size: 30px !important;
+ line-height: 38px !important;
+ letter-spacing: 0;
+}

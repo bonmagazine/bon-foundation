@@ -359,6 +359,34 @@ hr.separator {
       margin-left: $indent;
     }
   }
+  &.pullquote {
+	 text-align:left;
+	 font-size: 30px !important;
+	 line-height: 38px !important;
+	 letter-spacing: 0;  
+	 text-indent:0;
+     padding-left: $indent;
+     &:before { 
+	    content: "***";
+		width:80px; 
+		text-indent:-9999px; 
+		height:6px; 
+		background:black; 
+	    margin-top: ($baseline * 1.5) - 3px; 
+	    margin-bottom: ($baseline * 1.5) - 3px; 
+		display:block;
+	 } 
+	 &:after { 
+	    content: "***";
+		width:80px; 
+		text-indent:-9999px; 
+		height:6px; 
+		background:black; 
+	    margin-top: ($baseline * 1.5) - 3px; 
+	    margin-bottom: ($baseline * 1.5) - 3px; 
+		display:block;
+	}
+   }
 }
 
 .fashionname {
@@ -550,12 +578,6 @@ div.panel_title {
 .austinmedium {
   @include serif; }
 
-.pullquote {
-  @include serif;
-  font-size: 42px;
-  line-height: 32px;
-  width: 600px;
-  margin: 0px auto; }
 
 .smallquote {
   @include serif;

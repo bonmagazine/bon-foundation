@@ -96,3 +96,17 @@ span.dropcap {
 	margin-bottom: 21px; 
 	margin-left:48px; 
 }
+.pullquote::before { 
+    content: "***";
+}
+.pullquote::after { 
+    content: "***";
+}
+
+
+.pullquote {
+ font-family: "Archive Pro Roman", serif;
+ font-size: 30px !important;
+ line-height: 28px !important;
+ letter-spacing: 0;
+}
