@@ -74,11 +74,17 @@
   }
 
   .title {
-    @include medium-archive-h;
+    @include small-medium-archive-h;
+    @media #{$s-up} { 
+      @include medium-archive-h;
+    }
   }
 
   .entry-excerpt p{
-    @include large-archive-p;
+    @include medium-archive-p;
+    @media #{$s-up} { 
+	    @include large-archive-p;
+    }
   }
 
   .entry-meta {

@@ -16,25 +16,29 @@
     }
     
     .section {
-      @include large-grotesque-h;
-
+      @include medium-grotesque-h;
+      text-transform: uppercase;
+	  text-align: center;
       @media #{$s-up} {
         text-align: right;
-
+        @include large-grotesque-h;
         @include grid-column(2);
       }
 
       &:after {
+      @media #{$s-up} {
         content: "";
         line-height: 4.5rem;
+        }
       }
     }
     
     .entry-title {
-      @include large-archive-h;
-
+      @include medium-archive-h;
+	  text-align:center;
       @media #{$s-up} {
         @include grid-column(8);
+        @include large-archive-h;
       }
     }
     
@@ -70,7 +74,9 @@
     }
 
     p {
-      @include large-archive-p;
+      @media #{$s-up} {  
+        @include large-archive-p;
+	  }
     }
     
     p + p {
