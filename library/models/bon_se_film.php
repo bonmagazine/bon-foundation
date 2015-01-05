@@ -92,6 +92,27 @@ function bon_get_film_share_url() {
   return $share_url;
 }
 
+function bon_get_film_release_date() {
+  $release_date = new DateTime();
+  $release_date->setTimestamp( bon_get_film_field('release_date') );
+  if( $release_date ) {
+    return $release_date->format('n F Y, H:i');
+  }
+}
+
+function bon_get_film_time_to_release() {
+  $release_date = new DateTime();
+  $release_date->setTimestamp( bon_get_film_field('release_date') );
+  if( $release_date ) {
+    $now = new DateTime('now');
+    $diff = $release_date->getTimestamp() - $now->getTimestamp();
+    // is it in the future?
+    if( $diff > 0 ) {
+      return $diff;
+    }
+  }
+}
+
 function bon_get_film_field($field) {
   $value = get_post_meta( get_the_ID(), $field, true );
   return $value;
