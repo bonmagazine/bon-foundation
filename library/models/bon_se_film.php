@@ -96,7 +96,7 @@ function bon_get_film_release_date() {
   $release_date = new DateTime();
   $release_date->setTimestamp( bon_get_film_field('release_date') );
   if( $release_date ) {
-    return $release_date->format('n F Y, H:i');
+    return $release_date->format('j F Y, H:i');
   }
 }
 

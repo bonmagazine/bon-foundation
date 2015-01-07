@@ -122,6 +122,7 @@ VideoPlayer = function (opt) {
 
         timetorelease--;
 
+        // Countdown is over, clear countdown and start player
         if(timetorelease < 1) {
           clearInterval(playerTimer);
           $('.counter-container').hide();
