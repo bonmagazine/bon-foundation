@@ -45,4 +45,9 @@
     margin-bottom: $baseline * 2;
   }
 
+  .counter-container {
+    @include flex-video-container;
+    text-align: center;
+  }
+
 }

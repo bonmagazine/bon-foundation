@@ -96,7 +96,7 @@ VideoPlayer = function (opt) {
 
       $('.entry-content')
         .find('div').hide().end()
-        .append('<div class="counter-container"><p class="release-date">'+releasedate+'</p><p class="counter"></p></div>');
+        .append('<div class="counter-container flex-video"><p class="release-date">'+releasedate+'</p><p class="counter"></p></div>');
 
       var playerTimer = setInterval(function () {
         var timer = timetorelease,
