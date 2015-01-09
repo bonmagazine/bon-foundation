@@ -103,8 +103,10 @@ function bon_get_film_release_date() {
 function bon_get_film_time_to_release() {
   $release_date = new DateTime();
   $release_date->setTimestamp( bon_get_film_field('release_date') );
+  $release_date->setTimezone(new DateTimeZone('Europe/Stockholm'));
   if( $release_date ) {
     $now = new DateTime('now');
+    $now->setTimezone(new DateTimeZone('Europe/Stockholm'));
     $diff = $release_date->getTimestamp() - $now->getTimestamp();
     // is it in the future?
     if( $diff > 0 ) {
