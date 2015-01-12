@@ -104,18 +104,37 @@ VideoPlayer = function (opt) {
 
         // do some time calculations
         days = parseInt(timer / 86400);
+        if(days > 0) {
+          daysLabel = (days > 1)? " days, " : " day, ";
+          text += days + daysLabel;
+        }
         timer = timer % 86400;
-        if(days > 0) text += days + " days, ";
 
         hours = parseInt(timer / 3600);
+        // Add padding
+        if(hours < 10) {
+          text += "0";
+        }
+        hoursLabel = ":"; //(hours > 1)? " hours, " : " hour, ";
+        text += hours + hoursLabel;
         timer = timer % 3600;
-        if(hours > 0) text += hours + " hours, ";
 
         minutes = parseInt(timer / 60);
-        if(minutes > 0) text += minutes + " minutes, ";
+        // Add padding
+        if(minutes < 10) {
+          text += "0";
+        }
+        minutesLabel = ":"; //(minutes > 1)? " minutes, " : " minute, ";
+        text += minutes + minutesLabel;
+        
 
         seconds = parseInt(timer % 60);
-        text += seconds + " seconds left";
+        // Add padding
+        if(seconds < 10) {
+          text += "0";
+        }
+        secondsLabel = " left"; //(seconds > 1)? " seconds left" : " second left";
+        text += seconds + secondsLabel;
 
         // format countdown string + set tag value
         $(".counter").text( text );
