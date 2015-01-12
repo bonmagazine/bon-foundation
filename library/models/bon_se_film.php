@@ -96,18 +96,24 @@ function bon_get_film_release_date() {
   if( bon_get_film_field('release_date') ) {
     $release_date = new DateTime();
     $release_date->setTimestamp( bon_get_film_field('release_date') );
-    return $release_date->format('j F Y, H:i');
+    // We want the date in the format 1 January 2014, 20:00
+    $return_format = "j F Y, H:i";
+    return $release_date->format($return_format ). " CET";
   }
 }
 
 function bon_get_film_time_to_release() {
   if( bon_get_film_field('release_date') ) {
-    $release_date = new DateTime();
-    $release_date->setTimestamp( bon_get_film_field('release_date') );
-    $release_date->setTimezone(new DateTimeZone('Europe/Stockholm'));
+    // Recorded date is in local time zone
+    // We need to convert it to GMT to calculate 
+    // time difference.
+    $release_date_local_tz = new DateTime();
+    $release_date_local_tz->setTimestamp( bon_get_film_field('release_date') );
+    $release_date_gmt_string = get_gmt_from_date( $release_date_local_tz->format('Y-m-d H:i:s') );
+    $release_date_gmt = new DateTime($release_date_gmt_string);
+
     $now = new DateTime('now');
-    $now->setTimezone(new DateTimeZone('Europe/Stockholm'));
-    $diff = $release_date->getTimestamp() - $now->getTimestamp();
+    $diff = $release_date_gmt->getTimestamp() - $now->getTimestamp();
     // is it in the future?
     if( $diff > 0 ) {
       return $diff;
