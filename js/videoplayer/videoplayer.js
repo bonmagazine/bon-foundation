@@ -96,7 +96,7 @@ VideoPlayer = function (opt) {
 
       $('.jwplayer-wrapper')
         .find('video').hide().end()
-        .append('<div class="counter-container" style="background: url('+ $('.jwplayer-wrapper video').attr('poster') +');"><p class="counter"></p></div>');
+        .append('<div class="counter-container" style="background-image: url('+ $('.jwplayer-wrapper video').attr('poster') +');"><p class="counter"></p></div>');
 
       var playerTimer = setInterval(function () {
         var timer = timetorelease,
