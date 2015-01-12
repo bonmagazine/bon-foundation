@@ -94,8 +94,8 @@ VideoPlayer = function (opt) {
 
     if( timetorelease ) {
 
-      $('.entry-content')
-        .find('div').hide().end()
+      $('.jwplayer-wrapper')
+        .find('video').hide().end()
         .append('<div class="counter-container"><p><span class="release-date">Stream begins on '+releasedate+'</span><span class="counter"></span></p></div>');
 
       var playerTimer = setInterval(function () {

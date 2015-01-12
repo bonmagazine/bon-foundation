@@ -34,6 +34,33 @@
   video {
     width: 100%;
   }
+  .counter-container {
+    position: relative;
+    padding-top: 1.38889rem;
+    padding-bottom: 67.5%;
+    height: 0;
+    margin-bottom: 0.88889rem;
+    overflow: hidden;
+    
+    text-align: center;
+    background: black;
+    color: white;
+    position: relative;
+  }
+
+    .counter-container p {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+
+      width: 100%;
+      max-width: none;
+    }
+
+    .counter-container span {
+      display: block;
+    }
   </style>
 </head>
 

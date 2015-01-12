@@ -93,18 +93,18 @@ function bon_get_film_share_url() {
 }
 
 function bon_get_film_release_date() {
-  $release_date = new DateTime();
-  $release_date->setTimestamp( bon_get_film_field('release_date') );
-  if( $release_date ) {
+  if( bon_get_film_field('release_date') ) {
+    $release_date = new DateTime();
+    $release_date->setTimestamp( bon_get_film_field('release_date') );
     return $release_date->format('j F Y, H:i');
   }
 }
 
 function bon_get_film_time_to_release() {
-  $release_date = new DateTime();
-  $release_date->setTimestamp( bon_get_film_field('release_date') );
-  $release_date->setTimezone(new DateTimeZone('Europe/Stockholm'));
-  if( $release_date ) {
+  if( bon_get_film_field('release_date') ) {
+    $release_date = new DateTime();
+    $release_date->setTimestamp( bon_get_film_field('release_date') );
+    $release_date->setTimezone(new DateTimeZone('Europe/Stockholm'));
     $now = new DateTime('now');
     $now->setTimezone(new DateTimeZone('Europe/Stockholm'));
     $diff = $release_date->getTimestamp() - $now->getTimestamp();
