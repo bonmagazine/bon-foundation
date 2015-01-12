@@ -43,8 +43,8 @@
     overflow: hidden;
     
     text-align: center;
-    background: black;
-    color: white;
+    background-repeat: no-repeat;
+    background-position: center center;
     position: relative;
   }
 
