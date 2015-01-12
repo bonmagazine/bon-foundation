@@ -96,48 +96,50 @@ VideoPlayer = function (opt) {
 
       $('.jwplayer-wrapper')
         .find('video').hide().end()
-        .append('<div class="counter-container"><p><span class="release-date">Stream begins on '+releasedate+'</span><span class="counter"></span></p></div>');
+        .append('<div class="counter-container" style="background: url('+ $('.jwplayer-wrapper video').attr('poster') +');"><p class="counter"></p></div>');
 
       var playerTimer = setInterval(function () {
         var timer = timetorelease,
-            text = "";
+            text = "Livestream starts ";
 
         // do some time calculations
         days = parseInt(timer / 86400);
         if(days > 0) {
-          daysLabel = (days > 1)? " days, " : " day, ";
-          text += days + daysLabel;
+          text += releasedate;
         }
-        timer = timer % 86400;
+        else {
+          text += "in ";
 
-        hours = parseInt(timer / 3600);
-        // Add padding
-        if(hours < 10) {
-          text += "0";
-        }
-        hoursLabel = ":"; //(hours > 1)? " hours, " : " hour, ";
-        text += hours + hoursLabel;
-        timer = timer % 3600;
+          timer = timer % 86400;
 
-        minutes = parseInt(timer / 60);
-        // Add padding
-        if(minutes < 10) {
-          text += "0";
+          hours = parseInt(timer / 3600);
+          // Add padding
+          if(hours < 10) {
+            text += "0";
+          }
+          hoursLabel = ":"; //(hours > 1)? " hours, " : " hour, ";
+          text += hours + hoursLabel;
+          timer = timer % 3600;
+
+          minutes = parseInt(timer / 60);
+          // Add padding
+          if(minutes < 10) {
+            text += "0";
+          }
+          minutesLabel = ":"; //(minutes > 1)? " minutes, " : " minute, ";
+          text += minutes + minutesLabel;
+          
+          seconds = parseInt(timer % 60);
+          // Add padding
+          if(seconds < 10) {
+            text += "0";
+          }
+          secondsLabel = ""; //(seconds > 1)? " seconds left" : " second left";
+          text += seconds + secondsLabel;
         }
-        minutesLabel = ":"; //(minutes > 1)? " minutes, " : " minute, ";
-        text += minutes + minutesLabel;
         
-
-        seconds = parseInt(timer % 60);
-        // Add padding
-        if(seconds < 10) {
-          text += "0";
-        }
-        secondsLabel = " left"; //(seconds > 1)? " seconds left" : " second left";
-        text += seconds + secondsLabel;
-
-        // format countdown string + set tag value
-        $(".counter").text( text );
+        // Update text
+        $(".counter").html( text );
 
         timetorelease--;
 

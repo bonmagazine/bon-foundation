@@ -47,9 +47,10 @@
 
   .counter-container {
     @include flex-video-container;
+    padding-bottom: 56.25%;
+    padding-top: 0;
+
     text-align: center;
-    background: black;
-    color: white;
     position: relative;
     
     p {

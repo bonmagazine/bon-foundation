@@ -37,7 +37,7 @@
   .counter-container {
     position: relative;
     padding-top: 1.38889rem;
-    padding-bottom: 67.5%;
+    padding-bottom: 56.25%;
     height: 0;
     margin-bottom: 0.88889rem;
     overflow: hidden;
