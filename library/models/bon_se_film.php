@@ -41,7 +41,7 @@ function bon_get_sibling_posts($post_type, $post_parent, $post_ID) {
 }
 
 function bon_get_film_skin() {
-  $skin = (get_post_meta( get_the_ID(), 'skin', true ))? get_post_meta( get_the_ID(), 'skin', true ) : 'bon';
+  $skin = (get_post_meta( get_the_ID(), 'video_player_skin', true ))? get_post_meta( get_the_ID(), 'video_player_skin', true ) : 'bon';
   return $skin;
 }
 

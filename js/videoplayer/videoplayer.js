@@ -11,6 +11,17 @@ Utils = {
 }
 
 VideoPlayer = function (opt) {
+
+  SKINS = {
+    bon: {
+      url: '/live/wp-content/themes/bon-foundation/js/jwplayer/skins/bon/bon.xml',
+      classname: 'bon-skin'
+    },
+    plain: {
+      url: '/live/wp-content/themes/bon-foundation/js/jwplayer/skins/bonplain/bonplain.xml',
+      classname: 'plain-skin'
+    }
+  };
  
   var that = this;
   
@@ -32,11 +43,7 @@ VideoPlayer = function (opt) {
           provider: "http://players.edgesuite.net/flash/plugins/jw/v3.4/AkamaiAdvancedJWStreamProvider.swf",
           type:'mp4'
           }],
-        skins = {
-          bon: '/live/wp-content/themes/bon-foundation/js/jwplayer/skins/bon/bon.xml',
-          plain: '/live/wp-content/themes/bon-foundation/js/jwplayer/skins/bonplain/bonplain.xml'
-        },
-        skinToUse = ( skins[$videoPlayer.data().skin]? skins[$videoPlayer.data().skin] : skins.bon );
+        skin = ( SKINS[$videoPlayer.data().skin]? SKINS[$videoPlayer.data().skin] : SKINS.bon );
 
     that.parentEl = $videoPlayer.parent().parent()[0];
     that.aspectRatio = aspectRatio;
@@ -71,7 +78,7 @@ VideoPlayer = function (opt) {
       sharing: sharing,
       height: vph,
       width: vpw,
-      skin: skinToUse,
+      skin: skin.url,
       smoothing: true,
       primary: "flash",
       autostart: autostart,
@@ -96,7 +103,7 @@ VideoPlayer = function (opt) {
 
       $('.jwplayer-wrapper')
         .find('video').hide().end()
-        .append('<div class="counter-container" style="background-image: url('+ $('.jwplayer-wrapper video').attr('poster') +');"><p class="counter"></p></div>');
+        .append('<div class="counter-container '+ skin.classname +'" style="background-image: url('+ $('.jwplayer-wrapper video').attr('poster') +');"><p class="counter"></p></div>');
 
       var playerTimer = setInterval(function () {
         var timer = timetorelease,
