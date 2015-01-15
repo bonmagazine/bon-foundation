@@ -27,7 +27,8 @@ module.exports = function(grunt) {
           loadPath: ['bower_components/foundation/scss']
         },
         files: {
-          'css/app.css': 'scss/app.scss'
+          'css/app.css': 'scss/app.scss',
+          'css/videoplayer.css' : 'scss/videoplayer.scss'
         }        
       },
       prod: {
@@ -37,7 +38,8 @@ module.exports = function(grunt) {
           loadPath: ['bower_components/foundation/scss']
         },
         files: {
-          'css/app.css': 'scss/app.scss'
+          'css/app.css': 'scss/app.scss',
+          'css/videoplayer.css' : 'scss/videoplayer.scss'
         }        
       }
     },

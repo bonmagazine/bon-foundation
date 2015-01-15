@@ -93,7 +93,7 @@ VideoPlayer = function (opt) {
       genericNetStreamPropertyValue : "",
       enableEndUserMapping : false,
       enableAlternateServerMapping : false
-    }
+    };
 
     // look for countdown time and don't initiate player if not live yet
     var timetorelease = $videoPlayer.data().timetorelease,
@@ -154,24 +154,31 @@ VideoPlayer = function (opt) {
         if(timetorelease < 1) {
           clearInterval(playerTimer);
           $('.counter-container').hide();
+          // that.initiatePlayer(playerSetup);
           this.player = new jwplayer(parent).setup(playerSetup);
+
         }
 
       }, 1000);
     }
     // no time to release, good to go
     else {
-      // Initiate JW Player
+      // that.initiatePlayer(playerSetup);
       this.player = new jwplayer(parent).setup(playerSetup);
+
     }
+  };
+
+  this.initiatePlayer = function(playerSetup) {
+
+    this.player = new jwplayer(parent).setup(playerSetup);
 
     // Resize handler
     if(opt && opt.embed) {
      that.resizeVideo();
      window.onresize = that.resizeVideo;
     }
-
-  };
+  }
   
   this.resizeVideo = function(){
     var width = that.parentEl.offsetWidth;

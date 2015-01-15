@@ -1,0 +1,52 @@
+@font-face {
+  font-family: 'HMAmpersand';
+  src: url('../fonts/HMAmpersand/HMAmpersand-Regular.ttf');
+}
+
+html {
+  overflow: hidden;
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+video {
+  width: 100%;
+}
+.embeded-player {
+  .counter-container {
+    @include flex-video-container;
+    padding-bottom: 56.25%;
+    height: 0;
+    margin-bottom: 0.88889rem;
+    overflow: hidden;
+
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    position: relative;
+
+    &.plain-skin {
+      font-family: "HMAmpersand", Arial, sans-serif;
+      text-transform: uppercase;
+      font-size: 36px;
+    }
+
+    p {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+
+      width: 100%;
+      max-width: none;
+      line-height: baseline(1.5);
+    }
+
+    span {
+      display: block;
+    }
+  }
+}

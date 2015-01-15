@@ -1,4 +1,4 @@
-/* VIDEO GALLERY */
+// Video player page 
 .videoplayer {
 
   video, 
@@ -44,28 +44,28 @@
     @media #{$l-up} { text-align: right; }
     margin-bottom: $baseline * 2;
   }
+}
 
-  .counter-container {
-    @include flex-video-container;
-    padding-bottom: 56.25%;
-    padding-top: 0;
+// Video player (both for page and embedable)
+.counter-container {
+  @include flex-video-container;
+  padding-bottom: 56.25%;
+  padding-top: 0;
 
-    text-align: center;
-    position: relative;
-    
-    p {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      -webkit-transform: translateY(-50%);
+  text-align: center;
+  position: relative;
+  
+  p {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
 
-      width: 100%;
-      max-width: none;
-    }
-
-    span {
-      display: block;
-    }
+    width: 100%;
+    max-width: none;
   }
 
+  span {
+    display: block;
+  }
 }

@@ -22,49 +22,10 @@
   <?php endforeach; ?>
   <meta property="og:image" content="<?php echo bon_get_film_poster(); ?>"/>
   <meta property="og:video:type" content="application/x-shockwave-flash">
-  <style>
-  html {
-    overflow: hidden;
-    height: 100%;
-  }
-  body {
-    margin: 0;
-    padding: 0;
-  }
-  video {
-    width: 100%;
-  }
-  .counter-container {
-    position: relative;
-    padding-top: 1.38889rem;
-    padding-bottom: 56.25%;
-    height: 0;
-    margin-bottom: 0.88889rem;
-    overflow: hidden;
-    
-    text-align: center;
-    background-repeat: no-repeat;
-    background-position: center center;
-    position: relative;
-  }
-
-    .counter-container p {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      -webkit-transform: translateY(-50%);
-
-      width: 100%;
-      max-width: none;
-    }
-
-    .counter-container span {
-      display: block;
-    }
-  </style>
+  <link rel="stylesheet" href="<?php echo bon_convert_to_protocol_relative(get_template_directory_uri()); ?>/css/videoplayer.css" type="text/css" media="all">
 </head>
 
-<body>
+<body class="embeded-player">
   <?php get_template_part( 'partials/videoplayer' ); ?>
   <?php wp_reset_postdata(); ?>
 

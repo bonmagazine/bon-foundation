@@ -1,0 +1,25 @@
+@import 
+  "settings",
+
+// Selectively include foundation components
+  "foundation/components/flex-video",
+  "foundation/components/grid",
+
+// Elements
+  "elements/functions",
+  "elements/typography",
+
+// Modules
+  "modules/videoplayer",
+  "modules/embeded-player";
+
+
+figure {
+  margin: 0;
+}
+
+button {
+  &:focus {
+    outline: none;
+  }
+}
