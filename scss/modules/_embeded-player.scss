@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'HMAmpersand';
-  src: url('../fonts/HMAmpersand/HMAmpersand-Regular.ttf');
+  src: url('../fonts/HMAmpersand/HMAmpersand-CondensedBd.ttf');
 }
 
 html {
@@ -31,7 +31,7 @@ video {
     &.plain-skin {
       font-family: "HMAmpersand", Arial, sans-serif;
       text-transform: uppercase;
-      font-size: 36px;
+      font-size: 4vw;
     }
 
     p {
