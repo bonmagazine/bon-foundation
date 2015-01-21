@@ -143,22 +143,22 @@ VideoPlayer = function (opt) {
         if(timetorelease < 1) {
           clearInterval(playerTimer);
           $('.counter-container').hide();
-          // that.initiatePlayer(playerSetup);
-          this.player = new jwplayer(parent).setup(playerSetup);
+          that.initiatePlayer(playerSetup);
+          // this.player = new jwplayer(parent).setup(playerSetup);
         }
 
       }, 1000);
     }
     // no time to release, good to go
     else {
-      // that.initiatePlayer(playerSetup);
-      this.player = new jwplayer(parent).setup(playerSetup);
+      that.initiatePlayer(playerSetup);
+      // this.player = new jwplayer(parent).setup(playerSetup);
     }
   };
 
   this.initiatePlayer = function(playerSetup) {
 
-    this.player = new jwplayer(parent).setup(playerSetup);
+    this.player = new jwplayer( $(".jwplayer-video").parent()[0].id ).setup(playerSetup);
 
     // Resize handler
     if(opt && opt.embed) {
