@@ -40,22 +40,13 @@ VideoPlayer = function (opt) {
         parent = $videoPlayer.parent()[0].id,
         playlist = [{
           image: poster,
-          provider: "http://players.edgesuite.net/flash/plugins/jw/v3.4/AkamaiAdvancedJWStreamProvider.swf",
+          provider: "/live/wp-content/themes/bon-foundation/js/jwplayer/AkamaiAdvancedJWStreamProvider.swf",
           type:'mp4'
           }],
         skin = ( SKINS[$videoPlayer.data().skin]? SKINS[$videoPlayer.data().skin] : SKINS.bon );
 
     that.parentEl = $videoPlayer.parent().parent()[0];
     that.aspectRatio = aspectRatio;
-
-    if($videoPlayer.data().share === 1) {
-      sharing = {
-        code: encodeURI("<iframe src='"+window.location.href+"' width='"+vpw+"' height='"+vph+"' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowfullscreen><iframe/>"),
-        link: $videoPlayer.data().permalink
-      };
-    } else {
-      sharing = '';
-    }
 
     //Stream
     if($videoPlayer.data().videotype === 'stream' ) {
@@ -74,26 +65,24 @@ VideoPlayer = function (opt) {
 
     // Player setup
     var playerSetup = {
-      playlist: playlist,
-      sharing: sharing,
-      height: vph,
-      width: vpw,
-      skin: skin.url,
-      smoothing: true,
-      primary: "flash",
-      autostart: autostart,
-      //akamai support player configs.
-      clipBegin : "",
-      clipEnd : "",
-      mbrStartingIndex : "",
-      mbrStartingBitrate :"",
-      akamaiMediaType : "",
-      netsessionMode : "",
-      genericNetStreamPropertyName :"",
-      genericNetStreamPropertyValue : "",
-      enableEndUserMapping : false,
-      enableAlternateServerMapping : false
-    };
+        playlist: playlist,
+        height: vph,
+        width: vpw,
+        primary: "flash",
+        skin: skin.url,
+        autostart: autostart,
+        smoothing: true,
+        //akamai support player configs.
+        enableAlternateServerMapping : false
+    }
+
+    // Sharing
+    if($videoPlayer.data().share === 1) {
+      playerSetup.sharing = {
+        code: encodeURI("<iframe src='"+window.location.href+"' width='"+vpw+"' height='"+vph+"' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowfullscreen><iframe/>"),
+        link: $videoPlayer.data().permalink
+      };
+    } 
 
     // look for countdown time and don't initiate player if not live yet
     var timetorelease = $videoPlayer.data().timetorelease,
@@ -156,7 +145,6 @@ VideoPlayer = function (opt) {
           $('.counter-container').hide();
           // that.initiatePlayer(playerSetup);
           this.player = new jwplayer(parent).setup(playerSetup);
-
         }
 
       }, 1000);
@@ -165,7 +153,6 @@ VideoPlayer = function (opt) {
     else {
       // that.initiatePlayer(playerSetup);
       this.player = new jwplayer(parent).setup(playerSetup);
-
     }
   };
 
