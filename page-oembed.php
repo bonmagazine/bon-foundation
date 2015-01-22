@@ -13,7 +13,7 @@ $json = array(
       "height" => 270,
       "title" => get_the_title(),
       "html" =>
-        "<iframe src=\"".bon_get_film_share_url()."\" width=\"480\" height=\"270\" frameborder=\"0\" webkitAllowFullScreen mozallowfullscreen allowfullscreen><iframe/>"
+        "<iframe src=\"".bon_get_film_share_url()."\" width=\"480\" height=\"270\" frameborder=\"0\" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>"
   );
 
 wp_send_json($json);

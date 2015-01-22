@@ -23,8 +23,7 @@
   <meta property="og:image" content="<?php echo bon_get_film_poster(); ?>"/>
   <meta property="og:video:type" content="application/x-shockwave-flash">
   <link rel="stylesheet" href="<?php echo bon_convert_to_protocol_relative(get_template_directory_uri()); ?>/css/videoplayer.css" type="text/css" media="all">
-  <link href="/oembed/?format=json&url=<?php echo urlencode( get_the_permalink() ); ?>" rel="alternate" type="application/json+oembed" />
-  <link href="/oembed/?format=xml&url=<?php echo urlencode( get_the_permalink() ); ?>" rel="alternate" type="application/xml+oembed" />
+  <link href="/oembed/?url=<?php echo urlencode( get_the_permalink() ); ?>" rel="alternate" type="application/json+oembed" />
 </head>
 
 <body class="embeded-player">
