@@ -51,6 +51,9 @@ require_once('library/user-profile.php');
 // Filters for content
 require_once('library/filters.php');
 
+// Add oEmbed providers
+require_once('library/oembed.php');
+
 /*
  *
  * MODELS

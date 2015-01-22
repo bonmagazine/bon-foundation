@@ -1,12 +1,16 @@
 <?php
 
 /*
- *  Custom URL structure for Bon Blogs
+ *  Custom URL structures
  *
  *
  **/
 
-function bon_blogs_rewrite() {
+function bon_rewrites() {
+
+  ////////////////////////////////
+  // BON BLOGS                  //
+  ////////////////////////////////
 
   // Bon Blog Pages
   add_rewrite_rule('^blogs/([^/]*)/pages/([^/]*)/?',
@@ -42,8 +46,31 @@ function bon_blogs_rewrite() {
   add_rewrite_rule('^blogs/([^/]*)/?',
                    'index.php?author_name=$matches[1]&post_type=bon_blogs',
                    'top');
+
+  ////////////////////////////////
+  // oEmbed                     //
+  ////////////////////////////////
+  add_rewrite_rule('^oembed?url=([^/]*)',
+                   'index.php?pagename=oembed&url=$matches[1]',
+                   'top');
 }
-add_action('init', 'bon_blogs_rewrite');
+add_action('init', 'bon_rewrites');
+
+function bon_query_vars( $query_vars ){
+    $query_vars[] = 'url'; // for oEmbed
+    return $query_vars;
+}
+add_filter( 'query_vars', 'bon_query_vars' );
+
+// create oEmbed page
+if( !get_page_by_title('oembed') ){
+  $page['post_type']    = 'page';
+  $page['post_parent']  = 0;
+  $page['post_content']  = '';
+  $page['post_status']  = 'publish';
+  $page['post_title']   = 'oembed';
+  $page_id = wp_insert_post($page);
+}
 
 function bon_custom_post_permalink( $url, $post = null, $leavename = false ) {
 

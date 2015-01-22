@@ -38,4 +38,12 @@ function bon_add_bon_blogs_feed() {
 }
 add_action('wp_head', 'bon_add_bon_blogs_feed');
 
+// Add oEmbed links to film pages
+function bon_add_oembed_links() {
+  if('bon_se_film' == get_post_type()) {
+    echo '<link href="/oembed?url='.urlencode( get_the_permalink() ).'" rel="alternate" type="application/json+oembed" />';
+  }
+}
+add_action('wp_head', 'bon_add_oembed_links');
+
 ?>
