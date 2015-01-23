@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'HMAmpersand';
-  src: url('../fonts/HMAmpersand/HMAmpersand-CondensedBd.ttf');
+  src: url('../fonts/HMAmpersand/HMAmpersand-Condensed.ttf');
 }
 
 html {
@@ -32,7 +32,7 @@ video {
     &.plain-skin {
       font-family: "HMAmpersand", Arial, sans-serif;
       text-transform: uppercase;
-      font-size: 4vw;
+      font-size: 7vw;
     }
 
     p {
@@ -43,7 +43,9 @@ video {
 
       width: 100%;
       max-width: none;
-      line-height: baseline(1.5);
+      margin: 0;
+      line-height: .9;
+      text-rendering: optimizeLegibility;
     }
 
     span {

@@ -101,10 +101,10 @@ VideoPlayer = function (opt) {
         // do some time calculations
         days = parseInt(timer / 86400);
         if(days > 0) {
-          text += releasedate;
+          text += "<br>"+releasedate;
         }
         else {
-          text += "in ";
+          text += "in <br>";
 
           timer = timer % 86400;
 
