@@ -59,3 +59,7 @@ button {
 a.read-more {
   color: $highlight-color;
 }
+
+.flex-video {
+  @include flex-video-container;
+}
