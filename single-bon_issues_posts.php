@@ -10,8 +10,7 @@
 		post_class( $classes ) ?> id="post-<?php the_ID(); ?>">
       <header class="entry-main">
         <p class="section">
-          <?php $issue = get_terms( 'bon_issues' ); ?>
-          <?php echo ($issue)? $issue[0]->slug : ''; ?>
+          <?php bon_the_bon_issue($post->ID); ?>
         </p>
         <h1 class="entry-title"><?php the_title(); ?></h1>
         <div class="author-and-date">

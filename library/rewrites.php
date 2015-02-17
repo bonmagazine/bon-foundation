@@ -85,8 +85,8 @@ function bon_custom_post_permalink( $url, $post = null, $leavename = false ) {
   // BON ISSUES
   elseif ( $post->post_type == 'bon_issues_posts' ) {
     $tag = '%bon_issues%';
-    $issue = get_terms('bon_issues');
-    $issue_slug = $issue? $issue[0]->slug : $tag;
+    $issue = bon_get_bon_issue($post->ID, 'slug');
+    $issue_slug = $issue? $issue : $tag;
     $url = str_replace($tag, $issue_slug, $url);
   }
 
