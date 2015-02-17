@@ -1,5 +1,10 @@
 <?php 
-  $post_ID = get_query_var( 'vid' ); 
+  if( get_query_var('vid') ) {
+    $post_ID = get_query_var( 'vid' ); 
+  } elseif( get_query_var('url') ) {
+    $url = urldecode(get_query_var('url'));
+    $post_ID = url_to_postid( 'http://bon.dev/'.$url );
+  }
   $post = get_post( $post_ID ); 
   setup_postdata( $post ); 
   ?>
