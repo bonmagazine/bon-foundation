@@ -3,7 +3,7 @@
     $post_ID = get_query_var( 'vid' ); 
   } elseif( get_query_var('url') ) {
     $url = urldecode(get_query_var('url'));
-    $post_ID = url_to_postid( 'http://bon.dev/'.$url );
+    $post_ID = url_to_postid( 'http://'.$_SERVER['SERVER_NAME'].'/'.$url );
   }
   $post = get_post( $post_ID ); 
   setup_postdata( $post ); 
