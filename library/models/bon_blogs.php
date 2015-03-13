@@ -18,6 +18,11 @@ function bon_the_bon_blog_stylesheet() {
   echo get_the_author_meta( 'bon_blog_style_box' );
 }
 
+function bon_the_bon_blog_analytics() {
+  echo get_the_author_meta( 'bon_blog_analytics_box' );
+}
+
+
 function bon_the_bon_blog_about_url() {
   echo get_permalink( get_the_author_meta( 'about_page_id' ) );
 }

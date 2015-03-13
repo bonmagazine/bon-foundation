@@ -18,6 +18,7 @@
   })();
 
 </script>
+<?php bon_the_bon_blog_analytics(); ?>
 </div><!-- .off-canvas-wrap -->
 </body>
 </html>

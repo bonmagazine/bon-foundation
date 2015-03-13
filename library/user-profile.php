@@ -75,9 +75,22 @@ p.intro-text {
           }
         ?>
         <textarea name="bon_blog_style_box" id="bon_blog_style_box" rows="5" cols="30"><?php echo $style_box; ?></textarea><br>
-        <span class="description">Custom stylesheet.</span>
+        <span class="description">Custom style box.</span>
       </td>
     </tr>
+    <tr>
+      <th><label for="bon_blog_style_box">Custom Google Analytics code</label></th>
+      <td>
+        <?php 
+          if( get_the_author_meta( 'bon_blog_analytics_box', $user->ID ) !== '') {
+            $analytics_box = esc_attr( get_the_author_meta( 'bon_blog_analytics_box', $user->ID ) ); 
+          }
+        ?>
+        <textarea name="bon_blog_analytics_box" id="bon_blog_analytics_box" rows="5" cols="30"><?php echo $analytics_box; ?></textarea><br>
+        <span class="description">Custom Google analytics code.</span>
+      </td>
+    </tr>
+
     <tr>
       <th><label for="bon_blog_header_image">About page</label></th>
       <td>
@@ -109,6 +122,7 @@ function bon_save_extra_profile_fields( $user_id ) {
   update_usermeta( $user_id, 'bon_blog_title', $_POST['bon_blog_title'] );
   update_usermeta( $user_id, 'bon_blog_subtitle', $_POST['bon_blog_subtitle'] );
   update_usermeta( $user_id, 'bon_blog_style_box', $_POST['bon_blog_style_box'] );
+  update_usermeta( $user_id, 'bon_blog_analytics_box', $_POST['bon_blog_analytics_box'] );
   update_usermeta( $user_id, 'about_page_id', $_POST['page_id'] );
 
 }
