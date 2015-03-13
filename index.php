@@ -26,6 +26,17 @@
     </section>
     <?php endif;?>
 
+    <?php $cover_posts = bon_get_bonbons_for_cover(); ?>
+    <?php if($cover_posts): ?>
+    <section class="bonbons-cover">
+      <?php foreach ($cover_posts as $post): setup_postdata( $post ); ?>
+        <?php get_template_part( 'partials/excerpt', 'bonbon' ); ?>
+      <?php endforeach; wp_reset_postdata(); ?>
+    </section>
+
+    <?php endif;?>
+
+
   <?php endif; // End homepage ?>
 
   <?php if ( have_posts() ) : ?>

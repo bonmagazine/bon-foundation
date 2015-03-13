@@ -9,6 +9,9 @@
 <?php if( in_category( array('short-post', 'ad') ) ) $short_post = true; ?>
 <?php if( in_category( array('ad') ) ) $ad_post = true; ?>
 
+
+<?php if ( get_the_title() != "Placeholder Blogs Widget" ) : ?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class( the_cover_template_class() ); ?>>
   
   <?php if( !$ad_post ): ?>
@@ -24,7 +27,6 @@
   <?php endif; ?>
 
   <div class="main">
-
     <?php if( !$ad_post ): ?>
     <div class="entry-meta">
       <div class="section">
@@ -57,3 +59,12 @@
     </div>
   </div>
 </article>
+<?php endif; ?>
+
+<?php if (get_the_title() == "Placeholder Blogs Widget"): ?>
+  	<?php if ( is_active_sidebar( 'sidebar' ) ) : ?>
+    <section class="blogs-widget">
+	<?php dynamic_sidebar( 'sidebar' ); ?>
+	</section><!-- #primary-sidebar -->
+	<?php endif; ?>
+<?php endif; ?>

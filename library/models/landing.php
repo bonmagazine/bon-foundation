@@ -62,6 +62,17 @@ function bon_get_cover_posts() {
   return get_posts($cover_args); 
 }
 
+function bon_get_bonbons_for_cover() {
+  $cover_args = array(
+    'post_type' => 'bon_minimagazine',
+    'posts_per_page' => 4, 
+    'orderby' => 'date',
+    'post_parent'=> 0,
+    'order' => 'DESC',
+   );
+  return get_posts($cover_args); 
+}
+
 // Hook for main query
 function bon_landing_hook($query) {
 
