@@ -13,9 +13,8 @@
   padding-bottom: 60px;
 
   // Hide for mobile devices because they don't support video autoplay
-  display: none;
   @media #{$s-up} { 
-    @include grid-row();
+    width:100%;
   }
 
   img {
@@ -28,12 +27,63 @@
 }
 
 .poster-container {
-  @include grid-column(12);
+	width:100%;
 }
 
+#poster {
+	position:relative;
+	min-height: 150px;
 
+	.posterimage img {
+		width:100%;
+	}
+   .postermeta {
+    /* let it fill the whole container */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color:white !important;
+	a {color:white}
+		.centered {
+    		display: inline-block;
+			vertical-align: middle;
+   		}
+   		.section {
+	   		@include grotesque;
+	   		text-transform: uppercase;
+	   		font-size:1.4vw;
+	   		color:white;
+	   		margin-bottom:4vw;
+	   		a {color:white}
+   		}
+   		.title {
+	   		@include archive-roman;
+	   		font-size:7vw;
+	   		color: #FFF;
+	   		margin-bottom:4vw;
+	   		a {color:white}
+   		}
+   		p {
+	   		@include grotesque;
+	   		font-size:1.4vw;
+	   		width: 30vw;
+	   		margin:0 auto;
+	   		line-height:2vw;
+   		}
+   }
+   .postermeta:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+   }
+
+	
+}
 #cover {
-  @include grid-row();
 
   .post {
     margin-bottom: baseline(1.5);

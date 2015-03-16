@@ -30,26 +30,6 @@ function the_cover_thumbail() {
     return the_post_thumbnail($image_size);
 }
 
-// Query Posters
-function bon_get_poster_posts() {
-  $poster_args = array(
-    'post_type' => 'bon_posters',
-    'posts_per_page' => -1, 
-    'orderby' => 'date',
-    'order' => 'DESC',
-
-    'meta_key' => 'end_date',
-    'meta_query' => array(
-        array(
-            'key' => 'end_date',
-            'value' => current_time( 'mysql' ),
-            'compare' => '>=',
-            'type' => 'date'
-            )
-        )
-   );
-  return get_posts($poster_args); 
-}
 
 function bon_get_cover_posts() {
   $cover_args = array(
@@ -61,6 +41,17 @@ function bon_get_cover_posts() {
    );
   return get_posts($cover_args); 
 }
+
+function bon_get_posters() {
+  $cover_args = array(
+    'category_name' => 'poster',
+    'posts_per_page' => -1,
+    'orderby' => 'date',
+    'order' => 'DESC'
+   );
+  return get_posts($cover_args); 
+}
+
 
 function bon_get_bonbons_for_cover() {
   $cover_args = array(

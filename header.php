@@ -15,7 +15,7 @@
   <?php get_template_part( 'partials/svg' ); ?>
   <div class="off-canvas-wrap" data-offcanvas>
   <div class="inner-wrap">
-    <div class="inner-wrap-row">
+    <div class="">
 
     <?php get_template_part( 'partials/campaigns/overlay' ); ?>
 
@@ -23,6 +23,7 @@
 
     <header class="site-header" role="banner">
       <?php if( is_home() ): ?>
+      <div id="biglogo">
       <h1 class="site-name">
         <a class="site-name-link" 
            href="<?php bloginfo('url'); ?>" 
@@ -35,9 +36,10 @@
             <span class="logo-text"><?php bloginfo('name'); ?></span>
         </a>
       </h1>
+      </div>
       <?php endif; ?>
 
-      <div class="fixed nav-menu-wrapper">
+      <div class="fixed nav-menu-wrapper<?php if( !is_home() ) echo " show-menu" ?>">
         <nav class="tab-bar">
           <ul class="title-area">
             <li class="left-small">

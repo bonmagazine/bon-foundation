@@ -55,8 +55,8 @@ Bon = function() {
     if($home.length > 0) {
 
       // Logo animation in nav menu
-      $('.site-header').waypoint(function(){
-        $('.nav-menu-wrapper').toggleClass('show-logo');
+      $('#biglogo').waypoint(function(){
+        $('.tab-bar').toggleClass('show-menu');
       })
     }
 

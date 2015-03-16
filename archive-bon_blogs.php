@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-  <div class="archive-main main <?php if( get_query_var('yearly') ): ?>archive-compact<?php endif; ?>" role="main">
+  <div class="archive-main main inner-wrap-row <?php if( get_query_var('yearly') ): ?>archive-compact<?php endif; ?>" role="main">
 
     <?php get_template_part( 'partials/header', 'bon_blogs' ); ?>
 

@@ -10,7 +10,7 @@
 <?php if( in_category( array('ad') ) ) $ad_post = true; ?>
 
 
-<?php if ( get_the_title() != "Placeholder Blogs Widget" ) : ?>
+<?php if ( (get_the_title() != "Placeholder Blogs Widget") && (get_the_title() != "Placeholder Bonbon Widget") ): ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( the_cover_template_class() ); ?>>
   
@@ -63,8 +63,21 @@
 
 <?php if (get_the_title() == "Placeholder Blogs Widget"): ?>
   	<?php if ( is_active_sidebar( 'sidebar' ) ) : ?>
-    <section class="blogs-widget">
+    <section class="cover-blogs">
 	<?php dynamic_sidebar( 'sidebar' ); ?>
 	</section><!-- #primary-sidebar -->
 	<?php endif; ?>
 <?php endif; ?>
+
+
+<?php if (get_the_title() == "Placeholder Bonbon Widget"): ?>
+	<?php $cover_posts = bon_get_bonbons_for_cover(); ?>
+	<?php if($cover_posts): ?>
+	<section class="bonbons-cover">
+	  <?php foreach ($cover_posts as $post): setup_postdata( $post ); ?>
+	    <?php get_template_part( 'partials/excerpt', 'bonbon' ); ?>
+	  <?php endforeach; wp_reset_postdata(); ?>
+	</section>
+	<?php endif;?>
+<?php endif;?>
+

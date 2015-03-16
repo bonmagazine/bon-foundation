@@ -12,11 +12,16 @@
   display: none;
  }
 } 
-
+#biglogo {
+	position: absolute;
+	top:3vw;
+	z-index: 98;
+	left:50%;
+	margin-left:-7.5vw;
+}
 .logo .icon {
-  stroke: #222;
-  width: 300px;
-  height: 100px;
+  stroke: #fff;
+  width: 15vw;
   stroke-width: 3;
 }
 
@@ -27,7 +32,9 @@
  */
 
 .tab-bar {
-  
+  background: rgba($bg-color, 0);
+  transition: background .2s ease-out;
+
   .title-area {
     max-width: 980px;
     margin: 0 auto;
@@ -43,9 +50,13 @@
     border-right: none;
   }
   .menu-icon {
-    border: 1px solid black;
+    border: 2px solid white;
     border-radius: 100%;
     margin: .5rem 0 0 .5rem;
+    background: rgba(0,0,0,1);
+	span::after {
+		box-shadow: 0 0px 0 1px #fff, 0 6px 0 1px #fff, 0 12px 0 1px #fff;
+	}
   }
 
   // Share Buttons
@@ -74,6 +85,14 @@
     display: block;
   }
 }
+.nav-menu-wrapper {
+	transition: margin 100ms linear;
+}
+.show-menu {
+	  background: rgba($bg-color, 1);
+	  .title-area .logo svg { stroke:rgba(0,0,0,1) }
+}  
+
 
 .title-area {
   .name {
@@ -83,20 +102,12 @@
   }
 
   .logo {
-    body.home & {
-      margin-top: -50px;
-      transition: margin 100ms linear;
-    }
-
-    body.home .show-logo & {
-      margin-top: 0;
-    }
-
     svg {
        width: 100px;
        height: 40px;
        margin-top: -5px;
        stroke-width: 3;
+       stroke:rgba(0,0,0,0);
      }
   }
 }
