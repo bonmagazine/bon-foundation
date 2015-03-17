@@ -172,7 +172,7 @@ function bon_get_skin() {
     Based on http://premium.wpmudev.org/blog/add-drama-wordpress-posts-video-for-featured-images/
  */
 
-function bon_the_post_video_thumbnail_html( $html , $post_id , $post_thumbnail_id  ) {
+function bon_the_post_video_thumbnail_html( $html  , $post_thumbnail_id  ) {
 	
 	global $is_chrome;
 		
@@ -199,7 +199,7 @@ function bon_the_post_video_thumbnail_html( $html , $post_id , $post_thumbnail_i
 				));
 				
 	$query = new WP_Query( $args );
-	
+	$thequery = "Last SQL-Query: {$query->request}";
 	$found = count( $query->posts );
 	
 	/* Will always find featured image so we need more than one match */
