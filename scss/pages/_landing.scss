@@ -46,6 +46,7 @@
     right: 0;
     text-align: center;
     color:white !important;
+    background:rgba(0, 0, 0, 0.2);
 	a {color:white}
 		.centered {
 				position: absolute;
@@ -61,8 +62,8 @@
 	   		font-size:1rem;
 	   		margin-bottom:baseline(0.5);
 	   		@media #{$s-up} { 
-   		   		font-size:1.7vw;	
-   		   		margin-bottom:4vw;   		   		
+   		   		font-size:2vw;	
+   		   		margin-bottom:1vw;   		   		
 		   	}
 	   		color:white;
 	   		a {color:white}
@@ -72,8 +73,9 @@
 	   		font-size:1.5rem;
 	   		margin-bottom:baseline(0.5);
 	   		@media #{$s-up} { 
-		   		font-size:9vw;
-		   		margin-bottom:4vw;
+		   		font-size:7.5vw;
+		   		line-height:7.5vw;
+		   		margin-bottom:2vw;
 		   	}
 	   		color: #FFF;
 	   		a {color:white}
@@ -84,7 +86,7 @@
 	   		width:70%;
 	   		margin-bottom:baseline(0.5);	   		
 	   		@media #{$s-up} { 
-		   		font-size:1.7vw;
+		   		font-size:2vw;
 		   		width: 50vw;
 		   		line-height:2.5vw;
 		   	}
