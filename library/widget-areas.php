@@ -504,7 +504,7 @@ class Bon_Blogs_Widget extends WP_Widget {
     
     $bon_blogs_posts = new WP_Query($my_args);
 
-    echo "<section class='widget bon-blogs-posts ".$author."'>";
+    echo "<article class='bon-blogs-widget ".$author."'>";
           
     // Post list
     
@@ -513,19 +513,20 @@ class Bon_Blogs_Widget extends WP_Widget {
       $bon_blogs_posts->the_post();
 
       $blogTitle = get_the_author_meta( 'bon_blog_title' );
+	  $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array(300,9999) );
 
-      $imageId = get_the_author_meta( 'bon_blog_header_image_id' );
-      $headerImage = wp_get_attachment_image( $imageId, 'small-thumbnail' ); 
 
     ?>
     <a class="no-ajax" href="/blogs/<?php echo get_the_author_meta( 'user_nicename' ); ?>" title="<?php the_title_attribute(); ?>" class="bon-blog-link">
-      <div class="col-3 bon-blog-thumbnail">
-        <?php echo $headerImage ?>
+      <div class="bon-blog-thumbnail" style="background-image:url(<?php echo $thumb['0']; ?>)">
+        <?php echo $url; ?>
       </div>
-      <div class="col-3">
+      <div class="bon-blog-meta">
+	    <div class="centered">
         <h1 class="bon-blog-title"><?php echo $blogTitle; ?></h1>
         <h2 class="bon-blog-post-title post-title"><?php the_title(); ?></h2>
         <p class="post-date"><?php echo get_the_date(); ?></p>
+	    </div>
       </div>
     </a>
 
@@ -535,7 +536,7 @@ class Bon_Blogs_Widget extends WP_Widget {
 
     wp_reset_query();
 
-    echo "</section>";
+    echo "</article>";
   }
   
   function update( $new_instance, $old_instance ) {

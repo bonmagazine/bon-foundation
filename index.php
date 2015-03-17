@@ -2,7 +2,6 @@
 
   <div class="index-main main" role="main">
   <?php if(is_home() && !get_query_var('paged')): // Only show Poster and Cover posts on home page, first page ?>
-
     <?php $poster_posts = bon_get_posters(); ?>
     <?php if($poster_posts): ?>
     <section id="poster" class="inner-wrap-row fullwidth-row">

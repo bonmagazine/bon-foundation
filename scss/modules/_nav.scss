@@ -14,15 +14,23 @@
 } 
 #biglogo {
 	position: absolute;
-	top:3vw;
 	z-index: 98;
 	left:50%;
-	margin-left:-7.5vw;
+	top:-6rem;
+	margin-left:-3rem;
+
+	@media #{$s-up} { 
+		top:3vw;
+		margin-left:-10vw;
+	}
 }
 .logo .icon {
+  width:6rem;
+  @media #{$s-up} { 
+  	width: 20vw;
+  }
   stroke: #fff;
-  width: 15vw;
-  stroke-width: 3;
+  stroke-width: 3px;
 }
 
 /* 
@@ -56,6 +64,8 @@
     background: rgba(0,0,0,1);
 	span::after {
 		box-shadow: 0 0px 0 1px #fff, 0 6px 0 1px #fff, 0 12px 0 1px #fff;
+		top:8px;
+		left:7px;
 	}
   }
 
@@ -98,7 +108,7 @@
   .name {
     padding-top: 10px;
     left: 6rem;
-    right: 9rem;
+    right: 6rem;
   }
 
   .logo {

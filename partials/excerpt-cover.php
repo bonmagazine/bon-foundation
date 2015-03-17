@@ -63,9 +63,14 @@
 
 <?php if (get_the_title() == "Placeholder Blogs Widget"): ?>
   	<?php if ( is_active_sidebar( 'sidebar' ) ) : ?>
-    <section class="cover-blogs">
-	<?php dynamic_sidebar( 'sidebar' ); ?>
-	</section><!-- #primary-sidebar -->
+  	</section>
+  	<div class="fullrow-bg">
+	    <section class="cover-blogs">
+	  	<h1 class="blogs-top-h">Bloggar på Bon</h1>		    
+		<?php dynamic_sidebar( 'sidebar' ); ?>
+		</section><!-- #primary-sidebar -->
+  	</div>
+	<section id="cover" class="inner-wrap-row">
 	<?php endif; ?>
 <?php endif; ?>
 

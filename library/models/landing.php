@@ -74,7 +74,8 @@ function bon_landing_hook($query) {
     && !is_admin() 
     ) {
       $cover_cat_ID = get_cat_ID( 'cover' );
-      $query->set( 'category__not_in', array($cover_cat_ID) );
+      $cover_poster_ID = get_cat_ID( 'poster' );
+      $query->set( 'category__not_in', array($cover_cat_ID, $cover_poster_ID,) );
       return;
   }
 

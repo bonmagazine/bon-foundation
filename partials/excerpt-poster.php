@@ -6,10 +6,9 @@
  * @since bon 1.0
  */
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class( the_cover_template_class() ); ?>>
-  <?php if( !$ad_post ): ?>
+<article id="post-<?php the_ID(); ?>">
   <div class="poster">
-	  <div class="posterimage"><?php the_post_thumbnail($page->ID); ?></div>
+	  <div class="posterimage"><?php echo bon_the_post_video_thumbnail_html( get_the_post_thumbnail( $post->ID, array(160,90)) , $post->ID , get_post_thumbnail_id($post->ID)  ); ?></div>
 	  <div class="postermeta">
 		  <div class="centered">
 		  <header>
@@ -24,6 +23,4 @@
 		  </div>
 	  </div>
   </div>
-<?php endif; ?>
 </article>
-

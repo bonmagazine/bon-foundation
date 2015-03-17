@@ -48,30 +48,47 @@
     color:white !important;
 	a {color:white}
 		.centered {
-    		display: inline-block;
-			vertical-align: middle;
+				position: absolute;
+				right:0;
+				left:0;
+				top: 50%;
+				transform: translateY(-50%);
+				color:#fff;
    		}
    		.section {
 	   		@include grotesque;
 	   		text-transform: uppercase;
-	   		font-size:1.4vw;
+	   		font-size:1rem;
+	   		margin-bottom:baseline(0.5);
+	   		@media #{$s-up} { 
+   		   		font-size:1.7vw;	
+   		   		margin-bottom:4vw;   		   		
+		   	}
 	   		color:white;
-	   		margin-bottom:4vw;
 	   		a {color:white}
    		}
    		.title {
 	   		@include archive-roman;
-	   		font-size:7vw;
+	   		font-size:1.5rem;
+	   		margin-bottom:baseline(0.5);
+	   		@media #{$s-up} { 
+		   		font-size:9vw;
+		   		margin-bottom:4vw;
+		   	}
 	   		color: #FFF;
-	   		margin-bottom:4vw;
 	   		a {color:white}
    		}
    		p {
 	   		@include grotesque;
-	   		font-size:1.4vw;
-	   		width: 30vw;
+	   		font-size:1rem;
+	   		width:70%;
+	   		margin-bottom:baseline(0.5);	   		
+	   		@media #{$s-up} { 
+		   		font-size:1.7vw;
+		   		width: 50vw;
+		   		line-height:2.5vw;
+		   	}
 	   		margin:0 auto;
-	   		line-height:2vw;
    		}
    }
    .postermeta:before {
@@ -79,6 +96,10 @@
     display: inline-block;
     vertical-align: middle;
     height: 100%;
+   }
+   .featuredvideo {
+	   width:100%;
+	   height:auto;
    }
 
 	
@@ -335,5 +356,73 @@
   .blog-list {
     border-top: 1px solid;
     padding-top: baseline();
+  }
+}
+.fullrow-bg {
+	background:#ccc;
+}
+.cover-blogs {
+	display:none;
+    @media #{$s-up} {
+
+	h1.blogs-top-h {
+		@include large-archive-h;
+		padding: baseline();
+	}
+	@include grid-row;
+	display:block;
+    background:#ddd;
+    padding-bottom:10px;
+    .bon-blogs-widget {
+	    @include grid-column(4);
+	  	overflow: hidden;
+	  	position:relative;
+	  	height:210px;
+	  	margin-top:10px;
+	  	.bon-blog-thumbnail {
+		  	background-position: center center;
+		  	background-size: cover;
+		  	width:100%;
+		  	height:100%;
+	  	}
+	  	.bon-blog-meta {
+		  	position: absolute;
+		  	top:0;
+		  	left:10px;
+		  	bottom:0px;
+		  	right:10px;
+		  	color:white;
+		  	background-color:rgba(159,203,207,0.5);
+		  	a { color:white }
+		  	text-align: center;
+		  	-webkit-transform-style: preserve-3d;
+			-moz-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+	
+			.centered {
+				position: absolute;
+				right:0;
+				left:0;
+				top: 50%;
+				transform: translateY(-50%);
+				color:#fff;
+	   		}
+	   		.bon-blog-title {
+		   		@include small-grotesque-p;
+		   		text-transform: uppercase;
+		   		letter-spacing: .1em;
+		   		color:white;
+	   		}
+	   		.bon-blog-post-title {
+		   		@include small-archive-h;
+		   		color:white;
+	   		}
+	   		.post-date {
+		   		@include small-grotesque-p;
+		   		text-transform: uppercase;
+		   		letter-spacing: .1em;
+	   		}
+	  	}	
+	}
   }
 }
