@@ -26,11 +26,13 @@
   <?php endif; // End homepage ?>
 
   <?php if ( have_posts() ) : ?>
-    <section id="blog-list" class="inner-wrap-row blog-list infinite-scroll masonry">
+  <div class="inner-wrap-row">
+    <section id="blog-list" class="blog-list infinite-scroll masonry">
       <?php while ( have_posts() ) : the_post(); ?>
         <?php get_template_part( 'partials/excerpt' ); ?>
       <?php endwhile; ?>
     </section>
+  </div>
   <?php endif;?>
 
     <nav id="nav-below">
