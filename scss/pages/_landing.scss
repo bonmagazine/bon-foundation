@@ -37,6 +37,9 @@
 				left:0;
 				top: 50%;
 				transform: translateY(-50%);
+				-webkit-transform: translateY(-50%);
+				-ms-transform: translateY(-50%);
+
 				color:#fff;
    		}
    		.section {
@@ -396,6 +399,9 @@
 				left:0;
 				top: 50%;
 				transform: translateY(-50%);
+				-webkit-transform: translateY(-50%);
+				-ms-transform: translateY(-50%);
+
 				color:#fff;
 	   		}
 	   		.bon-blog-title {

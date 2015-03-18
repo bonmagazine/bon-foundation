@@ -8,7 +8,7 @@
 ?>
 <article id="post-<?php the_ID(); ?>">
   <div class="poster">
-	  <div class="posterimage"><?php echo bon_the_post_video_thumbnail_html( get_the_post_thumbnail( $post->ID ) , get_post_thumbnail_id($post->ID)  ); ?></div>
+	  <div class="posterimage"><?php echo bon_the_post_video_thumbnail_html( get_the_post_thumbnail( $post->ID, 'full' ) , get_post_thumbnail_id($post->ID)  ); ?></div>
 	  <div class="postermeta">
 		  <div class="centered">
 		  <header>
