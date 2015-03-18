@@ -20,12 +20,13 @@
 	margin-left:-3rem;
 
 	@media #{$s-up} { 
-		top:3vw;
+		top:2vw;
 		margin-left:-10vw;
 	}
 }
 .logo .icon {
   width:6rem;
+  margin-top: -1.5rem;
   @media #{$s-up} { 
   	width: 20vw;
   }

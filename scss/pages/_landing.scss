@@ -7,32 +7,15 @@
 
 /* POSTER */
 
-#poster {
-  margin-bottom: baseline();
-  position: relative;
-  padding-bottom: 60px;
-
-  // Hide for mobile devices because they don't support video autoplay
-  @media #{$s-up} { 
-    width:100%;
-  }
-
-  img {
-    max-width: 100%;
-  }
-
-  p {
-    max-width: none;
-  }
-}
-
-.poster-container {
-	width:100%;
-}
 
 #poster {
 	position:relative;
 	min-height: 150px;
+	margin-top:48px;
+    @media #{$s-up} { 
+		margin:0;
+    }
+
 
 	.posterimage img {
 		width:100%;
@@ -70,8 +53,11 @@
    		}
    		.title {
 	   		@include archive-roman;
-	   		font-size:1.5rem;
+	   		font-size:1.8rem;
+	   		line-height: baseline();
 	   		margin-bottom:baseline(0.5);
+	   		width:70%;
+	   		margin:0px auto;
 	   		@media #{$s-up} { 
 		   		font-size:7.5vw;
 		   		line-height:7.5vw;
@@ -81,17 +67,20 @@
 	   		a {color:white}
    		}
    		p {
+	   		display:none;
 	   		@include grotesque;
 	   		font-size:1rem;
 	   		width:70%;
 	   		margin-bottom:baseline(0.5);	   		
 	   		@media #{$s-up} { 
+		   		display: block;
 		   		font-size:2vw;
 		   		width: 70vw;
 		   		line-height:2.5vw;
 		   	}
 	   		margin:0 auto;
    		}
+   		.author p { display: block;}
    }
    .postermeta:before {
     content: '';
