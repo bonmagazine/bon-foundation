@@ -23,7 +23,7 @@
     @include grid-column(12);
     height: 100%;
     margin: 0 auto;
-    background: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.95);
     min-height: 100vh;
     text-align: center;
 
@@ -33,21 +33,36 @@
   }
 
   .btn-skip {
-    position: relative;
-    top: 0;
+    top: 0px;
     width: 100%;
-    background: black;
+    z-index: 999;
+    background: none ;
     height: $baseline * 2;
     text-align: center;
-    color: white;
+    color: black;
     border: none;
     margin-bottom: 84px;
+    padding-top:14px;
     cursor: pointer;
     text-transform: none;
     font-size: 14px;
-    letter-spacing: .15em;
+    letter-spacing: .10em;
     text-indent: 0;
+    p {
+	    margin-left: auto;
+	    margin-right:auto;
+	    width:70%;
+		@include small-grotesque-p;
+    }
   }
+  	.close-icon {
+		width:40px;
+		height:40px;
+		position: absolute;
+		top:4px;
+		left:4px;
+	}
+
 }
 
 body.campaign-active { 
