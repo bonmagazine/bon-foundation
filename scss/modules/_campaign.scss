@@ -33,26 +33,26 @@
   }
 
   .btn-skip {
-    top: 0px;
     width: 100%;
-    z-index: 999;
     background: none ;
-    height: $baseline * 2;
     text-align: center;
     color: black;
     border: none;
-    margin-bottom: 84px;
     padding-top:14px;
+    padding-bottom:14px;
     cursor: pointer;
     text-transform: none;
-    font-size: 14px;
-    letter-spacing: .10em;
-    text-indent: 0;
+    min-height: baseline(2);
     p {
+    	text-indent: 0;
 	    margin-left: auto;
 	    margin-right:auto;
 	    width:70%;
 		@include small-grotesque-p;
+		@media #{$m-up} {
+		    @include medium-grotesque-p;
+			width:80%;
+	    }
     }
   }
   	.close-icon {
