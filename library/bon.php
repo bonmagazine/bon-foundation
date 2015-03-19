@@ -221,6 +221,7 @@ add_filter( 'get_the_excerpt', 'bon_trim_excerpt' );
 
 function bon_the_post_video_thumbnail_html( $html  , $post_thumbnail_id  ) {
 	
+	if ( wp_is_mobile() ) return $html;
 	global $is_chrome;
 		
 	/* get the basic url, width and height of the featured image */
