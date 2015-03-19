@@ -4,7 +4,7 @@
   <?php if(is_home() && !get_query_var('paged')): // Only show Poster and Cover posts on home page, first page ?>
     <?php $poster_posts = bon_get_posters(); ?>
     <?php if($poster_posts): ?>
-    <section id="poster" class="fullwidth-row">
+    <section id="poster" class="fullwidth-row poster-wrapper">
       <?php foreach ($poster_posts as $post): setup_postdata( $post ); ?>
         <?php get_template_part( 'partials/excerpt', 'poster' ); ?>
       <?php endforeach; wp_reset_postdata(); ?>

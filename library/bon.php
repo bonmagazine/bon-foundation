@@ -166,6 +166,53 @@ function bon_get_skin() {
     echo $skin;
 }
 
+/*
+ * Add line breaks to excerpts
+ *		
+ */
+
+function bon_trim_excerpt( $text = '' ) {
+    $raw_excerpt = $text;
+
+    if ( '' == $text ) {
+        $text = get_the_content( '' );
+        $text = strip_shortcodes( $text );
+        $text = apply_filters( 'the_content', $text );
+        $text = str_replace( ']]>', ']]&gt;', $text );
+        $excerpt_length = apply_filters( 'excerpt_length', 55 );
+        $excerpt_more = apply_filters( 'excerpt_more', ' ' . '[...]' );
+
+        $allowable = '<br>';
+        $text = preg_replace( '@<(script|style)[^>]*?>.*?</\\1>@si', '', $text );
+        $text = trim( strip_tags( $text, $allowable ) );
+
+        if ( 'characters' == _x( 'words', 'word count: words or characters?' )
+            && preg_match( '/^utf\-?8$/i', get_option( 'blog_charset' ) ) )
+        {
+            $text = trim( preg_replace( "/[\n\r\t ]+/", ' ', $text ), ' ' );
+            preg_match_all( '/./u', $text, $words_array );
+            $words_array = array_slice( $words_array[0], 0, $num_words + 1 );
+            $sep = '';
+        } else {
+            $words_array = preg_split( "/[\n\r\t ]+/", $text, $num_words + 1, PREG_SPLIT_NO_EMPTY );
+            $sep = ' ';
+        }
+
+        if ( count( $words_array ) > $excerpt_length ) {
+            array_pop( $words_array );
+            $text = implode( $sep, $words_array );
+            $text = $text . $excerpt_more;
+        } else {
+            $text = implode( $sep, $words_array );
+        }
+    }
+
+    return apply_filters( 'wp_trim_excerpt', $text, $raw_excerpt );
+}
+
+remove_filter( 'get_the_excerpt', 'wp_trim_excerpt');
+add_filter( 'get_the_excerpt', 'bon_trim_excerpt' );
+
 
 /*
  *	Filter to check for and add videos in lieu of featured images.

@@ -15,7 +15,9 @@
     @media #{$s-up} { 
 		margin:0;
     }
-
+	.slick-dots {
+	    position:static;
+	}
 
 	.posterimage img {
 		width:100%;

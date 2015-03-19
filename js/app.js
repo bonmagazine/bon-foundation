@@ -142,6 +142,7 @@ Bon = function() {
     $('.poster-wrapper').slick({
       autoplay: true,
       dots: true,
+      fade: true,
       onInit: function() {
         $('.poster-wrapper video').each(function(index, el) {
           this.play();
