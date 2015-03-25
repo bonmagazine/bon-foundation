@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-  <div class="index-main main landing-container" role="main">
+  <div class="index-main main<?php if( is_home() ) : ?> landing-container<?php endif;?>" role="main">
   <?php if(is_home() && !get_query_var('paged')): // Only show Poster and Cover posts on home page, first page ?>
     <?php $poster_posts = bon_get_posters(); ?>
     <?php if($poster_posts): ?>
