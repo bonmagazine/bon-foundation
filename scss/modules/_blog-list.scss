@@ -60,3 +60,11 @@
 	padding:0;
 	margin:0;
 }
+.container {
+	.main {
+		margin-top:baseline(2);
+	}
+	.main.landing-container { 
+		margin-top:0; 
+  	}
+}
