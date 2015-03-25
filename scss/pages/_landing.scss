@@ -16,7 +16,8 @@
 		margin:0;
     }
 	.slick-dots {
-	    position:static;
+	    position:absolute;
+	    bottom: 8px;
 	}
 
 	.posterimage img {
