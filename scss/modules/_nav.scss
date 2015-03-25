@@ -45,7 +45,6 @@
   transition: background .2s ease-out;
 
   .title-area {
-    max-width: 980px;
     margin: 0 auto;
     position: relative;
   }
@@ -189,26 +188,33 @@ form[role=search] {
     }
 
     .search-box {
-      height: 2.5rem;
-      background: $bg-color;
+      height: 2.3rem;
+      background: rgba($bg-color,0.8);
       z-index: 9999;
       position: relative;
-      left: 0;
+      left: 10px;
       width: 0;
       overflow: hidden;
       transition: width 200ms linear;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      border-radius: 10px;
       
       &.focus {
-        width: 150px;
+        width: 250px;
+        padding:8px;
       }
     }
 
     input[type=text] {
-      margin-top: 5px;
+      margin-left:10px;
+      margin-top:-5px;
       background: none;
-      padding: 2px 5px 0px;
+      padding: 0 5px 0;
       border-bottom: 1px solid #000; 
-    }    
+      width: 100%;
+	  @include medium-grotesque-p;  
+	}
   }
 }
 
