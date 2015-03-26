@@ -10,7 +10,8 @@
 
 #poster {
 	position:relative;
-	min-height: 150px;
+	height: 56.25vw;
+	overflow: hidden;
 	margin-top:48px;
     @media #{$s-up} { 
 		margin:0;
