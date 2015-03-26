@@ -24,10 +24,16 @@
 			</h1>
 		  </header>
 		  <p><?php the_excerpt(); ?></p>
-	  
+
 	 	  <?php if (!$short_post) : ?><div class="author">
 		    <?php bon_the_entry_author(); ?>
 		  </div>
+		  <?php endif; ?>
+		  
+		  <?php if ( bon_get_the_entry_photographers()  || bon_get_the_entry_stylists() ) : ?>
+	 	  <p class="byline author">
+			<?php if ( bon_get_the_entry_photographers() ) : ?>Fotografi: <?php echo bon_get_the_entry_photographers() ?><?php endif; ?><?php if ( bon_get_the_entry_photographers() && bon_get_the_entry_stylists() ) echo " | " ?><?php if ( bon_stylists ) : ?>Mode: <?php echo bon_get_the_entry_stylists() ?><?php endif; ?>
+		  </p>		  
 		  <?php endif; ?>
 		  </div>
 	  </div>
