@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-  <div class="main single-main single-bonbon" role="main">
+  <div class="main single-main single-bonbon inner-wrap-row" role="main">
 
   <?php get_template_part( 'partials/campaigns/topbanner', 'single' ); ?>
   

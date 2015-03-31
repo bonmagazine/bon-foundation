@@ -6,7 +6,7 @@
  * @since bon 1.0
  */
 ?>
-
+<?php if( !in_category( array('short-post', 'ad') ) ): ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <header>
     <div class="section small-sys-title"><?php the_terms( $post->ID, 'section' ); ?> </div>
@@ -26,3 +26,4 @@
     <?php endif; ?>
   </div>
 </article>
+<?php endif; ?>
