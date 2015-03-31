@@ -1,4 +1,5 @@
 *.DS_Store
 /node_modules/*
-.sass-cache/*
+/.sass-cache/*
+/scss/.sass-cache/*
 /css/*
