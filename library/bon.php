@@ -166,6 +166,77 @@ function bon_get_skin() {
     echo $skin;
 }
 
+/*
+ * Add line breaks to excerpts
+ *		
+ */
+
+
+/*
+ *	Filter to check for and add videos in lieu of featured images.
+    Based on http://premium.wpmudev.org/blog/add-drama-wordpress-posts-video-for-featured-images/
+ */
+
+function bon_the_post_video_thumbnail_html( $html  , $post_thumbnail_id  ) {
+	
+	if ( wp_is_mobile() ) return $html;
+	global $is_chrome;
+		
+	/* get the basic url, width and height of the featured image */
+	$fi_attr = wp_get_attachment_image_src ( $post_thumbnail_id , 'full' );
+	
+	/* get the original url - we need this to search for the video */	
+	$fi_url = wp_get_attachment_url ( $post_thumbnail_id );
+	
+	/* work out the name */
+	$fi_url_exploded = explode( '/' , $fi_url );
+	$fi_name = $fi_url_exploded[ count( $fi_url_exploded ) - 1 ];
+	$fi_name_exploded = explode( '.' , $fi_name );
+	$fi_filename = $fi_name_exploded[0];
+
+	/* now search the medial library for any matches */
+	$args = array( 'post_type' => 'attachment' , 'post_status' => 'inherit' ,
+				'meta_query' => array(
+					array(
+						'key' => '_wp_attached_file',
+						'value' => $fi_name_exploded[0] . '.',
+						'compare' => 'LIKE'
+					)
+				));
+				
+	$query = new WP_Query( $args );
+	$thequery = "Last SQL-Query: {$query->request}";
+	$found = count( $query->posts );
+	
+	/* Will always find featured image so we need more than one match */
+	if ($found > 1) {
+	
+		$new_html = '';
+		
+		/* loop through the matches and process those with a video mime type */	
+		foreach( $query->posts AS $attach ){
+		
+			if ( substr( $attach->post_mime_type , 0 , 5 ) == 'video' ) {
+		
+				if ( $new_html == '') {
+				
+					$controls = ( $is_chrome == true ) ? 'controls' : '';
+				
+					$new_html = '<video class="featuredvideo" ' . $controls . ' autoplay preload loop poster="' . $fi_attr[0] . '">';
+				}
+				
+				$new_html .= '<source class="' . $sourceclass . '" src="' . $attach->guid . '" type="' . $attach->post_mime_type . '">';
+			
+			} 	
+
+		}
+		
+		/* if video files were found then update the html */
+		if ( $new_html != '' ) $html = $new_html . $html . '</video>';
+		
+	}
+	return $html;
+}
 
 
 ?>

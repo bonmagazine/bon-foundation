@@ -12,12 +12,26 @@
   display: none;
  }
 } 
+#biglogo {
+	position: absolute;
+	z-index: 98;
+	left:50%;
+	top:-6rem;
+	margin-left:-3rem;
 
+	@media #{$s-up} { 
+		top:2vw;
+		margin-left:-10vw;
+	}
+}
 .logo .icon {
-  stroke: #222;
-  width: 300px;
-  height: 100px;
-  stroke-width: 3;
+  width:6rem;
+  margin-top: -1.5rem;
+  @media #{$s-up} { 
+  	width: 20vw;
+  }
+  stroke: #fff;
+  stroke-width: 3px;
 }
 
 /* 
@@ -27,9 +41,10 @@
  */
 
 .tab-bar {
-  
+  background: rgba($bg-color, 0);
+  transition: background .2s ease-out;
+
   .title-area {
-    max-width: 980px;
     margin: 0 auto;
     position: relative;
   }
@@ -43,9 +58,15 @@
     border-right: none;
   }
   .menu-icon {
-    border: 1px solid black;
+    border: 2px solid white;
     border-radius: 100%;
     margin: .5rem 0 0 .5rem;
+    background: rgba(0,0,0,1);
+	span::after {
+		box-shadow: 0 0px 0 1px #fff, 0 6px 0 1px #fff, 0 12px 0 1px #fff;
+		top:8px;
+		left:7px;
+	}
   }
 
   // Share Buttons
@@ -74,29 +95,29 @@
     display: block;
   }
 }
+.nav-menu-wrapper {
+	transition: margin 100ms linear;
+}
+.show-menu {
+	  background: rgba($bg-color, 1);
+	  .title-area .logo svg { stroke:rgba(0,0,0,1) }
+}  
+
 
 .title-area {
   .name {
     padding-top: 10px;
     left: 6rem;
-    right: 9rem;
+    right: 6rem;
   }
 
   .logo {
-    body.home & {
-      margin-top: -50px;
-      transition: margin 100ms linear;
-    }
-
-    body.home .show-logo & {
-      margin-top: 0;
-    }
-
     svg {
        width: 100px;
        height: 40px;
        margin-top: -5px;
        stroke-width: 3;
+       stroke:rgba(0,0,0,0);
      }
   }
 }
@@ -167,26 +188,33 @@ form[role=search] {
     }
 
     .search-box {
-      height: 2.5rem;
-      background: $bg-color;
+      height: 2.3rem;
+      background: rgba($bg-color,0.8);
       z-index: 9999;
       position: relative;
-      left: 0;
+      left: 10px;
       width: 0;
       overflow: hidden;
       transition: width 200ms linear;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      border-radius: 10px;
       
       &.focus {
-        width: 150px;
+        width: 250px;
+        padding:8px;
       }
     }
 
     input[type=text] {
-      margin-top: 5px;
+      margin-left:10px;
+      margin-top:-5px;
       background: none;
-      padding: 2px 5px 0px;
+      padding: 0 5px 0;
       border-bottom: 1px solid #000; 
-    }    
+      width: 100%;
+	  @include medium-grotesque-p;  
+	}
   }
 }
 

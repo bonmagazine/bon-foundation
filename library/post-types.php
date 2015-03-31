@@ -253,7 +253,7 @@ function create_post_type() {
   );
   register_taxonomy_for_object_type( 'bon_issues', 'bon_issues_posts' );
 
-  register_taxonomy('bon_photographers', array('bon_issues_posts', 'posts', 'bon_minimagazine'),
+  register_taxonomy('bon_photographers', array('bon_issues_posts', 'post', 'bon_minimagazine'),
     array(
       'hierarchical' => false,
       'label' => 'Fotograf',
@@ -264,11 +264,11 @@ function create_post_type() {
     )
   );
   register_taxonomy_for_object_type( 'bon_photographers', 'bon_issues_posts' );
-  register_taxonomy_for_object_type( 'bon_photographers', 'posts' );
+  register_taxonomy_for_object_type( 'bon_photographers', 'post' );
   register_taxonomy_for_object_type( 'bon_photographers', 'bon_minimagazine' );
 
 
-  register_taxonomy('bon_stylists', array('bon_issues_posts', 'posts', 'bon_minimagazine'),
+  register_taxonomy('bon_stylists', array('bon_issues_posts', 'post', 'bon_minimagazine'),
     array(
       'hierarchical' => false,
       'label' => 'Stylist',
@@ -279,7 +279,7 @@ function create_post_type() {
     )
   );
   register_taxonomy_for_object_type( 'bon_stylists', 'bon_issues_posts' );
-  register_taxonomy_for_object_type( 'bon_stylists', 'posts' );
+  register_taxonomy_for_object_type( 'bon_stylists', 'post' );
   register_taxonomy_for_object_type( 'bon_stylists', 'bon_minimagazine' );
 
   // Bon Issues Image field (uses Tax-meta-class)

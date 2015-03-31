@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-  <div class="main single-main" role="main">
+  <div class="main single-main inner-wrap-row" role="main">
 
   <?php get_template_part( 'partials/campaigns/topbanner', 'single' ); ?>
   
@@ -15,13 +15,6 @@
           <?php bon_the_entry_meta(); ?>
         </div>
       </header>
-      <div class="entry-social">
-        <iframe src="//www.facebook.com/plugins/like.php?href=<?php echo urlencode(get_the_permalink()); ?>&amp;width=50&amp;layout=box_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=65&amp;appId=395965657184574" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:65px; margin-right: 30px" allowTransparency="true"></iframe>
-
-        <iframe allowtransparency="true" frameborder="0" scrolling="no"
-                src="https://platform.twitter.com/widgets/tweet_button.html?count=vertical"
-                style="width:60px; height:65px;"></iframe>
-      </div>
       <div class="entry-content">
         <?php the_content(); ?>
         <?php get_template_part( 'partials/campaigns/articleinsert' ); ?>

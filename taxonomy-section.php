@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-  <div class="archive-main main" role="main">
+  <div class="archive-main main inner-wrap-row" role="main">
     <h1 class="archive-title">
       <?php single_cat_title(); ?>
     </h1>

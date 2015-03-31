@@ -1,8 +1,9 @@
 <?php get_header(); ?>
 
   <div class="archive-main main inner-wrap-row" role="main">
+    <h2 class="section">Sökresultat för:</h2>
     <h1 class="archive-title">
-      <?php wp_title(''); ?>
+      <?php if ( is_search() ) echo the_search_query(); ?>
     </h1>
 
   <?php if ( $top_banner ) : ?>

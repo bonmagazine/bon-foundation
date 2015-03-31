@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-	
+  <div class="main single-main inner-wrap-row" role="main">	
 	<?php while (have_posts()) : the_post(); ?>
 		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			<header class="entry-header">
@@ -15,5 +15,5 @@
 
 		</article>
 	<?php endwhile;?>
-		
+  </div>
 <?php get_footer(); ?>
