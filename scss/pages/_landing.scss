@@ -84,10 +84,21 @@
 		   		font-size:2vw;
 		   		width: 70vw;
 		   		line-height:2.5vw;
+		   		margin-bottom:1vw;
 		   	}
 	   		margin:0 auto;
    		}
-   		.author p { display: block;}
+   		.author { 	
+	   		font-size:.9rem; 
+	   		line-height: 1rem;
+	   		@media #{$s-up} { 
+		   		display: block;
+		   		font-size:1.5vw;
+		   		width: 70vw;
+		   		line-height:2vw;
+		   		margin:0 auto;
+		   	}
+	   	}
    }
    .postermeta:before {
     content: '';

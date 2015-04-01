@@ -87,7 +87,20 @@ function bon_cover_order_options() {
   // settings form
   
   ?>
-
+<style type="text/css">
+	li {
+		text-align: center;
+		max-width:500px;
+		padding: 20px;
+		border-bottom: 1px solid black;
+	}
+	label {
+		display: block;
+		font-family: serif;
+		font-size:18px;
+		text-align: center;
+	}
+</style>
 <form name="form1" method="post" action="" id="cover-sort">
 <input type="hidden" name="<?php echo $hidden_field_name; ?>" value="Y">
 
