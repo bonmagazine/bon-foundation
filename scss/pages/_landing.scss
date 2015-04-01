@@ -43,7 +43,6 @@
 				transform: translateY(-50%);
 				-webkit-transform: translateY(-50%);
 				-ms-transform: translateY(-50%);
-
 				color:#fff;
    		}
    		.section {
@@ -53,7 +52,7 @@
 	   		margin-bottom:baseline(0.5);
 	   		@media #{$s-up} { 
    		   		font-size:2vw;	
-   		   		margin-bottom:1vw;   		   		
+   		   		margin-bottom:0;   		   		
 		   	}
 	   		color:white;
 	   		a {color:white}
@@ -67,10 +66,10 @@
 	   		margin:0px auto;
 	   		@media #{$s-up} { 
 		   		font-size:7.5vw;
-		   		line-height:7.5vw;
-		   		margin-bottom:2vw;
+		   		line-height:6.5vw;
+		   		margin-bottom:1.5vw;
 		   	}
-	   		color: #FFF;
+	   		color: fff;
 	   		a {color:white}
    		}
    		p {
