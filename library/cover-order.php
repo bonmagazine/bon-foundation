@@ -88,13 +88,13 @@ function bon_cover_order_options() {
   
   ?>
 <style type="text/css">
-	li {
+	li.cover-order-li {
 		text-align: center;
 		max-width:500px;
 		padding: 20px;
 		border-bottom: 1px solid black;
 	}
-	label {
+	li.cover-order-li label {
 		display: block;
 		font-family: serif;
 		font-size:18px;
@@ -107,7 +107,7 @@ function bon_cover_order_options() {
 <ul class="sortable">
 <?php foreach ($opt_val as $id => $item): ?>  
 <?php $order = bon_cover_order( $id, 'get'); ?> 
-<li class="front-page-template-<?= $item['fields']['front_page_template'] ?>">
+<li class="front-page-template-<?= $item['fields']['front_page_template'] ?> cover-order-li">
   <?php echo get_the_post_thumbnail( $id, array(154,154) ); ?> 
   <label for="<?= $data_field_name ?>[<?= $id ?>]"><?= $item['post']->post_title ?></label>
   <input type="hidden" name="<?= $data_field_name ?>[<?= $id ?>]" id="<?= $data_field_name ?>[<?= $id ?>]" value="<?= $order ?>" size="20">
