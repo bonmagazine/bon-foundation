@@ -49,9 +49,16 @@ Paragraphs
 // #  
 // #
 
+@include font-face(LLBrown, '../fonts/LLBrown/BrownPro-Regular');
+@include font-face('LLBrown Italic', '../fonts/LLBrown/BrownPro-Bold', italic);
+@include font-face('LLBrown Bold', '../fonts/LLBrown/BrownPro-Bold', bold);
+@include font-face('Archive Pro Roman', '../fonts/Archive/archive_roman_pro');
+@include font-face('Archive Pro Italic', '../fonts/Archive/archive_roman_italic_pro');
+@include font-face('Archive Pro Bold', '../fonts/Archive/archive_bold_pro');
+@include font-face('Archive Pro Bold Italic', '../fonts/Archive/archive_bold_italic_pro');
+
 @mixin archive-mono { // For headings
-  font-family:"Archive Pro Mono", serif; 
-  word-spacing: -0.2em;
+  font-family:"Archive Pro Roman", serif; 
   text-rendering: optimizeLegibility;
 }
 
@@ -64,13 +71,13 @@ Paragraphs
 }
 
 @mixin serif {
-  font-family:"Value Serif Regular", serif; 
-  font-weight:600; 
+  font-family:"LLBrown", sans-serif; 
+  font-weight:500; 
 }
 
 @mixin grotesque {
-  font-family:"Value Sans Medium", sans-serif; 
-  font-weight:500;  
+  font-family:"LLBrown", sans-serif; 
+  @include font-feature-settings(ss01);
 }
 
 // #
@@ -105,7 +112,6 @@ Paragraphs
   line-height: baseline(0.75);
   text-transform: uppercase;
   font-weight: normal;
-  letter-spacing: .1em;
 }
 
 // ## archive paragraph: l-a-p

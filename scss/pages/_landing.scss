@@ -160,9 +160,9 @@
   }
 
   .entry-excerpt p{
-    @include medium-archive-p;
+    @include medium-grotesque-p;
     @media #{$s-up} { 
-	    @include large-archive-p;
+	    @include large-grotesque-p;
     }
   }
 

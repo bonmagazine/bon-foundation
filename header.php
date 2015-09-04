@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
-    <link rel="stylesheet" href="//f.fontdeck.com/s/css/usizZWFdN2CyQNkbgHeoeWIoXHw/<?php echo $_SERVER['SERVER_NAME']; ?>/30102.css" type="text/css" />
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/app.css" />
     <link rel="shortcut icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
     <meta name="google-site-verification" content="RAanImNUIhs6nzv8p9xiUmr93YIaC2gxn0qiQDsV_oE" />
