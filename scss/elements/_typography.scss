@@ -73,6 +73,7 @@ Paragraphs
 @mixin serif {
   font-family:"LLBrown", sans-serif; 
   font-weight:500; 
+  @include font-feature-settings(ss01);
 }
 
 @mixin grotesque {
