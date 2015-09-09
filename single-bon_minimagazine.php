@@ -9,10 +9,17 @@
 
       <?php $bonbon_pages = bon_get_bonbon_children_pages(); ?>
       <?php if($bonbon_pages): ?>
+        <?php $bon_count = 0 ?>
         <?php foreach ($bonbon_pages as $i=>$post): setup_postdata( $post ); ?>
           <div class="page">
             <div class="container">
-              <?php the_content(); ?>
+              <?php if ($bon_count != 2) { ?>
+                <?php the_content(); ?>
+                <?php $bon_count++; ?>
+              <?php } else { ?>
+                <?php get_template_part( 'partials/campaigns/articleinsert' ); ?>
+                <?php $bon_count++; ?>
+              <?php } ?>        
             </div>
           </div>
         <?php endforeach; wp_reset_postdata(); ?>
