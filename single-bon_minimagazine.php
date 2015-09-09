@@ -13,10 +13,15 @@
         <?php foreach ($bonbon_pages as $i=>$post): setup_postdata( $post ); ?>
           <div class="page">
             <div class="container">
-              <?php if ($bon_count != 2) { ?>
+              <?php if ($bon_count != 1) { ?>
                 <?php the_content(); ?>
                 <?php $bon_count++; ?>
               <?php } else { ?>
+                <?php the_content(); ?>
+            </div>
+          </div>
+          <div class="page">
+            <div class="container">                        
                 <?php get_template_part( 'partials/campaigns/articleinsert' ); ?>
                 <?php $bon_count++; ?>
               <?php } ?>        
