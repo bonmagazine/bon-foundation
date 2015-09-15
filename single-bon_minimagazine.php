@@ -3,7 +3,7 @@
   <div class="main single-main single-bonbon inner-wrap-row" role="main">
 
   <?php get_template_part( 'partials/campaigns/topbanner', 'single' ); ?>
-  
+  <?php $article_insert = bon_get_campaign('article-insert'); ?>
   <?php while (have_posts()) : the_post(); ?>
     <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
 
@@ -16,13 +16,15 @@
               <?php if ($bon_count != 1) { ?>
                 <?php the_content(); ?>
                 <?php $bon_count++; ?>
-              <?php } else { ?>
+              <?php } else  { ?>
                 <?php the_content(); ?>
+                <?php if ($article_insert)  { ?>
             </div>
           </div>
           <div class="page">
             <div class="container">                        
                 <?php get_template_part( 'partials/campaigns/articleinsert' ); ?>
+                <?php } ?>
                 <?php $bon_count++; ?>
               <?php } ?>        
             </div>
