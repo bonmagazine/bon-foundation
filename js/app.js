@@ -70,12 +70,13 @@ Bon = function() {
         autoplay: "autoplay"
       });
       $('.wp-video-shortcode').attr({
-        loop: "",
+        loop: "loop",
         autoplay: "autoplay"
       });
 
       $('.page')
         .waypoint(function() {
+
           $(this)
             .find('.minimagazine_video_autoplay')
             .attr({
@@ -84,6 +85,7 @@ Bon = function() {
             })
             .end()
             .addClass('show');
+            $(this).find('video').get(0).play();
 
         }, {
           offset: '80%',
