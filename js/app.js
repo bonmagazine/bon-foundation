@@ -69,6 +69,10 @@ Bon = function() {
         loop: "",
         autoplay: "autoplay"
       });
+      $('.wp-video-shortcode').attr({
+        loop: "",
+        autoplay: "autoplay"
+      });
 
       $('.page')
         .waypoint(function() {
