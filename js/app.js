@@ -70,23 +70,22 @@ Bon = function() {
         autoplay: "autoplay"
       });
       $('.wp-video-shortcode').attr({
-        loop: "loop",
+        loop: "",
         autoplay: "autoplay"
       });
 
       $('.page')
         .waypoint(function() {
-
+          
           $(this)
-            .find('video')
+            .find('.minimagazine_video_autoplay')
             .attr({
               loop: "",
               autoplay: "autoplay"
             })
             .end()
-            .addClass('show')
-            .each(play());
-          
+            .addClass('show');
+
         }, {
           offset: '80%',
           triggerOnce: true
