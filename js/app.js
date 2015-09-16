@@ -78,15 +78,14 @@ Bon = function() {
         .waypoint(function() {
 
           $(this)
-            .find('.minimagazine_video_autoplay')
+            .find('video')
             .attr({
               loop: "",
               autoplay: "autoplay"
             })
             .end()
             .addClass('show');
-            $(this).find('video').get(0).play();
-
+            
         }, {
           offset: '80%',
           triggerOnce: true
