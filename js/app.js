@@ -84,8 +84,9 @@ Bon = function() {
               autoplay: "autoplay"
             })
             .end()
-            .addClass('show');
-            
+            .addClass('show')
+            .each(play());
+          
         }, {
           offset: '80%',
           triggerOnce: true
