@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="vci_pcsIFuvLi8p1eFrSdM8owtm6_348JypZ_OJZF5w" />
     <title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/app.css" />
     <link rel="shortcut icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
