@@ -155,9 +155,8 @@ Bon = function() {
       }
     });
     $('.slick-orbit').slick({
-      autoplay: true,
+      autoplay: false,
       dots: true,
-      variableWidth: false
     });
 
   }

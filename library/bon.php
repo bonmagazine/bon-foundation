@@ -92,7 +92,7 @@ function orbit_slider($output, $attr) {
         // Fetch the thumbnail (or full image, it's up to you)
 //      $img = wp_get_attachment_image_src($id, 'medium');
 //      $img = wp_get_attachment_image_src($id, 'my-custom-image-size');
-        $img = wp_get_attachment_image_src($id, 'full');
+        $img = wp_get_attachment_image_src($id, 'large');
         $alt = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true);
 		$caption = $attachment->post_excerpt;
 

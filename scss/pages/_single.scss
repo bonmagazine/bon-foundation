@@ -139,18 +139,36 @@
   }
 }
 .single-main div.slick-orbit {
-	
-	margin-top:50px;
-	margin-bottom: 50px;
-	border-top:1px solid black;
-	border-bottom:1px solid black;
-	
-}
-.slick-orbit img {
-	max-width: $row-width;
-	max-height:600px; 
-	margin:0px auto;	
+  margin-top: baseline();
+  margin-bottom: baseline();
+  border-top:1px solid black;
+  border-bottom:1px solid black;
+  .slick-slide {
+  }
+  figure {
+    max-width: 100%;
+    img {
+        max-height:400px;
+        max-width:100%; 
+        margin:0px auto; 
+        @media #{$m-up} {
+          max-height:600px;
+        } 
+    }
+  }
 }
 .entry-content ul.slick-dots {
 	max-width:100%;
+  bottom:-10px;
+  clear:both;
+  li { 
+    height:20px;
+    margin:0
+  }
+  li button:before {
+    width:19px;
+    height:19px;
+  }
 }
+
+
