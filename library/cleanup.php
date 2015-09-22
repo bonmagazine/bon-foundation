@@ -26,7 +26,7 @@ function start_cleanup() {
     add_filter('gallery_style', 'gallery_style');
 
     // Remove admin bar
-    add_filter('show_admin_bar', '__return_false');
+    //add_filter('show_admin_bar', '__return_false');
 
     
     // additional post related cleaning
