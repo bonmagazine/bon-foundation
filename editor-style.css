@@ -1,4 +1,10 @@
-@import url("http://f.fontdeck.com/s/css/usizZWFdN2CyQNkbgHeoeWIoXHw/bon.se/30102.css");
+@font-face { font-family:LLBrown; src: url(fonts/LLBrown/BrownPro-Regular.ttf) }
+@font-face { font-family:LLBrown Italic; src: url(fonts/LLBrown/BrownPro-Italic.ttf); font-style: italic }
+@font-face { font-family:LLBrown Bold; src: url(fonts/LLBrown/BrownPro-Bold.ttf); font-weight: bold }
+@font-face { font-family:Archive Pro Roman; src: url(fonts/Archive/archive_roman_pro.ttf)}
+@font-face { font-family:Archive Pro Italic; src: url(fonts/Archive/archive_roman_italic_pro.ttf); font-style: italic }
+@font-face { font-family:Archive Pro Bold; src: url(fonts/Archive/archive_bold_pro.ttf); font-weight: bold }
+@font-face { font-family:Archive Pro Bold Italic; src: url(fonts/Archive/archive_bold_italic_pro.ttf); font-weight: bold; font-style: italic }
 
 body, td, pre, p {color:#000; font-family:"Archive Pro Roman", serif; font-size:18px; margin:8px; line-height:1.25em;}
 body#tinymce {
@@ -21,61 +27,61 @@ p.topmarginp {
 	margin-top: 16px;
 }
 p.questionp {
-  font-family: "Value Sans Medium", "Value", sans-serif;
+  font-family: "LLBrown", "Value", sans-serif;
   letter-spacing: 0.8px;
   text-indent: 0;
   margin-left: 48px; 
 }
 p.questionp em {
-	font-family: "Value Sans Medium Italic", sans-serif;	
+	font-family: "LLBrown Italic", sans-serif;	
 }
 .austinlight {
- font-family: "Value Sans Light", sans-serif;
+ font-family: "LLBrown", sans-serif;
 }
 .austinmedium {
- font-family: "Value Serif", serif;
+ font-family: "Archive Pro Bold", serif;
 }
 .marialistarubrik {
 	text-transform:uppercase;
-	font-family: "Value Sans Light", sans-serif;
+	font-family: "LLBrown", sans-serif;
 	letter-spacing: 1px;
 	padding-right: 10px;
 }
 
 .humanist {
- font-family: "Value Sans Medium", sans-serif;
+ font-family: "LLBrown", sans-serif;
 }
 .humanist em {
-	font-family: "Value Sans Medium Italic", sans-serif;	
+	font-family: "LLBrown Italic", sans-serif;	
 }
 	
 p.fotocredit {
- font-family: "Value Sans Medium", sans-serif;
+ font-family: "LLBrown", sans-serif;
  font-size:14px;
 }
 .fotocredit .austinmedium {
  font-size: 16px;
 }
 .ingress {
- font-family: "Value Sans Bold", sans-serif;
+ font-family: "LLBrown", sans-serif;
  font-size: 20px;
  line-height: 30px;
  letter-spacing: .7px;
  text-indent: 0;
 }
 .ingress em {
-	font-family: "Value Sans Medium Italic", sans-serif;		
+	font-family: "LLBrown Italic", sans-serif;		
 }
 
 .listsiffra {
 text-align: center;
 margin-top: -60px;
- font-family: "Value Sans Bold", sans-serif;
+ font-family: "LLBrown", sans-serif;
 font-size:124px;
 text-indent: 0 !important;	
 }
 .largeingress {
- font-family: "Value Sans Bold", sans-serif;
+ font-family: "LLBrown", sans-serif;
  font-size: 30px !important;
  line-height: 28px !important;
  letter-spacing: 0;
@@ -121,7 +127,7 @@ figure.size-full img {
 	max-width:960px;
 }
 span.interviewname {
-	font-family: "Value Sans Medium Italic", sans-serif;	
+	font-family: "LLBrown Italic", sans-serif;	
 	font-size: 14px;
 	text-transform: uppercase;
 	letter-spacing:.5px;
@@ -153,4 +159,17 @@ span.interviewname {
  font-size: 30px !important;
  line-height: 38px !important;
  letter-spacing: 0;
+}
+figure {
+	text-align:center;
+}
+figcaption {
+  font-family: "LLBrown", sans-serif;	
+  font-size: 16px;
+  line-height: 22px;
+  margin:22px 0;
+  text-align: center;
+}
+figcaption .austinmedium {
+ font-family: "Archive Pro Bold", serif;
 }

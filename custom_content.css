@@ -1,5 +1,3 @@
-@import url("http://f.fontdeck.com/s/css/usizZWFdN2CyQNkbgHeoeWIoXHw/bon.se/30102.css");
-
 body, td, pre, p {color:#000; font-family:"Archive Pro Roman", serif; font-size:18px; margin:8px; line-height:1.25em;}
 body#tinymce {
 	width:720px;
@@ -21,45 +19,55 @@ p.topmarginp {
 	margin-top: 16px;
 }
 p.questionp {
-  font-family: "Value Sans Medium", sans-serif;
+  font-family: "LLBrown", sans-serif;
   letter-spacing: 0.8px;
   text-indent: 0;
   margin-left: 48px; 
 }
 p.questionp em {
-	font-family: "Value Sans Medium Italic", sans-serif;	
+	font-family: "LLBrown Italic", sans-serif;	
 }
 .austinlight {
- font-family: "Value Sans Light", sans-serif;
+ font-family: "LLBrown", sans-serif;
 }
 .austinmedium {
  @include serif;
 }
 .marialistarubrik {
 	text-transform:uppercase;
-	font-family: "Value Sans Light", sans-serif;
+	font-family: "LLBrown", sans-serif;
 	letter-spacing: 1px;
 	padding-right: 10px;
 }
 
 .humanist {
- font-family: "Value Sans Medium", sans-serif;
+ font-family: "LLBrown", sans-serif;
 }
 .humanist em {
-	font-family: "Value Sans Medium Italic", sans-serif;	
+	font-family: "LLBrown Italic", sans-serif;	
 }
 
 	
 }
 .fotocredit {
- font-family: "Value Sans Medium", sans-serif;
+ font-family: "LLBrown", sans-serif;
  font-size:14px;
 }
 .fotocredit .austinmedium {
 	font-size:15px;
 }
+figcaption {
+  @include grotesque;
+  font-size: 16px;
+  line-height: 22px;
+}
+figcaption .austinmedium {
+  @include grotesque;
+  font-size: 16px;
+  line-height: 22px;
+}
 .ingress {
- font-family: "Value Sans Bold", sans-serif;
+ font-family: "LLBrown", sans-serif;
  font-size: 20px;
  line-height: 30px;
  letter-spacing: .7px;
@@ -68,12 +76,12 @@ p.questionp em {
 .listsiffra {
 text-align: center;
 margin-top: -60px;
- font-family: "Value Sans Bold", sans-serif;
+ font-family: "LLBrown", sans-serif;
 font-size:124px;
 text-indent: 0 !important;	
 }
 .largeingress {
- font-family: "Value Sans Bold", sans-serif;
+ font-family: "LLBrown", sans-serif;
  font-size: 30px !important;
  line-height: 28px !important;
  letter-spacing: 0;
