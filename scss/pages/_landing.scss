@@ -50,6 +50,8 @@
 	   		text-transform: uppercase;
 	   		font-size:1rem;
 	   		margin-bottom:baseline(0.5);
+        text-align: center;
+        width:100%;
 	   		@media #{$s-up} { 
    		   		font-size:2vw;	
    		   		margin-bottom:0;   		   		

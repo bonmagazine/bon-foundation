@@ -1,11 +1,18 @@
 <?php get_header(); ?>
+<?php 
+$format = get_post_format();
+if ( false === $format ) {
+  $format = 'standard';
+}
+?>
 
-  <div class="main single-main inner-wrap-row" role="main">
+  <div class="main single-main <?php if ($format == 'standard' ): ?>inner-wrap-row <?endif?><?php echo $format; ?>" role="main">
 
   <?php get_template_part( 'partials/campaigns/topbanner', 'single' ); ?>
   
   <?php while (have_posts()) : the_post(); ?>
     <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
+    <?php if ( $format == 'standard' ): ?> 
       <header class="entry-main">
         <p class="section">
           <?php the_terms( $post->ID, 'section' ); ?>
@@ -48,6 +55,36 @@
       <?php related_posts(); ?>
 
     </aside><!-- .related-content -->
+  <?php endif  ?>
+  <?php if ( $format == 'gallery' ): ?> 
+  <div id="poster">
+    <div class="postermeta">
+      <div class="centered">
+      <header>
+        <p class="section"><?php the_terms( $post->ID, 'section' ); ?></p>
+        <h1 class="title">
+          <?php the_title(); ?>
+        </h1>
+      </header>
+      <p><?php the_excerpt(); ?></p>
+
+      <?php if ( get_the_author() != 'Redaktionen' ): ?> 
+      <div class="author">
+        <?php bon_the_entry_author(); ?>
+      </div>
+      <?php endif ?>
+      <?php if ( bon_get_the_entry_photographers()  || bon_get_the_entry_stylists() ) : ?>
+      <p class="byline author">
+      <?php if ( bon_get_the_entry_photographers() ) : ?>Photography <?php echo bon_get_the_entry_photographers() ?><?php endif; ?><?php if ( bon_get_the_entry_photographers() && bon_get_the_entry_stylists() ) echo "</p><p class='byline author'>" ?><?php if ( bon_get_the_entry_stylists() ) : ?>Styling <?php echo bon_get_the_entry_stylists() ?><?php endif; ?>
+      </p>      
+      <?php endif; ?>
+      </div>
+    </div>
+  </div>    
+  <?php the_content(); ?>
+
+  <?php endif  ?>
+  
   <?php endwhile;?>
 
   </div>
