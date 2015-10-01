@@ -81,7 +81,19 @@ if ( false === $format ) {
       </div>
     </div>
   </div>    
+  <div class="gallery-content">
   <?php the_content(); ?>
+  </div>
+  <?php
+  $media = get_attached_media( 'image' );
+  /*
+  foreach ($media as $media) {
+    echo bon_the_post_video_thumbnail_html( wp_get_attachment_image( $media=> ID, 'full' ) , 444)  ); 
+
+  };
+  */
+  ?>
+  
 
   <?php endif  ?>
   

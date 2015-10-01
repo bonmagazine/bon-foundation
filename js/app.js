@@ -106,9 +106,10 @@ Bon = function() {
         autoplay: "autoplay"
       });
 
+
+
       $('figure')
         .waypoint(function() {
-          
           $(this)
             .find('.minimagazine_video_autoplay')
             .attr({
@@ -116,10 +117,9 @@ Bon = function() {
               autoplay: "autoplay"
             })
             .end()
-            .addClass('show');
-
+            .addClass('show bounceIn');
         }, {
-          offset: '80%',
+          offset: '40%',
           triggerOnce: true
         });
     }

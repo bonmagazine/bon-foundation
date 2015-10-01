@@ -1,7 +1,7 @@
+
 .single-main.gallery {
   margin-top:0;
   padding:0;
-
   article.format-gallery {
     padding:0;
     #poster {
@@ -14,7 +14,20 @@
         }
       }
     }
+   .gallery-content {
+     p {
+      margin: 0 auto;
+      background: #fff;
+    }
+  }
+
     figure {
+      &:first-of-type {
+        @media #{$m-up} {
+          min-height: 100vh;
+          background: none;
+        }      
+      }
       width:100%;
       margin-bottom: 64px;
       position: relative;
@@ -58,12 +71,17 @@
       position:relative;
       bottom: baseline(2);
       text-align:center;
-      max-width: 80%;
       margin:0px auto;
       height:0;
       @include medium-grotesque-h;
-
+      color:white;
+      padding:1em;
+      display: block;
+    }
+    .bounceIn figcaption  {
+      @include bounceIn();
     }
   }
 
 }
+
