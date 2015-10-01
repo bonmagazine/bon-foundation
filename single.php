@@ -18,6 +18,7 @@
       <div class="entry-content">
         <?php get_template_part( 'partials/campaigns/articleinsert' ); ?>
         <?php the_content(); ?>
+        <?php get_template_part( 'partials/campaigns/articleinsert-bottom' ); ?>
       </div>
       <footer class="entry-footer">
         <div class="tags">
