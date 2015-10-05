@@ -92,6 +92,37 @@ Bon = function() {
         });
     }
 
+   // BONBON new article lazyload
+    $bonbon = $('figure');
+    if($bonbon.length > 0) {
+
+      // Bon bon autoplay
+      $('.minimagazine_video_autoplay').attr({
+        loop: "",
+        autoplay: "autoplay"
+      });
+      $('.wp-video-shortcode').attr({
+        loop: "",
+        autoplay: "autoplay"
+      });
+
+
+
+      $('figure')
+        .waypoint(function() {
+          $(this)
+            .find('.minimagazine_video_autoplay')
+            .attr({
+              loop: "",
+              autoplay: "autoplay"
+            })
+            .end()
+            .addClass('show bounceIn');
+        }, {
+          offset: '40%',
+          triggerOnce: true
+        });
+    }
 
     // Search label
     $('label.search-nav-title').click(function(e){

@@ -3,6 +3,7 @@
 
 // Vendor
   "vendor/slick",
+  "vendor/animate",
 
 // Selectively include foundation components
   "foundation/components/clearing",
@@ -32,11 +33,16 @@
 // Pages
   "pages/bon-blog",
   "pages/bonbon",
+  "pages/bonbon_article",
   "pages/archive",
   "pages/single",
   "pages/single-film",
   "pages/redaktion",
-  "pages/landing";
+  "pages/landing",
+
+// Pages
+  "pages/bon-blog";
+
 
 figure {
   margin: 0;
