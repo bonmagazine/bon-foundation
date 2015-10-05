@@ -84,6 +84,11 @@ if ( false === $format ) {
   <div class="gallery-content">
   <?php the_content(); ?>
   </div>
+  <?php if ($endcredits = get_field( "end_credits" )): ?>
+  <div class="endcredits">
+  <?php echo $endcredits ?>
+  </div>
+  <?php endif ?>
   <?php
   $media = get_attached_media( 'image' );
   /*

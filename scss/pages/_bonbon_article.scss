@@ -82,6 +82,18 @@
       @include bounceIn();
     }
   }
-
+  .endcredits {
+    @media #{$m-up} {
+      padding:baseline() 20% ;
+    }
+    margin:64px auto;
+    background: white;
+    p {
+      text-indent: 0;
+      b {
+        @include large-grotesque-p;
+      }
+    }
+  }
 }
 
