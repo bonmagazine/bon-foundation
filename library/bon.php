@@ -47,6 +47,8 @@ add_filter( 'wp_list_pages', 'bon_active_list_pages_class', 10, 2 );
  */
 function orbit_slider($output, $attr) {
     global $post;
+    $format = get_post_format();
+    if ( false === $format ) $format = 'standard';
 
     if (isset($attr['orderby'])) {
         $attr['orderby'] = sanitize_sql_orderby($attr['orderby']);
@@ -85,7 +87,7 @@ function orbit_slider($output, $attr) {
     // Here's your actual output, you may customize it to your need
 
 // old output    $output = "<ul data-orbit class='slick-orbit' data-options='timer_speed:0;timer:false;'>\n";
-    $output = "<div class='slick-orbit'>\n";
+    if ( $format != 'gallery' ) $output = "<div class='slick-orbit'>\n";
 
     // Now you loop through each attachment
     foreach ($attachments as $id => $attachment) {
@@ -97,13 +99,19 @@ function orbit_slider($output, $attr) {
 		$caption = $attachment->post_excerpt;
 
 
-        $output .= "<div>\n";
-		$output .= "<figure class='figure-in-hentry align-none'>";
-        $output .= "<img src=\"{$img[0]}\" />\n<figcaption>".$caption."</figcaption>";
-        $output .= "</figure></div>\n";
+        if ( $format != 'gallery' ) $output .= "<div>\n";
+        
+		$output .= "<figure class='figure-in-hentry'>";
+        $imgtag = "<img src=\"{$img[0]}\" />";
+        $imgtag = bon_the_post_video_thumbnail_html( $imgtag, $attachment->ID  );
+        $output .= $imgtag;
+        $output .= "\n<figcaption>".$caption."</figcaption>";
+        $output .= "</figure>";
+        
+        if ( $format != 'gallery' ) $output .= "</div>\n";
     }
 
-    $output .= "</div>\n";
+    if ( $format != 'gallery' ) $output .= "</div>\n";
 
     return $output;
 }

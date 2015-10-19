@@ -3,6 +3,7 @@
   margin-top:0;
   padding:0;
   article.format-gallery {
+    background-color: rgb(255,255,255);
     padding:0;
     #poster {
       position: absolute;
@@ -13,18 +14,24 @@
           color: white;
         }
       }
+      .postermeta {
+        background: none;
+      }
+
     }
    .gallery-content {
      p {
       margin: 0 auto;
-      background: #fff;
+      @include grid-column(8, $collapse: true, $center: true);
+      text-indent: 0;
+
     }
+
   }
 
     figure {
       &:first-of-type {
         @media #{$m-up} {
-          min-height: 100vh;
           background: none;
         }      
       }
@@ -40,12 +47,14 @@
       width:100%;
     }
     figure.figure-fullheight {
-      height:100vh;
-      background: white;
-      img {
+      @media #{$s-up} {
         height:100vh;
-        width: auto;
-        margin:0px auto;
+        background: white;
+        img {
+          height:100vh;
+          width: auto;
+          margin:0px auto;
+        }
       }
     }
     figure.show {

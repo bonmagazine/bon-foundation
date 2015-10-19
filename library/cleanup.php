@@ -31,8 +31,8 @@ function start_cleanup() {
     
     // additional post related cleaning
     add_filter('get_image_tag_class', 'image_tag_class', 0, 4);
-    add_filter('get_image_tag', 'image_editor', 0, 4);
-    // add_filter( 'the_content', 'img_unautop', 30 );
+    add_filter( 'the_content', 'img_unautop', 30 );
+    add_theme_support( 'html5', array( 'caption' ) );
 
 } 
 
@@ -163,11 +163,6 @@ function image_editor($html, $id, $alt, $title) {
         $html);
 } 
 
-// Wrap images with figure tag 
-function img_unautop($pee) {
-    $pee = preg_replace('/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '<figure>$1</figure>', $pee);
-    return $pee;
-} 
 
 
 // Blank lines??
@@ -175,6 +170,11 @@ function line_output($atts) {
     return '<p>&nbsp;</p>';
 }
 add_shortcode('line', 'line_output');
+
+function img_unautop($pee) {
+    $pee = preg_replace('/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '<figure>$1</figure>', $pee);
+    return $pee;
+} 
 
 
 // Prevent Tiny MCE stripping style tags

@@ -4,18 +4,18 @@
  *
  * Filters for output content
  *
- */
 
 // Clean up image tags and use figure el
 function bon_html5_insert_image($html, $id, $caption, $title, $align, $url, $size, $alt) {
-    $image_src = wp_get_attachment_image_src($id, $size);
-    $html5 = "<figure id='post-$id media-$id' class='figure-in-hentry align-$align size-$size'>";
-    $html5 .= "<img src='$image_src[0]' alt='$title' class='size-$size' />";
-    if($caption) $html5 .= "<figcaption>$caption</figcaption>";
-    $html5 .= "</figure>";
+    if($caption) $html5 = "[caption id='attachment_" . $id . "' align='align" . $align ."']";
+    $image_src = wp_get_attachment_image_src($id, $size);    
+    $html5 .= "<img class='' src='$image_src[0]' alt='$title' />";
+    if($caption) $html5 .= $caption . "[/caption]";
     return $html5;
 }
 add_filter( 'image_send_to_editor', 'bon_html5_insert_image', 10, 9 );
+
+ */
 
 
 // Register the html5 figure-non-responsive code fix.
