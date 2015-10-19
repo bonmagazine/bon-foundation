@@ -94,7 +94,8 @@ function orbit_slider($output, $attr) {
         // Fetch the thumbnail (or full image, it's up to you)
 //      $img = wp_get_attachment_image_src($id, 'medium');
 //      $img = wp_get_attachment_image_src($id, 'my-custom-image-size');
-        $img = wp_get_attachment_image_src($id, 'large');
+        if ( $format != 'gallery' ) $img = wp_get_attachment_image_src($id, 'large');
+        if ( $format == 'gallery' ) $img = wp_get_attachment_image_src($id, 'xxx-large');        
         $alt = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true);
 		$caption = $attachment->post_excerpt;
 
@@ -228,7 +229,6 @@ function bon_the_post_video_thumbnail_html( $html  , $post_thumbnail_id  ) {
 		
 				if ( $new_html == '') {
 				
-					$controls = ( $is_chrome == true ) ? 'controls' : '';
 				
 					$new_html = '<video class="featuredvideo" ' . $controls . ' autoplay preload loop poster="' . $fi_attr[0] . '">';
 				}

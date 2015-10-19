@@ -18,6 +18,7 @@ function bon_theme_support() {
     add_image_size('cover-big', 780, 9999); // Front Cover Big image
     add_image_size('cover-medium', 460, 9999); // Front Cover Medium
     add_image_size('tb', 300, 9999); // Thumbnails
+    add_image_size('xxx-large', 1600, 1600); // Large fullscreen images
 
     // Image sizes 
     add_image_size('blog-header', 1000, 240, 1);
