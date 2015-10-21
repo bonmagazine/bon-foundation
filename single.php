@@ -70,13 +70,13 @@ if ( false === $format ) {
       <p><?php the_excerpt(); ?></p>
 
       <?php if ( get_the_author() != 'Redaktionen' ): ?> 
-      <div class="author">
-        <?php bon_the_entry_author(); ?>
-      </div>
+      <p class="byline author">
+        Text <?php echo get_the_author(); ?>
+      </p>
       <?php endif ?>
       <?php if ( bon_get_the_entry_photographers()  || bon_get_the_entry_stylists() ) : ?>
       <p class="byline author">
-      <?php if ( bon_get_the_entry_photographers() ) : ?>Photography <?php echo bon_get_the_entry_photographers() ?><?php endif; ?><?php if ( bon_get_the_entry_photographers() && bon_get_the_entry_stylists() ) echo "</p><p class='byline author'>" ?><?php if ( bon_get_the_entry_stylists() ) : ?>Styling <?php echo bon_get_the_entry_stylists() ?><?php endif; ?>
+      <?php if ( bon_get_the_entry_photographers() ) : ?>Fotografi <?php echo bon_get_the_entry_photographers() ?><?php endif; ?><?php if ( bon_get_the_entry_photographers() && bon_get_the_entry_stylists() ) echo "</p><p class='byline author'>" ?><?php if ( bon_get_the_entry_stylists() ) : ?>Mode <?php echo bon_get_the_entry_stylists() ?><?php endif; ?>
       </p>      
       <?php endif; ?>
       </div>

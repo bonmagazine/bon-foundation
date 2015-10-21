@@ -229,6 +229,7 @@ function bon_the_post_video_thumbnail_html( $html  , $post_thumbnail_id  ) {
 		
 				if ( $new_html == '') {
 				
+//					$controls = ( $is_chrome == true ) ? 'controls' : '';
 				
 					$new_html = '<video class="featuredvideo" ' . $controls . ' autoplay preload loop poster="' . $fi_attr[0] . '">';
 				}

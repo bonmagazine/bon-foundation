@@ -22,9 +22,13 @@
    .gallery-content {
      p {
       margin: 0 auto;
-      @include grid-column(8, $collapse: true, $center: true);
+      max-width: 62.5rem;
+      width: 100%;
+    }
+    .questionp {
+      @include serif;
+      padding-left: $indent;
       text-indent: 0;
-
     }
 
   }
@@ -93,8 +97,22 @@
   }
   .endcredits {
     @media #{$m-up} {
-      padding:baseline() 20% ;
+      margin: baseline() auto;
+      max-width: 62.5rem;
+      width: 100%;
     }
+    &:before { 
+      content: "***";
+      width:80px; 
+      text-indent:-9999px; 
+      height:6px; 
+      background:black; 
+      margin-top: ($baseline * 1.5) - 3px; 
+      margin-bottom: ($baseline * 1.5) - 3px; 
+      display:block;
+      margin-left: $indent;
+   } 
+
     margin:64px auto;
     background: white;
     p {
