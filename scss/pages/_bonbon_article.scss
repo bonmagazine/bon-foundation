@@ -14,16 +14,14 @@
           color: white;
         }
       }
-      .postermeta {
-        background: none;
-      }
 
     }
    .gallery-content {
      p {
       margin: 0 auto;
-      max-width: 62.5rem;
+      max-width: 42.5rem;
       width: 100%;
+      padding: 0 1.25rem;
     }
     .questionp {
       @include serif;
@@ -100,7 +98,7 @@
   .endcredits {
     @media #{$m-up} {
       margin: baseline() auto;
-      max-width: 62.5rem;
+      max-width: 42.5rem;
       width: 100%;
     }
     &:before { 
