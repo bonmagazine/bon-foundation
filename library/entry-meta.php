@@ -34,6 +34,17 @@ if(!function_exists('bon_entry_meta')) :
   	  }
   	  return $stylist;	  
   }
+  function bon_get_the_entry_metaterm($entry_taxonomy) {
+    $terms = get_the_terms( $post->ID , $entry_taxonomy );
+    if ( count($terms) == 0 ) return;
+    $n = 1;
+    foreach ( $terms as $term ) {
+      $term_output = $term_output . $term->name;
+      if ( count($terms) > 0 && $n < count($terms) ) $term_output = $term_output . ", ";
+      $n++;
+      }
+      return $term_output;   
+  }
 
 endif;
 ?>

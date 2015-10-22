@@ -282,6 +282,21 @@ function create_post_type() {
   register_taxonomy_for_object_type( 'bon_stylists', 'post' );
   register_taxonomy_for_object_type( 'bon_stylists', 'bon_minimagazine' );
 
+  register_taxonomy('bon_extracredit', array('bon_issues_posts', 'post', 'bon_minimagazine'),
+    array(
+      'hierarchical' => false,
+      'label' => 'Extra credit',
+      'query_var' => true,
+      'rewrite' => array('slug' => 'other', 'with_front' => false),
+      'public' => true,
+      'show_ui' => true
+    )
+  );
+  register_taxonomy_for_object_type( 'bon_extracredit', 'bon_issues_posts' );
+  register_taxonomy_for_object_type( 'bon_extracredit', 'post' );
+  register_taxonomy_for_object_type( 'bon_extracredit', 'bon_minimagazine' );
+
+
   // Bon Issues Image field (uses Tax-meta-class)
   if (is_admin()){
     $prefix = 'bon_';

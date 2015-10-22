@@ -74,9 +74,9 @@ if ( false === $format ) {
         Text <?php echo get_the_author(); ?>
       </p>
       <?php endif ?>
-      <?php if ( bon_get_the_entry_photographers()  || bon_get_the_entry_stylists() ) : ?>
+      <?php if ( bon_get_the_entry_metaterm('bon_photographers')  || bon_get_the_entry_metaterm('bon_stylists') || bon_get_the_entry_metaterm('bon_extracredit')) : ?>
       <p class="byline author">
-      <?php if ( bon_get_the_entry_photographers() ) : ?>Fotografi <?php echo bon_get_the_entry_photographers() ?><?php endif; ?><?php if ( bon_get_the_entry_photographers() && bon_get_the_entry_stylists() ) echo "</p><p class='byline author'>" ?><?php if ( bon_get_the_entry_stylists() ) : ?>Mode <?php echo bon_get_the_entry_stylists() ?><?php endif; ?>
+      <?php if ( bon_get_the_entry_metaterm('bon_photographers') ) : ?>Fotografi <?php echo bon_get_the_entry_metaterm('bon_photographers') ?><?php endif; ?><?php if ( bon_get_the_entry_metaterm('bon_photographers')&& bon_get_the_entry_metaterm('bon_stylists') ) echo "</p><p class='byline author'>" ?><?php if ( bon_get_the_entry_metaterm('bon_stylists') ) : ?>Mode <?php echo bon_get_the_entry_metaterm('bon_stylists') ?></p><?php endif; ?><?php if ( bon_get_the_entry_metaterm('bon_extracredit') ) : ?><p class='byline author'><?php echo bon_get_the_entry_metaterm('bon_extracredit') ?></p><?php endif ?>
       </p>      
       <?php endif; ?>
       </div>
