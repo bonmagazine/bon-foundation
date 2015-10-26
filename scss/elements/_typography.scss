@@ -49,13 +49,13 @@ Paragraphs
 // #  
 // #
 
-@include font-face(LLBrown, '../fonts/LLBrown/BrownPro-Regular');
-@include font-face('LLBrown Italic', '../fonts/LLBrown/BrownPro-Bold', italic);
-@include font-face('LLBrown Bold', '../fonts/LLBrown/BrownPro-Bold', bold);
-@include font-face('Archive Pro Roman', '../fonts/Archive/archive_roman_pro');
-@include font-face('Archive Pro Italic', '../fonts/Archive/archive_roman_italic_pro');
-@include font-face('Archive Pro Bold', '../fonts/Archive/archive_bold_pro');
-@include font-face('Archive Pro Bold Italic', '../fonts/Archive/archive_bold_italic_pro');
+@include font-face('LLBrown', '../fonts/B/Br', regular, 'ttf');
+@include font-face('LLBrown Italic', '../fonts/B/Bi', italic, 'ttf');
+@include font-face('LLBrown Bold', '../fonts/B/Bb', bold, 'ttf');
+@include font-face('Archive Pro Roman', '../fonts/A/ar', roman, 'ttf');
+@include font-face('Archive Pro Italic', '../fonts/A/ari', italic, 'ttf');
+@include font-face('Archive Pro Bold', '../fonts/A/ab', bold, 'ttf');
+@include font-face('Archive Pro Bold Italic', '../fonts/A/abi', bold italic, 'ttf');
 
 @mixin archive-mono { // For headings
   font-family:"Archive Pro Roman", serif; 
