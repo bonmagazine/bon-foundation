@@ -82,6 +82,21 @@
     p + p {
       text-indent: $indent;
     }
+    .faktaruta {
+      background: #ade5ff;
+      margin:$baseline;
+      padding:$baseline;
+      @media #{$s-up} {  
+          @include grid-column(4);
+      }
+    }
+    p {
+      font-size: 16px;
+    }
+    h2 {
+      @include medium-grotesque-h;
+      text-transform: uppercase;
+    }
   }
 
   .type-post .entry-content {
