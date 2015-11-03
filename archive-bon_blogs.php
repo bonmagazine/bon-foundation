@@ -9,6 +9,7 @@
       <?php echo $top_banner->post_content ?>
     </div>
   <?php endif; ?>
+  <?php get_template_part( 'partials/campaigns/articleinsert' ); ?>
 
   <?php if ( have_posts() ) : ?>
     <section id="blog-list" class="bon-blog-list infinite-scroll">
