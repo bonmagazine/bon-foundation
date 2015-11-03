@@ -147,7 +147,7 @@ function bon_get_campaign($type = 'overlay') {
             )
         )
     );
-  if ( !$type == 'overlay' ) return get_posts($campaign_args);
+  if ( $type != 'overlay' ) return get_posts($campaign_args);
   else {
       $cookie = json_decode ( stripslashes( $_COOKIE[ "bon_campaigncookie" ] ) );
       if ($cookie->visits < 3) return get_posts($campaign_args);      
