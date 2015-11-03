@@ -3,10 +3,15 @@
 	<?php foreach ($overlay as $post): setup_postdata( $post ); ?>
 <div class="campaign-promo-container">
   <div class="campaign-promo-wrap">
+	<?php 
+	$selected = get_field('show_skip_button');
+	if( in_array('on', $selected) ) :
+	?>
     <div class="btn btn-skip section">
 	    <svg class="close-icon"><use xlink:href="#close-icon" /></svg>
 		<p><?php echo get_field( "skip_button_text" ) ?></p>
-	    </div>
+	</div>
+	<? endif ?>
     <?php the_content(); ?>
   </div>
 </div>

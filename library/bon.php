@@ -147,8 +147,35 @@ function bon_get_campaign($type = 'overlay') {
             )
         )
     );
-  return get_posts($campaign_args);
+  if ( !$type == 'overlay' ) return get_posts($campaign_args);
+  else {
+      $cookie = json_decode ( stripslashes( $_COOKIE[ "bon_campaigncookie" ] ) );
+      if ($cookie->visits < 3) return get_posts($campaign_args);      
+  }
 }
+
+
+/* 
+ * Campaign cookie
+ * Make sure the takeover doesn't show up more than once a day or every 3 pages
+ */
+
+function set_campaign_cookie() {
+  if ( !is_admin() ) {
+    if (isset($_COOKIE['bon_campaigncookie'])) {
+        $cookie = json_decode ( stripslashes( $_COOKIE[ "bon_campaigncookie" ] ) );
+        $expiry = $cookie->expiry;
+        $visits = ($cookie->visits) +1 ;
+        if ( $visits > 12 ) $visits = 1;
+    } else {
+        $time = 1;
+        $expiry = time() +3600*24;
+    }
+    $cookieData = (object) array( "visits" => $visits, "expiry" => $expiry );
+    setcookie( "bon_campaigncookie", json_encode( $cookieData ), $expiry );
+  }
+}
+add_action( 'init', 'set_campaign_cookie');
 
 
 /* 
