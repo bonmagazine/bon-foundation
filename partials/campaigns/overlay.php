@@ -14,6 +14,7 @@
     <?php the_content(); ?>
   </div>
 </div>
+<?php else ?>
 <?php the_content(); ?>
 <?php endif ?>
 	<?php endforeach; wp_reset_postdata(); ?>
