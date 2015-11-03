@@ -3,7 +3,7 @@
 	<?php foreach ($overlay as $post): setup_postdata( $post ); ?>
 	<?php 
 	$selected = get_field('show_skip_button');
-	if( in_array('on', $selected) ) :
+	if( in_array('on', $selected) ) {
 	?>
 <div class="campaign-promo-container">
   <div class="campaign-promo-wrap">
@@ -14,8 +14,8 @@
     <?php the_content(); ?>
   </div>
 </div>
-<?php else ?>
+<?php } else { ?>
 <?php the_content(); ?>
-<?php endif ?>
+<?php } ?>
 	<?php endforeach; wp_reset_postdata(); ?>
 <?php endif; ?>
