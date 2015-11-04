@@ -98,11 +98,9 @@ function orbit_slider($output, $attr) {
         if ( $format == 'gallery' ) $img = wp_get_attachment_image_src($id, 'xxx-large');        
         $alt = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true);
 		$caption = $attachment->post_excerpt;
-
-
+        $caption_colour = get_field( "caption_colour", $id );
         if ( $format != 'gallery' ) $output .= "<div>\n";
-        
-		$output .= "<figure class='figure-in-hentry'>";
+		$output .= "<figure class='figure-in-hentry " . $caption_colour . "'>";
         $imgtag = "<img src=\"{$img[0]}\" />";
         $imgtag = bon_the_post_video_thumbnail_html( $imgtag, $attachment->ID  );
         $output .= $imgtag;
