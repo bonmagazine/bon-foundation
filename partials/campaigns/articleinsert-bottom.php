@@ -1,6 +1,6 @@
-<?php $article_insert = bon_get_campaign('article-insert-bottom'); ?>
+<?php $article_insert = bon_get_campaign('article-bottom'); ?>
 <?php if($article_insert): ?>
-<div class="article-insert">
+<div class="article-insert insert-bottom">
   <?php foreach ($article_insert as $post): setup_postdata( $post ); ?>
     <?php the_content(); ?>
   <?php endforeach; wp_reset_postdata(); ?>

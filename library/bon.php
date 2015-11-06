@@ -134,7 +134,7 @@ function bon_get_campaign($type = 'overlay') {
     'order' => 'meta_value_num',
     'meta_query' => array(
         array(
-            'key' => 'Ad_placement',
+            'key' => 'ad_placement',
             'value' => $type,
             'compare'   => 'LIKE'            
             ),
