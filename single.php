@@ -58,7 +58,8 @@ if ( false === $format ) {
     </aside><!-- .related-content -->
   <?php endif  ?>
   <?php if ( $format == 'gallery' ): ?> 
-  <div id="poster">
+  <div id="poster"<?php if( get_field( "poster_text_colour" ) == "black" ) : ?> class="black"<?php endif?>> 
+
     <div class="postermeta">
       <div class="centered">
       <header>

@@ -34,7 +34,7 @@
     text-align: center;
     color:white !important;
     background:rgba(0, 0, 0, 0.1);
-	a {color:white}
+  	a {color:white}
 		.centered {
 				position: absolute;
 				right:0;
@@ -110,9 +110,15 @@
    .featuredvideo {
 	   width:100%;
 	   height:auto;
-   }
-
-	
+   }	
+}
+#poster.black {
+  .postermeta { 
+    color:black !important;  
+    a { color:black !important; }
+    p { color:black !important; }
+    header h1 { color:black !important;}
+  }
 }
 #cover {
 
