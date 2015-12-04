@@ -134,8 +134,7 @@
 
 figure {
   text-align: center;
-  margin: 0 baseline();
-  
+  margin: baseline() 0;
   @media #{$m-up} {
     text-align: center;
 
