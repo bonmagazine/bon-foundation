@@ -19,7 +19,17 @@ if ( false === $format ) {
         </p>
         <h1 class="entry-title"><?php the_title(); ?></h1>
         <div class="author-and-date">
-          <?php bon_the_entry_meta(); ?>
+          <?php if ( get_the_author() != 'Redaktionen' ): ?> 
+          <p class="byline author">
+            Text <?php echo get_the_author(); ?>
+          </p>
+          <?php endif ?>
+          <?php if ( bon_get_the_entry_metaterm('bon_photographers')  || bon_get_the_entry_metaterm('bon_stylists') || bon_get_the_entry_metaterm('bon_extracredit')) : ?>
+          <p class="byline author">
+          <?php if ( bon_get_the_entry_metaterm('bon_photographers') ) : ?>Fotografi <?php echo bon_get_the_entry_metaterm('bon_photographers') ?><?php endif; ?><?php if ( bon_get_the_entry_metaterm('bon_photographers')&& bon_get_the_entry_metaterm('bon_stylists') ) echo "</p><p class='byline author'>" ?><?php if ( bon_get_the_entry_metaterm('bon_stylists') ) : ?>Mode <?php echo bon_get_the_entry_metaterm('bon_stylists') ?></p><?php endif; ?><?php if ( bon_get_the_entry_metaterm('bon_extracredit') ) : ?><p class='byline author'><?php echo bon_get_the_entry_metaterm('bon_extracredit') ?></p><?php endif ?>
+          </p>      
+          <?php endif; ?>
+          <br><?php bon_the_entry_date(); ?>
         </div>
       </header>
       <div class="entry-content">
